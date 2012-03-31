@@ -5,41 +5,47 @@
 <title>Kushagra Gour</title>
 
 <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>    
     
+    <script>
+		window.addEventListener('load', init);
+		function init(){
+			for(var i=5;i--;){
+				var g = document.createElement('g');
+				var circle = document.createElement('circle');
+				circle.setAttribute('cx', 100 + i*50);
+				circle.setAttribute('cy', 100 + i*10);
+				circle.setAttribute('r', 50);
+				g.appendChild(circle); console.log(g);
+				document.getElementById('svg_canvas').appendChild(circle);
+			}
+		};
+    
+    </script>
+
 </head>
 
 <body>
-<div id="wrapper">	
 	
-	<div id="header" class="box">
-		<h1>Kushagra Gour</h1>
-		<h4> Indie Game Developer <span style="font-size:30;color:red">+</span> Flash Evangelist</h4>
-		<br>
-	</div>
+	<header>
+	</header>
 	
-	<div id="menu" class="box">
-		<ul>
-			<li><a href="" class="selected">HOME</a> &middot; </li>
-			<li><a href="">GAMES</a> &middot; </li>
-			<li><a href="">BLOG</a> &middot; </li>
-			<li><a href="">RESUME</a> &middot; </li>
-			<li><a href="">ABOUT</a></li>
-		</ul>	
-	</div>	
+	<section>
+		<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" id="svg_canvas">
+			
+		</svg>
+	</section>
 	
-	<div id="content" class="box">
-		<h3>COming Up SoOn !</h3>
+	<footer>
+		<div class="name">
+			KUSHAGRA GOUR 
+		</div>
 		
-		<br><br>
+		<div class="desc">
+			<em>Artist</em> . <em>Coder</em> . <em>Game_Developer</em> . <em>Flutist</em>
+		</div>
 		
-	</div>
-	
-	<div id="footer" class="box">
-		&copy; 2011 Kushagra Gour
-	</div>
-	
-	
-</div>
+	</footer>
 </body>
 
 </html>

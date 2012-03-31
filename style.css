@@ -1,64 +1,51 @@
-/* css style */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary {
+    display: block;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: sans-serif;
+}
 
 
 body{
-	background-color: #eeb;
-	font-size: 12;
+	padding: 0;
+	margin: 0;
+	color: #DDD;
+	overflow: hidden;
+	background-color: #EEE;
 }
 
-a{
-	color: #ff0000;
-	text-decoration: none;
+footer{
+	position: absolute;
+	width: 100%;
+	height: 70px;
+	background-color: #DEDEDE;
+	border-top: 1px solid #FFF;
+	bottom: 0;
+	color: #999;
+	text-shadow: 0 1px 1px #FFF;
 }
 
-a:hover{
-	font-style: underline;
-	color: #000000;
-	font-size: 20px;
-}
-
-a.selected{
-	color: #000000;
-	font-weight: bold;
-	font-size: 20px;
-}
-
-ul{
-	list-style: none;
-}
-
-.box{
-	display: block;
-	text-align: center;
-	padding: 1px;
-}
-
-#wrapper{
-	width: 800px;
-	margin: auto;
-	background-color: #fff;	
-}
-
-#header{
-	//width: 800px;
-	//background-color: #ffcccc;
-}
-
-#menu{
-	//width: 800px;
-	background-color: #eee;
-}
-
-#menu>ul>li{
-	font-size: 14;
+footer div.name{
+	font-size: 60px;
 	display: inline;
 }
 
-#content{
-	//background-color: #aaffaa;
-}
-
-#footer{
-	color: #ddd;
-	background-color: #333;
+footer div.desc{
+	font-size: 25px;
+	display: inline;
 }
