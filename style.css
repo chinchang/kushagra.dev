@@ -17,16 +17,60 @@ button,
 input,
 select,
 textarea {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
 }
 
+.clear{
+	clear: both;
+}
 
 body{
 	padding: 0;
 	margin: 0;
-	color: #DDD;
+	color: #222;
 	overflow: hidden;
-	background-color: #EEE;
+	background-color: #DDD;
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+}
+
+#main-container{
+	width: 1000px;
+	height: 100%;
+	padding: 0;
+	margin: 0 auto;
+	height: 350px;
+	text-align: center;
+}
+
+#face{
+	display: inline-block;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin-left: -90px;
+}
+
+#chang{
+	width: 10px;
+	height: 10px;
+	margin: 80px 50px;
+	background: #000;
+	box-shadow:
+		0 0 #000,			10px 0px #000, 		20px 0 #000, 		30px 0 #000, 		40px 0 #000,
+		0px 10px #000, 	10px 10px #f1c634,	20px 10px #f1c634,	30px 10px #f1c634,	40px 10px #000,
+		0px 20px #f1c634, 	10px 20px #000,		20px 20px #f1c634,	30px 20px #000,		40px 20px #f1c634,
+		0px 30px #f1c634, 	10px 30px #f1c634,		20px 30px #f1c634,	30px 30px #f1c634,		40px 30px #f1c634,
+		0px 40px #aaa, 	10px 40px #aaa,		20px 40px #aaa,		30px 40px #aaa,	40px 40px #aaa,
+		-10px 50px #000, 	0px 50px #aaa, 		10px 50px #fff,		20px 50px #fff,		30px 50px #fff,	40px 50px #aaa, 50px 50px #000,
+		0px 60px #aaa, 	10px 60px #aaa,	20px 60px #aaa,	30px 60px #aaa,	40px 60px #aaa
+	;
+}
+
+#name{
+	font-size: 22px;
+	text-shadow: 0 1px #fff;
 }
 
 footer{
