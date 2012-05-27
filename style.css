@@ -52,21 +52,108 @@ body{
 	margin-left: -90px;
 }
 
+#chang-wrapper{
+	width: 200px;
+	height: 200px;
+	margin-bottom: -50px;
+}
+
 #chang{
 	width: 10px;
 	height: 10px;
-	margin: 80px 50px;
-	background: #000;
-	box-shadow:
-		0 0 #000,			10px 0px #000, 		20px 0 #000, 		30px 0 #000, 		40px 0 #000,
-		0px 10px #000, 	10px 10px #f1c634,	20px 10px #f1c634,	30px 10px #f1c634,	40px 10px #000,
-		0px 20px #f1c634, 	10px 20px #000,		20px 20px #f1c634,	30px 20px #000,		40px 20px #f1c634,
-		0px 30px #f1c634, 	10px 30px #f1c634,		20px 30px #f1c634,	30px 30px #f1c634,		40px 30px #f1c634,
-		0px 40px #aaa, 	10px 40px #aaa,		20px 40px #aaa,		30px 40px #aaa,	40px 40px #aaa,
-		-10px 50px #000, 	0px 50px #aaa, 		10px 50px #fff,		20px 50px #fff,		30px 50px #fff,	40px 50px #aaa, 50px 50px #000,
-		0px 60px #aaa, 	10px 60px #aaa,	20px 60px #aaa,	30px 60px #aaa,	40px 60px #aaa
-	;
+	background: transparent;
+	box-shadow: 
+	90px 70px rgb(242, 195, 82),
+	90px 80px rgb(242, 195, 82),
+	70px 80px rgb(242, 195, 82),
+	70px 90px rgb(242, 195, 82),
+	80px 90px rgb(242, 195, 82),
+	100px 90px rgb(242, 195, 82),
+	90px 90px rgb(242, 195, 82),
+	100px 80px rgb(242, 195, 82),
+	70px 100px rgb(242, 195, 82),
+	80px 80px rgb(242, 195, 82),
+	110px 90px rgb(242, 195, 82),
+	110px 80px rgb(242, 195, 82),
+	60px 60px rgb(242, 195, 82),
+	60px 70px rgb(242, 195, 82),
+	120px 70px rgb(242, 195, 82),
+	120px 80px rgb(242, 195, 82),
+	70px 50px rgb(242, 195, 82),
+	90px 50px rgb(242, 195, 82),
+	80px 50px rgb(242, 195, 82),
+	110px 100px rgb(242, 195, 82),
+	80px 40px rgb(0, 0, 0),
+	90px 40px rgb(0, 0, 0),
+	110px 40px rgb(0, 0, 0),
+	100px 70px rgb(0, 0, 0),
+	80px 70px rgb(0, 0, 0),
+	110px 70px rgb(251, 251, 251),
+	70px 70px rgb(251, 251, 251),
+	60px 80px rgb(242, 195, 82),
+	80px 110px rgb(251, 251, 250),
+	90px 110px rgb(251, 251, 250),
+	100px 110px rgb(251, 251, 250),
+	110px 30px rgb(2, 2, 2),
+	100px 30px rgb(2, 2, 2),
+	70px 30px rgb(2, 2, 2),
+	80px 20px rgb(2, 2, 2),
+	70px 20px rgb(2, 2, 2),
+	110px 110px rgb(174, 174, 174),
+	100px 130px rgb(174, 174, 174),
+	90px 130px rgb(174, 174, 174),
+	80px 130px rgb(174, 174, 174),
+	70px 120px rgb(174, 174, 174),
+	70px 110px rgb(174, 174, 174),
+	80px 100px rgb(174, 174, 174),
+	100px 100px rgb(174, 174, 174),
+	90px 100px rgb(174, 174, 174),
+	80px 120px rgb(174, 174, 174),
+	90px 120px rgb(174, 174, 174),
+	110px 120px rgb(174, 174, 174),
+	100px 120px rgb(174, 174, 174),
+	60px 100px rgb(174, 174, 174),
+	120px 100px rgb(174, 174, 174),
+	120px 90px rgb(242, 195, 82),
+	60px 90px rgb(242, 195, 82),
+	90px 20px rgb(0, 0, 0),
+	70px 40px rgb(0, 0, 0),
+	60px 30px rgb(0, 0, 0),
+	60px 40px rgb(0, 0, 0),
+	60px 50px rgb(0, 0, 0),
+	50px 40px rgb(0, 0, 0),
+	50px 70px rgb(0, 0, 0),
+	50px 60px rgb(0, 0, 0),
+	50px 50px rgb(0, 0, 0),
+	60px 110px rgb(0, 0, 0),
+	60px 120px rgb(0, 0, 0),
+	50px 120px rgb(0, 0, 0),
+	120px 110px rgb(0, 0, 0),
+	120px 120px rgb(0, 0, 0),
+	130px 120px rgb(0, 0, 0),
+	130px 70px rgb(0, 0, 0),
+	130px 60px rgb(0, 0, 0),
+	130px 50px rgb(0, 0, 0),
+	130px 40px rgb(0, 0, 0),
+	120px 50px rgb(0, 0, 0),
+	120px 40px rgb(0, 0, 0),
+	100px 40px rgb(0, 0, 0),
+	90px 30px rgb(0, 0, 0),
+	80px 30px rgb(0, 0, 0),
+	100px 20px rgb(0, 0, 0),
+	110px 20px rgb(0, 0, 0),
+	120px 30px rgb(0, 0, 0),
+	90px 60px rgb(242, 195, 82),
+	100px 60px rgb(242, 195, 82),
+	80px 60px rgb(242, 195, 82),
+	70px 60px rgb(242, 195, 82),
+	110px 50px rgb(0, 0, 0),
+	100px 50px rgb(0, 0, 0),
+	110px 60px rgb(0, 0, 0),
+	120px 60px rgb(0, 0, 0)
 }
+
+
 
 #name{
 	font-size: 22px;
