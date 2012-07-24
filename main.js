@@ -19,7 +19,7 @@
 
   ctx = null;
 
-  num_particles = 750;
+  num_particles = 850;
 
   density = 10;
 
