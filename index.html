@@ -7,64 +7,18 @@
 <link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
 <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>    
     
-    <script>
-		window.addEventListener('load', init);
-		function init(){
-			return;
-			for(var i=5;i--;){
-				var g = document.createElement('g');
-				var circle = document.createElement('circle');
-				circle.setAttribute('cx', 100 + i*50);
-				circle.setAttribute('cy', 100 + i*10);
-				circle.setAttribute('r', 50);
-				g.appendChild(circle); console.log(g);
-				document.getElementById('svg_canvas').appendChild(circle);
-			}
-		};
-    
-    </script>
-
-<!-- Start Visual Website Optimizer Code -->
-<script type='text/javascript'>
-var _vis_opt_account_id = 11767;
-var _vis_opt_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
-document.write('<s' + 'cript src="' + _vis_opt_protocol + 
-'dev.visualwebsiteoptimizer.com/deploy/js_visitor_settings.php?v=1&a='+_vis_opt_account_id+'&url='
-+encodeURIComponent(document.URL)+'&random='+Math.random()+'" type="text/javascript">' + '<\/s' + 'cript>');
-</script>
-
-<script type='text/javascript'>
-if(typeof(_vis_opt_settings_loaded) == "boolean") { document.write('<s' + 'cript src="' + _vis_opt_protocol + 
-'d5phz18u4wuww.cloudfront.net/vis_opt.js" type="text/javascript">' + '<\/s' + 'cript>'); }
-// if your site already has jQuery 1.4.2, replace vis_opt.js with vis_opt_no_jquery.js above
-</script>
-
-<script type='text/javascript'>
-if(typeof(_vis_opt_settings_loaded) == "boolean" && typeof(_vis_opt_top_initialize) == "function") {
-        _vis_opt_top_initialize(); vwo_$(document).ready(function() { _vis_opt_bottom_initialize(); });
-}
-</script>
-<!-- End Visual Website Optimizer Code -->
 
 </head>
 
 <body>
 	<div id="main-container">
-
-		<div id="face" title="This is me, yeah!">
-			<div id="chang-wrapper">
-				<div id="chang"></div>
-			</div>
-			<span id="name"><a href="https://twitter.com/chinchang457">Kushagra Gour</a></span>
-			<p>
-				<button>I don't do anything, except having fun!</button>
-			</p>
-		</div>
+		<canvas id="c" ></canvas>
 
 	</div>
 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>    
+	<script src="main.js"></script>    
  
 	<script type="text/javascript">
 
