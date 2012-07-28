@@ -1,40 +1,12 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-<title>Kushagra Gour</title>
-
-<link href='http://fonts.googleapis.com/css?family=Russo+One' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
-<link href="style.css" media="screen" rel="stylesheet" type="text/css" />
-    
-
-</head>
-
-<body>
-	<div id="main-container">
-		<canvas id="c" ></canvas>
-
-	</div>
-
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>    
-	<script src="main.js"></script>    
- 
-	<script type="text/javascript">
-
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-19798102-3']);
-	  _gaq.push(['_trackPageview']);
-
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-
-	</script>
+---
+layout: default
+title: Home
+---
 
 
-</body>
-
-</html>
+<ul>
+	{% for post in site.posts %}
+		<li><a href="{{ post.url }}">{{ post.title }}</a>
+		({{ post.date | date_to_string}})</li>
+	{% endfor %}
+</ul>
