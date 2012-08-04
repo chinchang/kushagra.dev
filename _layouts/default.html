@@ -1,27 +1,39 @@
-<html>
-<head>
-	<title>Kushagra Gour- Creativity freak!</title>
-</head>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+  	<meta charset="UTF-8">
+  	<title>{{ site.title }}</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-	{{content}}
+  <body>
 
+    <div id="outer-container">
+      <header id="top-header">
+        <h1>Kushagra Gour</h1>
+      </header>
+      <nav>
+        <ul>
+          <li>LAB</li>
+          <li>ART</li>
+          <li>ART</li>
+        </ul>
+        <div id="me"><div></div></div>
+        <ul>
+          <li>BLOG</li>
+          <li>LAB</li>
+          <li>ART</li>
+        </ul>
+        <div class="clear"></div>
+      </nav>
 
-<script type="text/javascript">
-          
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-19798102-3']);
-            _gaq.push(['_trackPageview']);
-  
-            (function() {
-              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-  
-</script>
+  	  {{ content }}
 
+      <footer>
+      </footer>
+    </div>
 
-</body>
+    {% include analytics.html %}
+  </body>
 
 </html>
