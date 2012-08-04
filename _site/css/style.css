@@ -53,6 +53,10 @@ body{
 	margin: 25px 0;
 	font-family: serif;
 }
+#top-header h2 {
+	font-size: 25px;
+	color: hsl(53, 44%, 35%);
+}
 
 nav ul {
 	display: inline-block;
@@ -65,8 +69,6 @@ nav ul li {
 	margin: 0 5px;
 	width: 100px;
 	height: 100px;
-	/*background: #F1D4AF;*/
-	/*color: white;*/
 	margin: 2px;
 	text-align: center;
 	padding: 44px 8px;
@@ -74,6 +76,8 @@ nav ul li {
 	-webkit-transition: 350ms all;
 	clear: both;
 	position: relative;
+	font-size: 20px;
+	font-weight: bold; 
 }
 nav ul li.first-nav {
 	clear: left;
