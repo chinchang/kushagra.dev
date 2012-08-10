@@ -3,38 +3,44 @@
   <head>
   	<meta charset="UTF-8">
   	<title>{{ site.title }}</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
 
     <div id="outer-container">
-      <header id="top-header">
-        <h1>Kushagra Gour</h1>
-        <h2>Game developer, Hacker, Creativity freak!</h2>
-      </header>
-      <nav>
-        <ul>
-          <li>HOME</li>
-          <li>GAMES</li>
-          <li>LAB</li>
-        </ul>
-        <div id="me"><div></div></div>
-        <ul>
-          <li>BLOG</li>
-          <li>ART</li>
-          <li>ME?</li>
-        </ul>
-        <div class="clear"></div>
-      </nav>
+      <div id="main-container">
 
-  	  {{ content }}
+        <header id="top-header">
+          <h1>Kushagra Gour</h1>
+          <h2>Game developer, Hacker, Creativity freak!</h2>
+        </header>
+        <nav>
+          <ul>
+            <li><a href="/" class="selected">HOME</a></li>
+            <li><a href="/games">GAMES</a></li>
+            <li><a href="/lab">LAB</a></li>
+            <li><a href="/blog">BLOG</a></li>
+            <li><a href="#">ART</a></li>
+            <li><a href="/about">ME?</a></li>
+          </ul>
+          <div class="clear"></div>
+          <div id="me"><div></div></div>
+        </nav>
 
-      <footer>
-      </footer>
+    	  {{ content }}
+
+      </div>
+
+      {% include footer.html %}
+
     </div>
 
     {% include analytics.html %}
+    {% if page.comments %}
+      {% include analytics.html %}
+    {% endif %}
+
   </body>
 
 </html>
