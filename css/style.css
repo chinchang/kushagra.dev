@@ -29,8 +29,7 @@ body{
 	background-color: #403B33;
 	width: 100%;
 	height: 100%;
-	font-size: 12px;
-	font-family: Courier;
+	font: 15px/1.22 Helvetica, Arial, Geneva, sans-serif;
 	color: #A3A948;
 }
 
@@ -78,7 +77,6 @@ a {
 }
 
 #main-container nav ul li {
-	/*height: 40px;*/
 	margin: 0 3px;
 	float: left;
 }
@@ -91,7 +89,7 @@ a {
 	text-align: center;
 	padding: 4px 8px;
 	position: relative;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 	box-sizing: border-box;
 	-webkit-transition: 350ms all;
