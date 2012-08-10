@@ -30,62 +30,79 @@ body{
 	width: 100%;
 	height: 100%;
 	font-size: 12px;
-	font-family: Arial;
+	font-family: Courier;
 	color: #A3A948;
 }
 
+a {
+	text-decoration: none;
+	color: #F2C45A;
+}
+
 #outer-container {
-	width: 100%
-	height: 100%;
-	padding: 0;
+	width: 600px;
 	margin: 0 auto;
-	height: 350px;
-	text-align: center;
+}
+
+#main-container {
+	background-color: #4C473D;
+	padding: 20px;
 }
 
 #top-header {
 	text-align: center;
+	margin-bottom: 30px;
 }
 
 #top-header h1 {
-	font-size: 100px;
+	font-size: 70px;
 	padding: 0;
-	margin: 25px 0;
-	font-family: serif;
+	margin: 0;
 }
 #top-header h2 {
-	font-size: 25px;
-	color: hsl(53, 44%, 35%);
+	font-size: 18px;
+	color: #F2C45A;//hsl(53, 44%, 35%);
 }
 
-nav ul {
+#main-container nav {
+	text-align: center;
+}
+
+#main-container nav ul {
 	display: inline-block;
 	list-style: none;
 	padding: 0;
+	margin: 0;
+	clear: both;
 }
 
-nav ul li {
+#main-container nav ul li {
+	/*height: 40px;*/
+	margin: 0 3px;
 	float: left;
-	margin: 0 5px;
-	width: 100px;
-	height: 100px;
-	margin: 2px;
+}
+
+#main-container nav ul li a {
+	color: #A3A948;
+	width: 100%;
+	height: 100%;
+	display: block;
 	text-align: center;
-	padding: 44px 8px;
-	box-sizing: border-box;
-	-webkit-transition: 350ms all;
-	clear: both;
+	padding: 4px 8px;
 	position: relative;
 	font-size: 20px;
-	font-weight: bold; 
+	font-weight: bold;
+	box-sizing: border-box;
+	-webkit-transition: 350ms all;
 }
-nav ul li.first-nav {
-	clear: left;
-}
-nav ul li:HOVER {
+#main-container nav ul li a:HOVER {
 	background-color: #332F29;
 }
-nav ul li:HOVER:AFTER {
+#main-container nav ul li a.selected {
+	background-color: #332F29;
+}
+
+#main-container nav ul li a:HOVER:AFTER, #main-container nav ul li a.selected:AFTER {
 	content: '';
 	width: 0;
 	height: 0;
@@ -93,32 +110,24 @@ nav ul li:HOVER:AFTER {
 	background: transparent;
 	border-width: 10px;
 	position: absolute;
-	top: 40px;
-	border-left-color: #332F29;
-	right: -19px;
+	bottom: -19px;
+	left: 50%;
+	border-top-color: #332F29;
+	margin-left: -10px;
 }
-nav ul + div + ul li:HOVER:AFTER {
-	content: '';
-	width: 0;
-	height: 0;
-	border: solid transparent;
-	background: transparent;
-	border-width: 10px;
-	position: absolute;
-	top: 40px;
-	left: -19px;
-	border-right-color: #332F29;
-}
-footer{
-	color: #999;
-	text-shadow: 0 1px 1px #FFF;
+
+footer {
+	text-align: center;
+	padding: 20px 10px;
+	/*color: #999;*/
+	/*text-shadow: 0 1px 1px #FFF;*/
 }
 
 #me {
 	width: 112px;
 	height: 272px;
 	display: inline-block;
-	margin: 0 10px;
+	margin: 0 10px -10px;
 }
 
 
