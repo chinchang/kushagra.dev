@@ -13,3 +13,7 @@ var str = "Hello World!";
 console.log(str);
 
 {% endhighlight %}
+
+I'll be soon writing a post about my experience with switching from wordpress to really awesome Jekyll.
+
+Stay tuned.
