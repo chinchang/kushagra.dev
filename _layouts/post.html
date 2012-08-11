@@ -2,12 +2,18 @@
 layout: default
 name: blog
 ---
+<article>
+	<h2 class="post-title">{{ page.title }}</h2>
+	<div class="post-meta">{{ page.date | date: "%B %d, %Y" }}</div>
 
-<h2>{{ page.title }}</h2>
-<span>{{ page.date | date: "%B %d, %Y" }}</span>
 
-{{ content }}
+	<div class="post-content">{{ content }}</div>
 
-<!-- 
-{% include disqus.html %}
- -->
+	{% include share_bar.html %}
+	
+
+	<!-- 
+	{% include disqus.html %}
+	 -->
+
+</article>
