@@ -1,7 +1,13 @@
 ---
 layout: default
+name: blog
 ---
 
 <h2>{{ page.title }}</h2>
+<span>{{ page.date | date: "%B %d, %Y" }}</span>
 
 {{ content }}
+
+<!-- 
+{% include disqus.html %}
+ -->
