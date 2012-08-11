@@ -66,6 +66,8 @@ a {
 #main-container nav {
 	text-align: center;
 	margin-bottom: 20px;
+	background: #403B33;
+	font-size: 0;
 }
 
 #main-container nav ul {
