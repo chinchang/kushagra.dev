@@ -149,20 +149,18 @@ article {
 	border-radius: 5px;
 }
 
-article .post-title {
-}
+article .post-title {}
 
 article .post-meta {
 	font-size: 12px;
 }
 
-article .post-summary {
-}
+article .post-summary {}
+
+article img { max-width: 100%; }
 
 .share-bar {
 	height: 33px;
 	margin: 10px 0;
 }
-.share-button {
-	float: left;
-}
+.share-button { float: left; }
