@@ -1,16 +1,24 @@
 
 <div class="share-bar" >
+	{% capture current_page %}{{ site.root_url }}{{ page.url }}{% endcapture %}
 
-	<div class="share-button" style="width:100px;">
-		<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkushagragour.in%2Fblog%2F2011%2F06%2Fpoozle-now-with-camera-mode%2F&amp;layout=button_count&amp;show_faces=false&amp;width=&amp;action=like&amp;colorscheme=dark&amp;send=false&amp;height=27" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:px; height:27px;" allowtransparency="true"></iframe>
+	<div class="share-button" style="width:90px;">
+		<iframe src="//www.facebook.com/plugins/like.php?href={{ current_page | url_encode }}&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=dark&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
 	</div>
 
 	<div class="share-button" style="width:80px;">
-		<div id="___plusone_0" style="height: 20px; width: 90px; text-indent: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: transparent; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; background-position: initial initial; background-repeat: initial initial; "><iframe allowtransparency="true" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; position: static; left: 0px; top: 0px; visibility: visible; width: 90px; height: 20px; " tabindex="0" vspace="0" width="100%" id="I0_1344646638725" name="I0_1344646638725" src="https://plusone.google.com/_/+1/fastbutton?bsv=pr&amp;url=http%3A%2F%2Fkushagragour.in%2Fblog%2F2011%2F06%2Fpoozle-now-with-camera-mode%2F&amp;size=medium&amp;count=true&amp;origin=http%3A%2F%2Fkushagragour.in&amp;hl=en&amp;ic=1&amp;jsh=m%3B%2F_%2Fapps-static%2F_%2Fjs%2Fgapi%2F__features__%2Frt%3Dj%2Fver%3DMuUFPWAeFU4.en.%2Fsv%3D1%2Fam%3D!9WWg3hgFJrKAVXxNQA%2Fd%3D1%2Frs%3DAItRSTNtXBxLNFklFij4x75nPj6KNWZelQ#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Conload&amp;id=I0_1344646638725&amp;parent=http%3A%2F%2Fkushagragour.in" title="+1"></iframe></div>
+		<div class="g-plusone" data-size="medium" data-href="{{ current_page }}"></div>
+		<script type="text/javascript">
+		  (function() {
+		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		    po.src = 'https://apis.google.com/js/plusone.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		  })();
+		</script>
 	</div>
 
 	<div class="share-button" style="width:110px;">
-		<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1340179658.html#_=1344646638794&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fkushagragour.in%2Fblog%2F2011%2F06%2Fpoozle-now-with-camera-mode%2F&amp;size=m&amp;text=POOZLE%20%E2%80%93%20now%20with%20Camera%20mode%3E%20%40chinchang457&amp;url=http%3A%2F%2Fkushagragour.in%2Fblog%2F2011%2F06%2Fpoozle-now-with-camera-mode%2F" class="twitter-share-button twitter-count-horizontal" style="width: 107px; height: 20px; " title="Twitter Tweet Button">
-		</iframe>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ current_page }}" data-via="chinchang457" data-related="chinchang457">Tweet</a>
+		<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
 	</div>
 </div>
