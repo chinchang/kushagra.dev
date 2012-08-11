@@ -3,7 +3,9 @@ layout: post
 title: Hello WOrld
 ---
 
-Hello World!
+Hey!
+
+As a custom, I write my first post on my new blog (powered by Jekyll and Github).
 
 {% highlight javascript linenos %}
 var str = "Hello World!";
