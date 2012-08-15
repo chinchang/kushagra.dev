@@ -157,7 +157,11 @@ article .post-meta {
 
 article .post-summary {}
 
-article img { max-width: 100%; }
+article img {
+	border: 10px solid rgba(255, 255, 255, 0.09); 
+	border-radius: 12px;
+	max-width: 100%; 
+}
 
 .share-bar {
 	height: 33px;
