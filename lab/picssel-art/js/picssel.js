@@ -5,7 +5,7 @@ version 1.0
 Author	Kushagra Gour a.k.a. chinchang (chinchang457@gmail.com)
 Licensed under The MIT License
 */
-var $canvas, $color_input, RGBToHash, addState, canvasResize, canvas_size, canvas_size_range, clearCanvas, ctx, current_path, drawPixel, generateCode, getPixelColor, getRGB, is_mouse_down, onMouseDown, origin_color, pixel_size, pixels, states, undo, undo_size;
+var $canvas, $color_input, RGBToHash, addState, canvasResize, canvas_size, canvas_size_range, clearCanvas, ctx, current_path, drawPixel, generateCode, getPixelColor, getRGB, is_mouse_down, onMouseDown, onMouseMove, onMouseUp, origin_color, pixel_size, pixels, states, undo, undo_size;
 
 $canvas = null;
 
@@ -13,7 +13,7 @@ ctx = null;
 
 $color_input = null;
 
-pixel_size = 4;
+pixel_size = 6;
 
 pixels = [];
 
@@ -152,6 +152,20 @@ onMouseDown = function(e) {
   }
 };
 
+onMouseMove = function(e) {
+  var color, cx, cy, pixel_current_color;
+  cx = e.clientX - $canvas.offset().left + document.body.scrollLeft;
+  cy = e.clientY - $canvas.offset().top + document.body.scrollTop;
+  cx = ~~(cx / pixel_size) * pixel_size;
+  cy = ~~(cy / pixel_size) * pixel_size;
+  color = $("input.color").css('background-color');
+  return pixel_current_color = getPixelColor(cx, cy);
+};
+
+onMouseUp = function(e) {
+  return is_mouse_down = false;
+};
+
 /*
 function drawPixel
 @param	x 		x cordinate to draw at
@@ -220,6 +234,5 @@ getRGB = function(color) {
 
 RGBToHash = function(rgb) {
   rgb = getRGB(rgb);
-  rgb = rgb[2] | (rgb[1] << 8) | (rgb[0] << 16);
-  return '#' + rgb.toString(16);
+  return '#' + (rgb[2] | (rgb[1] << 8) | (rgb[0] << 16) | (1 << 24)).toString(16).slice(1);
 };
