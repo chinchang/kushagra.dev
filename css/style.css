@@ -212,13 +212,14 @@ article img {
 /* Social bar */
 #social-bar {
 	text-align: center; 
-	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 0;
 }
 #social-bar .social-icon {
 	display: inline-block;
 	width: 54px;
 	height: 54px;
-	margin: 0 5px;
+	margin: 0 10px;
 }
 #social-bar .social-icon span {
 	display: block;
