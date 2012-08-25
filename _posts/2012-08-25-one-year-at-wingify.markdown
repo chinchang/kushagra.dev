@@ -26,6 +26,8 @@ All in all, I feel really fortunate to be a part of Wingify and to be able to wo
 
 And hey, we are always looking out for great talent out there. So if you think you have got it, [reach out to us](http://visualwebsiteoptimizer.com/careers.php) and be a part of this place called **Wingify**.
 
+EDIT: And as an icing on the cake, I received a <a href="https://www.facebook.com/photo.php?fbid=4551440628203" target="_blank">touch ultrabook</a> from Intel today :D Yuhooo!!
+
 **Thanks Wingify!**
 
 <style type="text/css">
