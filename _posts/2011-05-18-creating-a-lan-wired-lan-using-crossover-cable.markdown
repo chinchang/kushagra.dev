@@ -46,25 +46,25 @@ Now click on **Change adapter settings** in the left panel.
 
 Select the **Local Area Connection** adapter, right-click on it and select **Properties**.
 
-[![](/images/lan_3-300x198.png)](/images/lan_3.png)[/caption]
+[![](/images/lan_3-300x198.png)](/images/lan_3.png)
 
 **STEP 5 :**
 
 Now we need to edit some IPv4 properties of the connection. Click on **Properties** with **Internet Protocol Version 4 (TCP/IPv4)** selected in the list.
 
-[![](/images/lan_4-300x219.png)](/images/lan_4.png)[/caption]
+[![](/images/lan_4-300x219.png)](/images/lan_4.png)
 
 **STEP 6 :**
 
 Change the IP addresses to those shown in the picture below and click **OK**.
 
-[![](/images/lan_5-300x229.png)](/images/lan_5.png)[/caption]
+[![](/images/lan_5-300x229.png)](/images/lan_5.png)
 
 **STEP 7 :**
 
 Follow the same steps on the second machine and change its IP addresses as shown in the picture.
 
-[![](/images/lan_6-300x249.png)](/images/lan_6.png)[/caption]
+[![](/images/lan_6-300x249.png)](/images/lan_6.png)
 
 This is it ! Your both machines are now connected in a LAN.
 
@@ -73,7 +73,7 @@ You can also set some additional sharing options. For that:
 **STEP 8 :**
 Click on **Change advanced sharing options** in the **Network and Sharing Center**.
 
-[![](/images/lan_7-300x227.png)](/images/lan_7.png)[/caption]
+[![](/images/lan_7-300x227.png)](/images/lan_7.png)
 
 Here you can find several sharing options which you can set according to your preferences.
 
