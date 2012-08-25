@@ -1,0 +1,68 @@
+---
+comments: true
+date: 2012-04-30 01:16:08
+layout: post
+slug: ludum-dare-23
+title: Ludum Dare 23!
+categories:
+- actionscript
+- events
+- flash
+- games
+- open source
+---
+
+Hey everyone!
+
+Last weekend was just super awesome...it was **[Ludum Dare](http://www.ludumdare.com/compo/)** 23 - The ultimate 48 hour compo. The theme was 'Tiny World' and I was in this time (my 2nd LD). I chose to make a game on flash platform using the **[Flashpunk](http://www.flashpunk.com)** game library. The game is called _SAVE ME_ in which you control a cute alien which is attacked by some evil species. You can jump on planets and even hop from one planet to another collecting the game power-ups.
+
+<a href="/images/ld23_ss1.png"><img src="/images/ld23_ss1.png" width="220" /></a>
+<a href="/images/ld23_ss1.png"><img src="/images/ld23_ss2.png" width="220" /></a>
+<a href="/images/ld23_ss1.png"><img src="/images/ld23_ss3.png" width="220" /></a>
+<a href="/images/ld23_ss1.png"><img src="/images/ld23_ss4.png" width="220" /></a>
+
+
+Some points about this LD for me were:
+
+
+
+	
+  * Gave more time and priority to gameplay.
+
+	
+  * Drew quite a lot pixel art for the first time (it was fun).
+
+	
+  * Tried some new game mechanics.
+
+	
+  * Integrated almost all game elements (sounds really matter).
+
+
+
+
+## **[Play and rate](http://www.ludumdare.com/compo/ludum-dare-23/?action=preview&uid=4201)** my entry.
+
+
+Now that the compo is over, I have played around 60 entries out which here are my best picks (in no order):
+
+
+
+	
+  * **[Memento XII - deepnight](http://www.ludumdare.com/compo/ludum-dare-23/?action=preview&uid=2982): **As always, this entry by deepnight has mind blowing graphics. The pixel art is really good and gives a very nice feel to the game. Though being a _point and click adventure_ type, I was not that a fan of the gameplay.
+
+	
+  * **[Astro Break - hulahulahest](http://www.ludumdare.com/compo/ludum-dare-23/?action=preview&uid=528)**: This was a really well made contra style game. I loved the sprites and the whole idea of having a shoot'emup on a lil planet was greet. A game to play for powerups!
+
+	
+  * **[Soul Searchin' - MaximSchoemaker](http://www.ludumdare.com/compo/ludum-dare-23/?action=preview&uid=11306)**: A 100% into the the theme entry. A very well executed idea where the player can be shrunk and grown to clear levels inside levels...A nice level design too.
+
+	
+  * **[Nook - PoV](http://www.ludumdare.com/compo/ludum-dare-23/?action=preview&uid=19): **Another shrink/grow type jam entry which wonderful graphics and animation. The game is fun to play and effects are neat.
+
+
+So go ahead, play them, rate them and be cool :)
+
+If you wanna check out my game's source, it can be found on **[github](https://github.com/chinchang/LD23)**.
+
+Till next time, cya!
