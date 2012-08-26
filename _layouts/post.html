@@ -9,11 +9,11 @@ name: blog
 
 	<div class="post-content">{{ content }}</div>
 
-	{% include share_bar.html %}
-	
-
-	<!-- 
-	{% include disqus.html %}
-	 -->
-
+	{% include share_bar.html %}	
 </article>
+
+<div class="comment-box">
+    <h3>Comments</h3>
+    <hr/>
+	{% include disqus.html %}
+</div>

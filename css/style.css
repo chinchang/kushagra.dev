@@ -42,6 +42,14 @@ a {
 	color: #F2C45A;
 }
 
+hr {
+	background-color: #443F36;
+	border: none;
+	height: 1px;
+	border-bottom: 1px solid #5D564B;
+	margin: 5px 0;
+}
+
 #outer-container {
 	width: 600px;
 	margin: 0 auto;
@@ -183,10 +191,13 @@ footer {
 
 
 article {
-	margin-bottom: 20px;
 	background: #524C42;
 	padding: 10px;
 	border-radius: 5px;
+}
+
+article.list-item {
+	margin-bottom: 20px;
 }
 
 article .post-title {}
@@ -206,10 +217,15 @@ article img {
 }
 
 .share-bar {
-	height: 33px;
+	height: 25px;
 	margin: 10px 0;
 }
 .share-button { float: left; }
+
+/* Comment box */
+.comment-box {
+	margin-top: 30px;
+}
 
 /* Social bar */
 #social-bar {

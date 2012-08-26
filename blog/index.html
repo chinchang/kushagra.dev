@@ -6,7 +6,7 @@ name: blog
 
 {% for post in site.posts %}
 
-<article>
+<article class="list-item">
 	<a href="{{ post.url }}"><h2 class="post-title">{{ post.title }}</h2></a>
 	<div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>
 
