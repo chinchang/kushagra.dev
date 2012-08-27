@@ -197,7 +197,11 @@ article {
 }
 
 article.list-item {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+article.list-item:last-child {
+	margin-bottom: 0;
 }
 
 article .post-title {}
