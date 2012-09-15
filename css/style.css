@@ -220,6 +220,11 @@ article img {
 	-moz-box-sizing: border-box;
 }
 
+article p code {
+	background-color: #3E3A32;
+	padding: 2px;
+}
+
 .share-bar {
 	height: 25px;
 	margin: 10px 0;
