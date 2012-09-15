@@ -222,7 +222,27 @@ article img {
 
 article p code {
 	background-color: #3E3A32;
-	padding: 2px;
+	padding: 2px 3px;
+}
+
+article .button {
+	background-color: #F2C45A;
+	color: #3E3A32;
+	padding: 6px 12px;
+	text-align: center;
+	-webkit-transition: color, background-color 200ms;
+	-moz-transition: color, background-color 200ms;
+}
+article .button:hover {
+	background-color: #3E3A32;
+	color: #F2C45A;
+}
+
+article .button.demo {
+	display: block;
+	font-weight: bold;
+	padding: 10px;
+	font-size: 1.5em;
 }
 
 .share-bar {
