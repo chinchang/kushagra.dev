@@ -161,7 +161,7 @@ Notice here how the animation plays just once and stops. We must tell the animat
 }
 {% endhighlight %}
 
-One final adjustment to make the animation smooth, set the <code>aniamtion-timing-function</code> to <code>linear</code>.
+One final adjustment to make the animation smooth, set the <code>animation-timing-function</code> to <code>linear</code>.
 
 {% highlight css linenos %}
 #earth {
@@ -181,6 +181,6 @@ One final adjustment to make the animation smooth, set the <code>aniamtion-timin
 
 And we are done! You may give the body a black background to get a feel of space. Also you can make different planets by just changing the background texture. So go and make some cool CSS planets.
 
-
+Earth image credits: [http://www.noirextreme.com/earth](http://www.noirextreme.com/earth)
 
 Cheers!
