@@ -212,6 +212,28 @@ article .post-meta {
 
 article .post-summary {}
 
+/* Blockquote credits: http://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/ */
+article blockquote {
+	background: rgba(0, 0, 0, 0.07);
+	border-left: 10px solid rgba(0, 0, 0, 0.15);
+	margin: 1.5em 10px;
+	padding: .5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+
+article blockquote:before {
+	color: rgba(0, 0, 0, 0.15);
+	content: open-quote;
+	font-size: 4em;
+	line-height: .1em;
+	margin-right: .25em;
+	vertical-align: -.4em;
+}
+
+article blockquote p {
+	display:inline;
+}
+
 article img {
 	border: 10px solid rgba(255, 255, 255, 0.09); 
 	border-radius: 12px;
