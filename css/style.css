@@ -40,6 +40,11 @@ body{
 a {
 	text-decoration: none;
 	color: #F2C45A;
+	font-weight: 200;
+}
+
+a:HOVER {
+	text-decoration: underline;
 }
 
 hr {
@@ -234,17 +239,24 @@ article blockquote p {
 	display:inline;
 }
 
+article p {
+	line-height: 1.4em;
+}
+
 article img {
-	border: 10px solid rgba(255, 255, 255, 0.09); 
-	border-radius: 12px;
+	border: 6px solid rgba(255, 255, 255, 0.09); 
+	border-radius: 4px;
 	max-width: 100%;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 }
 
 article p code {
+	font-size: 12px;
 	background-color: #3E3A32;
 	padding: 2px 3px;
+	border: 1px solid #36322B;
+	border-radius: 3px;
 }
 
 article .button {
