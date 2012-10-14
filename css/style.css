@@ -43,10 +43,6 @@ a {
 	font-weight: 200;
 }
 
-a:HOVER {
-	text-decoration: underline;
-}
-
 hr {
 	background-color: #443F36;
 	border: none;
@@ -82,14 +78,14 @@ hr {
 	margin: 0;
 }
 
-#main-container nav {
+#main-container > nav {
 	text-align: center;
 	margin-bottom: 20px;
 	background: #403B33;
 	font-size: 0;
 }
 
-#main-container nav ul {
+#main-container > nav ul {
 	display: inline-block;
 	list-style: none;
 	padding: 0;
@@ -97,12 +93,12 @@ hr {
 	clear: both;
 }
 
-#main-container nav ul li {
+#main-container > nav ul li {
 	margin: 0 3px;
 	float: left;
 }
 
-#main-container nav ul li a {
+#main-container > nav ul li a {
 	color: #A3A948;
 	width: 100%;
 	height: 100%;
@@ -115,14 +111,14 @@ hr {
 	box-sizing: border-box;
 	-webkit-transition: 350ms all;
 }
-#main-container nav ul li a:HOVER {
+#main-container > nav ul li a:HOVER {
 	background-color: #332F29;
 }
-#main-container nav ul li a.selected {
+#main-container > nav ul li a.selected {
 	background-color: #332F29;
 }
 
-#main-container nav ul li a:HOVER:AFTER, #main-container nav ul li a.selected:AFTER {
+#main-container > nav ul li a:HOVER:AFTER, #main-container nav ul li a.selected:AFTER {
 	content: '';
 	width: 0;
 	height: 0;
@@ -134,6 +130,10 @@ hr {
 	left: 50%;
 	border-top-color: #332F29;
 	margin-left: -10px;
+}
+
+#content a:HOVER {
+	text-decoration: underline;
 }
 
 footer {
@@ -194,6 +194,10 @@ footer {
 	box-shadow: 36px 6px #000,12px 0px #000,36px 0px #000,48px 0px #000,48px 6px #000,42px 0px #000,12px 6px #000,30px 0px #000,18px 0px #000,24px 0px #000,18px 6px #000,30px 6px #000,24px 6px #000,42px 6px #000,48px 12px #000,12px 12px #dba363,18px 12px #dba363,24px 12px #dba363,30px 12px #dba363,42px 12px #dba363,36px 12px #dba363,24px 24px #dba363,42px 24px #dba363,12px 18px #ffffff,30px 18px #ffffff,36px 54px #dba363,42px 54px #dba363,36px 60px #dba363,42px 60px #dba363,24px 18px #dba363,36px 72px #db6333,36px 66px #db6333,30px 72px #db6333,30px 66px #db6333,42px 66px #db6333,24px 66px #db6333,18px 66px #db6333,48px 66px #db6333,12px 72px #db6333,12px 66px #db6333,18px 72px #db6333,24px 72px #db6333,42px 72px #db6333,48px 72px #db6333,12px 78px #db6333,18px 78px #db6333,24px 78px #db6333,48px 78px #db6333,12px 84px #db6333,18px 84px #db6333,48px 84px #db6333,12px 90px #dba363,12px 96px #dba363,12px 102px #dba363,12px 108px #dba363,18px 108px #dba363,24px 108px #dba363,30px 108px #dba363,36px 108px #dba363,48px 108px #dba363,42px 108px #dba363,18px 96px #db6333,18px 90px #db6333,24px 102px #db6333,24px 90px #db6333,24px 96px #db6333,42px 90px #db6333,30px 102px #db6333,36px 102px #db6333,36px 96px #db6333,42px 102px #db6333,18px 120px #db6333,18px 114px #db6333,30px 114px #db6333,24px 114px #db6333,24px 120px #db6333,30px 120px #db6333,36px 114px #db6333,42px 120px #db6333,36px 120px #db6333,42px 114px #db6333,12px 24px #ffffff,30px 24px #ffffff,18px 18px #ffffff,36px 24px #000,18px 24px #000,18px 126px #db6333,24px 126px #db6333,30px 126px #db6333,36px 126px #db6333,42px 126px #db6333,48px 102px #dba363,18px 132px #688026,24px 138px #688026,24px 132px #688026,18px 138px #688026,30px 132px #688026,30px 138px #688026,36px 132px #688026,36px 138px #688026,42px 132px #688026,42px 144px #688026,42px 138px #688026,18px 144px #688026,36px 144px #688026,24px 144px #688026,30px 144px #688026,18px 150px #688026,18px 156px #688026,24px 162px #688026,24px 150px #688026,24px 156px #688026,18px 162px #688026,42px 150px #688026,42px 156px #688026,42px 162px #688026,24px 198px #dba363,24px 204px #dba363,24px 210px #dba363,24px 222px #dba363,24px 216px #dba363,18px 168px #688026,24px 168px #688026,18px 174px #688026,24px 174px #688026,24px 180px #688026,18px 180px #688026,48px 198px #dba363,48px 204px #dba363,48px 216px #dba363,48px 210px #dba363,42px 168px #688026,42px 174px #688026,42px 180px #688026,42px 186px #688026,18px 186px #688026,24px 186px #688026,18px 192px #688026,24px 192px #688026,42px 192px #688026,48px 222px #dba363,30px 228px #705433,24px 228px #dba363,18px 228px #dba363,12px 228px #dba363,24px 234px #705433,12px 234px #705433,18px 234px #705433,30px 234px #705433,42px 228px #705433,42px 234px #705433,54px 228px #705433,54px 234px #705433,42px 240px #705433,54px 240px #705433,48px 228px #dba363,48px 234px #dba363,48px 240px #dba363,30px 90px #db6333,24px 84px #db6333,42px 96px #db6333,42px 84px #db6333,36px 90px #db6333,30px 84px #db6333,30px 96px #db6333,42px 48px #dba363,30px 60px #e35444,36px 18px #ffffff,48px 24px #000,42px 18px #dba363,48px 18px #000,54px 114px #bf562d,54px 120px #bf562d,54px 126px #bf562d,54px 138px #4b5c1b,54px 132px #4b5c1b,54px 156px #4b5c1b,54px 192px #4b5c1b,54px 174px #4b5c1b,54px 168px #4b5c1b,54px 186px #4b5c1b,54px 144px #4b5c1b,54px 162px #4b5c1b,48px 30px #b88953,48px 36px #b88953,48px 48px #b88953,48px 42px #b88953,60px 90px #b88953,60px 102px #b88953,60px 96px #b88953,60px 108px #b88953,54px 246px #705433,42px 246px #705433,48px 246px #705433,6px 234px #705433,60px 84px #bf562d,60px 72px #bf562d,60px 66px #bf562d,60px 78px #bf562d,48px 96px #db6333,48px 90px #db6333,48px 60px #bf562d,48px 132px #688026,48px 138px #688026,48px 144px #688026,48px 156px #688026,48px 150px #688026,48px 186px #688026,48px 192px #688026,48px 180px #688026,48px 162px #688026,48px 174px #688026,48px 168px #688026,54px 180px #4b5c1b,54px 150px #4b5c1b,48px 114px #db6333,48px 126px #db6333,48px 120px #db6333,54px 102px #dba363,54px 108px #dba363,54px 66px #db6333,54px 78px #db6333,54px 72px #db6333,54px 84px #db6333,54px 90px #db6333,54px 96px #db6333,6px 6px #000,6px 0px #000,18px 102px #dba363,30px 78px #db6333,36px 84px #db6333,42px 78px #db6333,36px 78px #db6333,42px 36px #dba363,42px 30px #dba363,30px 30px #dba363,36px 30px #dba363,18px 30px #dba363,12px 30px #dba363,24px 30px #dba363,12px 36px #dba363,12px 42px #dba363,12px 48px #dba363,42px 42px #dba363,24px 48px #000,30px 48px #dba363,36px 48px #dba363,18px 48px #dba363,30px 42px #b88953,36px 36px #b88953,24px 42px #b88953,18px 42px #b88953,36px 42px #b88953,30px 36px #dba363,24px 36px #dba363,18px 36px #dba363;
 }
 
+.twtr-follow-container {
+	text-align: center;
+	margin-top: 20px;
+}
 
 article {
 	background: #524C42;
