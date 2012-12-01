@@ -24,7 +24,7 @@ The motion tracking algorithm is itself very basic but gives amazing results wit
 
 Its actually really cool to make your very own motion sensing game and play it :) I am surely going to explore it more and develop some good stuff with it, soon.
 
-<a href="/uploads/2011/motion_pong.rar" target="_blank" class="button demo">Download Source</a>
+<a href="/uploads/2011/motion_pong.rar" target="_blank" class="button button-big">Download Source</a>
 
 
 Cheers

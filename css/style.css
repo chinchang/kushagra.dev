@@ -276,7 +276,7 @@ article .button:hover {
 	color: #F2C45A;
 }
 
-article .button.demo {
+article .button-big {
 	display: block;
 	font-weight: bold;
 	padding: 10px;

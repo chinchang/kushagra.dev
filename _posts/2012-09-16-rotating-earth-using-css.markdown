@@ -7,7 +7,7 @@ Recently after seeing a pen on <a target="_blank" href="http://www.codepen.io">c
 
 I thought may be I should share the little CSS tricks being used in this CSS stuff to create the illusion. And here I am with a short walkthrough. Lets begin.
 
-<a href="http://codepen.io/chinchang/pen/xCkus" target="_blank" class="button demo">Demo</a>
+<a href="http://codepen.io/chinchang/pen/xCkus" target="_blank" class="button button-big">Demo</a>
 
 This demo uses a single <code>div</code> tag for the HTML. So lets start by creating a <code>div</code> tag with an ID <code>earth</code>.
 
