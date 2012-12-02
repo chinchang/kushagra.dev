@@ -51,6 +51,23 @@ hr {
 	margin: 5px 0;
 }
 
+/* Inspired by beautiful scrollbar 
+ * on Joshua Hibbert's website: http://joshnh.com/
+ */
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #F2C45A;
+}
+
+::-webkit-scrollbar-track {
+	background-color: #332F29;
+}
+
+
 #outer-container {
 	width: 600px;
 	margin: 0 auto;
