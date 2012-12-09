@@ -107,3 +107,7 @@ header .button:hover + span{
 	opacity: 1;
 	padding-left: 80px;
 }
+
+.chrome-app #back-to-lab-button, .chrome-app .github-ribbon {
+	display: none;
+}
