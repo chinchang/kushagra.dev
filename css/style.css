@@ -91,7 +91,7 @@ hr {
 }
 #top-header h2 {
 	font-size: 18px;
-	color: #F2C45A;//hsl(53, 44%, 35%);
+	color: #F2C45A;
 	margin: 0;
 }
 
@@ -230,7 +230,8 @@ article.list-item:last-child {
 	margin-bottom: 0;
 }
 
-article .post-title {}
+article .post-title {
+}
 
 article .post-meta {
 	font-size: 12px;
@@ -280,20 +281,22 @@ article p code {
 	border-radius: 3px;
 }
 
-article .button {
+.button {
 	background-color: #F2C45A;
 	color: #3E3A32;
 	padding: 6px 12px;
 	text-align: center;
+	cursor: pointer;
+	text-decoration: none !important;
 	-webkit-transition: color, background-color 200ms;
 	-moz-transition: color, background-color 200ms;
 }
-article .button:hover {
+.button:hover {
 	background-color: #3E3A32;
 	color: #F2C45A;
 }
 
-article .button-big {
+.button-big {
 	display: block;
 	font-weight: bold;
 	padding: 10px;
@@ -306,23 +309,44 @@ article .button-big {
 }
 .share-button { float: left; }
 
+/* Navigation buttons */
+.blog-navigation-buttons {
+	margin-top: 40px;
+	overflow: hidden;
+}
+
+.blog-navigation-buttons .button {
+	width: 40%;
+	text-transform: uppercase;
+}
+
+.next-post-button {
+	float: right;
+}
+
+.prev-post-button {
+	float: left;
+}
+
 /* Comment box */
 .comment-box {
-	margin-top: 30px;
+	margin-top: 40px;
 }
 
 /* Social bar */
 #social-bar {
-	text-align: center; 
+	text-align: center;
 	margin-bottom: 20px;
 	font-size: 0;
 }
+
 #social-bar .social-icon {
 	display: inline-block;
 	width: 54px;
 	height: 54px;
 	margin: 0 10px;
 }
+
 #social-bar .social-icon span {
 	display: block;
 	width: 6px;
@@ -337,4 +361,18 @@ article .button-big {
 }
 #social-bar .social-icon.github span {
 	box-shadow: 0px 12px #d9d9d9,12px 0px #d9d9d9,6px 6px #d9d9d9,6px 36px #d9d9d9,12px 48px #d9d9d9,0px 36px #d9d9d9,0px 30px #d9d9d9,0px 18px #d9d9d9,0px 24px #d9d9d9,42px 6px #d9d9d9,30px 0px #d9d9d9,24px 0px #d9d9d9,18px 0px #d9d9d9,18px 6px #d9d9d9,12px 42px #d9d9d9,24px 6px #d9d9d9,36px 42px #d9d9d9,18px 48px #d9d9d9,24px 48px #d9d9d9,30px 48px #d9d9d9,42px 42px #d9d9d9,48px 36px #d9d9d9,36px 48px #d9d9d9,36px 0px #d9d9d9,48px 12px #d9d9d9,48px 18px #d9d9d9,42px 18px #d9d9d9,48px 30px #d9d9d9,42px 36px #d9d9d9,30px 6px #d9d9d9,6px 18px #d9d9d9,18px 18px #171717,36px 18px #171717,30px 18px #171717,36px 24px #171717,36px 36px #171717,12px 36px #171717,12px 24px #171717,24px 18px #171717,30px 42px #171717,24px 42px #171717,18px 42px #171717,12px 30px #171717,24px 36px #f4cab1,18px 36px #f4cab1,18px 24px #171717,30px 24px #171717,24px 24px #171717,24px 30px #f4cab2,30px 36px #f4cab2,36px 6px #d9d9d9,12px 6px #d9d9d9,6px 24px #d9d9d9,6px 30px #d9d9d9,42px 30px #d9d9d9,48px 24px #d9d9d9,42px 24px #d9d9d9,30px 12px #d9d9d9,24px 12px #d9d9d9,18px 12px #d9d9d9,36px 30px #171717,42px 12px #d9d9d9,36px 12px #171717,12px 18px #171717,12px 12px #171717,6px 12px #d9d9d9,18px 30px #f4cab1,30px 30px #f4cab1,6px 42px #d9d9d9,0px 42px #d9d9d9,6px 48px #d9d9d9,0px 6px #d9d9d9,6px 0px #d9d9d9,42px 0px #d9d9d9,48px 6px #d9d9d9,48px 42px #d9d9d9,42px 48px #d9d9d9;
+}
+
+
+/* bring to top button for blog posts */
+.bring-to-top {
+	background: #F2C45A;
+	position: fixed;
+	right: 20px;
+	padding: 30px;
+	color: white;
+	font-weight: bold;
+	bottom: 20px;
+	cursor: pointer;
+	display: none;
 }
