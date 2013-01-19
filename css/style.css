@@ -381,6 +381,16 @@ Social bar 2
 	line-height: 25px;
 	border-top: 10px solid;
 	overflow: hidden;
+	-webkit-transition: border-width .25s ease;
+	-moz-transition: border-width .25s ease;
+	-ms-transition: border-width .25s ease;
+	-o-transition: border-width .25s ease;
+	transition: border-width .25s ease;
+}
+
+.social-bar-2__item:hover,
+.social-bar-2__item:focus {
+	border-top-width: 0;
 }
 
 .social-bar-2__item--twitter {
