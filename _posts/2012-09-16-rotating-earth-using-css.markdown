@@ -187,6 +187,8 @@ One final adjustment to make the animation smooth, set the <code>animation-timin
 
 And we are done! You may give the body a black background to get a feel of space. Also you can make different planets by just changing the background texture. So go and make some cool CSS planets.
 
+Finally, some light discussion about the demo [on Hacker News](http://news.ycombinator.com/item?id=4498860).
+
 Earth image credits: [http://www.noirextreme.com/earth](http://www.noirextreme.com/earth)
 
 Cheers!
