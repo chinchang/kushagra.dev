@@ -19,6 +19,7 @@ body {
 	background-color: hsl(0, 0%, 80%);
 	color: #666;
 	overflow-x: hidden;
+	overflow-y: scroll;
 	text-align: center;
 }
 
