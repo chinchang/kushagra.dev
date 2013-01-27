@@ -117,7 +117,7 @@
 			.removeClass('l1')
 			.removeClass('l2')
 			.addClass('l' + health);
-		if(!health) {
+		if(health <= 0) {
 			this.stopGame();
 		}
 	};
