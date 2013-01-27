@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+
+<body>
+
+<img class="ggj-logo" src="images/ggj-logo.png" height="100" alt="">
+
+<h1 class="title">BEAT SIGHT</h1> 
+
+<!--
+GAME SCREEN
+-->
+<div class="gameover-msg">
+	<h2>Game Over!</h2> 
+	You scored: <span class="js-score"></span>&nbsp;
+	<button class="js-play-again-button  play-again-button">Play Again (ENTER)</button>
+	
+</div>
+
+<div class="screen game">
+	<div class="hud  hud--left">
+		<ul class="hud--life">
+			<li class="hud--life__item">&hearts;</li>
+			<li class="hud--life__item">&hearts;</li>
+			<li class="hud--life__item">&hearts;</li>
+		</ul>
+	</div>
+
+	<div class="hud  hud--right">
+		<span class="js-collectibles">0</span>
+		<img src="images/coins.png" alt="">
+	</div>
+
+	<div class="canvas-container">
+		<div class="player"><div class="player__mouth"></div></div>
+		<div class="callout"><div class="callout_text"></div></div>
+		<canvas id="c"></canvas>
+	</div>
+
+	<div class="hud  hud--left">
+		<img src="images/trophy.png" alt="">
+		<span class="js-highscore">0</span>
+	</div>
+
+	<div class="hud  hud--right">
+		<span class="js-score">0</span>
+		<img src="images/clock.png" alt="">
+	</div>
+
+	<div class="clear"></div>
+	<span>CLICK or PRESS UP/W/SPACE to jump</span>
+
+
+</div>
+
+<footer>
+	<a href="#">Source</a> . <a href="">License</a> . 
+</footer>
+
+<audio id="hit" src="sfx/hit.wav" preload="auto"></audio>
+<audio id="note1" src="sfx/note1.wav" preload="auto"></audio>
+<audio id="note2" src="sfx/note2.wav" preload="auto"></audio>
+<audio id="note3" src="sfx/note3.wav" preload="auto"></audio>
+<audio id="note4" src="sfx/note4.wav" preload="auto"></audio>
+
+
+<script type="text/javascript" src="vendor/jquery.js"></script>
+<script type="text/javascript" src="src/engine.js"></script>
+<script type="text/javascript" src="src/globals.js"></script>
+<script type="text/javascript" src="src/data.js"></script>
+<script type="text/javascript" src="src/managers.js"></script>
+<script type="text/javascript" src="src/entities.js"></script>
+<script type="text/javascript" src="src/game.js"></script>
+
+</body>
+
+</html>
