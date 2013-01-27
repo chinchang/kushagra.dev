@@ -118,7 +118,7 @@
 				var obj = obstacles[i];
 				var distance = Math.abs(obj.x - this.x);
 				distance < W / 3 ? distance = W / 3 : 0;
-				obj.speed_y =  W / distance * -200;
+				obj.speed_y =  W / (distance * distance) * -65000;
 				obj.is_on_ground = false;
 			}
 		}

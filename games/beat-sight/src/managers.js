@@ -110,11 +110,19 @@ var level_manager = (function() {
 				_obstacle_timer = 0;
 				createObstacle();
 			}
-			else if(Math.random() > 0.97) {
+			else if(Math.random() < getCollectibleProbability()) {
 				createCollectible();
 			}
 		}
 	};
+
+	function getCollectibleProbability () {
+		if(_current_level <= 1) return 0.02;
+		else if(_current_level <= 2) return 0.03;
+		else if(_current_level <= 3) return 0.04;
+		else if(_current_level <= 10) return 0.05;
+		else if(_current_level <= 17) return 0.06;
+	}
 
 	function onLevelComplete() {
 		_state = 'IDLE';

@@ -7,42 +7,6 @@
 		highscore = 0,
 		collectibles = 0;
 
-	function initListeners () {
-		$('.js-play-again-button').click(function () {
-			NS.startGame();
-		});
-
-		// override stage's onClicked method
-		stage.onClicked = function () {
-			if(player.is_on_ground) {
-				player.jump();
-			}
-		};
-
-		// Keyup listeners
-		document.addEventListener('keyup', function(e) {
-			// Escape key
-			if(e.which === 27) {
-				PAUSE ^= 1;
-			}
-			else if(e.which == 13) {
-				NS.startGame();
-				e.preventDefault();
-			}
-		});
-	}
-
-
-	function initSounds() {
-		NS.Globals.sounds.hit = document.getElementById('hit');
-		NS.Globals.sounds.note1 = document.getElementById('note1');
-		NS.Globals.sounds.note2 = document.getElementById('note2');
-		NS.Globals.sounds.note3 = document.getElementById('note3');
-		NS.Globals.sounds.note4 = document.getElementById('note4');
-		// NS.sounds.shoot = document.getElementById('shoot');
-	}
-
-	
 	NS.init = function () {
 		log('game initialized');
 		initSounds();
@@ -73,6 +37,38 @@
 
 		NS.startGame();
 	};
+
+	function initListeners () {
+		$('.js-play-again-button').click(function () {
+			NS.startGame();
+		});
+
+		// override stage's onClicked method
+		stage.onClicked = function () {
+			if(player.is_on_ground) {
+				player.jump();
+			}
+		};
+
+		// Keyup listeners
+		document.addEventListener('keyup', function(e) {
+			// Escape key
+			if(e.which === 27) {
+				PAUSE ^= 1;
+			}
+			else if(e.which == 13) {
+				NS.startGame();
+				e.preventDefault();
+			}
+		});
+	}
+
+	function initSounds() {
+		NS.Globals.sounds.hit = document.getElementById('hit');
+		for (var i = NS.Globals.note_count - 1; i >= 0; i--) {
+			NS.Globals.sounds['note' + (i + 1)] = document.getElementById('note' + (i + 1));
+		}
+	}
 
 	NS.onLevelComplete = function () {
 		score = level_manager.getScore();
@@ -129,7 +125,7 @@
 	NS.takeCollectible = function () {
 		collectibles++;
 		$('.js-collectibles').text(collectibles + '');
-		NS.Globals.sounds['note' + getRandomFromList([1, 2, 3, 4])].play();
+		NS.Globals.sounds['note' + (~~(Math.random() * NS.Globals.note_count) + 1)].play();
 	};
 	
 	NS.createExplosion = function (x, y, level, color) {
@@ -152,13 +148,6 @@
 			data.highscore = score;
 		}
 
-		// // save level highscore
-		// if(!data.level_stats[current_level]) {
-		// 	data.level_stats[current_level] = $.extend({}, NS.dummy_save_data.level_stats['1']);
-		// }
-		// if(level_score > data.level_stats[current_level].highscore) {
-		// 	data.level_stats[current_level].highscore = level_score;
-		// }
 		NS.SaveManager.saveData(data);
 	};
 
