@@ -23,7 +23,7 @@ name: blog
 		}
 
 		.main-container {
-			max-width: 750px;
+			max-width: 800px;
 			margin: 50px auto 50px;
 		}
 
@@ -97,6 +97,10 @@ name: blog
 			text-decoration: none;
 		}
 
+    .socialz {
+      margin-top: 50px;
+    }
+
     footer {
       font-size: 0.8em;
       color: hsl(0, 0%, 50%);
@@ -127,11 +131,15 @@ name: blog
           T
     		</h2>
     		<p>
-          <strong>Hint.css</strong> is a tooltip library which uses only CSS to create simple tooltips.          
+          <strong>Hint.css</strong> is a tooltip library written in SASS which uses only HTML/CSS to create simple tooltips.         
         </p>
 
         <p>
-          The library itself is written using SASS and uses the BEM convention for naming.
+          <code>hint.css</code> is written as a pure CSS resource using which you can create cool tooltips for your web app. It does not rely on JavaScript and rather uses <strong>data-* attribute</strong>, <strong>pseudo elements</strong> and <strong>content property</strong> and <strong>CSS3 transitions</strong> to create the tooltips. Also it uses <strong>BEM</strong> naming convention particularly for the modifiers.
+        </p>
+
+        <p>
+          <em>Note: CSS3 Transitions is currently available on Firefox only. On rest of the browsers, this degrades gracefull without any transition. Though the same will be <a href="https://bugs.webkit.org/show_bug.cgi?id=92591" target="_blank">coming soon on webkit</a> also</em>
         </p>
 
         <p>
@@ -154,47 +162,47 @@ name: blog
 
         <h3>Basic ones</h3>
     		<p> 
-					<a href="#" class="hint  hint--top" data-hint="Yeah, I am >:D">Look, there is something over me.</a>
+					<a href="javascript:void(0)" class="hint  hint--top" data-hint="Yeah, I am >:D">Look, there is something over me.</a>
 				</p>
 
 				<p>
-					<a href="#" class="hint  hint--right" data-hint="Are you sure you are?">I am always right!</a>
+					<a href="javascript:void(0)" class="hint  hint--right" data-hint="Are you sure you are?">I am always right!</a>
 				</p>
 
 				<p>
-					<a href="#" class="hint  hint--bottom" data-hint="Sure. Cheers!">How about a bottoms up?</a>
+					<a href="javascript:void(0)" class="hint  hint--bottom" data-hint="Sure. Cheers!">How about a bottoms up?</a>
 				</p>
 
 				<p>
-					<a href="#" class="hint  hint--left" data-hint="LEFT-over Sir...">What do we get now?</a></p>
+					<a href="javascript:void(0)" class="hint  hint--left" data-hint="LEFT-over Sir...">What do we get now?</a></p>
 
         <h3>On dimensioned elements</h3>
 
-				<p><a class="hint  hint--right" data-hint="Made by Kushagra Gour" target="_blank" href="https://twitter.com/chinchang457"><img  src="http://www.gravatar.com/avatar/6be4e636e8aacd405bed5cd15124a875?s=80&d=mm&"></a>
+				<p><a class="hint  hint--right" data-hint="Pika pika!" href="javascript:void(0)"><img  src="pikachu.jpg"></a>
 				</p>
 
-        <h3>Various color based types</h3>
+        <h3>Color based types</h3>
 
 				<p>
-					<a class="hint  hint--top  hint--error" data-hint="This is an error tooltip">Oh man! You are gonna self-destruct in 5 sec.</a>
+					<a href="javascript:void(0)" class="hint  hint--top  hint--error" data-hint="This is an error tooltip">Oh man! You are gonna self-destruct in 5 sec.</a>
 				</p>
 				
 				<p>
-					<a class="hint  hint--left  hint--warning" data-hint="This is a warning tooltip">You did something wrong!</a>
+					<a href="javascript:void(0)" class="hint  hint--left  hint--warning" data-hint="This is a warning tooltip">You did something wrong!</a>
 				</p>
 				
 				<p>
-					<a class="hint  hint--bottom  hint--info" data-hint="This is an info tooltip">You can use different classes for different types of tooltips.</a>
+					<a href="javascript:void(0)" class="hint  hint--bottom  hint--info" data-hint="This is an info tooltip">You can use different classes for different types of tooltips.</a>
 				</p>
 
 				<p>
-					<a class="hint  hint--left  hint--success" data-hint="This is a success tooltip">Hurray! You have seen all 4 context types.</a>
+					<a href="javascript:void(0)" class="hint  hint--left  hint--success" data-hint="This is a success tooltip">Hurray! You have seen all 4 context types.</a>
 				</p>
 
         <h3>Extra</h3>
 
 				<p>
-					<a class="hint  hint--right  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
+					<a href="javascript:void(0)" class="hint  hint--right  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
 				</p>
 
     	</section>
@@ -231,19 +239,32 @@ name: blog
         </p>
 
         <p>
-          Use it with other available modifiers in various combinations. Available modifiers:
-          <ul>
-            <li>hint--error</li>
-            <li>hint--info</li>
-            <li>hint--warning</li>
-            <li>hint--success</li>
-            <li>hint--always</li>
-          </ul>
+          Use it with other available modifiers in various combinations. Available modifiers: <code>hint--error</code>, <code>hint--info</code>, <code>hint--warning</code>, <code>hint--success</code> and <code>hint--always</code>.
         </p>
 
       </section>
 
+      
+      <section class="socialz">
+    
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kushagragour.in/lab/hint/" data-via="chinchang457" data-hashtags="CSS,tooltip,sass">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkushagragour.in%2Flab%2Fhint%2F&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+
+        <!-- Place this tag where you want the +1 button to render. -->
+        <div class="g-plusone" data-size="medium" data-href="http://kushagragour.in/lab/hint/"></div>
+
+        <!-- Place this tag after the last +1 button tag. -->
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+
+      </section>
 
   	</div><!-- END .main-container -->
 
