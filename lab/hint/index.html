@@ -8,110 +8,11 @@ name: Hint.css
   	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>hint.css - A tooltip library in CSS</title>
-    <meta name="description" content="">
+    <meta name="description" content="A tooltip library in CSS">
     <meta name="viewport" content="width=device-width">
 
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="/css/pygments-light.css" />
-
-    <style type="text/css">
-		body {
-			text-align: center;
-			background: #C2E2F2;
-			height: 100%;
-			font: 18px/1.5 Helvetica, Arial;
-			color: #444;
-		}
-
-		.main-container {
-			max-width: 800px;
-			margin: 50px auto 50px;
-		}
-
-		header {
-			/*width: 1000px;*/
-			/*position: fixed;*/
-      margin: 0 auto;
-      text-align: center;
-			top: 0;
-			left: 50%;
-			/*margin-left: -500px;*/
-			padding-bottom: 30px;
-			z-index: 2;
-			background: #C2E2F2;
-      z-index: 5000000;
-		}
-
-		.title {
-      background: hsl(0, 0%, 27%);
-      display: inline-block;
-      color: hsl(0, 0%, 93%);
-      padding: 15px 30px;
-      position: relative;
-      font-size: 5em;
-      line-height: 1;
-      margin: 30px 0 0;
-      text-shadow: 0 -2px 2px hsl(0, 0%, 17%);
-  	}
-
-    .title:after {
-      display: block;
-      position: absolute;
-      background: transparent;
-      border: 30px solid transparent;
-      border-right-color: hsl(0, 0%, 27%);
-      top: 50%;
-      margin-top: -30px;
-      right: 100%;
-      content: '';
-      width: 0;
-      height: 0;
-    }
-
-    .section {
-      position: relative;
-      padding: 0 100px;
-    }
-
-    .section + .section {
-    	margin-top: 80px;
-    }
-
-    .section__title {
-			white-space: pre-line;
-			position: absolute;
-			top: 0;
-      left: 0;
-			margin: 0;
-			font-size: 1em;
-			background-color: hsl(0, 0%, 27%);
-			color: hsl(0, 0%, 93%);
-			padding: 8px 8px;
-  	}
-
-		h3{
-			margin: 5px 0;
-		}
-
-		a {
-			color: #1A5A7A;
-			text-decoration: none;
-		}
-
-    .socialz {
-      margin-top: 50px;
-    }
-
-    footer {
-      font-size: 0.8em;
-      color: hsl(0, 0%, 50%);
-      padding: 30px 0;
-    }
-
-    footer .my-name {
-      color: hsl(0, 0%, 20%);
-    }
-
-		</style>
     <link rel="stylesheet" href="hint.css">
   </head>
 
@@ -119,7 +20,7 @@ name: Hint.css
   <body>
   	<header>
   		<h1 class="title">HINT.css</h1>
-		<h3>A tooltip library in CSS</h3>
+		  <h3>A tooltip library in CSS</h3>
   	</header>
 
   	<div class="main-container">
@@ -135,15 +36,15 @@ name: Hint.css
         </p>
 
         <p>
-          <code>hint.css</code> is written as a pure CSS resource using which you can create cool tooltips for your web app. It does not rely on JavaScript and rather uses <strong>data-* attribute</strong>, <strong>pseudo elements</strong> and <strong>content property</strong> and <strong>CSS3 transitions</strong> to create the tooltips. Also it uses <strong>BEM</strong> naming convention particularly for the modifiers.
+          It does not rely on any JavaScript and rather uses <strong>data-* attribute</strong>, <strong>pseudo elements</strong>, <strong>content property</strong> and <strong>CSS3 transitions</strong> to create the tooltips. Also it uses <strong>BEM</strong> naming convention particularly for the modifiers.
         </p>
 
         <p>
-          <em>Note: CSS3 Transitions is currently available on Firefox only. On rest of the browsers, this degrades gracefull without any transition. Though the same will be <a href="https://bugs.webkit.org/show_bug.cgi?id=92591" target="_blank">coming soon on webkit</a> also</em>
+          <small>Note: CSS3 Transitions on pseudo elements is currently available on Firefox only. On rest of the browsers it degrades gracefully without any transition. Though the good news is that it will be <a href="https://bugs.webkit.org/show_bug.cgi?id=92591" target="_blank">coming soon on webkit</a> also.</small>
         </p>
 
         <p>
-          <button>Download Hint.css</button>          
+          <a href="https://github.com/chinchang/hint.css" class="btn">Download Hint.css from Github</a>
         </p>
 
     	</section>
@@ -216,7 +117,7 @@ name: Hint.css
         </h2>
 
         <p>
-          First get the library from above or <a href="">github repo</a>. Then in your HTML include the library CSS:
+          First get the library from the <a href="https://github.com/chinchang/hint.css">github repo</a>. Then in your HTML include the library CSS:
           <!-- <pre>&lt;link rel="stylesheet" href="/hint.css"&gt;</pre> -->
 
           {% highlight css %}<link rel="stylesheet" href="hint.css">{% endhighlight %}
@@ -229,7 +130,7 @@ name: Hint.css
         </p>
 
         <p>
-          And the tooltip content needs to be given using the <code>data-hint</code> attribute on that element.
+          And the tooltip text has to be given using the <code>data-hint</code> attribute on that element.
           {% highlight css %}Hello Sir, <span class="hint  hint--bottom" data-hint="Thank you!">hover me.</span>{% endhighlight %}
         </p>
 
