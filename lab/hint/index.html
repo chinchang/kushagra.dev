@@ -1,0 +1,262 @@
+---
+title: Blog
+name: blog
+---
+
+<!DOCTYPE html>
+  <head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Demo | Hint.css</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/pygments-light.css" />
+
+    <style type="text/css">
+		body {
+			text-align: center;
+			background: #C2E2F2;
+			height: 100%;
+			font: 18px/1.5 Helvetica, Arial;
+			color: #444;
+		}
+
+		.main-container {
+			max-width: 750px;
+			margin: 50px auto 50px;
+		}
+
+		header {
+			/*width: 1000px;*/
+			/*position: fixed;*/
+      margin: 0 auto;
+      text-align: center;
+			top: 0;
+			left: 50%;
+			/*margin-left: -500px;*/
+			padding-bottom: 30px;
+			z-index: 2;
+			background: #C2E2F2;
+      z-index: 5000000;
+		}
+
+		.title {
+      background: hsl(0, 0%, 27%);
+      display: inline-block;
+      color: hsl(0, 0%, 93%);
+      padding: 15px 30px;
+      position: relative;
+      font-size: 5em;
+      line-height: 1;
+      margin: 30px 0 0;
+      text-shadow: 0 -2px 2px hsl(0, 0%, 17%);
+  	}
+
+    .title:after {
+      display: block;
+      position: absolute;
+      background: transparent;
+      border: 30px solid transparent;
+      border-right-color: hsl(0, 0%, 27%);
+      top: 50%;
+      margin-top: -30px;
+      right: 100%;
+      content: '';
+      width: 0;
+      height: 0;
+    }
+
+    .section {
+      position: relative;
+      padding: 0 100px;
+    }
+
+    .section + .section {
+    	margin-top: 80px;
+    }
+
+    .section__title {
+			white-space: pre-line;
+			position: absolute;
+			top: 0;
+      left: 0;
+			margin: 0;
+			font-size: 1em;
+			background-color: hsl(0, 0%, 27%);
+			color: hsl(0, 0%, 93%);
+			padding: 8px 8px;
+  	}
+
+		h3{
+			margin: 5px 0;
+		}
+
+		a {
+			color: #1A5A7A;
+			text-decoration: none;
+		}
+
+    footer {
+      font-size: 0.8em;
+      color: hsl(0, 0%, 50%);
+      padding: 30px 0;
+    }
+
+    footer .my-name {
+      color: hsl(0, 0%, 20%);
+    }
+
+		</style>
+    <link rel="stylesheet" href="hint.css">
+  </head>
+
+
+  <body>
+  	<header>
+  		<h1 class="title">HINT.css</h1>
+		<h3>A tooltip library in CSS</h3>
+  	</header>
+
+  	<div class="main-container">
+    		
+      <section class="section  section--what">
+    		<h2 class="section__title">W
+          H
+          A
+          T
+    		</h2>
+    		<p>
+          <strong>Hint.css</strong> is a tooltip library which uses only CSS to create simple tooltips.          
+        </p>
+
+        <p>
+          The library itself is written using SASS and uses the BEM convention for naming.
+        </p>
+
+        <p>
+          <button>Download Hint.css</button>          
+        </p>
+
+    	</section>
+
+      
+    	<section class="section  section--examples">
+    		<h2 class="section__title">E
+    		X
+    		A
+    		M
+    		P
+    		L
+    		E
+    		S
+    		</h2>
+
+        <h3>Basic ones</h3>
+    		<p> 
+					<a href="#" class="hint  hint--top" data-hint="Yeah, I am >:D">Look, there is something over me.</a>
+				</p>
+
+				<p>
+					<a href="#" class="hint  hint--right" data-hint="Are you sure you are?">I am always right!</a>
+				</p>
+
+				<p>
+					<a href="#" class="hint  hint--bottom" data-hint="Sure. Cheers!">How about a bottoms up?</a>
+				</p>
+
+				<p>
+					<a href="#" class="hint  hint--left" data-hint="LEFT-over Sir...">What do we get now?</a></p>
+
+        <h3>On dimensioned elements</h3>
+
+				<p><a class="hint  hint--right" data-hint="Made by Kushagra Gour" target="_blank" href="https://twitter.com/chinchang457"><img  src="http://www.gravatar.com/avatar/6be4e636e8aacd405bed5cd15124a875?s=80&d=mm&"></a>
+				</p>
+
+        <h3>Various color based types</h3>
+
+				<p>
+					<a class="hint  hint--top  hint--error" data-hint="This is an error tooltip">Oh man! You are gonna self-destruct in 5 sec.</a>
+				</p>
+				
+				<p>
+					<a class="hint  hint--left  hint--warning" data-hint="This is a warning tooltip">You did something wrong!</a>
+				</p>
+				
+				<p>
+					<a class="hint  hint--bottom  hint--info" data-hint="This is an info tooltip">You can use different classes for different types of tooltips.</a>
+				</p>
+
+				<p>
+					<a class="hint  hint--left  hint--success" data-hint="This is a success tooltip">Hurray! You have seen all 4 context types.</a>
+				</p>
+
+        <h3>Extra</h3>
+
+				<p>
+					<a class="hint  hint--right  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
+				</p>
+
+    	</section>
+      
+      <section class="section  section--how">
+        <h2 class="section__title">U
+        S
+        A
+        G
+        E
+        </h2>
+
+        <p>
+          First get the library from above or <a href="">github repo</a>. Then in your HTML include the library CSS:
+          <!-- <pre>&lt;link rel="stylesheet" href="/hint.css"&gt;</pre> -->
+
+          {% highlight css %}<link rel="stylesheet" href="hint.css">{% endhighlight %}
+        </p>
+
+        <p>
+          Any element in your markup which needs to have a tooltip has to be given atleast 2 classes: <code>hint</code> & any one of <code>hint--top</code>, <code>hint--bottom</code>, <code>hint--left</code>, <code>hint--right</code> to position the tooltip.
+
+          {% highlight css %}Hello Sir, <span class="hint  hint--bottom">hover me.</span>{% endhighlight %}
+        </p>
+
+        <p>
+          And the tooltip content needs to be given using the <code>data-hint</code> attribute on that element.
+          {% highlight css %}Hello Sir, <span class="hint  hint--bottom" data-hint="Thank you!">hover me.</span>{% endhighlight %}
+        </p>
+
+        <p>
+          <em>Result</em>:
+          Hello Sir, <span class="hint  hint--bottom" data-hint="Thank you!"><strong>hover me</strong></span>.
+        </p>
+
+        <p>
+          Use it with other available modifiers in various combinations. Available modifiers:
+          <ul>
+            <li>hint--error</li>
+            <li>hint--info</li>
+            <li>hint--warning</li>
+            <li>hint--success</li>
+            <li>hint--always</li>
+          </ul>
+        </p>
+
+      </section>
+
+
+
+  	</div><!-- END .main-container -->
+
+    <footer>
+      Written by <a class="my-name" href="https://twitter.com/chinchang457" target="_blank">Kushagra Gour</a> {chin chang}
+    </footer>
+
+    <!-- github ribbon -->
+
+    <a class="github-ribbon" href="https://github.com/chinchang/hint.css"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+    <!-- {% include analytics.html %} -->
+
+
+  </body>
+</html>
