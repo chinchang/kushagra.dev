@@ -44,7 +44,7 @@ Out of the many, <span data-hint="Tooltip text">this</span> word needs a tooltip
 
 
 ####3. attr function for content
-Now the most important part on which **hint.css** is based on. You may have heard about the [<code>content</code>]() property of pseudo elements. As is clear from the name, it lets you specify content of the pseudo element.
+Now the most important part on which **hint.css** is based on. You may have heard about the <code>content</code> property of pseudo elements. As is clear from the name, it lets you specify content of the pseudo element.
 
 What was really great for me was the **attr** function which gives you the power of grabbing the value of any attribute on the element and set it as the pseudo element's content. Isn't that really neat? So the meat of the library is this one line:
 
