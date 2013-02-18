@@ -448,6 +448,10 @@ Social bar 2
 	transform: translateY(10px);
 }
 
+.social-bar-2__item__text:hover {
+	text-decoration: none;
+}
+
 .social-bar-2__item:hover .social-bar-2__item__text,
 .social-bar-2__item:focus .social-bar-2__item__text {
 	-webkit-transform: translateY(0px);
