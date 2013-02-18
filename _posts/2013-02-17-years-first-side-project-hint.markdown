@@ -9,7 +9,7 @@ It has been around a month and a half since we jumped into 2013. And this is my 
 
 First I would like to mention how nicely it was received and appreciated by the community. Here are some stats for the same:
 
-- I [released it on Hacker News](http://news.combinator.com/bc324734) on 4th Feb 2013 where it attained #1 ranking just after half an hour or so. Cool eh? BTW, this was the first time my submission got to #1 :) It got **224 upvotes**. Thank you!
+- I [released it on Hacker News](http://news.ycombinator.com/item?id=5164029) on 4th Feb 2013 where it attained #1 ranking just after half an hour or so. Cool eh? BTW, this was the first time my submission got to #1 :) It got **224 upvotes**. Thank you!
 
 - As a result of the above, the project page around 20K+ unique views. Heres an image showing some realtime stats after ~3 hours of release (*Note: The realtime count did went above 300, but come on...I was not in a state to take a screenshot then :P*):
 
