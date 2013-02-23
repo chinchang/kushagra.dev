@@ -90,6 +90,10 @@ hr {
 	margin-bottom: 30px;
 }
 
+.top-header__link:hover {
+	text-decoration: none;
+}
+
 #top-header h1 {
 	font-size: 70px;
 	color: #A3A948;
