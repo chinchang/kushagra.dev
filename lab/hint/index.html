@@ -63,51 +63,51 @@ name: Hint.css
 
         <h3>Basic ones</h3>
     		<p> 
-					<a href="javascript:void(0)" class="hint  hint--top" data-hint="Yeah, I am >:D">Look, there is something over me.</a>
+					<a href="javascript:void(0)" class="hint--top" data-hint="Yeah, I am >:D">Look, there is something over me.</a>
 				</p>
 
 				<p>
-					<a href="javascript:void(0)" class="hint  hint--right" data-hint="Are you sure you are?">I am always right!</a>
+					<a href="javascript:void(0)" class="hint--right" data-hint="Are you sure you are?">I am always right!</a>
 				</p>
 
 				<p>
-					<a href="javascript:void(0)" class="hint  hint--bottom" data-hint="Sure. Cheers!">How about a bottoms up?</a>
+					<a href="javascript:void(0)" class="hint--bottom" data-hint="Sure. Cheers!">How about a bottoms up?</a>
 				</p>
 
 				<p>
-					<a href="javascript:void(0)" class="hint  hint--left" data-hint="LEFT-over Sir...">What do we get now?</a></p>
+					<a href="javascript:void(0)" class="hint--left" data-hint="LEFT-over Sir...">What do we get now?</a></p>
 
         <h3>On dimensioned elements</h3>
 
-				<p><a class="hint  hint--right" data-hint="Pika pika!" href="javascript:void(0)"><img  src="pikachu.jpg"></a>
+				<p><a class="hint--right" data-hint="Pika pika!" href="javascript:void(0)"><img  src="pikachu.jpg"></a>
 				</p>
 
         <h3>Color based types</h3>
 
 				<p>
-					<a href="javascript:void(0)" class="hint  hint--top  hint--error" data-hint="This is an error tooltip">Oh man! You are gonna self-destruct in 5 sec.</a>
+					<a href="javascript:void(0)" class="hint--top  hint--error" data-hint="This is an error tooltip">Oh man! You are gonna self-destruct in 5 sec.</a>
 				</p>
 				
 				<p>
-					<a href="javascript:void(0)" class="hint  hint--left  hint--warning" data-hint="This is a warning tooltip">You did something wrong!</a>
+					<a href="javascript:void(0)" class="hint--left  hint--warning" data-hint="This is a warning tooltip">You did something wrong!</a>
 				</p>
 				
 				<p>
-					<a href="javascript:void(0)" class="hint  hint--bottom  hint--info" data-hint="This is an info tooltip">You can use different classes for different types of tooltips.</a>
+					<a href="javascript:void(0)" class="hint--bottom  hint--info" data-hint="This is an info tooltip">You can use different classes for different types of tooltips.</a>
 				</p>
 
 				<p>
-					<a href="javascript:void(0)" class="hint  hint--left  hint--success" data-hint="This is a success tooltip">Hurray! You have seen all 4 context types.</a>
+					<a href="javascript:void(0)" class="hint--left  hint--success" data-hint="This is a success tooltip">Hurray! You have seen all 4 context types.</a>
 				</p>
 
         <h3>Extra</h3>
 
 				<p>
-					<a href="javascript:void(0)" class="hint  hint--right  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
+					<a href="javascript:void(0)" class="hint--right  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
 				</p>
 
         <p>
-          <a class="hint  hint--right  hint--success  hint--rounded" data-hint="We have rounded corners for you">Hmm...So you don't like sharp edges?</a>
+          <a class="hint--right  hint--success  hint--rounded" data-hint="We have rounded corners for you">Hmm...So you don't like sharp edges?</a>
         </p>
 
     	</section>
@@ -128,28 +128,34 @@ name: Hint.css
         </p>
 
         <p>
-          Any element in your markup which needs to have a tooltip has to be given atleast 2 classes: <code>hint</code> & any one of <code>hint--top</code>, <code>hint--bottom</code>, <code>hint--left</code>, <code>hint--right</code> to position the tooltip.
+          Any element on your page which needs to have a tooltip has to be given at least one of the position classes: <code>hint--top</code>, <code>hint--bottom</code>, <code>hint--left</code>, <code>hint--right</code> to position the tooltip.
 
-          {% highlight css %}Hello Sir, <span class="hint  hint--bottom">hover over me.</span>{% endhighlight %}
+          {% highlight css %}Hello Sir, <span class="hint--bottom">hover over me.</span>{% endhighlight %}
         </p>
 
         <p>
           And the tooltip text has to be given using the <code>data-hint</code> attribute on that element.
-          {% highlight css %}Hello Sir, <span class="hint  hint--bottom" data-hint="Thank you!">hover over me.</span>{% endhighlight %}
+          {% highlight css %}Hello Sir, <span class="hint--bottom" data-hint="Thank you!">hover over me.</span>{% endhighlight %}
         </p>
 
         <p>
           <em>Result</em>:
-          Hello Sir, <span class="hint  hint--bottom" data-hint="Thank you!"><strong>hover over me</strong></span>.
+          Hello Sir, <span class="hint--bottom" data-hint="Thank you!"><strong>hover over me</strong></span>.
+        </p>
+
+        <p>
+          [<strong>Note</strong>: The <code>hint</code> class is no more required and is deprecated in versions >=1.2.0. Tooltip is shown on elements which have the <code>data-hint</code> attribute instead.]
         </p>
 
         <p>
           Use it with other available modifiers in various combinations. Available modifiers: <code>hint--error</code>, <code>hint--info</code>, <code>hint--warning</code>, <code>hint--success</code> and <code>hint--always</code>.
         </p>
+
       </section>
 
       
       <section class="socialz">
+        <h3>Share it if you like it!</h3>
     
         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kushagragour.in/lab/hint/" data-via="chinchang457" data-hashtags="CSS,tooltip,sass">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
