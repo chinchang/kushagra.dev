@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+		<head>
+				<meta charset="utf-8">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+				<title>Blue circles demo 2</title>
+				<meta name="description" content="Blue circles tunnel">
+				<meta name="viewport" content="width=device-width">
+
+				<style>
+					body { margin: 0; overflow: hidden; }
+				</style>
+		</head>
+		<body>
+
+			<canvas id="c"></canvas>
+
+			<script type="text/javascript">
+
+			var H, PI_BY_180, Particle, W, animate, animationLoop, canvas, colors, ctx, cx, cy, damping_constant, display_list, draw, init, last_time, num_particles, onMouseMove, spring_constant, time, update;
+
+			window.requestAnimFrame = (function() {
+			  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
+			    return window.setTimeout(callback, 1000 / 60);
+			  };
+			})();
+
+			PI_BY_180 = Math.PI / 180;
+
+			canvas = null;
+
+			ctx = null;
+
+			num_particles = 500;
+
+			display_list = [];
+
+			last_time = null;
+
+			spring_constant = 0.2;
+
+			damping_constant = 0.08;
+
+			colors = ['#0066CC'];
+
+			W = window.innerWidth;
+
+			H = window.innerHeight;
+
+			cx = W / 2;
+
+			cy = H / 2;
+
+			time = 1;
+
+			init = function(e) {
+			  var i, j, _i, _ref, _results;
+			  canvas = document.getElementById('c');
+			  ctx = canvas.getContext('2d');
+			  canvas.width = W;
+			  canvas.height = H;
+			  canvas.addEventListener('mousemove', onMouseMove);
+			  _results = [];
+			  for (i = _i = 10, _ref = W / 2; _i < _ref; i = _i += 10) {
+			    _results.push((function() {
+			      var _j, _results1;
+			      _results1 = [];
+			      for (j = _j = 0; _j < 10; j = ++_j) {
+			        _results1.push(display_list.push(new Particle(i)));
+			      }
+			      return _results1;
+			    })());
+			  }
+			  return _results;
+			};
+
+			onMouseMove = function(e) {
+			  var mx, my;
+			  mx = e.offsetX || e.pageX;
+			  my = e.offsetY || e.pageY;
+			  return time = mx / W;
+			};
+
+			animate = function() {
+			  animationLoop();
+			  return requestAnimFrame(animate);
+			};
+
+			animationLoop = function() {
+			  var current_time, dt;
+			  if (!last_time) {
+			    last_time = (new Date).getTime();
+			  }
+			  current_time = (new Date).getTime();
+			  dt = (current_time - last_time) / 1000;
+			  last_time = current_time;
+			  window.fps = 1 / dt;
+			  draw();
+			  return update();
+			};
+
+			draw = function() {
+			  var child, _i, _len, _results;
+			  ctx.fillStyle = "#111";
+			  ctx.fillRect(0, 0, W, H);
+			  _results = [];
+			  for (_i = 0, _len = display_list.length; _i < _len; _i++) {
+			    child = display_list[_i];
+			    if (typeof child.draw !== 'function') {
+			      continue;
+			    }
+			    ctx.save();
+			    if (!isNaN(child.x || isNaN(child.y))) {
+			      ctx.translate(child.x, child.y);
+			    }
+			    if (!isNaN(child.scale_x || isNaN(child.scale_y))) {
+			      ctx.scale(child.scale_x, child.scale_y);
+			    }
+			    if (!isNaN(child.alpha)) {
+			      ctx.globalAlpha = child.alpha;
+			    }
+			    child.draw();
+			    _results.push(ctx.restore());
+			  }
+			  return _results;
+			};
+
+			update = function() {
+			  var child, _i, _len, _results;
+			  _results = [];
+			  for (_i = 0, _len = display_list.length; _i < _len; _i++) {
+			    child = display_list[_i];
+			    if (typeof child.update === 'function') {
+			      _results.push(child.update());
+			    } else {
+			      _results.push(void 0);
+			    }
+			  }
+			  return _results;
+			};
+
+			Particle = (function() {
+
+			  function Particle(radius) {
+			    this.radius = radius != null ? radius : 1;
+			    this.theta = ~~(Math.random() * 360);
+			    this.speed_theta = 0.5 + Math.random() * this.radius * 0.005;
+			    this.alpha = this.radius / (W / 2);
+			    if (Math.random() > 0.5) {
+			      this.dir = 1;
+			    } else {
+			      this.dir = -1;
+			    }
+			    this.color = colors[0];
+			    this.scale_x = this.scale_y = 0.5;
+			  }
+
+			  Particle.prototype.draw = function() {
+			    ctx.fillStyle = this.color;
+			    ctx.beginPath();
+			    ctx.arc(0, 0, this.radius * 0.04, 0, Math.PI * 2, true);
+			    return ctx.fill();
+			  };
+
+			  Particle.prototype.update = function() {
+			    this.scale_x += this.dir * 0.06 * time;
+			    this.scale_y += this.dir * 0.06 * time;
+			    this.theta += this.speed_theta * time;
+			    this.x = cx + this.radius * Math.cos(this.theta * PI_BY_180);
+			    this.y = cy + this.radius * Math.sin(this.theta * PI_BY_180);
+			    if (this.scale_x > 1.5) {
+			      this.scale_x = 1.5;
+			      return this.dir = -1;
+			    } else if (this.scale_x < 0) {
+			      this.scale_x = 0;
+			      return this.dir = 1;
+			    }
+			  };
+
+			  Particle.prototype.reset = function() {
+			    this.dir *= -1;
+			    this.scale_x = this.scale_y = 0.5;
+			    return this.color = colors[~~(Math.random() * colors.length)];
+			  };
+
+			  Particle.prototype.reposition = function() {
+			    this.ox = this.x = ~~(Math.random() * W);
+			    return this.oy = this.y = 100 + ~~(Math.random() * 5);
+			  };
+
+			  return Particle;
+
+			})();
+
+			init();
+
+			animate();
+
+			</script>
+
+    	<script>
+					var _gaq=[['_setAccount','UA-19798102-1'],['_trackPageview']];
+					(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+					g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+					s.parentNode.insertBefore(g,s)}(document,'script'));
+			</script>
+
+		</body>
+</html>
