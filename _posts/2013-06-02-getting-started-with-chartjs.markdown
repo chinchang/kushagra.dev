@@ -63,7 +63,7 @@ This is the sample of data I had which I wanted to visualize:
 
 First thing I did was clone the [github repo for Chart.js](https://github.com/nnnick/Chart.js):
 
-{% highlight linenos %}
+{% highlight javascript linenos %}
 git clone git://github.com/nnnick/Chart.js.git
 cd Chart.js
 {% endhighlight %}
@@ -212,6 +212,3 @@ Its still a new library and has a long way to go. It has been receiving contribu
 [Hack it here](https://github.com/nnnick/Chart.js).
 
 Cheers :)
-
-
-
