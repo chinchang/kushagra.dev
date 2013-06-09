@@ -15,7 +15,23 @@
     <div id="outer-container">
       <div id="main-container">
 
-        <header id="top-header">
+        <header class="top-header {% if page.name == 'home' %}top-header--home{% endif %}">
+
+          {% if page.name != 'home' %}
+          <div class="space3d  top-header__cube">
+            <div class="_3dbox">
+              <div id="me" class="_3dface  _3dface--front">
+                <div></div>
+              </div>
+              <div class="_3dface  _3dface--bottom">
+                <a href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Flocalhost%3A4000%2F&region=follow_link&screen_name=chinchang457&tw_p=followbutton&variant=2.0">
+                  <img src="https://twitter.com/images/resources/twitter-bird-light-bgs.png" width="100">
+                </a>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+
           <a class="top-header__link" href="/"><h1>Kushagra Gour</h1></a>
           <h2>Game developer . Hacker . Creativity freak!</h2>
         </header>
@@ -28,12 +44,14 @@
 
       </div>
 
-      {% include footer.html %}
 
     </div>
+
+      {% include footer.html %}
 
     {% include analytics.html %}
 
   </body>
+
 
 </html>
