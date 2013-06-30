@@ -26,7 +26,7 @@ Now some real stuff.
   * Windows 7 OS (Windows Vista will also work)
 
 
-[ **NOTE** : The tutorial visuals shown here are of Win 7, though it would work just fine on Windows Vista also. ]
+(**NOTE** : The tutorial visuals shown here are of Win 7, though it would work just fine on Windows Vista also.)
 
 **STEP 1 :**
 On any one machine (which you want to create the network on), open the control Panel and go over to **View network status and tasks**.
@@ -51,7 +51,7 @@ Now you need to enter a **Network name** and a **Security key** for the new netw
 Thats all you need to do to create a wireless network. Now its time to start it up and let others join.
 
 **STEP 5 :**
-[ **NOTE** : Make sure WIFI on the machine is turned on before this step. ]
+(**NOTE** : Make sure WIFI on the machine is turned on before this step.)
 
 On the same machine, click the network icon in the system tray. You will see the network name you just created in the list.
 Click it to connect to it.

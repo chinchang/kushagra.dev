@@ -20,7 +20,6 @@ Though it tracks motion nicely it still needs to be improved to track smoothly a
 
 # **[PROJECT SOURCE](https://github.com/chinchang/AS3-Motion-Tracker)**
 
-
-<del>Will soon upload the demo source too. Till then</del>...Download it. Play with it. Improve it.
+Download it. Play with it. Improve it.
 
 Cheers !

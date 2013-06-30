@@ -18,7 +18,7 @@ Last night while surfing on the web and reading flash stuff I came across [**Jus
 <object data="/uploads/2011/motionpong.swf" type="application/x-shockwave-flash" width="530" height="300" >
 </object>
 
-**[ Move your hand left-right to move the platform. ]**
+**(Move your hand left-right to move the platform.)**
 
 The motion tracking algorithm is itself very basic but gives amazing results with little tweaking. One restriction though, you should have only one object moving on the screen (hand, head etc) to properly get it tracked to play the game. More about the API **[can be read here](http://blog.soulwire.co.uk/code/actionscript-3/webcam-motion-detection-tracking)**.
 

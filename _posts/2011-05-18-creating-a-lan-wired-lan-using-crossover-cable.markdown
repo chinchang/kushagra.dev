@@ -17,20 +17,14 @@ This one will show how to create a wired LAN using just a crossover cable.
 So lets get going !
 
 **Requirements for this tutorial :**
+ * 2 Computer machines having lan card.
+ * 1 [Crossover cable](http://en.wikipedia.org/wiki/Ethernet_crossover_cable).
 
 
-
-	
-  * 2 Computer machines having lan card.
-
-	
-  * 1 [Crossover cable](http://en.wikipedia.org/wiki/Ethernet_crossover_cable).
-
-
-[ **NOTE** : The visuals shown here are of Win 7, though it would work just fine on any Windows. ]
+(**NOTE** : The visuals shown here are of Win 7, though it would work just fine on any Windows.)
 
 **STEP 1 :**
-****Connect the 2 machines with the crossover cable.
+Connect the 2 machines with the crossover cable.
 
 **STEP 2 :**
 On first machine, Open the control Panel and go over to **View network status and tasks**.
