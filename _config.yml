@@ -2,3 +2,11 @@ root_url: http://kushagragour.in
 title: Kushagra Gour- Creativity freak!
 permalink: /blog/:year/:month/:title/
 pygments: true
+
+lab_projects:
+- name: "Hint.css"
+  link: "hint/"
+- name: "piCSSel-artt"
+  link: "picssel-art/"
+- name: "Iso-Blocks"
+  link: "isoblocks/"

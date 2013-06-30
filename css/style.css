@@ -22,27 +22,28 @@ textarea {
 
 h2, h3, h4, h5, h6 {
 	margin: 0;
-	color: #F2C45A;
 }
 
 .clear { clear: both; }
 
-.talign-center { text-align: center; }
+.talign-middle { text-align: center; }
+
+.valign-middle { vertical-align: middle; }
+
 
 body{
 	padding: 0;
 	margin: 0;
-	color: #222;
-	background-color: #403B33;
+	background-color: #F9F9F9;
 	width: 100%;
 	height: 100%;
-	font: 16px/1.4 'Ubuntu', Helvetica, Arial, Geneva, sans-serif;
-	color: #A3A948;
+	font: 16px/1.56 'Ubuntu', Helvetica, Arial, Geneva, sans-serif;
+	color: #555;
 }
 
 a {
 	text-decoration: none;
-	color: #F2C45A;
+	color: #A3A948;
 	font-weight: 200;
 }
 
@@ -58,6 +59,47 @@ hr {
 	margin: 5px 0;
 }
 
+
+/* 3D Cube */
+.space3d {
+	-webkit-perspective: 1000px;
+	width: 150px;
+	height: 150px;
+	text-align: center;
+}
+
+._3dbox {
+	display: inline-block;
+	-webkit-transition: all 0.6s cubic-bezier(0.175,0.885,0.320,1.275);
+	position: relative;
+	width: 150px;
+	height: 150px;
+	-webkit-transform-style: preserve-3d;
+}
+
+._3dbox:hover {
+	-webkit-transform: rotateX(90deg);
+}
+
+._3dface {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	border: 1px solid #DDD;
+	box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
+	-webkit-backface-visibility: hidden;
+}
+
+._3dface--front {
+	-webkit-transform: translate3d(0px, 0px, 75px);
+}
+
+._3dface--bottom {
+	-webkit-transform: rotateX(-90deg) translate3d(0, 0, 75px);
+}
+
+
 /* Inspired by beautiful scrollbar 
  * on Joshua Hibbert's website: http://joshnh.com/
  */
@@ -67,11 +109,11 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #F2C45A;
+    background-color: #A3A948;
 }
 
 ::-webkit-scrollbar-track {
-	background-color: #332F29;
+	background-color: #EEE;
 }
 
 
@@ -81,26 +123,50 @@ hr {
 }
 
 #main-container {
-	background-color: #4C473D;
+	/*background-color: #F8F8F8;*/
 	padding: 20px;
 }
 
-#top-header {
+.top-header {
 	text-align: center;
 	margin-bottom: 30px;
+}
+
+.top-header__cube {
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+.top-header__cube ._3dbox {
+	width: 100px;
+	height: 100px;
+}
+
+.top-header__cube ._3dface--front {
+	-webkit-transform: translate3d(0, 0, 50px);
+}
+
+.top-header__cube ._3dface--bottom {
+	-webkit-transform: rotateX(-90deg) translate3d(0, 0, 50px);
 }
 
 .top-header__link:hover {
 	text-decoration: none;
 }
 
-#top-header h1 {
-	font-size: 70px;
+.top-header h1 {
+	font-size: 50px;
 	color: #A3A948;
 	padding: 0;
 	margin: 0;
 }
-#top-header h2 {
+
+.top-header--home h1 {
+	font-size: 70px;
+}
+
+.top-header h2 {
 	font-size: 18px;
 	color: #F2C45A;
 	margin: 0;
@@ -109,8 +175,9 @@ hr {
 #main-container > nav {
 	text-align: center;
 	margin-bottom: 20px;
-	background: #403B33;
+	background: #A3A948;
 	font-size: 0;
+	border-radius: 3px;
 }
 
 #main-container > nav ul {
@@ -122,17 +189,17 @@ hr {
 }
 
 #main-container > nav li {
-	margin: 0 3px;
+	margin: 0 8px;
 	float: left;
 }
 
 #main-container > nav a {
-	color: #A3A948;
+	color: #FFF;
 	width: 100%;
 	height: 100%;
 	display: block;
 	text-align: center;
-	padding: 4px 8px;
+	padding: 8px 8px;
 	position: relative;
 	font-size: 18px;
 	font-weight: bold;
@@ -142,31 +209,37 @@ hr {
 
 #main-container > nav a:HOVER {
 	text-decoration: none;
-	background-color: #332F29;
 }
 
 #main-container > nav a.selected {
-	background-color: #332F29;
 }
-
-#main-container > nav a:HOVER:AFTER, #main-container nav a.selected:AFTER {
+ 
+#main-container > nav a:AFTER, #main-container nav a.selected:AFTER {
 	content: '';
 	width: 0;
 	height: 0;
 	border: solid transparent;
 	background: transparent;
-	border-width: 10px;
+	border-width: 9px;
 	position: absolute;
-	bottom: -19px;
+	bottom: 0;
 	left: 50%;
-	border-top-color: #332F29;
+	border-bottom-color: #F9F9F9;
 	margin-left: -10px;
+	bottom: -12px;
+	-webkit-transition: 0.3s;
+} 
+
+#main-container > nav a:HOVER:AFTER, #main-container nav a.selected:AFTER {
+	opacity: 1;
+	bottom: 0;
 }
 
 footer {
 	text-align: center;
-	padding: 10px 10px 20px;
+	padding: 10px 0 20px;
 	font-size: 12px;
+	width: 100%;
 }
 
 .callout {
@@ -190,31 +263,28 @@ footer {
   top: 20px;
 }
 
+.main-page-cube {
+	margin: 50px auto;
+}
+
+.main-page-cube__twitter-link {
+	line-height: 150px;
+}
+
+.main-page-cube #me div{
+	margin-left: 40px;
+}
+
 #me {
-	width: 78px;
-	height: 250px;
-	margin: 0 auto;
-	position: relative;
-}
-
-#me .callout {
-	position: absolute;
-	right: 80px;
-	top: 20px;
-	width: 140px;
-	opacity: 0;
-	-webkit-transition-duration: 250ms;
-	-moz-transition-duration: 250ms;
-	-webkit-transition-property: opacity, -webkit-transform;
-	-moz-transition-property: opacity, -webkit-transform;
-}
-
-#me:hover .callout {
-	opacity: 1;
-	-webkit-transform: translateY(-10px);
+	/*width: 78px;*/
+	/*height: 250px;*/
+	/*margin: 0 auto;*/
+	/*position: relative;*/
 }
 
 #me div{
+	margin-left: 20px;
+	margin-top: 10px;
 	width: 6px;
 	height: 6px;
 	background: transparent;
@@ -227,7 +297,7 @@ footer {
 }
 
 article {
-	background: #524C42;
+	/*background: #524C42;*/
 	padding: 10px;
 	border-radius: 5px;
 }
@@ -248,6 +318,10 @@ article.list-item {
 	margin-bottom: 10px;
 }
 
+article.list-item--lab {
+	text-align: center;
+}
+
 article.list-item:last-child {
 	margin-bottom: 0;
 }
@@ -257,6 +331,7 @@ article .post-title {
 
 article .post-meta {
 	font-size: 12px;
+	color: #777;
 }
 
 article .post-summary {}
@@ -297,15 +372,16 @@ article img {
 
 article p code {
 	font-size: 12px;
-	background-color: #4A453B;
+	background-color: #EEE;
 	padding: 2px 3px;
-	border: 1px solid #443F36;
+	border: 1px solid #DDD;
 	border-radius: 3px;
 }
 
 .button {
 	background-color: #F2C45A;
-	color: #3E3A32;
+	color: #FFF;
+	font-weight: bold;
 	padding: 6px 12px;
 	text-align: center;
 	cursor: pointer;
@@ -315,9 +391,8 @@ article p code {
 	-moz-transition: color, background-color 200ms;
 }
 
-.button:hover {
-	background-color: #3E3A32;
-	color: #F2C45A;
+.button:hover, .button:focus {
+	background-color: #DDAD44;
 }
 
 .button-big {
@@ -325,6 +400,10 @@ article p code {
 	font-weight: bold;
 	padding: 10px;
 	font-size: 1.5em;
+}
+
+.button-big:hover, .button-big:focus {
+	color: white;
 }
 
 .share-bar {
@@ -392,7 +471,7 @@ Social bar 2
  */
 .social-bar-2 {
 	overflow: auto;
-	width: 400px;
+	width: 100%;
 	margin: 0 auto;
 }
 
