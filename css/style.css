@@ -37,7 +37,7 @@ body{
 	background-color: #F9F9F9;
 	width: 100%;
 	height: 100%;
-	font: 16px/1.55 'Ubuntu', Helvetica, Arial, Geneva, sans-serif;
+	font: 16px/1.56 'Ubuntu', Helvetica, Arial, Geneva, sans-serif;
 	color: #555;
 }
 
@@ -318,6 +318,10 @@ article.list-item {
 	margin-bottom: 10px;
 }
 
+article.list-item--lab {
+	text-align: center;
+}
+
 article.list-item:last-child {
 	margin-bottom: 0;
 }
@@ -368,15 +372,16 @@ article img {
 
 article p code {
 	font-size: 12px;
-	background-color: #4A453B;
+	background-color: #EEE;
 	padding: 2px 3px;
-	border: 1px solid #443F36;
+	border: 1px solid #DDD;
 	border-radius: 3px;
 }
 
 .button {
 	background-color: #F2C45A;
-	color: #3E3A32;
+	color: #FFF;
+	font-weight: bold;
 	padding: 6px 12px;
 	text-align: center;
 	cursor: pointer;
@@ -386,9 +391,8 @@ article p code {
 	-moz-transition: color, background-color 200ms;
 }
 
-.button:hover {
-	background-color: #3E3A32;
-	color: #F2C45A;
+.button:hover, .button:focus {
+	background-color: #DDAD44;
 }
 
 .button-big {
@@ -396,6 +400,10 @@ article p code {
 	font-weight: bold;
 	padding: 10px;
 	font-size: 1.5em;
+}
+
+.button-big:hover, .button-big:focus {
+	color: white;
 }
 
 .share-bar {
