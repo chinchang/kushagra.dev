@@ -15,6 +15,8 @@
 	-webkit-overflow-scrolling: touch;
 }
 
+.highlight .lineno { color: #657B83; } /* Line nos. */
+
 .highlight .c { color: #586E75 } /* Comment */
 .highlight .err { color: #93A1A1 } /* Error */
 .highlight .g { color: #93A1A1 } /* Generic */
