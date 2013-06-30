@@ -1,0 +1,161 @@
+<html>
+<head>
+	<title>Ankit Jain</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="name">
+
+    <div class="space3d  main-cube">
+      <div class="_3dbox">
+        <div class="_3dface  _3dface--front">
+          <h1>A</h1>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <h2>I code!</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="space3d  main-cube">
+      <div class="_3dbox">
+        <div class="_3dface  _3dface--front">
+          <h1>N</h1>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <h2>I create</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="space3d  main-cube">
+      <div class="_3dbox">
+        <div class="_3dface  _3dface--front">
+          <h1>K</h1>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <h2>I code!</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="space3d  main-cube">
+      <div class="_3dbox">
+        <div class="_3dface  _3dface--front">
+          <h1>I</h1>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <h2>I am married</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="space3d  main-cube">
+      <div class="_3dbox">
+        <div class="_3dface  _3dface--front">
+          <h1>T</h1>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <h3>I am in the MATRIX</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="space3d  main-cube">
+      <div class="_3dbox">
+        <div class="_3dface  _3dface--front">
+          <h1>J</h1>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <h2>I Hack</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="space3d  main-cube">
+      <div class="_3dbox">
+        <div class="_3dface  _3dface--front">
+          <h1>A</h1>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <h2>I crack</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="space3d  main-cube">
+      <div class="_3dbox">
+        <div class="_3dface  _3dface--front">
+          <h1>I</h1>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <h2>I play FIFA</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="space3d  main-cube">
+      <div class="_3dbox">
+        <div class="_3dface  _3dface--front">
+          <h1>N</h1>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <h2>I &#9829; Servers</h2>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- END .name  -->
+
+  <div>Enter the Matrix...</div>
+
+
+
+  <div class="space3d  space3d--footer  footer">
+      <div class="_3dbox  _3dbox--footer">
+        <div class="_3dface  _3dface--front">
+          <span>Copyright &copy; Ankit Jain 2013.</span>
+        </div>
+
+        <div class="_3dface  _3dface--bottom">
+          <span>Made by  <a href="http://kushagragour.in">Kushagra "Chin Chang" Gour</a> for an awesome guy called Ankit Jain.</span>
+        </div>
+      </div>
+    </div>
+
+  <script>
+
+    var cubes = document.querySelectorAll('.name ._3dbox'),
+      selectedCube = null;
+
+    setInterval(rotateRandomCube, 1500);
+
+    function rotateRandomCube () {
+      if (selectedCube) {
+        selectedCube.className = selectedCube.className.replace(/rotated/g, '');
+      }
+
+      selectedCube = cubes[~~(Math.random() * cubes.length)];
+      
+      selectedCube.className = selectedCube.className + ' rotated ';
+
+    }
+
+  </script>
+
+
+</body>
+</html>
