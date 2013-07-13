@@ -4,10 +4,17 @@ title: Games
 name: games
 ---
 
-{% for game in site.games %}
+<div style="overflow: hidden;">
 	
-<article class="list-item  list-item--lab">
-	<a href="{{ game.link }}"><h2 class="post-title">{{ game.name }}</h2></a>
-</article>
+	{% for game in site.games %}
+		
+	<article class="list-item  list-item--game">
+		<a href="{{ game.link }}/">
+			<img width="150" src="/images/games/thumbnails/{{ game.link }}.jpg" alt="">
+			<h3 class="post-title">{{ game.name }}</h3>
+		</a>
+	</article>
 
-{% endfor %}
+	{% endfor %}
+
+</div>

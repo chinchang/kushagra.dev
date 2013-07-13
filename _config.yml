@@ -13,10 +13,12 @@ lab_projects:
 
 games:
 - name: "Beat Sight"
-  link: "beat-sight/"
+  link: "beat-sight"
 - name: "Feed the Gods"
-  link: "feed-the-gods/"
+  link: "feed-the-gods"
 - name: "Save Me (LD23)"
-  link: "saveme/"
+  link: "saveme"
 - name: "Fun With Force"
-  link: "fun-with-force/"
+  link: "fun-with-force"
+- name: "Chef of War"
+  link: "chef-of-war"
