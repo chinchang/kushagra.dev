@@ -10,3 +10,9 @@ lab_projects:
   link: "picssel-art/"
 - name: "Iso-Blocks"
   link: "isoblocks/"
+
+games:
+- name: "Beat Sight"
+  link: "beat-sight/"
+- name: "Fun With Force"
+  link: "fun-with-force/"

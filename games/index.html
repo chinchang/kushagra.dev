@@ -1,0 +1,13 @@
+---
+layout: default
+title: Games
+name: games
+---
+
+{% for game in site.games %}
+	
+<article class="list-item  list-item--lab">
+	<a href="{{ game.link }}"><h2 class="post-title">{{ game.name }}</h2></a>
+</article>
+
+{% endfor %}
