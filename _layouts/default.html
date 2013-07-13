@@ -38,16 +38,24 @@
         
         {% include nav.html %}
         
+        {% if page.type != 'game' %}
         <div id="content">
           {{ content }}
         </div>
+        {% endif %}
 
       </div>
 
 
     </div>
 
-      {% include footer.html %}
+    {% if page.type == 'game' %}
+    <div class="content  content--game">
+      {{ content }}
+    </div>
+    {% endif %}
+
+    {% include footer.html %}
 
     {% include analytics.html %}
 

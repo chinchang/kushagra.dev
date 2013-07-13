@@ -14,5 +14,9 @@ lab_projects:
 games:
 - name: "Beat Sight"
   link: "beat-sight/"
+- name: "Feed the Gods"
+  link: "feed-the-gods/"
+- name: "Save Me (LD23)"
+  link: "saveme/"
 - name: "Fun With Force"
   link: "fun-with-force/"

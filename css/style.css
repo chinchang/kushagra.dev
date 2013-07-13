@@ -587,3 +587,12 @@ Social bar 2
 	cursor: pointer;
 	display: none;
 }
+
+/*
+Game page
+ */
+
+.content--game {
+	text-align: center;
+	margin-bottom: 50px;
+}
