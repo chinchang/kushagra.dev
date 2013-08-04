@@ -9,9 +9,11 @@ body {
 .btn {
   border: 1px solid #CCC;
   background: #EEE;
-  border-radius: 3px;
-  padding: 12px 15px;
+  border-radius: 8px;
+  padding: 22px 45px;
   color: #333;
+  display: inline-block;
+  margin: 10px 0;
 }
 
 .btn:hover,
