@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <script src="//cdn.jsdelivr.net/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <style>
+      
+      body {
+        padding: 40px;
+        text-align: center;
+      }
+           
+      .scene {
+        display: inline-block;
+        margin-top: 150px;
+        width: 200px;
+        height: 200px;
+        
+        perspective: 600px;
+      }
+      .cube {
+        position: relative;
+        width: inherit;
+        height: inherit;
+        
+        transform-style: preserve-3d;
+        transform: rotateX(-90deg) rotateY(140deg) rotateZ(10deg);
+        animation: rotateCube 7s infinite;
+      }
+      .cube-face {
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        background: red;
+        opacity: 0.2;
+      }
+      
+      /* faces */
+      .cube-face-front {
+        background: yellow;
+        transform: translate3d(0, 0, 100px);
+      }  
+      .cube-face-back {
+        background: black;
+        transform: rotateY(180deg) translate3d(0, 0, 100px);
+      } 
+      .cube-face-left {
+        background: green;
+        transform: rotateY(-90deg) translate3d(0, 0, 100px);
+      } 
+      .cube-face-right {
+        background: magenta;
+        transform: rotateY(90deg) translate3d(0, 0, 100px);
+      } 
+      .cube-face-top {
+        background: blue;
+        transform: rotateX(90deg) translate3d(0, 0, 100px);
+      } 
+      .cube-face-bottom {
+        background: indianred;
+        transform: rotateX(-90deg) translate3d(0, 0, 100px);
+      }
+      
+      @keyframes rotateCube {
+        33% {
+          transform: rotateX(40deg) rotateY(90deg) rotateZ(-20deg);
+        }
+        66% {
+          transform: rotateX(-40deg) rotateY(-30deg) rotateZ(90deg);
+        }
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="scene">
+      <div class="cube">
+          <div class="cube-face  cube-face-front"></div>
+          <div class="cube-face  cube-face-back"></div>
+          <div class="cube-face  cube-face-left"></div>
+          <div class="cube-face  cube-face-right"></div>
+          <div class="cube-face  cube-face-top"></div>
+          <div class="cube-face  cube-face-bottom"></div>
+       </div>
+    </div>
+    
+  </body>
+</html>

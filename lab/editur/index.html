@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Editur- code in your browser</title>
+		<link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
+
+		<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		/* Codemirror */
+		.Codemirror {
+			width: 100%;
+			height: 100%;
+			opacity: 0.9;
+			font-size: 16px;
+		}
+
+		#demo-frame {
+			border: 0;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 1;
+			pointer-events: none;
+		}
+
+		</style>
+	</head>
+
+	<body>
+
+		<iframe src="" frameborder="0" id="demo-frame"></iframe>
+
+    <script src="lib/codemirror/lib/codemirror.js"></script>
+
+    <script src="lib/codemirror/addon/edit/closetag.js"></script>
+    
+    <script src="lib/codemirror/mode/xml/xml.js"></script>
+    <script src="lib/codemirror/mode/javascript/javascript.js"></script>
+    <script src="lib/codemirror/mode/css/css.js"></script>
+    <script src="lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+
+    <script src="editur.js"></script>
+		
+	</body>
+</html>
