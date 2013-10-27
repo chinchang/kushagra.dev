@@ -14,7 +14,7 @@
     
     <button class="btn" onclick="startGame();">Play</button>
     <br>
-    <a class="btn btn--twitter" target="_blank" href="http://twitter.com/share?url=http://khele.in/pappu-pakia/&amp;text=I am playing Pappu Pakia, a cute HTML5 game on khele.in!&amp;count=horiztonal&amp;via=_rishabhp&amp;related=solitarydesigns">Tweet my score: <span class="js-main-highscore">0</span></a>
+    <a class="btn btn--twitter  js-tweet-btn" target="_blank" href="http://twitter.com/share?url=http://kushagragour.in/games/chal-jhoote/&amp;text=I scored 0 points in the game of Chal Jhoote. Come, detect some lies.&amp;count=horiztonal&amp;hashtags=byog,game&amp;via=chinchang457&amp;related=game">Tweet my score: <span class="js-main-highscore">0</span></a>
 
 
     <div class="footer  ta-align">Game by <a href="https://twitter.com/chinchang457" target="_blank" class="">Kushagra Gour</a> | Made for <a href="http://13.byog.gamedev.in/">BYOG</a> Oct/2013</div>
@@ -89,6 +89,7 @@
         $score = document.querySelector('.js-score'),
         $highscore = document.querySelector('.js-highscore'),
         $main_highscore = document.querySelector('.js-main-highscore'),
+        $tweet_btn = document.querySelector('.js-tweet-btn'),
         $narration = document.querySelector('.js-narration'),
         $guy_list = document.querySelector('.js-guy-list');
 
@@ -152,6 +153,8 @@
     function loose () {
         narrate('Ahh, you killed the wrong guy. Returning to menu...');
         state = states.IDLE;
+        $tweet_btn.href = "http://twitter.com/share?url=http://kushagragour.in/games/chal-jhoote/&text=I scored " + highscore + " points in the game of Chal Jhoote. Come, detect some lies.&count=horiztonal&hashtags=byog,game&via=chinchang457&related=game";
+
 
         setTimeout(function () {
             show('#js-home-screen');
