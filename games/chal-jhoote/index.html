@@ -1,0 +1,595 @@
+<html>
+<head>
+<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700' rel='stylesheet' type='text/css'>
+<link href='style.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div class="screen  ta-center" id="js-home-screen">
+    <h1><span style="color:#27ae60">Chal</span><span style="color:indianred">Jhoote</span></h1>
+    <h2>(Get Lost Liar)</h2>
+    <br>
+    <br>
+    
+    <button class="btn" onclick="startGame();">Play</button>
+    <br>
+    <a class="btn btn--twitter" target="_blank" href="http://twitter.com/share?url=http://khele.in/pappu-pakia/&amp;text=I am playing Pappu Pakia, a cute HTML5 game on khele.in!&amp;count=horiztonal&amp;via=_rishabhp&amp;related=solitarydesigns">Tweet my score: <span class="js-main-highscore">0</span></a>
+
+
+    <div class="footer  ta-align">Game by <a href="https://twitter.com/chinchang457" target="_blank" class="">Kushagra Gour</a> | Made for <a href="http://13.byog.gamedev.in/">BYOG</a> Oct/2013</div>
+</div>
+
+<div class="screen hidden" id="js-game-screen">
+    <div class="canvas-wrap">
+        <canvas id="bg1" width="600" height="300"></canvas>
+        <canvas id="c" width="600" height="300"></canvas>
+        <!-- <div class="dom-elems">
+            <div class="obj  guy" style="top:40px;left: 40px;">A</div>
+        </div> -->
+        <div id="fg2" class="hud-wrap">
+            <div class="hud-level">Level: <span class="js-level">0</span></div>
+            <div class="hud-level-time">Level time: <span class="js-level-time">0</span></div>
+            <div class="hud-score">score: <span class="js-score">0</span></div>
+            <div class="hud-highscore">Highscore: <span class="js-highscore">0</span></div>
+
+            <div class="hud-target">Target: Find the guy with the key</div>
+            <div class="hud-guy-list  js-guy-list">
+            </div>
+            <div class="hud-chances">Chances: <span class="js-chances-left">0</span></div>
+        </div>
+        <canvas id="fg1" width="600" height="300"></canvas>
+    </div>
+    <div class="narration  js-narration">Welcome, to the game.</div>
+</div>
+
+<script src="Stats.js"></script>
+<script>
+(function () {
+    var scale = 3,
+        w = 200,
+        h = 100,
+        cw = w * scale,
+        ch = h * scale,
+        keyups = {},
+        keydowns = {},
+        G = 1550,
+        ground_y = h,
+        last_time = Date.now(),
+        last_emit_time = Date.now(),
+        ctx = c.getContext('2d'),
+        players = [],
+        messages = [],
+        id = 0,
+        states = {
+            PLAYING: 0,
+            READY: 1
+        },
+        state = states.IDLE,
+        shake_timer = 0,
+        hint_timer = 0,
+        level_timer = 0,
+        max_shake = 2,
+        epsillon = 0.5,
+        easing = 0.1,
+        chances_left = 0,
+        score = 0,
+        highscore = 0,
+        level = 0,
+
+        tutorial_step = 0,
+        say_count = 0,
+
+        stats = null;
+
+    // Element nodes
+    var $level_timer = document.querySelector('.js-level-time'),
+        $level = document.querySelector('.js-level'),
+        $chances_left = document.querySelector('.js-chances-left'),
+        $score = document.querySelector('.js-score'),
+        $highscore = document.querySelector('.js-highscore'),
+        $main_highscore = document.querySelector('.js-main-highscore'),
+        $narration = document.querySelector('.js-narration'),
+        $guy_list = document.querySelector('.js-guy-list');
+
+    _ = {};
+    _.extend = function (obj) {
+        [].slice.call(arguments, 1).forEach (function (source) {
+            if (source) {
+                for (var prop in source) {
+                    obj[prop] = source[prop];
+                }
+            }
+        });
+        return obj;
+    };
+
+    function random (start, end) {
+        if (arguments.length < 2) {
+            end = start;
+            start = 0;
+        }
+        return ~~(Math.random() * (end - start)) + start;
+    }
+
+    function startGame (count) {
+        hide('#js-home-screen');
+        show('#js-game-screen');
+        score = 0;
+        chances_left = 0;
+        level = 1;
+        createLevel(1);
+        setTimeout(function () {
+            manageTutorial();
+        }, 2000);
+        state = states.PLAYING;
+    }
+
+    function checkWin (answer) {
+        if (right_answer.toLowerCase() === answer.toLowerCase()) {
+            win();
+        }
+        else if (!chances_left) {
+            loose();
+        }
+        else {
+            narrate('Think well before you come to conclusion.');
+        }
+    }
+
+    function win () {
+        score += ~~((1/level_timer)*500);
+        if (score > highscore) {
+            highscore = score;
+        }
+        if (level_timer <= 5) {
+            chances_left++;
+        }
+        narrate('Well done! Progressing level...');
+        createLevel(++level);
+    }
+
+    function loose () {
+        narrate('Ahh, you killed the wrong guy. Returning to menu...');
+        state = states.IDLE;
+
+        setTimeout(function () {
+            show('#js-home-screen');
+            hide('#js-game-screen');
+        }, 3500);
+    }
+
+    function createLevel (level) {
+        var guy,
+            count = level+1,
+            player_with_key = random(count),
+            width_per_player = (w-40) / count,
+            start_x,
+            guy_list_html = '';
+
+        chances_left++;
+        level_timer = 0;
+        players = [];
+
+        for (var i = count; i--;) {
+            start_x = 20 + i * width_per_player;
+            guy = insertGuy({
+                x: random(start_x, start_x + width_per_player),
+                y: ground_y,
+                target_y: ground_y - 18,
+                is_good : ~~(Math.random() * 2),
+                name: String.fromCharCode(65 + i),
+                has_key: i === player_with_key ? true : false
+            });
+            guy_list_html = '<button class="btn btn--mini js-guy-btn">' + guy.name + '</button>' + guy_list_html;
+
+            if (i===player_with_key) {
+                right_answer = guy.name;
+                // console.log(guy.name);
+            }
+        }
+
+        $guy_list.innerHTML = guy_list_html;
+
+        narrate('Level ' + level + ' begins.');
+    }
+
+    function createMessage (params) {
+        var obj = _.extend({
+            active: 1,
+            x: 0,
+            y: 0,
+            w: 35,
+            h: 8,
+            speed_x: 0,
+            speed_y: 0,
+            life_timer: 2,
+            text: '',
+            update: function (dt) {
+                if (this.life_timer > 0) {
+                    this.life_timer -= dt;
+                }
+                else {
+                    this.active = false;
+                    return this;
+                }
+
+                this.x += this.speed_x * dt;
+                this.y += this.speed_y * dt;
+                
+                // make it move towards target x
+                if (this.target_x) {
+                    // this.x = ~~(this.x + (this.target_x - this.x) * 0.1);
+                }
+                if (this.target_y) {
+                    this.y = (this.y + (this.target_y - this.y) * 0.1);
+                }
+
+                return this;
+            },
+            draw: function () {
+                ctx.fillStyle = '#FFF';
+                ctx.beginPath();
+                ctx.rect(this.x - this.w/2, this.y, this.w, this.h);
+                ctx.fill();
+                
+                // Draw the arrow
+                ctx.beginPath();
+                ctx.moveTo(this.x + 3, this.y + this.h);
+                ctx.lineTo(this.x, this.y + this.h + 3);
+                ctx.lineTo(this.x - 3, this.y + this.h);
+                ctx.fill();
+
+                ctx.font = '3pt Arial';
+                ctx.textAlign = 'center';
+                ctx.fillStyle = '#000';
+                ctx.fillText(this.text, this.x, this.y + 5);
+
+                return this;
+            }
+        }, params);
+
+        obj.target_y = obj.y - random(5, 20);
+        return obj;
+    }
+
+    function createChar () {
+        return {
+            active: 1,
+            x: 0,
+            y: 0,
+            w: 8,
+            h: 12,
+            color: '#000',
+            speed_x: 0,
+            speed_y: 0,
+            is_on_ground: 0,
+            components: [],
+            msg_timer: 0,
+            update: function (dt) {
+                if (!this.is_on_ground && this.target_y) {
+                    this.y = this.y + (this.target_y - this.y) * 0.1;
+                    if (Math.abs(this.target_y - this.y) <= epsillon) {
+                        this.is_on_ground = 1;
+                    }
+                }
+
+                if (this.y + this.h > ground_y) {
+                    // this.y = ground_y - this.h;
+                    // this.is_on_ground = 1;
+                }
+
+                if (this.msg_timer > 0) {
+                    this.msg_timer -= dt;
+                }
+                else {
+                    this.msg_timer = 0;
+                    this.message = '';
+                }
+                
+                return this;
+            },
+            draw: function () {
+                // Body
+                ctx.beginPath();
+                ctx.fillStyle = this.color;
+                ctx.rect(this.x, this.y + 4, this.w, this.h - 4);
+                ctx.fill();
+
+                // Face
+                ctx.beginPath();
+                ctx.fillStyle = '#f39c12';
+                ctx.rect(this.x + 2, this.y, 4, 4);
+                ctx.fill();
+
+                // Legs
+                ctx.beginPath();
+                ctx.fillStyle = '#444';
+                ctx.rect(this.x + 2, this.y + 12, 4, 6);
+                ctx.fill();
+
+                if (this.name) {
+                    ctx.fillStyle = 'white';
+                    ctx.font = '4pt Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(this.name, this.x + 4, this.y + 10);
+                }
+                return this;
+            },
+            getMessage: function () {
+                // Select a random player
+                var other_player = null,
+                    has_key = false,
+                    verb;
+    
+                while ((other_player = players[random(players.length)]).has_key);
+                
+                if (!this.is_good) {
+                    has_key = !has_key;
+                }
+                
+                var is_same_player = this.name === other_player.name;
+
+                if (has_key) {
+                    verb = is_same_player ? 'have' : 'has';
+                }
+                else {
+                    verb = is_same_player ? "don't have" : "doesn't have";
+                }
+                return (is_same_player ? 'I' : other_player.name) + ' ' + verb + " it";
+            },
+            say: function (msg) {
+                messages.push(createMessage({
+                    x: this.x + this.w / 2,
+                    y: this.y - 10,
+                    text: this.getMessage()
+                }));
+                document.dispatchEvent(new Event('guy-said'));
+            }
+        };
+    }
+
+    function createPlayer () {
+        var p = createPlayer();
+        p.update = function (dt) {
+        };
+        return p;
+    }
+
+    function insertGuy (data) {
+        var player = createChar();
+        _.extend(player, data);
+        player.color = player.is_good ? '#27ae60' : 'indianred';
+        players.push(player);
+        return player;
+    }
+
+    function loop () {
+        stats.begin();
+
+        if (state === states.PLAYING) {
+            var current_time = Date.now(),
+                dt = (current_time - last_time) / 1000;
+            last_time = current_time;
+
+            if (1) {
+                level_timer += dt;
+            }
+        
+            updateHUD();
+
+            ctx.clearRect(0, 0, cw, ch);
+
+            ctx.save();
+            ctx.scale(scale, scale);
+            if (shake_timer) {
+                (shake_timer -= dt) > 0 && ctx.translate(random(-max_shake, max_shake), random(-max_shake, max_shake));
+            }
+            else {
+                shake_timer = 0
+            }
+            
+            if (shake_timer) {
+                (shake_timer -= dt) > 0 && ctx.translate(Math.random() * (max_shake<<1) - max_shake, Math.random() * (max_shake<<1) - max_shake);
+            }
+            else {
+                shake_timer = 0;
+            }
+
+
+            var objs = players.concat(messages);
+            forEvery (objs, function (obj) {
+                if (obj && obj.active) {
+                    ctx.save();
+                    // if (!isNaN(obj.alpha)
+                    obj.update(dt).draw();
+                    ctx.restore();
+                }
+            });
+
+            for (var i = players.length; i--;) {
+                if (!players[i].active) {
+                    players.splice(i, 1);
+                }
+            }
+            for (var i = messages.length; i--;) {
+                if (!messages[i].active) {
+                    messages.splice(i, 1);
+                }
+            }
+
+            ctx.restore();
+        }
+        requestAnimationFrame(loop);
+
+        stats.end();
+    }
+
+    function updateHUD () {
+        $level_timer.textContent = ~~(level_timer + '');
+        $level.textContent = ~~(level + '');
+        $chances_left.textContent = ~~(chances_left + '');
+        $score.textContent = ~~(score + '');
+        $highscore.textContent = ~~(highscore + '');
+        $main_highscore.textContent = ~~(highscore + '');
+    }
+
+    function initListeners () {
+        document.addEventListener('click', function (e) {
+            if (state !== states.PLAYING) return;
+
+            var target = e.target;
+            if (target.className.indexOf('js-guy-btn') !== -1) {
+                chances_left--;
+                checkWin(target.textContent);
+            }
+            else {
+                var player_index = random(players.length);
+                players[player_index].say();
+            }
+        });
+
+        document.addEventListener('keypress', function (e) {
+            if (state !== states.PLAYING) return;
+
+        });
+
+        document.addEventListener('guy-said', function (e) {
+            say_count++;
+            manageTutorial();
+        });
+    }
+    
+    function generateRandomColor () {
+        return '#' + (~~(Math.random()*255) + (~~(Math.random()*255)<<8) + (~~(Math.random()*255)<<16) + (1<<24)).toString(16).slice(1);
+    }
+
+    function forEvery (obj, cb) {
+        // Its an array
+        if (obj instanceof Array) {
+            for (var i = 0, len = obj.length; i < len; i++) {
+                cb.call(this, obj[i]);
+            }
+            return;
+        }
+        // otherwise, loop object
+        for (var i in obj) {
+            cb.call(this, obj[i]);
+        }
+    }
+
+    function drawBg () {
+        var c =  document.querySelector('#bg1'),
+            ctx = c.getContext('2d'),
+            i = 0,
+            size = 0;
+        ctx.scale(scale, scale);
+        ctx.fillStyle = 'hsl(191, 50%, 31%)';
+        ctx.beginPath();
+        ctx.rect(0, 0, w, h);
+        ctx.fill();
+        
+        //ctx.fillStyle = 'hsl(191, 50%, 100%)';
+        ctx.fillStyle = 'hsl(191, 50%, 45%)';
+        ctx.beginPath();
+        while (++i < 80) {
+            size = ~~(Math.random() * 5) + 1;
+            ctx.rect(~~(Math.random() * w), ~~(Math.random() * h), size, size);
+        }
+        ctx.fill();
+    }
+
+    function drawFg () {
+        var c =  document.querySelector('#fg1'),
+            ctx = c.getContext('2d'),
+            i = 0,
+            width = 2,
+            separation = width+1,
+            count = ch/(separation);
+        //ctx.scale(scale, scale);
+        ctx.fillStyle = 'hsla(0, 0%, 20%, 0.2)';
+        ctx.beginPath();
+        while (++i < count) {
+            ctx.rect(0, i*separation, cw, width);
+            //ctx.rect(i*separation, 0, width, h);
+        }
+        ctx.fill();
+    }
+
+    function init () {
+        stats = new Stats();
+        stats.setMode(0); // 0: fps, 1: ms
+
+        // Align top-left
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.right = '0px';
+        stats.domElement.style.top = '0px';
+
+        // document.body.appendChild( stats.domElement );
+
+        drawBg();
+        drawFg();
+
+        updateHUD();
+
+        initListeners();
+        loop();
+    }
+
+    function show (el) {
+        if (typeof el === 'string') {
+            el = document.querySelector(el);
+        }
+        el.className = el.className.replace(/hidden/g, '');
+    }
+
+    function hide (el) {
+        if (typeof el === 'string') {
+            el = document.querySelector(el);
+        }
+        el.className = el.className + ' hidden ';
+    }
+
+    function narrate (msg) {
+        if (!msg) return;
+        // Store timeouts to clear them later
+        narrate.timeouts = narrate.timeouts || [];
+
+        forEvery (narrate.timeouts, function (t) {
+            clearTimeout(t);
+        });
+
+        $narration.textContent = '';
+        var time = 0;
+        for (var i =  0; i < msg.length; i++) {
+            (function (i) {
+                narrate.timeouts.push(setTimeout(function () {
+                    $narration.textContent = msg.substr(0, i) + '_';
+                }, time+=(msg[i-1]===' '?100:30)));
+            })(i);
+        }
+    }
+
+    function manageTutorial () {
+        switch (tutorial_step) {
+        case 0:
+            narrate('Try clicking anywhere to investigate those guys.');
+            tutorial_step++;
+            break;
+        case 1:
+            level === 1 && narrate('Great! Keep investigating till you find who has the key.');
+            tutorial_step++;
+            break;
+        case 2:
+            say_count==3 && narrate('Oh, btw the green ones speak truth and the red, LIES!') && tutorial_step++;
+        }
+    }
+
+    init();
+    // startGame();
+    window.startGame = startGame;
+})();
+</script>
+
+</body>
+</html>
