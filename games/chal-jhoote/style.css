@@ -17,7 +17,8 @@ body {
     font-family: 'Yanone Kaffeesatz';
     color: #777;
     letter-spacing: 3px;
-    background: url(http://subtlepatterns.com/patterns/ricepaper.png);
+    background: #EEE;
+    //background: url(http://subtlepatterns.com/patterns/ricepaper.png);
 }
 
 h1 {
