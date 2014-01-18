@@ -35,8 +35,8 @@ Pseudo elements are a gift for web developers which open numerous possibilities 
 
 This has the advantage that you do not have to add any extra markup on your page. But it has a downside too. As the tooltip is created using pseudo elements, its not possible to use them for any other purpose on the element you put tooltip on.
 
-####2. data-* atributes
-The tooltips need to be told what text to show. How do we provide this text? [<code>data-*</code>](http://www.w3.org/TR/2011/WD-html5-20110525/elements.html#embedding-custom-non-visible-data-with-the-data-attributes) attributes to the rescue. They let you put custom data on any element using attributes. So **hint.css** expects you to define an attribute called <code>data-hint</code> on the element which needs a tooltip:
+####2. data-* attributes
+The tooltips need to be told what text to show. How do we provide this text? [<code>data-* </code>](http://www.w3.org/TR/2011/WD-html5-20110525/elements.html#embedding-custom-non-visible-data-with-the-data-attributes) attributes to the rescue. They let you put custom data on any element using attributes. So **hint.css** expects you to define an attribute called <code>data-hint</code> on the element which needs a tooltip:
 
 {% highlight html linenos %}
 Out of the many, <span data-hint="Tooltip text">this</span> word needs a tooltip.
