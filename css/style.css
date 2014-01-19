@@ -30,6 +30,13 @@ h2, h3, h4, h5, h6 {
 
 .valign-middle { vertical-align: middle; }
 
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
 
 body{
 	padding: 0;
@@ -52,10 +59,10 @@ a:HOVER {
 }
 
 hr {
-	background-color: #443F36;
+	background-color: #D1D1D1;
 	border: none;
 	height: 1px;
-	border-bottom: 1px solid #5D564B;
+	border-bottom: 1px solid white;
 	margin: 5px 0;
 }
 
@@ -123,7 +130,7 @@ hr {
  */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
-    height: 14px;
+    height: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -136,7 +143,7 @@ hr {
 
 
 #outer-container {
-	width: 660px;
+	width: 750px;
 	margin: 0 auto;
 }
 
@@ -375,6 +382,7 @@ article blockquote {
 	margin: 1.5em 10px;
 	padding: .5em 10px;
 	quotes: "\201C""\201D""\2018""\2019";
+	font-style: italic;
 }
 
 article blockquote:before {
