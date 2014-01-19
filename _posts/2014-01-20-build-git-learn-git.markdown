@@ -1,15 +1,19 @@
 ---
 layout: post
-title: 'Build GIT - Learn GIT'
+title: 'Build GIT - Learn GIT (P1)'
 ---
 
-If you are reading this post, you probably are using Git or want to use Git. I am a big fan of Git and also [those posts](http://teropa.info/blog/2013/11/03/make-your-own-angular-part-1-scopes-and-digest.html) where people [implement some piece of technology](http://modernjavascript.blogspot.in/2013/08/promisesa-understanding-by-doing.html) in order to understand how their work in the core. This is once such post written to spread my love for Git.
+If you are reading this post, you probably are using Git or want to use Git. I am a big fan of Git and also [those posts](http://teropa.info/blog/2013/11/03/make-your-own-angular-part-1-scopes-and-digest.html) where people [implement some piece of an existing technology](http://modernjavascript.blogspot.in/2013/08/promisesa-understanding-by-doing.html) in order to understand how their work in the core. This is one such post written to spread my love for Git. **Yes, we'll implement Git!**
 
-This article covers the following topics in Git:
+This part implements basics of the following concepts:
 1. Repository.
 2. Commit.
 3. Commit chaining.
 4. Branch.
+
+All the code written is available in a Github repo:
+
+<a href="https://github.com/chinchang/build-git-learn-git/" class="button button-big">Github Repo</a>
 
 ### What is Git?
 ---
@@ -248,7 +252,7 @@ Next up is Branches!
 ### Branches
 ---
 
-Hurray, we have reached at the most interesting &amp; powerful feature of Git: Branches. So what is a Branch and what is it used for.
+Hurray, we have reached at the most interesting &amp; powerful feature of Git: Branches. So what is a Branch and what is it used for?
 
 Imagine this scenario, you are working on a project making commits now and then. At some point may be you or one of your teammate wants to experiment something on your current work, say a different algorithm. You could surely keep making those experimental commits, but remember this was your experiment and hence not guaranteed to be kept in the main project. This way you polluted your main project.
 
@@ -259,7 +263,7 @@ To quote the definition at kernel.org:
 A "branch" is an active line of development. The most recent commit on a branch is referred to as the tip of that branch. The tip of the branch is referenced by a branch head, which moves forward as additional development is done on the branch. A single git repository can track an arbitrary number of branches
 </blockquote>
 
-Lets understand what a branch is. A branch is nothing but a mere pointer to some commit. Seriously, that is it. You may say `HEAD` was exactly this. You are right. The only difference being that `HEAD` is just one (because at a given time you are only on a single commit) but branches can be many, each pointing to a commit.
+Lets understand what a branch is. A branch is nothing but a mere pointer to some commit. Seriously, that is it. That is what makes branches in Git so lightweight and use-n-throw type. You may say `HEAD` was exactly this. You are right. The only difference being that `HEAD` is just one (because at a given time you are only on a single commit) but branches can be many, each pointing to a commit.
 
 The **'master' branch**
 
@@ -348,9 +352,9 @@ Git.prototype.log = function () {
 	var commit = this.HEAD.commit,
 </code></pre>
 
-Everything works as before. To really see what we deduced in theory by calculating history of those 2 branches above, we need one final method on our `Git` class: **checkout**.
+Everything works as before. To really verify what we deduced in theory by calculating history of those 2 branches above, we need one final method on our `Git` class: **checkout**.
 
-To begin with, to *checkout* means to switch branches. By default we are on *master* branch. If I do something like `repo.checkout('testing')`, I should jump to *testing* branch...provided it is already created. But if its not created already, a new branch with that name should be created. Lets write a test for this method.
+To begin with, consider *checkout* as switching branches. By default we are on *master* branch. If I do something like `repo.checkout('testing')`, I should jump to *testing* branch...provided it is already created. But if its not created already, a new branch with that name should be created. Lets write a test for this method.
 
 <pre ><code class="language-javascript">
 console.log('Git.checkout() test')
@@ -432,7 +436,12 @@ Git.prototype.checkout = function (branchName) {
 
 	console.log('Switched to new branch: ' + branchName);
 	return this;
+
 }
+
+// Actual command:
+// > git checkout existing-branch
+// > git checkout -b new-branch
 </code></pre>
 
 Eureka! Now our `checkout` tests pass :)
@@ -471,11 +480,13 @@ repo.commit('Change 3');
 console.assert(historyToIdMapper(repo.log()) === '3-1-0'); // Continue on master with 4th commit.
 </code></pre>
 
-This test basically represents the diagrams we saw earlier explaining the working of branches. Lets see our implementation is inline with the theory:
+This test basically represents the diagrams we saw earlier explaining the working of branches. Lets see if our implementation is inline with the theory:
 
 <a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/4/embed?js,console">Build Git - Learn Git (part 1)</a><script src="http://static.jsbin.com/js/embed.js"> </script>
 
-Wonderful! Our implementation is right.
+Wonderful! Our implementation is right. The final code for this part can be found in GIT repo: `git-part1.js`.
+
+<a href="https://github.com/chinchang/build-git-learn-git/" class="button button-big">Github Repo</a>
 
 ### Whats next?
 ---
@@ -486,4 +497,9 @@ I had a lot of fun writing this and hope you enjoyed it too. If you did, share t
 
 Till next time, bbye.
 
+#### References
+---
+- [http://git-scm.com/book/en/](http://git-scm.com/book/en/) (Where I learned Git from)
+- [https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html](https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html)
 
+Thanks [JSBin](http://jsbin.com/) for your lovely console panel :)
