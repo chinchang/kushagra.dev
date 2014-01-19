@@ -160,7 +160,9 @@ The `log` function has only pseudo code right now in form of comments which tell
 2. Every commit should somehow know which commit was made before it.
 
 We have a failing test case right now:
-<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/1/embed?js,console">Build Git - Learn Git (part 1)</a><script src="http://static.jsbin.com/js/embed.js"> </script>
+<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/1/embed?js,console">Build Git - Learn Git (part 1)</a>
+
+<script src="http://static.jsbin.com/js/embed.js"></script>
 
 
 Lets take up the first requirement: Knowing the last commit.
@@ -240,7 +242,9 @@ Git.prototype.log = function () {
 </code></pre>
 
 Our test should pass now:
-<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/2/embed?js,console">Build Git - Learn Git (part 1)</a><script src="http://static.jsbin.com/js/embed.js"> </script>
+<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/2/embed?js,console">Build Git - Learn Git (part 1)</a>
+
+<script src="http://static.jsbin.com/js/embed.js"></script>
 
 #### Match your code
 ---
@@ -259,6 +263,7 @@ Imagine this scenario, you are working on a project making commits now and then.
 **Branches to the rescue**. What you need to do here is branch out from your current line of commits so that the commits you make do not pollute the main line of development.
 
 To quote the definition at kernel.org:
+
 <blockquote>
 A "branch" is an active line of development. The most recent commit on a branch is referred to as the tip of that branch. The tip of the branch is referenced by a branch head, which moves forward as additional development is done on the branch. A single git repository can track an arbitrary number of branches
 </blockquote>
@@ -446,7 +451,9 @@ Git.prototype.checkout = function (branchName) {
 
 Eureka! Now our `checkout` tests pass :)
 
-<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/3/embed?js,console">Build Git - Learn Git (part 1)</a><script src="http://static.jsbin.com/js/embed.js"> </script>
+<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/3/embed?js,console">Build Git - Learn Git (part 1)</a>
+
+<script src="http://static.jsbin.com/js/embed.js"></script>
 
 Now the grand moment for which we created the `checkout` function. Verifying the awesomeness of branches through the theory we saw earlier. We'll write one final test to verify the same:
 
@@ -482,7 +489,9 @@ console.assert(historyToIdMapper(repo.log()) === '3-1-0'); // Continue on master
 
 This test basically represents the diagrams we saw earlier explaining the working of branches. Lets see if our implementation is inline with the theory:
 
-<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/4/embed?js,console">Build Git - Learn Git (part 1)</a><script src="http://static.jsbin.com/js/embed.js"> </script>
+<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/4/embed?js,console">Build Git - Learn Git (part 1)</a>
+
+<script src="http://static.jsbin.com/js/embed.js"></script>
 
 Wonderful! Our implementation is right. The final code for this part can be found in GIT repo: `git-part1.js`.
 
