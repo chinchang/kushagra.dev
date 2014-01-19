@@ -5,9 +5,12 @@ name: lab
 ---
 
 {% for project in site.lab_projects %}
-	
+
 <article class="list-item  list-item--lab">
-	<a href="{{ project.link }}"><h2 class="post-title">{{ project.name }}</h2></a>
+	<h3 class="post-title">
+		<a href="{{ project.link }}">{{ project.name }}</a>
+	</h3>
+	<!-- <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div> -->
 </article>
 
 {% endfor %}

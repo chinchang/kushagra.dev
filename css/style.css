@@ -30,6 +30,13 @@ h2, h3, h4, h5, h6 {
 
 .valign-middle { vertical-align: middle; }
 
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
 
 body{
 	padding: 0;
@@ -52,10 +59,10 @@ a:HOVER {
 }
 
 hr {
-	background-color: #443F36;
+	background-color: #D1D1D1;
 	border: none;
 	height: 1px;
-	border-bottom: 1px solid #5D564B;
+	border-bottom: 1px solid white;
 	margin: 5px 0;
 }
 
@@ -123,7 +130,7 @@ hr {
  */
 ::-webkit-scrollbar {
     -webkit-appearance: none;
-    height: 14px;
+    height: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -136,7 +143,7 @@ hr {
 
 
 #outer-container {
-	width: 660px;
+	width: 750px;
 	margin: 0 auto;
 }
 
@@ -289,6 +296,10 @@ footer {
   top: 20px;
 }
 
+.header-cube__twitter-link {
+	line-height: 100px;
+}
+
 .main-page-cube {
 	margin: 50px auto;
 }
@@ -338,16 +349,16 @@ article a:HOVER {
 }
 
 .blog article a {
-	padding-bottom: 2px;
-	border-bottom: 1px hsl(64, 40%, 47%) solid;
+	color: hsl(64, 40%, 47%); /* green */
 }
 
 .blog article a:HOVER {
-	border-color: #F2C45A;
+	color: #F2C45A; /* yellow */
 }
 
 article.list-item {
-	margin-bottom: 10px;
+	padding: 20px 0;
+	border-bottom: 1px solid #e7e7e7;
 }
 
 article.list-item--lab {
@@ -358,7 +369,9 @@ article.list-item:last-child {
 	margin-bottom: 0;
 }
 
-article .post-title {
+article .post-title a {
+	border: 0!important;
+	color: inherit;
 }
 
 article .post-meta {
@@ -375,6 +388,7 @@ article blockquote {
 	margin: 1.5em 10px;
 	padding: .5em 10px;
 	quotes: "\201C""\201D""\2018""\2019";
+	font-style: italic;
 }
 
 article blockquote:before {
@@ -412,7 +426,7 @@ article p code {
 
 .button {
 	background-color: #F2C45A;
-	color: #FFF;
+	color: #FFF !important;
 	font-weight: bold;
 	padding: 6px 12px;
 	text-align: center;
@@ -430,7 +444,7 @@ article p code {
 .button-big {
 	display: block;
 	font-weight: bold;
-	padding: 10px;
+	padding: 20px;
 	font-size: 1.5em;
 }
 
@@ -445,8 +459,14 @@ article p code {
 .share-bar {
 	height: 25px;
 	margin: 10px 0;
+	padding: 10px 0;
+	border: 0 solid #e7e7e7;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	text-align: center;
 }
-.share-button { float: left; }
+
+.share-button { display: inline-block; }
 
 /* Navigation buttons */
 .blog-navigation-buttons {

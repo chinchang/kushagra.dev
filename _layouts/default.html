@@ -4,7 +4,7 @@
   	<meta charset="UTF-8">
   	<meta name="description" content="Code and Create" />
 	<title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
     <link rel="stylesheet" href="/css/pygments.css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss.xml">
@@ -24,8 +24,8 @@
                 <div></div>
               </div>
               <div class="_3dface  _3dface--bottom">
-                <a href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Flocalhost%3A4000%2F&region=follow_link&screen_name=chinchang457&tw_p=followbutton&variant=2.0">
-                  <img src="https://twitter.com/images/resources/twitter-bird-light-bgs.png" width="100">
+                <a href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Flocalhost%3A4000%2F&region=follow_link&screen_name=chinchang457&tw_p=followbutton&variant=2.0" class="header-cube__twitter-link">
+                  <img src="https://dev.twitter.com/sites/default/files/images_documentation/bird_blue_48.png" width="44" class="valign-middle">
                 </a>
               </div>
             </div>
@@ -35,9 +35,9 @@
           <a class="top-header__link" href="/"><h1>Kushagra Gour</h1></a>
           <h2>Game developer . Hacker . Creativity freak!</h2>
         </header>
-        
+
         {% include nav.html %}
-        
+
         {% if page.type != 'game' %}
         <div id="content">
           {{ content }}
@@ -58,6 +58,10 @@
     {% include footer.html %}
 
     {% include analytics.html %}
+
+    {% if page.name == 'blog' %}
+    <script type="text/javascript" src="/js/prism.js"></script>
+    {% endif %}
 
   </body>
 
