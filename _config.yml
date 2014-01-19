@@ -1,3 +1,6 @@
+safe: true
+lsi: false
+
 root_url: http://kushagragour.in
 title: Kushagra Gour- Creativity freak!
 permalink: /blog/:year/:month/:title/
