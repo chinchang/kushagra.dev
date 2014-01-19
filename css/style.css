@@ -345,16 +345,16 @@ article a:HOVER {
 }
 
 .blog article a {
-	padding-bottom: 2px;
-	border-bottom: 1px hsl(64, 40%, 47%) solid;
+	color: hsl(64, 40%, 47%); /* green */
 }
 
 .blog article a:HOVER {
-	border-color: #F2C45A;
+	color: #F2C45A; /* yellow */
 }
 
 article.list-item {
-	margin-bottom: 10px;
+	padding: 20px 0;
+	border-bottom: 1px solid #e7e7e7;
 }
 
 article.list-item--lab {
@@ -365,7 +365,9 @@ article.list-item:last-child {
 	margin-bottom: 0;
 }
 
-article .post-title {
+article .post-title a {
+	border: 0!important;
+	color: inherit;
 }
 
 article .post-meta {
@@ -420,7 +422,7 @@ article p code {
 
 .button {
 	background-color: #F2C45A;
-	color: #FFF;
+	color: #FFF !important;
 	font-weight: bold;
 	padding: 6px 12px;
 	text-align: center;
@@ -438,7 +440,7 @@ article p code {
 .button-big {
 	display: block;
 	font-weight: bold;
-	padding: 10px;
+	padding: 20px;
 	font-size: 1.5em;
 }
 
@@ -453,8 +455,14 @@ article p code {
 .share-bar {
 	height: 25px;
 	margin: 10px 0;
+	padding: 10px 0;
+	border: 0 solid #e7e7e7;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	text-align: center;
 }
-.share-button { float: left; }
+
+.share-button { display: inline-block; }
 
 /* Navigation buttons */
 .blog-navigation-buttons {
