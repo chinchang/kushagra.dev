@@ -296,6 +296,10 @@ footer {
   top: 20px;
 }
 
+.header-cube__twitter-link {
+	line-height: 100px;
+}
+
 .main-page-cube {
 	margin: 50px auto;
 }
