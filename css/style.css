@@ -628,3 +628,28 @@ Games
 	-moz-sizing: border-box;
 	box-sizing: border-box;
 }
+
+
+/* Fix link box */
+.fixed-link-box {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	opacity: 0.6;
+	-moz-transition: 0.25s ease-in-out;
+	-webkit-transition: 0.25s ease-in-out;
+	transition: 0.25s ease-in-out;
+}
+
+.fixed-link-box:hover {
+	opacity: 1;
+}
+
+.rss-link {
+	background: #FE9900 url('/images/icons/rss.svg') no-repeat;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background-size: 48px;
+	margin: 0 10px;
+}

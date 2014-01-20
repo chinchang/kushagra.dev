@@ -60,9 +60,12 @@
     {% include analytics.html %}
 
     {% if page.name == 'blog' %}
+    <div class="fixed-link-box">
+      <a href="/feed/rss.xml" class="rss-link" target="_blank"></a>
+    </div>
+
     <script type="text/javascript" src="/js/prism.js"></script>
     {% endif %}
-
   </body>
 
 
