@@ -512,3 +512,5 @@ Till next time, bbye.
 - [https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html](https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html)
 
 Thanks [JSBin](http://jsbin.com/) for your lovely console panel :)
+
+*Update: Join the [discussion on HN](https://news.ycombinator.com/item?id=7089380).*
