@@ -9,7 +9,7 @@ pygments: true
 lab_projects:
 - name: "Hint.css"
   link: "hint/"
-- name: "piCSSel-artt"
+- name: "piCSSel-art"
   link: "picssel-art/"
 - name: "Iso-Blocks"
   link: "isoblocks/"
