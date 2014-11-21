@@ -15,6 +15,8 @@ lab_projects:
   link: "isoblocks/"
 
 games:
+- name: "Chal Jhoote"
+  link: "chal-jhoote"
 - name: "Feed the Gods"
   link: "feed-the-gods"
 - name: "Save Me (LD23)"
