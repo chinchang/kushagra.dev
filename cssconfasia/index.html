@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<title></title>
 
-	<link rel="stylesheet" href="reveal.min.css">
-	<link rel="stylesheet" href="night.css" id="theme">
-	<link rel="stylesheet" href="solarized_dark.css">
+	<link rel="stylesheet" href="lib/css/reveal.min.css">
+	<link rel="stylesheet" href="lib/css/night.css" id="theme">
+	<link rel="stylesheet" href="lib/css/solarized_dark.css">
 
 	<style>
 	.topic {
@@ -849,11 +849,15 @@ $z-index-modal-box: 5; // on top of everything</code></pre></div>
 	</div>
 
 	<div class="game-help">
-		Open <code style="background:#46A0AA">10.10.0.249:8000</code> on your mobiles/laptop to play along
+		Open <code style="background:#46A0AA">PUT_YOUR_IP_HERE:8000</code> on your mobiles/laptop to play along
 	</div>
 
-	<script src="lib/head.min.js"></script>
-	<script src="reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="lib/js/reveal.min.js"></script>
+	<script src="game/phaser.js"></script>
+	<script src="game/script.js"></script>
+	<script src="lib/js/socket.io.js"></script>
+
 
 	<script>
 
@@ -874,17 +878,33 @@ $z-index-modal-box: 5; // on top of everything</code></pre></div>
 
 			// Optional libraries used to extend on reveal.js
 			dependencies: [
-				{ src: 'lib/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 				{
-					src: 'lib/highlight.js', async: true, callback: function() {
+					src: 'lib/js/highlight.js', async: true, callback: function() {
 						hljs.configure({
   							tabReplace: '   ', // 4 spaces
   						});
 						hljs.initHighlightingOnLoad();
 					}
-				},
+				}
 			]
 		});
+
+		window.addEventListener('keydown', function (e) {
+			var canvas = document.querySelector('canvas');
+
+			if (e.which === 71) {
+				if (!/show/.test(document.body.className)) {
+					window.noRevealKeyboard = true;
+					document.body.classList.add('show');
+				}
+				else {
+					window.noRevealKeyboard = false;
+					document.body.classList.remove('show');
+				}
+			}
+		});
+
 	</script>
 
 </body>

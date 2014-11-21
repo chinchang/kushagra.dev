@@ -1,0 +1,173 @@
+<html ng-app="app">
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="MainCtrl">
+
+<div class="screen  ta-center" id="js-home-screen">
+    <br>
+    <h1 style="text-transform: uppercase;">Know Thy CSS Properties</h1>
+    <h2>A game made for <a href="cssconf.asia" target="_blank">CSSConf.Asia</a></h3>
+    <form action="" ng-submit="onCodeSubmit()" class="join-form">
+        <textarea placeholder="property: value" ng-model="code" class="code-input"></textarea>
+
+        <div class="ta-center">
+            <input id="js-submit-btn" type="submit" class="btn" value="SUBMIT"/>
+        </div>
+    </form>
+</div>
+
+<div class="screen  hidden" id="js-game-screen">
+    <div class="cf">
+        <div class="scores-wrap">
+            <h3>LOG</h3>
+            <ul class="logs">
+                <li ng-repeat="log in logs track by $index">{{log}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="footer  ta-align">Game by <a href="https://twitter.com/chinchang457" target="_blank">Kushagra Gour</a></div>
+
+<script src="lib/jquery-2.1.1.js"></script>
+<script src="lib/angular.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+    var app = angular.module('app', []);
+
+    app.controller('MainCtrl', ['$scope', '$http', function($scope, $http) {
+
+        $scope.logs = [];
+
+        $scope.log = function log(data) {
+            $scope.logs.unshift(data);
+        };
+
+        $scope.onCodeSubmit = function onCodeSubmit() {
+            $http.post('/code', { code: $scope.code, name: window.name}).success(function (response) {
+                console.log(response);
+                if (!response) $scope.log('Something went horribly wrong!.');
+                if (response.success) {
+                    $scope.log(response.data || 'Correct code!');
+                   changeButtonColor('#8DBB3C');
+                }
+                else {
+                    $scope.log(response.data);
+                    changeButtonColor('indianred');
+                }
+            });
+        };
+
+        window.scope = $scope;
+    }]);
+
+    var socket = null,
+        el_responses = document.querySelector('#js-responses'),
+        el_submit_btn = document.querySelector('#js-submit-btn'),
+        name = '',
+        cmirror;
+
+
+    function log (data) {
+        window.scope.log(data);
+        window.scope.$digest()
+    }
+
+    function changeButtonColor(color) {
+        if (window.timeout) clearTimeout(window.timeout)
+
+        el_submit_btn.style.background = color;
+        window.timeout = setTimeout(function() {
+            el_submit_btn.style.background = '#C7A526';
+        }, 1000);
+    }
+
+    function initSocketListeners () {
+        socket.on('welcome', function (data) {
+            id = data.id;
+            log(data.msg);
+            init();
+        });
+
+        socket.on('msg', function (data) {
+            log(data);
+        });
+
+        socket.on('level-start', function (msg) {
+            createLevel(msg.data);
+            state = states.PLAYING;
+        });
+
+        socket.on('update-players', function (data) {
+            for (var i = 0, len = data.length; i < len; i++) {
+                // do not update myself, for now.
+                if (data[i].id === id) continue;
+                var player = players[data[i].id];
+                if (!player) continue;
+                player.x = data[i].x;
+                player.y = data[i].y;
+            };
+        });
+    }
+
+    /* Game code */
+    var players = {},
+        me = null,
+        id = 0,
+        name = "User"
+        updateInterval = 1000/10,
+        states = {
+            PLAYING: 0,
+            READY: 1
+        },
+        state = states.PLAYING;
+
+    function generateRandomColor () {
+        return '#' + (~~(Math.random()*255) + (~~(Math.random()*255)<<8) + (~~(Math.random()*255)<<16) + (1<<24)).toString(16).slice(1);
+    }
+
+    function forEvery (obj, cb) {
+        // Its an array
+        if (obj instanceof Array) {
+            for (var i = 0, len = obj.length; i < len; i++) {
+                cb.call(this, obj[i]);
+            }
+            return;
+        }
+        // otherwise, loop object
+        for (var i in obj) {
+            cb.call(this, obj[i]);
+        }
+    }
+
+    function init () {
+        // notify server about our data
+        socket.emit('set-data', {
+            name: name
+        });
+    }
+
+    window.addEventListener('load', function () {
+        if (name) {
+            socket = io.connect('/');
+            initSocketListeners();
+        }
+    });
+
+
+    // setInterval(function ()  {
+    //     $('input[type="submit"]').click()
+    // }, 5000)
+
+</script>
+</body>
+</html>

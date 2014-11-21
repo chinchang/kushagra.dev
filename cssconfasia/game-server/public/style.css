@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.cf {
+    overflow: hidden;
+    zoom: 1;
+}
+.hidden { display: none; }
+.ta-center{ text-align: center; }
+
+body {
+    font-size: 16px;
+    font-family: Helvetica;
+    color: #777;
+}
+
+a {
+    color: #C7A526;
+}
+
+input, textarea {
+    border: 1px solid #CCC;
+    padding: 12px;
+    font-size: 1.5em;
+    color: #777;
+}
+
+.btn {
+    background: #C7A526;
+    color: white;
+    bottom: 0;
+    left: 0;
+    border: none;
+    padding: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.btn, .code-input {
+    width: 80%;
+    max-width: 600px;
+}
+
+.ready-btn {
+    margin: 20px 10px;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+.game-box {
+    float: left;
+    width: 60%;
+    margin-bottom: 15px;
+}
+.scores-wrap {
+    width: 35%;
+    float: right;
+}
+.scores-wrap--admin {
+    text-align: center;
+}
+
+.score {
+    font-size: 100px;
+}
+.score-label {
+    font-size: 20px;
+}
+.logs {
+    /*padding-left: 14px;*/
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 16px;
+    list-style: none;
+}
+
+.logs li {
+    position: relative;
+    padding: 4px;
+    background: #FEFEFE;
+
+}
+.logs li:first-child {
+    font-weight: bold;
+}
+
+.logs li:nth-child(even) {
+    background: #F7F7F7;
+}
+
+.score-row-color-box {
+    position: absolute;
+    width: 13px;
+    height: 19px;
+    right: 2px;
+    top: 2px;
+}
+.score-row-me {
+    border: 3px solid #0A8BE7;
+}
+
+.join-form {
+    margin-top: 50px;
+}
+
+.footer {
+    position: fixed;
+    text-align: center;
+    bottom: 20px;
+    left: 0;
+    padding-top: 40px;
+    width: 100%;
+}
+
+@media screen and ( max-height: 600px ){
+    .screen {
+        height: auto;
+    }
+
+    .footer {
+        position: static;
+    }
+}
+
+
+
+/* PIE */
+
+.pieContainer {
+  width: 300px;
+  height: 300px;
+  margin: 30px auto 0;
+}
+
+.pieBackground, .pie, .hold {
+  width: 300px;
+  height: 300px;
+}
+
+.pieBackground {
+  background-color: #CCC;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.pie {
+  position: absolute;
+  border-radius: 50%;
+  clip: rect(0px, 150px, 300px, 0px);
+}
+.hold {
+  position: absolute;
+  border-radius: 50%;
+  clip: rect(0px, 300px, 300px, 150px);
+}
+.pieSlice2 {
+    transform: rotate(180deg);
+}
+.pie {
+    background: #8DBB3C;
+    transition: 0.4s ease;
+}
+.pieSlice1 .pie {
+  transform:rotate(1deg);
+}
