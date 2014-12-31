@@ -1,0 +1,80 @@
+---
+layout: post
+title: '2014 - Year in review'
+---
+
+Guess what...it has been an year since I last wrote a post here! Time has passed by pretty quickly (as always) this year. This post is just a written log of things that `(did_happen && I_remember)` this year. Lets begin.
+
+### January
+
+2014 began with a bang. I published this year's first (and last too) blog post on [learning GIT by implementing it in JavaScript](http://kushagragour.in/blog/2014/01/build-git-learn-git/). The post received a lot of appreciation on [Hackernews](https://news.ycombinator.com/item?id=7089380). In short, people loved it. I had one or two further parts for this article, though I never couldn't take out time to finish them. 2015, may be :)
+
+### April
+
+Nothing major here, but I had some [really good 3-4 days](https://www.facebook.com/bhaisaab.baagi/media_set?set=a.310731669079177.1073741831.100004270386636&type=1) with my awesome engineering team at Wingify. We were in the middle of our product's revamp and it had taken a lot of time already. Our engineering team was a little stressed out along with being excited. So we decided to leave our office for a few days and marched out to 'The Westin Sohna Resor'.
+
+![](/images/2014/westin1.jpg)
+![](/images/2014/westin2.jpg)
+
+All techie ppl inside one huge villa at such an awesome place writing code till 6 in the morning and pool games in the evening...crazy time it was.
+
+
+### June
+
+One of the biggest acheivement this year. Months and months of effort by our engineering team at Wingify - [VWO 3.0](http://app.vwo.com/) finally released on June 25th. It was really a festive environment at the office. Everyone was super relaxed and extremely happy with what a bunch of cool engineers had created.
+
+I also released my first ever music piece in June. It was a [beatbox on MJ's Billie Jean](https://soundcloud.com/kushagra-gour/billie-jean-beatboxed).
+
+### July
+
+Our cow, Bahula, gave a cute baby boy this month. We named him 'Krishna' as he was dark in color. But with time his name got reduced to just 'Kalu' :D Yeah, that is what we call him now :)
+
+![](/images/2014/kalu.jpg)
+
+### September
+
+Our complete engineering team went on a trip to the beautiful land of Nepal.. That place is amazing I must say. We did a small trek there and went on a bicycle sprint in Pokhra. Super fun-filled 4 days.
+
+![](/images/2014/nepal1.jpg)
+
+Wingify sponsored JSFoo this year which is a JavaScript conference in Banglore, India. So a bunch of people from engineering went there to setup a booth for 2 days. It was my first time attending a conference from sponsor point of view. It was nice altogether. I also gave a small hiring pitch on stage there in 'Hindi' which received an applause from the audience :P
+
+![](/images/2014/jsfoo.jpg)
+
+### November
+
+November was kickass! I spoke at a conference for the first time. And guess which conference it was - [CSS Conf Asia](http://2014.cssconf.asia/#speakers)! It was really a great experience to be speaking on CSS, at such a big conference, in front of such awesome people and along with such great co-speakers. [My talk](http://kushagragour.in/cssconfasia/) went better than expected. People applauded and people laughed - that is all I wanted. Though I couldn't interact face to face much there :p I guess I'm a digital geek.
+
+![](/images/2014/cssconf1.jpg)
+![](/images/2014/cssconf2.jpg)
+
+Plus I went to Universal Studios, Singapore. The most amazing thing there was the transformers ride...can't explain it in words. Had lots of fun with my friends - Himanshu and Kushagra.
+
+I also started maintaining a travelouge in this trip: [http://travel.kushagragour.in/](http://travel.kushagragour.in/)
+
+
+### December
+
+On December's first day I finally started my Facebook page - [**"Bematlab"**](https://www.facebook.com/bematlab). A place where I do what I love - draw & crack PJs, together :D Here is a latest comic from there:
+
+![](/images/2014/bematlab.jpg)
+
+I also released my [second beatbox piece](https://soundcloud.com/kushagra-gour/teri-yaaden-beatbox-jam), this time a jam with a friend.
+
+In the end was Wingify's year end outing! We went to Krabi, Thailand. Water-water everywhere. Had nice time there.
+
+![](/images/2014/krabi1.jpg)
+
+### Summary
+
+This year I travelled, drew stuff, attended a conference, spoke at a conference, created music, bought lots of toys, collected more flutes, worked on lots of side projects (couldn't release any though), spent more time with family and friend, learnt stuff. [Hint.css](https://github.com/chinchang/hint.css) reached 3000 stars on github.
+
+### For 2015 (in no order)
+
+- Create and release more amazing stuff
+- Take 'Bematlab' to next level
+- Draw more
+- Get better at Beatboxing
+- Collaborate more with other artists and programmers
+- Travel to more places
+- Learn something new everyday
