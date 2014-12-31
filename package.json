@@ -1,0 +1,14 @@
+{
+  "name": "kushagragour-website",
+  "version": "0.1.0",
+  "description": "My personal website.",
+  "author": "Kushagra Gour <chinchang457@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chinchang/chinchang.github.com.git"
+  },
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-minify-css": "~0.3.11"
+  }
+}

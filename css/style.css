@@ -38,6 +38,12 @@ h3 {
 	font-size: 1.5em;
 }
 
+html {
+	height: 100%;
+	margin-left: calc(100vw - 100%);
+	margin-right: 0;
+}
+
 body{
 	padding: 0;
 	margin: 0;
@@ -94,9 +100,9 @@ hr {
 }
 
 ._3dbox:hover {
-	-moz-transform: rotateX(90deg);
-	-webkit-transform: rotateX(90deg);
-	transform: rotateX(90deg);
+	-moz-transform: scale(1.5) rotateX(90deg);
+	-webkit-transform: scale(1.5) rotateX(90deg);
+	transform: scale(1.5) rotateX(90deg);
 }
 
 ._3dface {
@@ -144,6 +150,7 @@ hr {
 
 #outer-container {
 	width: 750px;
+	min-height: calc(100% - 100px);
 	margin: 0 auto;
 }
 
@@ -301,7 +308,7 @@ footer {
 }
 
 .main-page-cube {
-	margin: 50px auto;
+	margin: 150px auto;
 }
 
 .main-page-cube__twitter-link {
@@ -528,7 +535,7 @@ Social bar 2
 	cursor: pointer;
 	text-align: center;
 	line-height: 25px;
-	border-top: 10px solid;
+	border-top: 15px solid;
 	overflow: hidden;
 	-webkit-transition: border-width .25s ease;
 	-moz-transition: border-width .25s ease;
