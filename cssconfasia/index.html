@@ -7,6 +7,14 @@
 	<link rel="stylesheet" href="lib/css/reveal.min.css">
 	<link rel="stylesheet" href="lib/css/night.css" id="theme">
 	<link rel="stylesheet" href="lib/css/solarized_dark.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'lib/css/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
 
 	<style>
 	.topic {
@@ -118,6 +126,20 @@
 		top: -7px;
 		margin-left: 10px;
 		width: 80px;
+	}
+	.pdf-link {
+		position: fixed!important;
+		bottom: 4px;
+		right: 34px;
+		font-size: 17px!important;
+		z-index: 11;
+		opacity: 0.5;
+	}
+	.pdf-link:hover {
+		opacity: 1;
+	}
+	.reveal .controls {
+		bottom: 20px;
 	}
 	</style>
 </head>
@@ -837,6 +859,9 @@ $z-index-modal-box: 5; // on top of everything</code></pre></div>
 
 			<section>
 				<h1>Play Time :)</h1>
+				<br>
+				<a href="javascript:void(0)">Press 'g'</a><br>
+				<!-- <a href="http://bit.ly/cssconfasia">bit.ly/cssconfasia</a> -->
 			</section>
 
 			<section>
@@ -846,17 +871,26 @@ $z-index-modal-box: 5; // on top of everything</code></pre></div>
 
 		</div>
 
+		<a href="https://speakerdeck.com/chinchang/10-commandments-for-efficient-css-architecture-cssconf-dot-asia-14" target="_blank" class="pdf-link">See PDF</a>
+
 	</div>
 
 	<div class="game-help">
 		Open <code style="background:#46A0AA">PUT_YOUR_IP_HERE:8000</code> on your mobiles/laptop to play along
 	</div>
 
+
 	<script src="lib/js/head.min.js"></script>
 	<script src="lib/js/reveal.min.js"></script>
 	<script src="game/phaser.js"></script>
-	<script src="game/script.js"></script>
 	<script src="lib/js/socket.io.js"></script>
+	<script>
+		if (!window.location.search.match( /print-pdf/gi )) {
+			var s = document.createElement('script');
+			s.src = 'game/script.js';
+			document.getElementsByTagName( 'head' )[0].appendChild(s);
+		}
+	</script>
 
 
 	<script>
@@ -865,7 +899,7 @@ $z-index-modal-box: 5; // on top of everything</code></pre></div>
 		// https://github.com/hakimel/reveal.js#configuration
 		Reveal.initialize({
 			// keyboard: false,
-			controls: false,
+			//controls: false,
 			progress: true,
 			history: true,
 			center: true,
@@ -890,7 +924,11 @@ $z-index-modal-box: 5; // on top of everything</code></pre></div>
 			]
 		});
 
-		window.addEventListener('keydown', function (e) {
+		if (!window.location.search.match( /print-pdf/gi )) {
+			window.addEventListener('keydown', onKeyDown);
+		}
+
+		function onKeyDown(e) {
 			var canvas = document.querySelector('canvas');
 
 			if (e.which === 71) {
@@ -903,7 +941,20 @@ $z-index-modal-box: 5; // on top of everything</code></pre></div>
 					document.body.classList.remove('show');
 				}
 			}
-		});
+		}
+	</script>
+
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-19798102-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
 
 	</script>
 
