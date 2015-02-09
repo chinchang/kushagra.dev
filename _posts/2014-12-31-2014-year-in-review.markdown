@@ -43,9 +43,9 @@ Wingify sponsored JSFoo this year which is a JavaScript conference in Banglore, 
 
 ### November
 
-November was kickass! I spoke at a conference for the first time. And guess which conference it was - [CSS Conf Asia](http://2014.cssconf.asia/#speakers)! It was really a great experience to be speaking on CSS, at such a big conference, in front of such awesome people and along with such great co-speakers. [My talk](http://kushagragour.in/cssconfasia/) went better than expected. People applauded and people laughed - that is all I wanted. Though I couldn't interact face to face much there :p I guess I'm a digital geek.
+November was kickass! I spoke at a conference for the first time. And guess which conference it was - [CSS Conf Asia](http://2014.cssconf.asia/#speakers)! It was really a great experience to be speaking on CSS, at such a big conference, in front of such awesome people and along with such great co-speakers. [My talk](https://www.youtube.com/watch?v=FYcu-wWrNqo) went better than expected. People applauded and people laughed - that is all I wanted. Though I couldn't interact face to face much there :p I guess I'm a digital geek.
 
-![](/images/2014/cssconf1.jpg)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FYcu-wWrNqo" frameborder="0" allowfullscreen></iframe>
 ![](/images/2014/cssconf2.jpg)
 
 Plus I went to Universal Studios, Singapore. The most amazing thing there was the transformers ride...can't explain it in words. Had lots of fun with my friends - Himanshu and Kushagra.
