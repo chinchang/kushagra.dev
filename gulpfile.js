@@ -1,10 +1,12 @@
 var gulp = require('gulp'),
 	minifyCSS = require('gulp-minify-css');
+	concat = require('gulp-concat');
 
 gulp.task('minify-css', function() {
-  gulp.src('./css/style.css')
-    .pipe(minifyCSS({ keepBreaks:true }))
-    .pipe(gulp.dest('./css/min/'))
+  gulp.src(['./css/style.css', './css/prism.css'])
+    .pipe(concat('./css/style.min.css'))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('./'))
 });
 
 gulp.task('default', function() {
