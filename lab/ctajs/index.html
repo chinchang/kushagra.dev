@@ -1,3 +1,7 @@
+---
+name: cta.js
+---
+
 <!doctype html>
 <html class="no-js" lang="">
 	<head>
@@ -192,7 +196,7 @@
 			cta.js or "Call to Animation" is a light-weight performant library to animate your "action-to-effect" paths.
 		</p>
 
-		<a href="https://github.com/chinchang/cta.js#installation" title="Off to Github" class="btn  download-btn">Get started</a>
+		<a href="https://github.com/chinchang/cta.js#installation" onClick="_gaq.push(['_trackEvent', 'ctajs', 'start']);" title="Off to Github" class="btn  download-btn">Get started</a>
 
 		<section class="section--white" style="margin-top: 40px;">
 			<h2>What can I use it for?</h2>
@@ -282,8 +286,8 @@
 			<span class="modal-close-btn"></span>
 			<h3>Do you think this is Awesome?</h3>
 			<br>
-			<a onclick="closeShowingModal(); return;" class="btn  btn--blue">Yes</a>
-			<a onclick="closeShowingModal(); return;" class="btn  btn--blue">No</a>
+			<a onclick="closeShowingModal(true); return;" class="btn  btn--blue">Yes</a>
+			<a onclick="closeShowingModal(false); return;" class="btn  btn--blue">No</a>
 
 		</div>
 
@@ -297,7 +301,7 @@
 		<footer>
 			<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-via="chinchang457" data-related="chinchang457" data-hashtags="animate,javascript">Tweet</a>
 
-			<div class="footer-text">By <a href="https://twitter.com/chinchang457">Kushagra Gour</a> • <a href="https://github.com/chinchang/cta.js">Source</a> • Made with JavaScript in India.</div>
+			<div class="footer-text">By <a href="https://twitter.com/chinchang457">Kushagra Gour</a> • <a href="https://github.com/chinchang/cta.js">Source</a> • Made with JavaScript in India • <a href="/lab/">More projects</a> </div>
 		</footer>
 
 		<a class="github-ribbon" href="https://github.com/chinchang/cta.js"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
@@ -305,7 +309,10 @@
 		<script src="src/cta.js"></script>
 		<script>
 		var closeFn;
-		function closeShowingModal() {
+		function closeShowingModal(liked) {
+			if (liked !== undefined) {
+				_gaq.push(['_trackEvent', 'ctajs', liked ? 'liked' : 'unliked']);
+			}
 			var showingModal = document.querySelector('.modal.show');
 			if (!showingModal) return;
 			showingModal.classList.remove('show');
@@ -318,6 +325,7 @@
 		document.addEventListener('click', function (e) {
 			var target = e.target;
 			if (target.dataset.ctaTarget) {
+				_gaq.push(['_trackEvent', 'ctajs', 'modal']);
 				closeFn = cta(target, document.querySelector(target.dataset.ctaTarget), { relativeToWindow: true }, function showModal(modal) {
 					modal.classList.add('show');
 					document.body.classList.add('disable-mouse');
@@ -335,5 +343,6 @@
 		</script>
 		<script async="true" type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 
+    	{% include analytics.html %}
 	</body>
 </html>

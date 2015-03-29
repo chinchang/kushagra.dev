@@ -7,6 +7,8 @@ permalink: /blog/:year/:month/:title/
 highlighter: pygments
 
 lab_projects:
+- name: "cta.js"
+  link: "ctajs/"
 - name: "Hint.css"
   link: "hint/"
 - name: "piCSSel-art"
