@@ -9,12 +9,16 @@ highlighter: pygments
 lab_projects:
 - name: "cta.js"
   link: "ctajs/"
+  desc: "A JavaScript library to animate your 'action-to-effect' paths."
 - name: "Hint.css"
   link: "hint/"
+  desc: "A tooltip library in CSS for your lovely websites"
 - name: "piCSSel-art"
   link: "picssel-art/"
+  desc: "App to draw pixel art with CSS!"
 - name: "Iso-Blocks"
   link: "isoblocks/"
+  desc: "Write using isometric blocks"
 
 games:
 - name: "Chal Jhoote"

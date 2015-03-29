@@ -371,6 +371,9 @@ article.list-item {
 article.list-item--lab {
 	text-align: center;
 }
+.list-item--lab__desc {
+	opacity: 0.5;
+}
 
 article.list-item:last-child {
 	margin-bottom: 0;
