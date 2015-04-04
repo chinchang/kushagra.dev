@@ -3,7 +3,7 @@ layout: post
 title: "Journey with Rubik's Cube"
 ---
 
-Yes, I started playing with Rubik's cube recently. I have had rubik's cube (very cheap one though) since I was 14, but it was just timepass then. I didn't know how to solve it. It was just one-sided play (if you get what I mean) as I could figure how to solve only one side completely. But this January my cousin came to our place for his vacations and he bought along a rubik's cube (probably just like me back then). As anyone would do now-a-days to know how something is done, I google-d too. And a whole lot of videos on how to solve rubik's cube showed up. Me and my cousin together learned how to solve the cube with the very basic method and have been practicing since then. I am writing this post to document the approach I have taken to learn whatever I know on solving a 3x3x3 rubik's cube. Lets start.
+Yes, I started playing with Rubik's cube recently. I have had rubik's cube (very cheap one though) since I was 14, but it was just time-pass then. I didn't know how to solve it. It was just one-sided play (if you get what I mean) as I could figure how to solve only one side completely. But this January my cousin came to our place for his vacations and he brought along a rubik's cube (probably just like me back then). As anyone would do now-a-days to know how something is done, I google-d too. And a lot of videos on how to solve rubik's cube showed up. Me and my cousin together learned how to solve the cube with the very basic method and have been practicing since then. I am writing this post to document the approach I have taken to learn whatever I know on solving a 3x3x3 rubik's cube. Lets start.
 
 ### Learning Beginner's method
 
@@ -23,21 +23,21 @@ As soon as my cousin left, I ordered a new cube online. It was a Taxton T-3 stic
 
 ### Getting faster with finger tricks
 
-I kept seeing videos of rubik's cube championships and various tips and tricks on solving the cube faster. Soon it became clear that to reduce my time I had 2 options:
+I kept seeing videos of rubik's cube championships and various tips and tricks on solving the cube faster. Soon it became clear that to lower my solve time I had 2 options:
 
 1. Learn a faster method of solving (Fridrich method)
 2. Get faster with what I already knew
 
-Upon a quick glance at the Fridrich method, I releasized it was better not to take it at that time :P It has huge number of algorithms that one needs to learn to execute it perfectly. All rubik's cube champions use this method, in pure or derivative form. So I went with the second option, also called as finger tricks in puzzle world.
+Upon a quick glance at the Fridrich method, I realized it was better not to take it at that time :P It has huge number of algorithms that one needs to learn to execute it perfectly. All rubik's cube champions use this method, in pure or derivative form. So I went with the second option, also called as finger tricks in puzzle world.
 
-Finger tricks basically refers to using your fingers to turn the cube instead of using complete hand (which is slower). Also it emphasizes on smooth transitions from one algorithm to another without wasting much time in getting ready to execute the next one. This is how those sub-20 second guyz are able to turn the cube layers sooooo fast! So I got down to this, practicing each algorithm individually I knew whenever I got time - in bus, train, office, home...everywhere. I actually did not do even a single solve for about 2 weeks, just practice individual algorithms and developing my own finger turn-style. And then I did a timed solve just to show a colleage I could also solve the cube apart from just turning it seemingly ad-hoc - I did it in 2:40 minutes that day!
+Finger tricks basically refers to using your fingers to turn the cube instead of using complete hand (which is slower). Also it emphasizes on smooth transitions from one algorithm to another without wasting much time in getting ready to execute the next one. This is how those sub-20 second guyz are able to turn the cube layers sooooo fast! So I got down to this, practicing each algorithm individually I knew whenever I got time - in bus, train, office, home...everywhere. I actually did not do even a single solve for about 2 weeks, just practice individual algorithms and developing my own finger turn-style. And then I did a timed solve just to show a colleague I could also solve the cube apart from just turning it seemingly ad-hoc - I did it in 2:40 minutes that day!
 
 <a>**Average Time: ~ 3 minutes**</a>
 
 
 ### Move to Fridrich Method?
 
-Getting down to 3 minutes on average, I started feeling that I was not able to go lower than that. Also honestly I was getting a little bored with doing those algorithms over and over and over again. So I decided on giving Fridrich method a shot. Now fridrich method involves large no. of algorithms which can be divided into categories:
+Getting down to 3 minutes on average, I started feeling that I was not able to go lower than that. Also honestly I was getting a little bored with doing those algorithms over and over and over again. So I decided on giving Fridrich method a shot. Fridrich method involves large no. of algorithms which can be divided into categories:
 
 1. to solve 1st and 2nd layer - F2L
 2. to solve 3rd layer - PLL and OLL
