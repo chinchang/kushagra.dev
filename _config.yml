@@ -7,6 +7,9 @@ permalink: /blog/:year/:month/:title/
 highlighter: pygments
 
 lab_projects:
+- name: "konsole.table"
+  link: "https://www.npmjs.com/package/konsole.table"
+  desc: "console.table polyfill for Node.js"
 - name: "cta.js"
   link: "ctajs/"
   desc: "A JavaScript library to animate your 'action-to-effect' paths."
