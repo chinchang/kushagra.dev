@@ -195,8 +195,8 @@ name: cta.js
 			margin-top: 20px;
 		}
 		.top-twitter-button {
-			display: none;
-			position: absolute;
+			display: none!important;
+			position: absolute!important;
 			top: 10px;
 			left: 10px;
 		}
@@ -363,7 +363,7 @@ name: cta.js
 			}
 		})
 		</script>
-		<script async="true" type="text/javascript" src="http://platform.twitter.com/widgets.js" onload="document.querySelector('.top-twitter-button').style.display='block'"></script>
+		<script async="true" type="text/javascript" src="http://platform.twitter.com/widgets.js" onload="document.querySelector('.top-twitter-button').style.setProperty('display', 'block', 'important')"></script>
 		<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 
     	{% include analytics.html %}
