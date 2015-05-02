@@ -180,18 +180,23 @@ hr {
 	margin: 0 auto;
 	background: #f7f7f7;
 	-webkit-animation: logo-pop 0.3s ease-out forwards 0.5s;
+	animation: logo-pop 0.3s ease-out forwards 0.5s;
 	transform: translateY(-150px);
 }
 
 @-webkit-keyframes logo-pop {
 	from {
-		/*opacity: 0;*/
-		/*transform: scale(0.3);*/
 		transform: translateY(-150px);
 	}
 	to {
-		/*opacity: 1;*/
-		/*transform: scale(1);*/
+		transform: translateY(0);
+	}
+}
+@keyframes logo-pop {
+	from {
+		transform: translateY(-150px);
+	}
+	to {
 		transform: translateY(0);
 	}
 }
@@ -258,29 +263,45 @@ hr {
 	background: #45B98A;
 	opacity: 0;
 	-webkit-animation: menu-item-show 0.4s ease forwards 0.5s;
+	animation: menu-item-show 0.4s ease forwards 0.5s;
 }
 #main-container > nav li:nth-child(2) {
 	background: #EA5954;
 	-webkit-animation-delay: 0.6s;
+	animation-delay: 0.6s;
 }
 #main-container > nav li:nth-child(3) {
 	-webkit-animation-delay: 0.7s;
+	animation-delay: 0.7s;
 	background: #6CC8C5;
 }
 #main-container > nav li:nth-child(4) {
 	background: #F7D842;
 	-webkit-animation-delay: 0.8s;
+	animation-delay: 0.8s;
 }
 #main-container > nav li:nth-child(5) {
 	background: #F7D842;
 	-webkit-animation-delay: 0.9s;
+	animation-delay: 0.9s;
 }
 #main-container > nav li:nth-child(6) {
 	-webkit-animation-delay: 1s;
+	animation-delay: 1s;
 	background: #6CC8C5;
 }
 
 @-webkit-keyframes menu-item-show {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes menu-item-show {
 	from {
 		opacity: 0;
 		transform: translateY(30px);
