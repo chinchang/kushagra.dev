@@ -179,18 +179,20 @@ hr {
 	border-radius: 50%;
 	margin: 0 auto;
 	background: #f7f7f7;
-	-webkit-animation: logo-pop 0.2s ease-out forwards;
-	transform-origin: center;
+	-webkit-animation: logo-pop 0.3s ease-out forwards 0.5s;
+	transform: translateY(-150px);
 }
 
- @-webkit-keyframes logo-pop {
+@-webkit-keyframes logo-pop {
 	from {
 		/*opacity: 0;*/
-		transform: scale(0.3);
+		/*transform: scale(0.3);*/
+		transform: translateY(-150px);
 	}
 	to {
 		/*opacity: 1;*/
-		transform: scale(1);
+		/*transform: scale(1);*/
+		transform: translateY(0);
 	}
 }
 
