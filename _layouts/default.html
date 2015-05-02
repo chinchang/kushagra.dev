@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
   	<meta charset="UTF-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
   	<meta name="description" content="Code and Create" />
-	<title>{{ page.title }} - {{ site.title }}</title>
+    <title>{{ page.title }} - {{ site.title }}</title>
 
     <link rel="stylesheet" href="/css/style.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
@@ -18,22 +19,10 @@
 
         <header class="top-header {% if page.name == 'home' %}top-header--home{% endif %}">
 
-          {% if page.name != 'home' %}
-          <div class="space3d  top-header__cube">
-            <div class="_3dbox">
-              <div id="me" class="_3dface  _3dface--front">
-                <div></div>
-              </div>
-              <div class="_3dface  _3dface--bottom">
-                <a href="https://twitter.com/intent/follow?original_referer=http%3A%2F%2Flocalhost%3A4000%2F&region=follow_link&screen_name=chinchang457&tw_p=followbutton&variant=2.0" class="header-cube__twitter-link">
-                  <img src="/images/twitter-logo.png" width="44" class="valign-middle">
-                </a>
-              </div>
-            </div>
-          </div>
-          {% endif %}
-
-          <a class="top-header__link" href="/"><h1>Kushagra Gour</h1></a>
+        <div id="me" class="top-header__logo">
+          <div></div>
+        </div>
+        <a class="top-header__link" href="/"><h1>Kushagra Gour</h1></a>
           <h2>Game developer . Hacker . Creativity freak!</h2>
         </header>
 
