@@ -30,6 +30,8 @@ h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
+input { outline: 0; }
+input:focus { box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); }
 .clear { clear: both; }
 
 .talign-middle { text-align: center; }
@@ -536,9 +538,8 @@ article p code {
 }
 
 .share-bar {
-	height: 25px;
 	margin: 10px 0;
-	padding: 10px 0;
+	padding: 15px 0 10px;
 	border: 0 solid #e7e7e7;
 	border-top-width: 1px;
 	border-bottom-width: 1px;
@@ -704,6 +705,70 @@ Games
 	margin: 0 10px;
 }
 
+/*********************************
+SEARCH BAR
+**********************************/
+
+.search {
+	position: fixed;
+	background-color: rgba(102, 51, 153, 0.95);
+	background-color: rgba(0, 191, 255, 0.85);
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	color: beige;
+	z-index: 1;
+  /* transform: translateY(-320px); */
+	transition: 0.2s ease;
+	visibility: hidden;
+	opacity: 0;
+}
+.search__input {
+	border: 1px solid #EEE;
+	font-size: 50px;
+	border-left: none;
+	border-right: none;
+	color: #777;
+	width: 100%;
+	padding: 10px 31px;
+	text-align: center;
+}
+.search__results {
+	text-align: center;
+	list-style: none;
+	padding: 0;
+	transition: 0.2s ease;
+}
+.search__results.is-hidden {
+	opacity: 0;
+	transform: translateY(-1vh);
+}
+
+.search__results > li > a {
+	display: block;
+	background-color: #f9f9f9;
+	color: #666;
+	padding: 17px;
+	margin: 12px 14px;
+	box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+	opacity: 0;
+	/*transform: translateY(10px);*/
+	/*transform: scale(0.4);*/
+	/*-webkit-animation: slide-up 0.15s ease-out forwards;*/
+}
+.search.is-active {
+	opacity: 1;
+	visibility: visible;
+}
+
+@-webkit-keyframes slide-up {
+	to {
+		transform: translateY(0);
+		transform: scale(1);
+		opacity: 1;
+	}
+}
 
 @media (max-width: 750px) {
 	#outer-container {
