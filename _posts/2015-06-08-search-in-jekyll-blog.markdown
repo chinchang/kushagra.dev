@@ -7,6 +7,10 @@ I recently implemented search on this website (made in Jekyll). Its a complete c
 
 There are not too many articles out there on implementing a functional post search on a Jekyll blog, so I thought of writing about it. The following method described works over your blog's RSS feeds. So make sure you have your RSS feed URL ready. If you have a jekyll/octopress blog, chances are you already have a `feed.xml` in your root folder. If not, [read here](http://joelglovier.com/writing/rss-for-jekyll/).
 
+### tl;dr
+
+[**super-search**](https://github.com/chinchang/super-search/) - A library to easily add search on your jekyll or any other blog.
+
 Lets start implementing the search.
 
 ### Fetching the RSS feeds.
