@@ -747,28 +747,23 @@ SEARCH BAR
 
 .search__results > li > a {
 	display: block;
+	position: relative;
 	background-color: #f9f9f9;
 	color: #666;
 	padding: 17px;
 	margin: 12px 14px;
 	box-shadow: 0 3px 4px rgba(0,0,0,0.1);
-	opacity: 0;
-	/*transform: translateY(10px);*/
-	/*transform: scale(0.4);*/
-	/*-webkit-animation: slide-up 0.15s ease-out forwards;*/
+}
+.search__result-date {
+	color: #BBB;
+	position: absolute;
+	right: 12px;
 }
 .search.is-active {
 	opacity: 1;
 	visibility: visible;
 }
 
-@-webkit-keyframes slide-up {
-	to {
-		transform: translateY(0);
-		transform: scale(1);
-		opacity: 1;
-	}
-}
 
 @media (max-width: 750px) {
 	#outer-container {

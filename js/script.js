@@ -86,14 +86,13 @@
 	});
 
 	searchInputEl.addEventListener('input', function onInputChange() {
-		var currentResultHash;
+		var currentResultHash, d;
 
 		currentInputValue = searchInputEl.value;
 		if (!currentInputValue) {
 			searchResultsEl.innerHTML = '';
 			return;
 		}
-		searchResultsEl.classList.add('is-hidden');
 		searchResultsEl.style.offsetWidth;
 
 		var matchingPosts = posts.filter(function (post) {
@@ -101,14 +100,18 @@
 				return true;
 			}
 		});
+		if (!matchingPosts.length) {
+			searchResultsEl.classList.add('is-hidden');
+		}
 		currentResultHash = matchingPosts.reduce(function(hash, post) { return post.title + hash; }, '');
-		if (currentResultHash !== lastSearchResultHash) {
+		if (matchingPosts.length && currentResultHash !== lastSearchResultHash) {
+			searchResultsEl.classList.remove('is-hidden');
 			searchResultsEl.innerHTML = matchingPosts.map(function (post) {
-				return '<li><a href="' + post.link + '">' + post.title + '</a></li>';
+				d = new Date(post.pubDate);
+				return '<li><a href="' + post.link + '">' + post.title + '<span class="search__result-date">' + d.toUTCString().replace(/.*(\d{2})\s+(\w{3})\s+(\d{4}).*/,'$2 $1, $3') + '</span></a></li>';
 			}).join('');
 		}
 		lastSearchResultHash = currentResultHash;
-		searchResultsEl.classList.remove('is-hidden');
 	});
 
 })();
