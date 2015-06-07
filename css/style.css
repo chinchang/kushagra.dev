@@ -30,6 +30,8 @@ h2, h3, h4, h5, h6 {
 	margin: 0;
 }
 
+input { outline: 0; }
+input:focus { box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); }
 .clear { clear: both; }
 
 .talign-middle { text-align: center; }
@@ -536,9 +538,8 @@ article p code {
 }
 
 .share-bar {
-	height: 25px;
 	margin: 10px 0;
-	padding: 10px 0;
+	padding: 15px 0 10px;
 	border: 0 solid #e7e7e7;
 	border-top-width: 1px;
 	border-bottom-width: 1px;
@@ -702,6 +703,86 @@ Games
 	height: 50px;
 	background-size: 48px;
 	margin: 0 10px;
+}
+
+/*********************************
+SEARCH BAR
+**********************************/
+
+.search-btn {
+	position: fixed;
+	right: 10px;
+	top: 15px;
+	fill: #DDD;
+}
+.search-btn:hover {
+	fill: #BBB;
+}
+
+.search {
+	position: fixed;
+	background-color: rgba(102, 51, 153, 0.95);
+	background-color: rgba(0, 191, 255, 0.85);
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	color: beige;
+	z-index: 1;
+	transition: 0.2s ease;
+	visibility: hidden;
+	opacity: 0;
+}
+.search__close-btn {
+	fill: #DDD;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+	z-index: 1;
+}
+.search__input {
+	border: 0;
+	font-size: 50px;
+	border-left: none;
+	border-right: none;
+	color: #999;
+	width: 100%;
+	padding: 10px 31px;
+	text-align: center;
+	transform: translateY(-100%);
+	transition: 0.15s ease-out 150ms;
+}
+.is-active .search__input {
+	transform: translateY(0);
+}
+.search__results {
+	text-align: center;
+	list-style: none;
+	padding: 0;
+	transition: 0.2s ease;
+}
+.search__results.is-hidden {
+	opacity: 0;
+	transform: translateY(-1vh);
+}
+
+.search__results > li > a {
+	display: block;
+	position: relative;
+	background-color: #f9f9f9;
+	color: #666;
+	padding: 17px;
+	margin: 12px 14px;
+	box-shadow: 0 3px 4px rgba(0,0,0,0.1);
+}
+.search__result-date {
+	color: #BBB;
+	position: absolute;
+	right: 12px;
+}
+.search.is-active {
+	opacity: 1;
+	visibility: visible;
 }
 
 
