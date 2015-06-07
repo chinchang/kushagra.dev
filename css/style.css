@@ -304,6 +304,13 @@ hr {
 	padding: 0 14px 0 10px;
 }
 
+
+.blog #main-container > nav a {
+	font-size: 32px;
+	line-height: 32px;
+	letter-spacing: -4px;
+}
+
 #main-container > nav li:nth-child(2) {
 	-webkit-animation-delay: 0.6s;
 	animation-delay: 0.6s;
