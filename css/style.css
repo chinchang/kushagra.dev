@@ -709,6 +709,16 @@ Games
 SEARCH BAR
 **********************************/
 
+.search-btn {
+	position: fixed;
+	right: 10px;
+	top: 15px;
+	fill: #DDD;
+}
+.search-btn:hover {
+	fill: #BBB;
+}
+
 .search {
 	position: fixed;
 	background-color: rgba(102, 51, 153, 0.95);
@@ -719,20 +729,30 @@ SEARCH BAR
 	bottom: 0;
 	color: beige;
 	z-index: 1;
-  /* transform: translateY(-320px); */
 	transition: 0.2s ease;
 	visibility: hidden;
 	opacity: 0;
 }
+.search__close-btn {
+	fill: #DDD;
+	position: absolute;
+	right: 10px;
+	top: 15px;
+}
 .search__input {
-	border: 1px solid #EEE;
+	border: 0;
 	font-size: 50px;
 	border-left: none;
 	border-right: none;
-	color: #777;
+	color: #999;
 	width: 100%;
 	padding: 10px 31px;
 	text-align: center;
+	transform: translateY(-100%);
+	transition: 0.15s ease-out 150ms;
+}
+.is-active .search__input {
+	transform: translateY(0);
 }
 .search__results {
 	text-align: center;

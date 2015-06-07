@@ -67,11 +67,18 @@
 	}
 	xmlhttp.send();
 
-	function toggleSearch() {
+	window.toggleSearch = function toggleSearch() {
 		searchEl.classList.toggle('is-active');
+		if (searchEl.classList.contains('is-active')) {
+			// while opening
+			searchInputEl.value = '';
+		} else {
+			// while closing
+			searchResultsEl.classList.add('is-hidden');
+		}
 		setTimeout(function () {
 			searchInputEl.focus();
-		}, 100);
+		}, 210);
 	}
 
 	window.addEventListener('keyup', function onKeyPress(e) {
@@ -90,7 +97,8 @@
 
 		currentInputValue = searchInputEl.value;
 		if (!currentInputValue) {
-			searchResultsEl.innerHTML = '';
+			lastSearchResultHash = '';
+			searchResultsEl.classList.add('is-hidden');
 			return;
 		}
 		searchResultsEl.style.offsetWidth;
