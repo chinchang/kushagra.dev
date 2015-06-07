@@ -87,7 +87,7 @@
 		}
 	});
 	window.addEventListener('keypress', function onKeyPress(e) {
-		if (e.which === 47) {
+		if (e.which === 47 && !searchEl.classList.contains('is-active')) {
 			toggleSearch();
 		}
 	});
@@ -96,7 +96,7 @@
 		var currentResultHash, d;
 
 		currentInputValue = searchInputEl.value;
-		if (!currentInputValue) {
+		if (!currentInputValue || currentInputValue.length < 3) {
 			lastSearchResultHash = '';
 			searchResultsEl.classList.add('is-hidden');
 			return;
