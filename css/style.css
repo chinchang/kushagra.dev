@@ -759,6 +759,8 @@ SEARCH BAR
 	text-align: center;
 	list-style: none;
 	padding: 0;
+	overflow-x: hidden;
+	height: calc(100% - 110px);
 	transition: 0.2s ease;
 }
 .search__results.is-hidden {
@@ -833,5 +835,16 @@ SEARCH BAR
 	.social-bar-2__item .social-bar-2__item__text {
 		transform: translateY(0px);
 		opacity: 1;
+	}
+
+	.search__input {
+		font-size: 33px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.search__result-date {
+		position: static;
+		display: block;
 	}
 }
