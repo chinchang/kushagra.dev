@@ -7,6 +7,9 @@ permalink: /blog/:year/:month/:title/
 highlighter: pygments
 
 lab_projects:
+- name: "Prototyp"
+  link: "http://prototyp.in"
+  desc: "App for quick and easy interaction prototyping"
 - name: "konsole.table"
   link: "https://www.npmjs.com/package/konsole.table"
   desc: "console.table polyfill for Node.js"
