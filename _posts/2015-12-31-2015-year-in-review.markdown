@@ -63,7 +63,7 @@ This has to be the first category for review as this is what I love to do the mo
 
 <figure>
 	<h3><a href="http://kushagragour.in/code-blast-codemirror/demo/index.html">Code Blast plugin for Codemirror</a></h3>
-	<video src="/images/2015/codeblast.mp4" autoplay alt=""></video>
+	<video src="/images/2015/codeblast.mp4" autoplay loop alt=""></video>
 	<figcaption>A hack trigerred by someone's <a href="https://twitter.com/JoelBesada/status/670343885655293952">hack</a>. Too much of fun :P</figcaption>
 </figure>
 
@@ -205,7 +205,7 @@ I made an app called [**Gamjeong**](http://chennainerd.2015.nodeknockout.com/) a
 	<h3>Started Cardistry</h3>
 	<img src="/images/2015/cardistry.jpg" />
 	<figcaption>
-		A month back I also started [Cardistry](http://www.theory11.com/media/4545-what-is-cardistry) and some basic sleight of hands tricks with cards. Its very interesting and exciting. Will post my first video on cardistry soon :)
+		A month back I also started <a href="http://www.theory11.com/media/4545-what-is-cardistry">Cardistry</a> and some basic sleight of hands tricks with cards. Its very interesting and exciting. Will post my first video on cardistry soon :)
 	</figcaption>
 </figure>
 
