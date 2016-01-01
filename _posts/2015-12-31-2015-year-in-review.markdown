@@ -217,6 +217,13 @@ I made an app called [**Gamjeong**](http://chennainerd.2015.nodeknockout.com/) a
 	</figcaption>
 </figure>
 
+<figure>
+	<h3>More gaming</h3>
+	<figcaption>
+		Bought a PS3 and have started playing games again after a long gap. Good to be back!
+	</figcaption>
+</figure>
+
 ### Summary
 
 I created a lot of open source stuff, travelled a lot (by my standards). As far as art and music is concerned, I wanted to do more.
