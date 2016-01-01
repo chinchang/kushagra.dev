@@ -1,0 +1,232 @@
+---
+layout: post
+title: '2015 - Year in review'
+---
+
+Another year passed and its review time :) But this time instead of reviewing the year month wise, I'll do it in few categories.
+
+## Tech
+
+This has to be the first category for review as this is what I love to do the most.
+
+<figure>
+	<h3>Perfaudit</h3>
+	<img src="/images/2015/perfaudit.png" alt="">
+	<figcaption><a href="https://perfaudit.com">PerfAudit</a> was this year's first side project that I did with my colleague <a href="https://twitter.com/Apoorv_Saxena">Apoorv</a>. We did case-studies for some awesome websites, helped people make their sites faster and got lot of appreciation. It was fun.</figcaption>
+</figure>
+
+<figure>
+	<h3>cta.js</h3>
+	<img src="/images/2015/ctajs.png" alt="">
+	<figcaption><a href="http://kushagragour.in/lab/ctajs/">Cta.js</a> is a JS library I wrote inspired from <a href="https://twitter.com/aerotwist">Paul Lewis'</a> technique to performantly transition DOM elements.</figcaption>
+</figure>
+
+<figure>
+	<h3>konsole.table, super-search & screenlog.js</h3>
+	<figcaption>
+	3 more JS shorties I did. <a href="https://www.npmjs.com/package/konsole.table">konsole.table</a> was my first npm module which provides `console.table` in node environment. And <a href="https://github.com/chinchang/super-search"
+	>super-search</a> is a JS library to enable search feature in any blog/website having an RSS feed.
+	<br>
+	<a href="https://github.com/chinchang/screenlog.js">screenlog.js</a> makes it possible to use `console` statements without opening the console in your browser.
+	</figcaption>
+</figure>
+
+
+<figure>
+	<h3>Prototyp</h3>
+	<img src="/images/2015/prototyp.png" alt="">
+	<figcaption>Then I did one of my most "useful" app of the year :P I had started playing with Framer.js and was really impressed with what one can do with it very easily. But the editor for it is paid and just available for mac. So I decided to build a web app over Framer.js which is free and works across platforms.
+	<br>
+	I would say this is by far the closest I have come to creating a product :) Hope to make it more usable in coming time
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Kalu</h3>
+	<figcaption>
+	<a href="http://kushagragour.in/lab/kalu/">Kalu</a> was a calculator concept I implemented using codemirror editor. It aims at making long inter-linked calculation easy.
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Word Blast Game</h3>
+	<img src="/images/2015/wordblast.jpg" alt="">
+	<figcaption>The <a href="http://js13kgames.com/entries/word-blast">only game</a> I did this year was for JS13KGames compo. Wanted to make more games though.</figcaption>
+</figure>
+
+<figure>
+	<h3>lollipop.css</h3>
+	<img src="/images/2015/lollipopcss.png" alt="">
+	<figcaption><a href="http://kushagragour.in/lab/lollipop.css/">A self-learning experiment</a> to implement Android Lollipop animations in pure CSS.</figcaption>
+</figure>
+
+
+<figure>
+	<h3><a href="http://kushagragour.in/code-blast-codemirror/demo/index.html">Code Blast plugin for Codemirror</a></h3>
+	<video src="/images/2015/codeblast.mp4" autoplay alt=""></video>
+	<figcaption>A hack trigerred by someone's <a href="https://twitter.com/JoelBesada/status/670343885655293952">hack</a>. Too much of fun :P</figcaption>
+</figure>
+
+
+## Art
+
+<figure>
+	<h3>INKtober</h3>
+	<img src="/images/2015/inktober.jpg" alt="">
+	<figcaption>
+	INKtober is a challenge where people draw something on every day of October. This was my first and although I couldn't draw all 31 days, I managed to pull off quite a few and had a very happy time doing it. Heres a summary of it but checkout all of them on my <a href="http://draw.kushagragour.in/tagged/inktober">art blog</a>.
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Bematlab</h3>
+	<img src="/images/2015/bematlab.jpg" alt="">
+	<figcaption>
+	I started <a href="https://www.facebook.com/bematlab">Bematlab</a> last year and this year I added content whenever I got time and ideas. Drawing is fun! Ideas are rare! Heres one of my favourite from this year.
+	</figcaption>
+</figure>
+
+## Music
+
+Not much here. I practiced beatboxing and playing flute occasionally. Also released a small <a href="https://soundcloud.com/kushagra-gour/resham-firiri-bansuri-n-beatbox">beatbox+flute piece</a>.
+
+## Sports
+
+<figure>
+	<h3>Football with office pals</h3>
+	<figcaption>
+	We made an unofficial WingifyFC at Wingify :) We have started playing on Sat/Sun, then shifted to Wed/Fridays, then just fridays and then stopped in the end :P We'll definitely start it again and also have a tournament coming up this January :)
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Won TT doubles tournament</h3>
+	<img src="/images/2015/tt.png" alt="" height="300">
+	<figcaption>
+	A TT double tournament was organized at Wingify. I and <a href="https://twitter.com/s0ftvar">Varun</a> won that :)
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Marathon</h3>
+	<img src="/images/2015/marathon.jpg" alt="">
+	<figcaption>
+		I ran a 7KM marathon...in Leh, Ladakh with my friend Manpreet :)
+	</figcaption>
+</figure>
+
+## Conferences
+
+Attended MetaRefresh conference in Bangalore where we (wingify) were a sponsor and Apoorv gave a talk. It was all fine until...there was a Karnataka-bandh and we had to stay for hours on Bangalore airport :(
+
+## Travel
+
+<figure>
+	<h3>Chamba, Himachal</h3>
+	<img src="/images/2015/chamba.jpg" alt="">
+	<figcaption>
+		An awesome trip to Chamba/Khajjiar/Dalhousie with Kamal, Ajay, Hariom and Gillz (Vivek). First time in Himachal :) <a href="http://travel.kushagragour.in/tagged/chamba">More pics</a>.
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Kasol, Himachal</h3>
+	<img src="/images/2015/kasol.png" alt="">
+	<figcaption>
+		Full Wingify Engineering team outing.
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Leh, Ladakh</h3>
+	<img src="/images/2015/ladakh1.jpg" alt="">
+	<img src="/images/2015/ladakh2.jpg" alt="">
+	<figcaption>
+		No words to speak about this trip. Beautiful mountains, clean roads and absolute silence. You have to be there to experience it. And I must say, the food is just top class in Leh! <a href="http://travel.kushagragour.in/tagged/ladakh">More pics</a>.
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Jim Corbett, Uttarakhand</h3>
+	<img src="/images/2015/corbett1.jpg" alt="">
+	<figcaption>
+		Full Wingify Engineering team outing, again :) We saw no tiger, infact no animal. Just chilled at the resort. We are playing mafia in above still.
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Laangkawi, Malaysia</h3>
+	<img src="/images/2015/malaysia1.jpg" alt="">
+	<img src="/images/2015/malaysia2.jpg" alt="">
+	<figcaption>
+		Wingify's year end trip with 100+ people :) It was amazing to see 100+ wingifians fill up the complete airport, plane, then the resort, beaches! Did para-sailing for first time. Last trip of year, absolute fun.
+	</figcaption>
+</figure>
+
+
+## Work
+
+<figure>
+	<h3>First time campus recruitment</h3>
+	<img src="/images/2015/dce1.png" alt="">
+	<img src="/images/2015/dce2.png" alt="">
+	<figcaption>
+		After 4 years out of college, I was in a campus (DTU) for recruiting engineers. Good first time experience :P
+	</figcaption>
+</figure>
+
+### Focusing on DX along with UX
+
+This year I shifted my partial focus from User experience (UX) to Developer experience (DX, self-invented term). DX means I work towards making life of developers easy in every aspect, whether its writing code or releasing it. That involves things like automating stuff and is a refreshing change for me.
+
+### BSP
+
+We organized our first Bug squashing party at office. Quite a success I would say.
+
+### New office
+
+Our product team at Wingify moved to a new office. New environment, new vibes, less distraction.
+
+### Hackathon
+
+I made an app called [**Gamjeong**](http://chennainerd.2015.nodeknockout.com/) along with [Dheeraj](https://twitter.com/dheerajhere) at a hackathon we had at Wingify. It send you push notifications for tweets that match the keyword and sentiment you say.
+
+## Misc
+
+<figure>
+	<h3>Rubiks Cube</h3>
+	<iframe width="420" height="315" src="https://www.youtube.com/embed/hVr-DeIR7TY" frameborder="0" allowfullscreen></iframe>
+	<figcaption>
+		Beginning this year, I started solving rubiks cube. Apart from getting down from 5 minutes/solve to 50 seconds/solve, best thing was perseverance. I kept practicing it the whole year...probably because its too handly and I keep playing with it in buses, trains, boring weddings and where not :)
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>Started Cardistry</h3>
+	<img src="/images/2015/cardistry.jpg" />
+	<figcaption>
+		A month back I also started [Cardistry](http://www.theory11.com/media/4545-what-is-cardistry) and some basic sleight of hands tricks with cards. Its very interesting and exciting. Will post my first video on cardistry soon :)
+	</figcaption>
+</figure>
+
+<figure>
+	<h3>New Car</h3>
+	<img src="/images/2015/ciaz.jpg" />
+	<figcaption>
+		Got a new car for my Dad :)
+	</figcaption>
+</figure>
+
+### Summary
+
+I created a lot of open source stuff, travelled a lot (by my standards). As far as art and music is concerned, I wanted to do more.
+
+### For 2016 (in no order)
+
+- Create and release more amazing stuff, as usual. More on product side instead of small libraries.
+- Draw more often
+- Release some music pieces
+- Start a tech podcast
+- Travel to more places
+- Work towards making someone's life better
+- Help bro with [Prakriti](http://prakritee.com)

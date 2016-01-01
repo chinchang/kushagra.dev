@@ -80,7 +80,14 @@ hr {
 	margin: 5px 0;
 }
 
-
+figure {
+	padding: 10px;
+	background: rgba(0, 0, 0, 0.06);
+	text-align: center;
+}
+figure h3 {
+	color: #A3A948;
+}
 /* 3D Cube */
 .space3d {
 	-webkit-perspective: 1000px;

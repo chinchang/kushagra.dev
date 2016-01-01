@@ -7,6 +7,9 @@ permalink: /blog/:year/:month/:title/
 highlighter: pygments
 
 lab_projects:
+- name: "screenlog.js"
+  link: "https://github.com/chinchang/screenlog.js"
+  desc: "Bring console.log on the screen"
 - name: "lollipop.css"
   link: "lollipop.css/"
   desc: "Android Lollipop animations in CSS"
