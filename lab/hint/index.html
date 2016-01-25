@@ -41,6 +41,7 @@ name: Hint.css
 					text-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
 				font-family: 'Lobster', cursive;
 			}
+
 			.version {
 					font-size: 0.3em;
 					border-radius: 50%;
@@ -49,6 +50,14 @@ name: Hint.css
 					top: 0px;
 					position: absolute;
 					right: -65px;
+			}
+			@media screen and (max-width: 400px) {
+				body {
+					font-size: 15px;
+				}
+				.version {
+					right: 0;
+				}
 			}
 			.section {
 				padding: 3em 0;
@@ -181,6 +190,14 @@ name: Hint.css
 				box-shadow: 0px 6px 17px rgba(0,0,0,0.2);
 				cursor: default;
 			}
+			@media screen and (max-width:500px) {
+				.window {
+					width: auto;
+					min-width: 0;
+					margin: 0 10px;
+				}
+			}
+
 
 			.titlebar {
 				background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ebebeb, color-stop(1, #d5d5d5)));
@@ -339,7 +356,7 @@ name: Hint.css
 										<path fill="#ffffff" d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11.05 8.23,12.81 10,13.58V16H14V13.58C15.77,12.81 17,11.05 17,9A5,5 0 0,0 12,4Z" />
 								</svg>
 							</a>
-							<a class="status-icon  hint--bottom-right  hint--success" style="background:lightgreen" data-hint="This is success tooltip">
+							<a class="status-icon  hint--bottom-left  hint--success" style="background:lightgreen" data-hint="This is success tooltip">
 								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
 									<path fill="#ffffff" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
 								</svg>
@@ -348,8 +365,8 @@ name: Hint.css
 
 						<h3>Extra</h3>
 
-						<p>
-							<a class="hint--left  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
+						<p style="margin-bottom:50px">
+							<a class="hint--bottom  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
 						</p>
 
 						<p>
@@ -362,7 +379,7 @@ name: Hint.css
 							<a class="hint--top  hint--no-animate" data-hint="Get a simple show/hide tooltip">Dont like animation?</a>
 						</p>
 						<p>
-							<a class="hint--right  hint--bounce" data-hint="Bounce">Adding a <code>hint--bounce</code> class gives you that...</a>
+							<a class="hint--bottom  hint--bounce" data-hint="Bounce">Adding a <code>hint--bounce</code> class gives you that...</a>
 						</p>
 					</div>
 				</div>
