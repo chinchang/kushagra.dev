@@ -4,199 +4,424 @@ name: Hint.css
 ---
 
 <!DOCTYPE html>
-  <head>
-  	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hint.css - A tooltip library in CSS</title>
-    <meta name="description" content="A tooltip library in CSS">
-    <meta name="viewport" content="width=device-width">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Hint.css - A tooltip library in CSS</title>
+		<meta name="description" content="A CSS only tooltip library">
+		<meta name="viewport" content="width=device-width">
+		<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="stylesheet" type="text/css" href="/css/pygments-light.css" />
-    <link rel="stylesheet" type="text/css" href="hint.min.css">
-    <link rel="image_src" href="hint.png"/>
-  </head>
+		<!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+		<link rel="stylesheet" type="text/css" href="/css/pygments-light.css" />
+		<link rel="stylesheet" type="text/css" href="hint.min.css">
+		<link rel="image_src" href="hint.png"/>
 
+		<style type="text/css">
+			body {
+				text-align: center;
+				font-family: Arial;
+				background: #D9623F;
+				min-height: 100vh;
+				font-size: 18px;
+				padding: 0;
+				margin: 0;
+				color: white;
+			}
 
-  <body>
-  	<header>
-  		<h1 class="title">HINT.css</h1>
-		  <h3>A tooltip library in CSS for your lovely websites</h3>
-  	</header>
+			h1 {
+				font-size: 6em;
+					text-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
+				font-family: 'Lobster', cursive;
+			}
+			h2 {
+				font-size: 4em;
+				margin: 0.5em 0;
+					text-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
+				font-family: 'Lobster', cursive;
+			}
+			.version {
+					font-size: 0.3em;
+					border-radius: 50%;
+					padding: 1px 11px;
+					text-shadow: none;
+					top: 0px;
+					position: absolute;
+					right: -65px;
+			}
+			.section {
+				padding: 3em 0;
+				position: relative;
+			}
+			.section:after {
+					content: '';
+					position: absolute;
+					bottom: -25px;
+					background: inherit;
+					left: -4px;
+					height: 50px;
+					right: -2px;
+					z-index: 1;
+					transform: rotate(2deg);
+			}
+			.section:last-of-type {
+				padding-bottom: 2em;
+			}
+			.section:last-of-type:after {
+				display: none;
+			}
+			.section--inverted:after {
+					left: -4px;
+					height: 50px;
+					right: -2px;
+					z-index: 1;
+					transform: rotate(-2deg);
+			}
+			.hero {
+				background: #5CC2F1;
+				background: #81C439;
+				background: #7D6EC6;
+					/*text-shadow: 0 3px 7px rgba(0,0,0,0.25);*/
+			}
+			.section:nth-child(2) {
+				background: #9993C1;
+				background: #8BBA66;
+				background: #5BC0EB;
+				background:
+			}
+			.section:nth-child(3) {
+				background: #D9623F;
+				background: #E4CC37;
+				/* #BD3769 */
+				/* #E18335 */
+			}
+			.section:nth-child(4) {
+				background: #7D6EC6;
+			}
+			.section:nth-child(5) {
+				background: #D9623F;
+				/*background: ##E18335;*/
+				/* #BD3769 */
+				/* #E18335 */
+			}
+			.section-inner {
+				max-width: 600px;
+				margin: 0 auto;
+			}
+			@media screen and (max-width: 650px) {
+					.section-inner {
+						width: auto;
+						padding: 0 10px;
+					}
+			}
+			h1,h3{
+				margin: 5px 0;
+			}
+			a {
+				color: #1A5A7A;
+				color: #fff;
+				outline: none;
+				text-decoration: none;
+			}
+			.btn {
+				/*background: rgba(0,0,0,0.2);*/
+				background: white;
+				padding: 20px;
+				display: inline-block;
+				border-radius: 8px;
+				text-transform: uppercase;
+				transition: 0.3s ease;
+			}
+			.btn:hover {
+				transform: scale(1.2);
+			}
+			.download-btn {
+				color: #7D6EC6;
+				margin-top: 1em;
+			}
+			.position-grid {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.position-grid__cell {
+				flex: 1 33.33%;
+				font-size: 0.8em;
+			}
+			.position-grid__cell a {
+				display: inline-block;
+				width: 90%;
+				background: rgba(91, 192, 235, 0.37);
+				color: white;
+				margin: 2px 0;
+				padding: 16px 5px;
+			}
+			.status-icon {
+				background: indianred;
+				fill: white;
+				border-radius: 3px;
+				padding: 5px 6px 2px;
+				margin: 0 4px;
+				border: 1px solid rgba(0,0,0,0.2);
+			}
+			.features ul {
+				padding: 0;
+				list-style: none;
+			}
+			.footer {
+				color: rgba(255, 255, 255, 0.7);
+			}
+			.window {
+				background: #fff;
+				width: 50vw;
+				min-width: 450px;
+				margin: auto;
+				border: 1px solid #acacac;
+				border-radius: 6px;
+				box-shadow: 0px 6px 17px rgba(0,0,0,0.2);
+				cursor: default;
+			}
 
-  	<div class="main-container">
+			.titlebar {
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ebebeb, color-stop(1, #d5d5d5)));
+				background: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
+				background: -moz-linear-gradient(top, #ebebeb, #d5d5d5);
+				background: -ms-linear-gradient(top, #ebebeb, #d5d5d5);
+				background: -o-linear-gradient(top, #ebebeb, #d5d5d5);
+				background: linear-gradient(top, #ebebeb, #d5d5d5);
+				color: #4d494d;
+				font-size: 11pt;
+				line-height: 20px;
+				text-align: center;
+				width: 100%;
+				height: 20px;
+				border-top: 1px solid #f3f1f3;
+				border-bottom: 1px solid #b1aeb1;
+				border-top-left-radius: 6px;
+				border-top-right-radius: 6px;
+			}
 
-      <section class="section  section--what">
-    		<h2 class="section__title">W
-          H
-          A
-          T
-    		</h2>
-    		<p>
-          <strong>Hint.css</strong> is a tooltip library written in SASS which uses only HTML/CSS to create simple tooltips.
-        </p>
+			.buttons {
+				padding-left: 8px;
+				padding-top: 3px;
+				float: left;
+				line-height: 0px;
+			}
 
-        <p>
-          It does not rely on any JavaScript and rather uses <strong>data-* attribute</strong>, <strong>pseudo elements</strong>, <strong>content property</strong> and <strong>CSS3 transitions</strong> to create the tooltips. Also it uses <strong>BEM</strong> naming convention particularly for the modifiers.
-        </p>
+			.titlebar__btn {
+				font-size: 9pt;
+				line-height: 11px;
+				width: 11px;
+				height: 11px;
+				border: 1px solid rgba(0,0,0,0.15);
+				border-radius: 50%;
+				display: inline-block;
+				margin-right: 5px;
+				cursor: pointer;
 
-        <p>
-          <a href="https://github.com/chinchang/hint.css" class="btn">Download Hint.css from Github <small>(v1.3.3)</small></a>
-        </p>
+			}
+			.close {
+				background: #ff5c5c;
+			}
+			.minimize {
+				background: #ffbd4c;
+			}
+			.zoom {
+				background: #00ca56;
+			}
+			.titlebar__btn:hover {
+				border-color: rgba(0, 0, 0, 0.3);
+			}
+			.content {
+				padding: 50px 10px;
+				color: #777;
+			}
+			.content a {
+				color: #444;
+			}
+			.content h3 {
+				text-transform: uppercase;
+				font-size: 0.8em;
+				margin: 22px 0 0;
+				padding: 4px 0;
+				background: rgba(00,0,0,0.02);
+				color: rgba(0,0,0,0.9);
+				border-bottom: 1px solid rgba(0,0,0,0.04);
+			}
+			pre {
+				color: #555;
+				font-size: 1.5em;
+			}
+			a svg {
+				fill: rgba(255, 255, 255, 0.6);
+			}
+			a:hover svg {
+				fill: white;
+			}
+			.social-wrap {
+				position:fixed;
+				/*z-index:2;*/
+				right: 20px;
+				top:20px;
+			}
+			@media screen and (max-width:800px) {
+				.social-wrap {
+					margin-top: 20px;
+					position: static;
+		    }
+			}
+		</style>
+		<link rel="stylesheet" href="hint.css">
+	</head>
+	<body>
 
-    	</section>
+		<div class="section  hero">
 
+			<h1 style="display:inline-block;position:relative">Hint.css <small class="version">2.0</small> </h1>
+			<h3>A pure CSS tooltip library for your lovely websites</h3>
+				<br>
+			<a href="https://github.com/chinchang/hint.css" class="btn  download-btn  hint--top" data-hint="Get it from Github">Download <em style="text-transform:lowercase">(1.5KB minified & gzipped)</em></a>
 
-    	<section class="section  section--examples">
-    		<h2 class="section__title">E
-    		X
-    		A
-    		M
-    		P
-    		L
-    		E
-    		S
-    		</h2>
+			<div class="social-wrap">
+				 <a data-hint="Fork on github" class="hint--bottom-left" href="https://github.com/chinchang/hint.css" style="margin:0 10px">
+					<svg viewBox="0 0 16 16" width="48" height="48">
+						<path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+					</svg>
+				</a>
+				<a data-hint="Tweet about Hint.css v2" class="hint--bottom-left" title="Tweet" href="http://twitter.com/share?url=http://kushagragour.in/lab/hint/&text=Hint.css v2 - A CSS only tooltip library for your lovely websites&count=horiztonal&related=chinchang457&hashtags=css,sass&via=chinchang457" target="_blank">
+					 <svg viewBox="0 0 16 16" width="48" height="48">
+							<path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+							c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+						</svg>
+				</a>
+			</div>
+		</div>
 
-        <h3>Basic ones</h3>
-    		<p>
-					<a href="javascript:void(0)" class="hint--top" data-hint="Yeah, I am >:D">Look, there is something over me.</a>
+		<div class="section  section--inverted">
+			<h2>Tryout</h2>
+
+				<div class="window">
+					<div class="titlebar">
+						<div class="buttons">
+							<a class="titlebar__btn  close  hint--bottom-right" data-hint="Close"></a>
+							<a class="titlebar__btn  minimize  hint--bottom-right" data-hint="Minimize"></a>
+							<a class="titlebar__btn  zoom  hint--bottom-right" data-hint="Zoom"></a>
+						</div>
+						Try hovering over different things
+					</div>
+					<div class="content">
+						<div class="position-grid">
+							<div class="position-grid__cell"><a href="#" data-hint="bottom-right" class="hint--bottom-right">bottom-right</a></div>
+							<div class="position-grid__cell"><a href="#" data-hint="bottom" class="hint--bottom">bottom</a></div>
+							<div class="position-grid__cell"><a href="#" data-hint="bottom-left" class="hint--bottom-left">bottom-left</a></div>
+							<div class="position-grid__cell"><a href="#" data-hint="right" class="hint--right">right</a></div>
+							<div class="position-grid__cell"><a>.</a></div>
+							<div class="position-grid__cell"><a href="#" data-hint="left" class="hint--left">left</a></div>
+							<div class="position-grid__cell"><a href="#" data-hint="top-right" class="hint--top-right">top-right</a></div>
+							<div class="position-grid__cell"><a href="#" data-hint="top" class="hint--top">top</a></div>
+							<div class="position-grid__cell"><a href="#" data-hint="top-left" class="hint--top-left">top-left</a></div>
+						</div>
+
+						<h3>Color Modifiers</h3>
+						<p>
+							<a class="status-icon  hint--bottom-right  hint--error" style="background:indianred" data-hint="This is an error tooltip">
+								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#ffffff" d="M8.27,3L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3M8.41,7L12,10.59L15.59,7L17,8.41L13.41,12L17,15.59L15.59,17L12,13.41L8.41,17L7,15.59L10.59,12L7,8.41" />
+								</svg>
+							</a>
+							<a class="status-icon  hint--bottom-right  hint--warning" style="background:orange" data-hint="This is a warning tooltip">
+								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#ffffff" d="M11,4.5H13V15.5H11V4.5M13,17.5V19.5H11V17.5H13Z" />
+								</svg>
+							</a>
+							<a class="status-icon  hint--bottom-left  hint--info" style="background:lightblue" data-hint="This is an info tooltip">
+								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="#ffffff" d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11.05 8.23,12.81 10,13.58V16H14V13.58C15.77,12.81 17,11.05 17,9A5,5 0 0,0 12,4Z" />
+								</svg>
+							</a>
+							<a class="status-icon  hint--bottom-right  hint--success" style="background:lightgreen" data-hint="This is success tooltip">
+								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+									<path fill="#ffffff" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+								</svg>
+							</a>
+						</p>
+
+						<h3>Extra</h3>
+
+						<p>
+							<a class="hint--left  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
+						</p>
+
+						<p>
+							<a class="hint--top  hint--rounded" data-hint="We have rounded corners for you">Hmm...So you don't like sharp edges?</a>
+						</p>
+
+						<h3>Effects</h3>
+
+						<p>
+							<a class="hint--top  hint--no-animate" data-hint="Get a simple show/hide tooltip">Dont like animation?</a>
+						</p>
+						<p>
+							<a class="hint--right  hint--bounce" data-hint="Bounce">Adding a <code>hint--bounce</code> class gives you that...</a>
+						</p>
+					</div>
+				</div>
+
+				<div class="section-inner" style="opacity: 0.7; margin-top: 25px">
+					<strong>Upgrading from v1.x</strong>: If you are already using v1.x, you may need to tweak certain position classes because of the way tooltips are positioned in v2.
+				</div>
+		</div>
+
+		<div class="section  features">
+				<h2>Features</h2>
+
+	<style>
+	li:before {
+		content: '☺';
+		color: white;
+		font-size: 2em;
+	}
+	</style>
+				<div class="section-inner">
+					<ul>
+						<li>Only CSS. No JavaScript!</li>
+						<li>Small file size. Only 1.5KB minified and gzipped!</li>
+						<li>Easy to use. No config required.</li>
+						<li>Works in all modern browsers.</li>
+					</ul>
+				</div>
+
+		</div>
+
+		<div class="section  section--inverted  usage">
+			<h2>Usage</h2>
+
+			<div class="section-inner">
+
+				<p>
+				First get the library from the <a href="https://github.com/chinchang/hint.css">github repo</a>. Then in your HTML include the library CSS:
+
+				{% highlight css %}<link rel="stylesheet" href="hint.css">{% endhighlight %}
+
+				<p>
+					Now, all you need to do is give your element any position class and tooltip text using the <code>data-hint</code> attribute:
+
+					{% highlight css %}Hello Sir, <span class="hint--bottom" data-hint="Thank you!">hover over me.</span>{% endhighlight %}
 				</p>
 
 				<p>
-					<a href="javascript:void(0)" class="hint--right" data-hint="Are you sure you are?">I am always right!</a>
+				Use it with other available modifiers in various combinations. Available modifiers: <code>hint--error</code>, <code>hint--info</code>, <code>hint--warning</code>, <code>hint--success</code>, <code>hint--rounded</code> and <code>hint--bounce</code>.
 				</p>
+			</div>
 
-				<p>
-					<a href="javascript:void(0)" class="hint--bottom" data-hint="Sure. Cheers!">How about a bottoms up?</a>
-				</p>
+		</div>
 
-				<p>
-					<a href="javascript:void(0)" class="hint--left" data-hint="LEFT-over Sir...">What do we get now?</a></p>
+		<div class="section  footer">
+			<iframe src="http://ghbtns.com/github-btn.html?user=chinchang&repo=hint.css&type=watch&count=true"
+	allowtransparency="true" frameborder="0" scrolling="0" width="105" height="20" style="margin-bottom:12px;"></iframe><br>
+			Made with hands by <a href="https://twitter.com/chinchang457">Kushagra Gour</a> in India
+		</div>
 
-        <h3>On dimensioned elements</h3>
-
-				<p><a class="hint--right" data-hint="Pika pika!" href="javascript:void(0)"><img  src="pikachu.jpg"></a>
-				</p>
-
-        <h3>Color based types</h3>
-
-				<p>
-					<a href="javascript:void(0)" class="hint--top  hint--error" data-hint="This is an error tooltip">Oh man! You are gonna self-destruct in 5 sec.</a>
-				</p>
-
-				<p>
-					<a href="javascript:void(0)" class="hint--left  hint--warning" data-hint="This is a warning tooltip">You did something wrong!</a>
-				</p>
-
-				<p>
-					<a href="javascript:void(0)" class="hint--bottom  hint--info" data-hint="This is an info tooltip">You can use different classes for different types of tooltips.</a>
-				</p>
-
-				<p>
-					<a href="javascript:void(0)" class="hint--left  hint--success" data-hint="This is a success tooltip">Hurray! You have seen all 4 context types.</a>
-				</p>
-
-        <h3>Extra</h3>
-
-				<p>
-					<a href="javascript:void(0)" class="hint--right  hint--always" data-hint="...which always keep showing">You can also make tooltips...</a>
-				</p>
-
-        <p>
-          <a class="hint--right  hint--success  hint--rounded" data-hint="We have rounded corners for you">Hmm...So you don't like sharp edges?</a>
-        </p>
-
-        <h3>Effects</h3>
-        <p>
-          <a href="javascript:void(0)" class="hint--top  hint--no-animate" data-hint="Simple show/hide tooltips with 'hint--no-animate' class">Want no animations?</a>
-        </p>
-
-        <p>
-          <a href="javascript:void(0)" class="hint--right  hint--bounce" data-hint="Bounce">Adding a <code>hint--bounce</code> class gives you that...</a>
-        </p>
-
-    	</section>
-
-      <section class="section  section--how">
-        <h2 class="section__title">U
-        S
-        A
-        G
-        E
-        </h2>
-
-        <p>
-          First get the library from the <a href="https://github.com/chinchang/hint.css">github repo</a>. Then in your HTML include the library CSS:
-          <!-- <pre>&lt;link rel="stylesheet" href="/hint.css"&gt;</pre> -->
-
-          {% highlight css %}<link rel="stylesheet" href="hint.css">{% endhighlight %}
-        </p>
-
-        <p>
-          Any element on your page which needs to have a tooltip has to be given at least one of the position classes: <code>hint--top</code>, <code>hint--bottom</code>, <code>hint--left</code>, <code>hint--right</code> to position the tooltip.
-
-          {% highlight css %}Hello Sir, <span class="hint--bottom">hover over me.</span>{% endhighlight %}
-        </p>
-
-        <p>
-          And the tooltip text has to be given using the <code>data-hint</code> attribute on that element.
-          {% highlight css %}Hello Sir, <span class="hint--bottom" data-hint="Thank you!">hover over me.</span>{% endhighlight %}
-        </p>
-
-        <p>
-          <em>Result</em>:
-          Hello Sir, <span class="hint--bottom" data-hint="Thank you!"><strong>hover over me</strong></span>.
-        </p>
-
-        <p>
-          [<strong>Note</strong>: The <code>hint</code> class is no more required and is deprecated in versions >=1.2.0. Tooltip is shown on elements which have the <code>data-hint</code> attribute instead.]
-        </p>
-
-        <p>
-          Use it with other available modifiers in various combinations. Available modifiers: <code>hint--error</code>, <code>hint--info</code>, <code>hint--warning</code>, <code>hint--success</code>, <code>hint--rounded</code> and <code>hint--bounce</code>.
-        </p>
-
-      </section>
-
-
-      <section class="socialz">
-        <h3>Share it if you like it!</h3>
-
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kushagragour.in/lab/hint/" data-via="chinchang457" data-hashtags="CSS,tooltip,sass">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fkushagragour.in%2Flab%2Fhint%2F&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
-
-        <!-- Place this tag where you want the +1 button to render. -->
-        <div class="g-plusone" data-size="medium" data-href="http://kushagragour.in/lab/hint/"></div>
-
-        <!-- Place this tag after the last +1 button tag. -->
-        <script type="text/javascript">
-          (function() {
-            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-            po.src = 'https://apis.google.com/js/plusone.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-          })();
-        </script>
-
-        <iframe src="http://ghbtns.com/github-btn.html?user=chinchang&repo=hint.css&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="105" height="20"></iframe>
-
-      </section>
-
-  	</div><!-- END .main-container -->
-
-    <footer>
-      Written by <a class="my-name" href="https://twitter.com/chinchang457">Kushagra Gour</a> {chin chang} . <a class="" href="/lab/">See more experiments</a>
-    </footer>
-
-    <!-- github ribbon -->
-
-    <a class="github-ribbon" href="https://github.com/chinchang/hint.css"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-
-    {% include analytics.html %}
-
-
-  </body>
+		{% include analytics.html %}
+	</body>
 </html>
