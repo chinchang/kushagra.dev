@@ -65,9 +65,9 @@ This code has 2 visible issues:
 
 ### Solution
 
-One thing that might come to your mind to prevent these issue is `currentColor`. Close enough, but just that `currentColor` refers to the `color` property and not `background-color`. Bummer!
+One thing that might come to your mind to prevent these issues is `currentColor`. Close enough, just that `currentColor` refers to the `color` property and not `background-color`. Bummer!
 
-To overcome this limitation I came up with a trick I call `currentColor propagation` :) The trick is basically to propagate `background-color` to `color` property of the arrow and these use `currentColor` for coloring arrows! That solves both our issues:
+To overcome this limitation I came up with a trick I call `currentColor propagation` :) The trick is basically to propagate `background-color` to `color` property of the arrow and then use `currentColor` for coloring arrows! That solves both our issues:
 
 
 {% highlight css %}
@@ -95,7 +95,7 @@ To overcome this limitation I came up with a trick I call `currentColor propagat
 }
 {% endhighlight %}
 
-Yes, we need still need to mention color 2 times for each new container, but still better than 3 times. More importantly, all the arrow related code is just at one place and not duplicated for each container. Plus we don't have to use that dirty `!important` and much less code.
+Yes, we need still need to mention color 2 times for each new container, but still better than 3 times. More importantly, all the arrow related code is just at one place and not duplicated for each container. Plus we don't have to use that dirty `!important` and have much less code.
 
 **Improved Demo:**
 
