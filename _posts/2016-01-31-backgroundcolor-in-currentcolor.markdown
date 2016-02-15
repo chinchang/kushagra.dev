@@ -73,7 +73,7 @@ To overcome this limitation I came up with a trick I call `currentColor propagat
 {% highlight css %}
 .container {
 	/* Other styles here */
-	color: indianred;
+	background-color: indianred;
 }
 .container:after {
 	/* Other styles here */
