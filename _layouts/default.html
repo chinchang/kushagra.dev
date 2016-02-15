@@ -14,7 +14,7 @@
 
   </head>
 
-  <body class="{{ page.name }}">
+  <body class="{{ layout.name }}">
 
     <a href="javascript:void(0)" title="or press '/' to search" onclick="toggleSearch()" class="search-btn">
       <svg style="width:48px;height:48px" viewBox="0 0 24 24">
@@ -67,7 +67,7 @@
 
     {% include analytics.html %}
 
-    {% if page.name == 'blog' %}
+    {% if layout.name == 'blog' %}
     <div class="fixed-link-box">
     <!-- Icon made by Austin Andrews from Flaticon.com -->
       <a href="/feed/rss.xml" class="rss-link" target="_blank"></a>

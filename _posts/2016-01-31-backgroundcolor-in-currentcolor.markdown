@@ -6,7 +6,7 @@ title: 'Using background color in currentColor'
 I had the following situation recently - I have a container with some background color and it needs to have an arrow coming out from inside of the same background color. I implemented the arrow using `:after` pseudo element. Something like this:
 
 ![](/images/2016/currentcolor-propagation.png)
-{% highlight css %}
+<pre><code class="language-css">
 .container {
   display: inline-block;
   padding: 30px;
@@ -24,11 +24,11 @@ I had the following situation recently - I have a container with some background
   border: 10px solid transparent;
   border-left-color: indianred;
 }
-{% endhighlight %}
+</code></pre>
 
 Now this code works, but the container could be multi-colored and also the arrow can show either right or left for any container. With above implementation, for each different container, we'll have to change the border color as well like so:
 
-{% highlight css %}
+<pre><code class="language-css">
 /* Modifier for a container having left arrow */
 .container--inverted:after {
   left: auto;
@@ -48,7 +48,7 @@ Now this code works, but the container could be multi-colored and also the arrow
 .container--2.container--inverted:after {
   border-right-color: skyblue;
 }
-{% endhighlight %}
+</code></pre>
 
 
 **Bad Demo:**
@@ -70,7 +70,7 @@ One thing that might come to your mind to prevent these issues is `currentColor`
 To overcome this limitation I came up with a trick I call `currentColor propagation` :) The trick is basically to propagate `background-color` to `color` property of the arrow and then use `currentColor` for coloring arrows! That solves both our issues:
 
 
-{% highlight css %}
+<pre><code class="language-css">
 .container {
 	/* Other styles here */
 	background-color: indianred;
@@ -93,7 +93,7 @@ To overcome this limitation I came up with a trick I call `currentColor propagat
 .container--2:after {
   color: skyblue;
 }
-{% endhighlight %}
+</code></pre>
 
 Yes, we need still need to mention color 2 times for each new container, but still better than 3 times. More importantly, all the arrow related code is just at one place and not duplicated for each container. Plus we don't have to use that dirty `!important` and have much less code.
 
