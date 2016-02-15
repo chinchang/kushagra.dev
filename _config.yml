@@ -4,7 +4,7 @@ lsi: false
 root_url: http://kushagragour.in
 title: Kushagra Gour- Creativity freak!
 permalink: /blog/:year/:month/:title/
-highlighter: pygments
+highlighter: rouge
 
 lab_projects:
 - name: "screenlog.js"
