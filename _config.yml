@@ -7,6 +7,9 @@ permalink: /blog/:year/:month/:title/
 highlighter: rouge
 
 lab_projects:
+- name: "superplaceholder.js"
+  link: "superplaceholderjs/"
+  desc: "Super charge your input placeholders"
 - name: "screenlog.js"
   link: "https://github.com/chinchang/screenlog.js"
   desc: "Bring console.log on the screen"
