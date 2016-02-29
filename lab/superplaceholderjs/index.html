@@ -41,9 +41,14 @@ name: superplaceholder.js
 			margin: 3em auto;
 			border-bottom: 2px solid rgba(0,0,0,0.07);
 		}
+		.main-title-wrap {
+			margin: 3em 0 0;
+		}
 		.main-title {
 			font-size: 9vw;
-			margin: 0.5em 0 0;
+			margin: 0;
+			vertical-align: top;
+			display: inline-block;
 			color: white;
 		}
 		.main-sub-title {
@@ -106,6 +111,7 @@ name: superplaceholder.js
 				max-width: 100%;
 				font-size: 1.5em;
 			}
+			.main-title { display: block; }
 			.download-btn {
 				font-size: 1em;
 			}
@@ -116,7 +122,10 @@ name: superplaceholder.js
 		</style>
 	</head>
 	<body>
-		<h1 class="main-title">superplaceholder.js</h1>
+		<div class="main-title-wrap">
+			<img width="65px" height="100px" src="assets/logo.png"/>
+			<h1 class="main-title">superplaceholder.js</h1>
+		</div>
 		<h2 class="main-sub-title">Super charge your input placeholders</h2>
 		<a class="btn  download-btn" href="https://github.com/superplaceholder.js">Download <small><em style="text-transform:lowercase">(<1KB minified &amp; gzipped)</em></small></a>
 
