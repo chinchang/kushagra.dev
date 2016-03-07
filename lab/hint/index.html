@@ -13,7 +13,6 @@ name: Hint.css
 		<meta name="viewport" content="width=device-width">
 		<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
-		<!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
 		<link rel="stylesheet" type="text/css" href="/css/pygments-light.css" />
 		<link rel="stylesheet" type="text/css" href="hint.min.css">
 		<link rel="image_src" href="hint.png"/>
@@ -273,7 +272,6 @@ name: Hint.css
 		    }
 			}
 		</style>
-		<link rel="stylesheet" href="hint.css">
 	</head>
 	<body>
 
@@ -345,6 +343,22 @@ name: Hint.css
 								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
 									<path fill="#ffffff" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
 								</svg>
+							</a>
+						</p>
+
+						<h3>Size variations</h3>
+
+						<p>
+							<a class="hint--top  hint--small" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
+								Small
+							</a>
+
+							<a class="hint--top  hint--medium" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
+								Medium
+							</a>
+
+							<a class="hint--top  hint--large" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
+								Large
 							</a>
 						</p>
 
@@ -421,7 +435,7 @@ name: Hint.css
 		<div class="section  footer">
 			<iframe src="http://ghbtns.com/github-btn.html?user=chinchang&repo=hint.css&type=watch&count=true"
 	allowtransparency="true" frameborder="0" scrolling="0" width="105" height="20" style="margin-bottom:12px;"></iframe><br>
-			Made with hands by <a href="https://twitter.com/chinchang457">Kushagra Gour</a> in India • <a href="/lab/">More projects</a>
+			Made with hands by <a class="hint--top" data-hint="@chinchang457" href="https://twitter.com/chinchang457">Kushagra Gour</a> in India • <a href="/lab/">More projects</a>
 		</div>
 
 		{% include analytics.html %}
