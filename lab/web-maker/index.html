@@ -11,7 +11,7 @@ name: Web Maker
 		<title>Web Maker - Easy, quick and offline web experiment playground</title>
 		<meta name="description" content="An easy, quick and offline web experiment playground">
 		<meta name="viewport" content="width=device-width">
-		<link rel="image_src" href="hint.png"/>
+		<link rel="image_src" href="ss1.png"/>
 		<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/lkfkkhfhhdkiemehlpkgjeojomhpccnh">
 		<style type="text/css">
 		body {
@@ -25,6 +25,12 @@ name: Web Maker
 			color: #555;
 		}
 
+		.logo {
+			vertical-align: middle;
+			position: relative;
+			top: -10px;
+			margin-right: 10px;
+		}
 		h1 {
 			font-size: 5em;
 			margin: 0;
@@ -62,7 +68,6 @@ name: Web Maker
 		.download-btn {
 			color: white;
 			background-color: #4d7bd6;
-			margin-top: 1em;
 		}
 		.btn > img {
 			vertical-align: middle;
@@ -88,25 +93,30 @@ name: Web Maker
 		}
 		</style>
 		<script>
+		function changeLabel(label) {
+			document.querySelector('.download-btn span').innerHTML = label;
+		}
 		function addToChrome() {
-			chrome.webstore.install();
+			changeLabel('Installing...');
+			chrome.webstore.install(undefined, function () {
+				cta.innerHTML = 'Successfully installed! Open a new tab to use <strong>Web Maker</strong>.'
+			});
 		}
 		</script>
 	</head>
 	<body>
-
-		<h1>Web Maker</h1>
+		<h1><img class="logo" src="icon-128.png" alt="">Web Maker</h1>
 		<h2>Replace your new tab with with an offline web experiment playground</h2>
 		<img class="screenshot" src="ss1.png" height="" alt="">
 
-		<div style="margin-top: 20px;">
+		<div style="margin-top: 50px;" id="cta">
 
 		<script>
 		if (chrome.app.isInstalled) {
 			document.write('You have this extension already installed!')
 		}
 		else {
-			document.write('<a class="btn  download-btn" href="javascript:void(0)" onclick="addToChrome()"><img src="chrome-logo.png" height="40" alt="">Add to Chrome</a>');
+			document.write('<a class="btn  download-btn" href="javascript:void(0)" onclick="addToChrome()"><img src="chrome-logo.png" height="40" alt=""><span>Add to Chrome</span></a>');
 		}
 		</script>
 		</div>
