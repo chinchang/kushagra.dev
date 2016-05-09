@@ -9,7 +9,7 @@ highlighter: rouge
 lab_projects:
 - name: "Web Maker"
   link: "web-maker/"
-  desc: "Convert your new tab into a web playground"
+  desc: "Chrome extension to convert your new tab into a web playground"
 - name: "superplaceholder.js"
   link: "superplaceholderjs/"
   desc: "Super charge your input placeholders"
