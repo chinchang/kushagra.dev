@@ -1,0 +1,220 @@
+---
+title: Web Maker - Easy, quick and offline web experiment playground.
+name: Web Maker
+---
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Web Maker - Easy, quick and offline web experiment playground</title>
+		<meta name="description" content="An easy, quick and offline web experiment playground">
+		<meta name="viewport" content="width=device-width">
+		<link rel="image_src" href="hint.png"/>
+		<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/lkfkkhfhhdkiemehlpkgjeojomhpccnh">
+		<style type="text/css">
+		body {
+			text-align: center;
+			font-family: Arial;
+			background: white;
+			min-height: 100vh;
+			font-size: 18px;
+			padding: 0;
+			margin: 0;
+			color: #555;
+		}
+
+		h1 {
+			font-size: 5em;
+			margin: 0;
+			padding: 0.25em 0 0;
+				text-shadow: 0 6px 1px rgba(0, 0, 0, 0.1);
+			font-family: 'Arial', cursive;
+		}
+		@media screen and (max-width: 400px) {
+			body {
+				font-size: 15px;
+			}
+			.version {
+				right: 0;
+			}
+		}
+		img {
+			max-width: 90vw;
+		}
+		a {
+			color: #1A5A7A;
+			outline: none;
+			text-decoration: none;
+		}
+		.btn {
+			background: rgba(0,0,0,0.2);
+			padding: 15px 20px;
+			display: inline-block;
+			border-radius: 8px;
+			text-transform: uppercase;
+			transition: 0.3s ease;
+		}
+		.btn:hover {
+			transform: scale(1.2);
+		}
+		.download-btn {
+			color: white;
+			background-color: #4d7bd6;
+			margin-top: 1em;
+		}
+		.btn > img {
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+		.screenshot {
+			max-width: 700px;
+		}
+		.features ul {
+			padding: 0;
+			list-style: none;
+		}
+		.footer {
+			color: rgba(255, 255, 255, 0.7);
+		}
+		.window {
+			background: #fff;
+			width: 50vw;
+			min-width: 450px;
+			margin: auto;
+			border: 1px solid #acacac;
+			border-radius: 6px;
+			box-shadow: 0px 6px 17px rgba(0,0,0,0.2);
+			cursor: default;
+		}
+		@media screen and (max-width:500px) {
+			.window {
+				width: auto;
+				min-width: 0;
+				margin: 0 10px;
+			}
+		}
+
+
+		.titlebar {
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ebebeb, color-stop(1, #d5d5d5)));
+			background: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
+			background: linear-gradient(top, #ebebeb, #d5d5d5);
+			color: #4d494d;
+			font-size: 11pt;
+			line-height: 20px;
+			text-align: center;
+			width: 100%;
+			height: 28px;
+			border-top: 1px solid #f3f1f3;
+			border-bottom: 1px solid #b1aeb1;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
+			position: relative;
+		}
+
+		.buttons {
+			padding-left: 8px;
+			padding-top: 8px;
+			float: left;
+			line-height: 0px;
+		}
+
+		.titlebar__btn {
+			font-size: 9pt;
+			line-height: 11px;
+			width: 11px;
+			height: 11px;
+			border: 1px solid rgba(0,0,0,0.15);
+			border-radius: 50%;
+			display: inline-block;
+			margin-right: 5px;
+			cursor: pointer;
+
+		}
+		.close {
+			background: #ff5c5c;
+		}
+		.minimize {
+			background: #ffbd4c;
+		}
+		.zoom {
+			background: #00ca56;
+		}
+		.titlebar__btn:hover {
+			border-color: rgba(0, 0, 0, 0.3);
+		}
+		.tab {
+			position: absolute;
+			top: 1px;
+			left: 70px;
+			display: inline-block;
+			height: 30px;
+			width: 100px;
+			margin: 0 10px;
+			background: #cccccc;
+			border: 1px solid rgba(0,0,0,0.2);
+			border-bottom: 0;
+			border-radius: 5px 5px 0 0;
+			transform: perspective( 190px ) rotateX(45deg);
+		}
+		.content {
+			color: #777;
+		}
+		.content a {
+			color: #444;
+		}
+		a svg {
+			fill: rgba(255, 255, 255, 0.6);
+		}
+		a:hover svg {
+			fill: white;
+		}
+		.social-wrap {
+			position:fixed;
+			/*z-index:2;*/
+			right: 20px;
+			top:20px;
+		}
+		</style>
+		<script>
+		function addToChrome() {
+			chrome.webstore.install();
+		}
+		</script>
+	</head>
+	<body>
+
+		<h1>Web Maker</h1>
+		<h2>Replace your new tab with with an offline web experiment playground</h2>
+		<!-- <div class="window">
+			<div class="titlebar">
+				<div class="buttons">
+					<a class="titlebar__btn  close  hint--bottom-right" data-hint="Close"></a>
+					<a class="titlebar__btn  minimize  hint--bottom-right" data-hint="Minimize"></a>
+					<a class="titlebar__btn  zoom  hint--bottom-right" data-hint="Zoom"></a>
+				</div>
+				<div class="tab"></div>
+			</div>
+			<div class="content">
+				<img class="screenshot" src="ss1.png" alt="">
+			</div>
+		</div> -->
+		<img class="screenshot" src="ss1.png" height="" alt="">
+
+		<div style="margin-top: 20px;">
+
+		<script>
+		if (chrome.app.isInstalled) {
+			document.write('You have this extension already installed!')
+		}
+		else {
+			document.write('<a class="btn  download-btn" href="javascript:void(0)" onclick="addToChrome()"><img src="chrome-logo.png" height="40" alt="">Add to Chrome</a>');
+		}
+		</script>
+		</div>
+
+		{% include analytics.html %}
+	</body>
+</html>
