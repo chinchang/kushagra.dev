@@ -110,22 +110,22 @@ name: Web Maker
 	<body>
 		<h1><img class="logo" width="128" height="128" src="icon-128.png" alt="">Web Maker</h1>
 		<h2>Replace your new tab with with an offline web experiment playground</h2>
-		<div>
-		<img class="screenshot" src="ss1.png" height="" alt="">
+		<div style="margin-top: 40px;" id="cta">
+			<script>
+			if (chrome.app.isInstalled) {
+				document.write('You have this extension already installed!')
+			}
+			else {
+				document.write('<a class="btn  download-btn" href="javascript:void(0)" onclick="addToChrome()"><img src="chrome-logo.png" height="40" alt=""><span>Add to Chrome</span></a>');
+			}
+			</script>
+		</div>
+
+		<div style="margin-top:30px;">
+			<img class="screenshot" src="ss1.png" height="" alt="">
 		</div>
 		<small style="color:#aaa">[Chrome only]</small>
 
-		<div style="margin-top: 50px;" id="cta">
-
-		<script>
-		if (chrome.app.isInstalled) {
-			document.write('You have this extension already installed!')
-		}
-		else {
-			document.write('<a class="btn  download-btn" href="javascript:void(0)" onclick="addToChrome()"><img src="chrome-logo.png" height="40" alt=""><span>Add to Chrome</span></a>');
-		}
-		</script>
-		</div>
 
 		{% include analytics.html %}
 	</body>
