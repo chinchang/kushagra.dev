@@ -109,13 +109,13 @@ name: Web Maker
 		<script>
 		function changeLabel(label) {
 			document.querySelector('.download-btn span').innerHTML = label;
-			_gaq && _gaq.push(['_trackEvent', 'webmaker', 'install-done']);
 		}
 		function addToChrome() {
 			_gaq && _gaq.push(['_trackEvent', 'webmaker', 'install-start']);
 			changeLabel('Installing...');
 			chrome.webstore.install(undefined, function () {
 				cta.innerHTML = 'Successfully installed! Open a new tab to use <strong>Web Maker</strong>.'
+				_gaq && _gaq.push(['_trackEvent', 'webmaker', 'install-done']);
 			});
 		}
 		</script>
