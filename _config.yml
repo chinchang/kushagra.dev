@@ -9,6 +9,9 @@ permalink: /blog/:year/:month/:title/
 highlighter: rouge
 
 lab_projects:
+- name: "Tolks"
+  link: "https://tolks.io"
+  desc: "Put your stories up on the Internet"
 - name: "Web Maker"
   link: "web-maker/"
   desc: "Chrome extension to convert your new tab into a web playground"
