@@ -408,6 +408,11 @@ footer {
 	margin-left: 40px;
 }
 
+#me2 {
+	background-image: url(/images/avatar.png);
+	background-size: contain;
+}
+
 #me {
 	/*width: 78px;*/
 	/*height: 250px;*/
