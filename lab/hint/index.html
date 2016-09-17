@@ -95,8 +95,12 @@ name: Hint.css
 			.section:nth-child(4) { background: #7D6EC6; }
 			.section:nth-child(4):after { color: #7D6EC6; }
 
-			.section:nth-child(5) {	background: #D9623F; }
-			.section:nth-child(5):after { color: #D9623F; }
+			.section:nth-child(5) { background: #5BC0EB; }
+			.section:nth-child(5):after { color: #5BC0EB; }
+
+			.section:nth-child(6) {	background: #D9623F; }
+			.section:nth-child(6):after { color: #D9623F; }
+
 
 			.section-inner {
 				max-width: 600px;
@@ -181,7 +185,6 @@ name: Hint.css
 					margin: 0 10px;
 				}
 			}
-
 
 			.titlebar {
 				background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ebebeb, color-stop(1, #d5d5d5)));
@@ -269,7 +272,47 @@ name: Hint.css
 				.social-wrap {
 					margin-top: 20px;
 					position: static;
+		    	}
 		    }
+		    .license-wrap {
+				display: flex;
+			}
+			.license {
+				display: block;
+				margin: 20px;
+				flex: 1;
+				padding: 20px;
+				border: 1px solid #45a3cc;
+				border-radius: 4px;
+				background: rgba(255,255,255,0.9);
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				color: #555;
+				overflow: hidden;
+				cursor: pointer;
+				transition: 0.3s ease;
+			}
+			.license h3 {
+				font-size: 1.4em;
+				font-family: 'Lobster', cursive;
+				margin: 5px 0 5px 0;
+			}
+			.license:hover {
+				box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+			}
+			.license__project-count {
+				margin: 30px 0;
+			}
+			.license__price {
+				background: #34718c;
+				color: white;
+				padding: 20px;
+				font-size: 1.2em;
+				margin: 10px -20px -20px;
+			}
+			@media screen and (max-width:600px) {
+				.license-wrap {
+					flex-direction: column;
+				}
 			}
 		</style>
 	</head>
@@ -279,8 +322,10 @@ name: Hint.css
 
 			<h1 style="display:inline-block;position:relative">Hint.css <small class="version">2.0</small> </h1>
 			<h3>A pure CSS tooltip library for your lovely websites</h3>
-				<br>
-			<a href="https://github.com/chinchang/hint.css" class="btn  download-btn  hint--top" aria-label="Get it from Github">Download <em style="text-transform:lowercase">(1.5KB minified & gzipped)</em></a>
+			<br>
+			<a href="https://github.com/chinchang/hint.css/releases" class="btn  download-btn  hint--top" aria-label="Get it from Github">Download <em style="text-transform:lowercase">(1.5KB minified & gzipped)</em></a>
+			<!-- <br> -->
+			<a style="display:block;margin-top:20px;" href="#commercial">Commercial Use</a>
 
 			<div class="social-wrap">
 				 <a aria-label="Fork on github" class="hint--bottom-left" href="https://github.com/chinchang/hint.css" style="margin:0 10px">
@@ -389,24 +434,24 @@ name: Hint.css
 		</div>
 
 		<div class="section  features">
-				<h2>Features</h2>
+			<h2>Features</h2>
 
-	<style>
-	li:before {
-		content: '☺';
-		color: white;
-		font-size: 2em;
-	}
-	</style>
-				<div class="section-inner">
-					<ul>
-						<li>Only CSS. No JavaScript!</li>
-						<li>Small file size. Only 1.5KB minified and gzipped!</li>
-						<li>Easy to use. No config required.</li>
-						<li>Supports Accessibility with <code>aria-label</code> attributes</li>
-						<li>Works in all modern browsers.</li>
-					</ul>
-				</div>
+			<style>
+			li:before {
+				content: '☺';
+				color: white;
+				font-size: 2em;
+			}
+			</style>
+			<div class="section-inner">
+				<ul>
+					<li>Only CSS. No JavaScript!</li>
+					<li>Small file size. Only 1.5KB minified and gzipped!</li>
+					<li>Easy to use. No config required.</li>
+					<li>Supports Accessibility with <code>aria-label</code> attributes</li>
+					<li>Works in all modern browsers.</li>
+				</ul>
+			</div>
 
 		</div>
 
@@ -429,6 +474,32 @@ name: Hint.css
 				<p>
 				Use it with other available modifiers in various combinations. Available modifiers: <code>hint--error</code>, <code>hint--info</code>, <code>hint--warning</code>, <code>hint--success</code>, <code>hint--rounded</code> and <code>hint--bounce</code>.
 				</p>
+			</div>
+
+		</div>
+
+		<div class="section  buy">
+			<h2 id="commercial">Commercial License</h2>
+
+			<div class="section-inner">
+				<p>Hint.css is a free and open-source library, however, if you are using the library for business, commercial sites, themes, projects, and applications, the Commercial license is the appropriate license.</p>
+
+				<div class="license-wrap">
+					<a class="license" href="http://www.uplabs.com/posts/hint-css?utm_source=hintcss&utm_medium=pricing&utm_campaign=hintcss" target="_blank">
+						<small>Commercial</small>
+						<h3>Developer</h3>
+						<small>License</small>
+						<div class="license__project-count">For 1 Project</div>
+						<div class="license__price">$15</div>
+					</a>
+					<a class="license" href="http://www.uplabs.com/posts/hint-css?utm_source=hintcss&utm_medium=pricing&utm_campaign=hintcss" target="_blank">
+						<small>Commercial</small>
+						<h3>Team</h3>
+						<small>License</small>
+						<div class="license__project-count">For Unlimited Projects</div>
+						<div class="license__price">$50</div>
+					</a>
+				</div>
 			</div>
 
 		</div>
