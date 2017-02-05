@@ -64,6 +64,7 @@ name: Web Maker
 			outline: none;
 			text-decoration: none;
 		}
+		.flex { display: flex; }
 		.btn {
 			background: rgba(0,0,0,0.2);
 			padding: 10px 20px;
@@ -105,12 +106,40 @@ name: Web Maker
 		.social-bar:hover {
 			opacity: 1;
 		}
+		.feature-box {
+			width: 80vw;
+			min-width: 400px;
+			margin: 0 auto;
+			flex-wrap: wrap;
+			margin-top: 2em;
+			justify-content: center;
+		}
+		.feature {
+			flex-basis: 100%;
+			max-width: 100%;
+			padding: 0.5em 1em;
+			box-sizing: border-box;
+		}
+		.feature svg {
+			width: 32px;
+			height: 32px;
+			fill: #444;
+		}
 		@media (min-width: 751px) {
 			.social-bar {
 				position: fixed;
 				top: 30px;
 				right: 20px;
 				opacity: 0.5;
+			}
+			.social-bar > a {
+				display: block;
+				margin-top: 10px;
+			}
+			.feature {
+				flex-basis: 50%;
+				max-width: 50%;
+				padding: 0.5em 2em;
 			}
 		}
 
@@ -146,6 +175,40 @@ name: Web Maker
 
 		<div style="margin-top:30px;">
 			<img class="screenshot" src="ss1.png" height="" alt="">
+		</div>
+
+		<div class="flex feature-box">
+			<div class="feature">
+				<!-- <svg viewBox="0 0 24 24">
+				    <path d="M2.28,3L1,4.27L2.47,5.74C2.04,6 1.61,6.29 1.2,6.6L3,9C3.53,8.6 4.08,8.25 4.66,7.93L6.89,10.16C6.15,10.5 5.44,10.91 4.8,11.4L6.6,13.8C7.38,13.22 8.26,12.77 9.2,12.47L11.75,15C10.5,15.07 9.34,15.5 8.4,16.2L12,21L14.46,17.73L17.74,21L19,19.72M12,3C9.85,3 7.8,3.38 5.9,4.07L8.29,6.47C9.5,6.16 10.72,6 12,6C15.38,6 18.5,7.11 21,9L22.8,6.6C19.79,4.34 16.06,3 12,3M12,9C11.62,9 11.25,9 10.88,9.05L14.07,12.25C15.29,12.53 16.43,13.07 17.4,13.8L19.2,11.4C17.2,9.89 14.7,9 12,9Z" />
+				</svg> -->
+				<h2>Works Offline</h2>
+				<p>Lives completely in your browser. There is no network involved, so it opens and shows previews instantly.</p>
+			</div>
+			<div class="feature">
+				<h2>Preprocessor Support</h2>
+				<p>Be it Markdown, Jade, SCSS, LESS, JSX, CoffeeScript or TypeScript - you get it all.</p>
+			</div>
+			<div class="feature">
+				<h2>Quick Add Libraries</h2>
+				<p>Drop in any library from the available list or put a URL of any other library you wish to add.
+				</p>
+			</div>
+			<div class="feature">
+				<h2>Multiple Layouts</h2>
+				<p>Get exact same layout in front of you, that you last saved the creation in. Plus, a full screen layout to see your work in actual browser window.
+				</p>
+			</div>
+			<div class="feature">
+				<h2>Preview screenshot capture</h2>
+				<p>Feel like taking a screenshot of your awesome creation, just hit the Capture button to get a beautiful screenshot of your result.
+				</p>
+			</div>
+			<div class="feature">
+				<h2>Open in Codepen</h2>
+				<p>Done with your creation and want to share it with the world? One click and have your work open in CodePen.
+				</p>
+			</div>
 		</div>
 
 		<div class="social-bar">
