@@ -8,12 +8,12 @@
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.min.css?t=14337754955" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss.xml">
   </head>
 
-  <body class="{{ layout.name }}">
+  <body class="{% if page.label %}{{ page.label }}{% else %}{{ layout.label }}{% endif %}">
 
     <a href="javascript:void(0)" title="or press '/' to search" onclick="toggleSearch()" class="search-btn">
       <svg style="width:48px;height:48px" viewBox="0 0 24 24">
@@ -34,7 +34,7 @@
     <div id="outer-container">
       <div id="main-container">
 
-        <header class="top-header {% if page.name == 'home' %}top-header--home{% endif %}">
+        <header class="top-header {% if page.label == 'home' %}top-header--home{% endif %}">
 
         <div id="me2" class="top-header__logo">
           <div></div>
@@ -66,7 +66,7 @@
 
     {% include analytics.html %}
 
-    {% if layout.name == 'blog' %}
+    {% if page.label == 'blog' %}
     <div class="fixed-link-box">
     <!-- Icon made by Austin Andrews from Flaticon.com -->
       <a href="/feed/rss.xml" class="rss-link" target="_blank"></a>
