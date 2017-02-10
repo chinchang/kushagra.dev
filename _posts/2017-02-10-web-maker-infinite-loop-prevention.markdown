@@ -5,7 +5,7 @@ title: "Web Maker: Preventing Infinite Loops"
 
 ## The Problem
 
-When you write JavaScript in Web Maker, it renders that JavaScript inside the preview window in realtime. What this means is in case you using any loop structure in your code, there will probably be a point when you mid way defining your loop variables, conditions, variant etc. And at that point if Web Maker renders your JavaScript, it would result in an infinite loop. Lets see with an example. Suppose I want to write a for loop to iterate 10 times, I'll start with
+When you write JavaScript in [Web Maker](https://kushagragour.in/lab/web-maker), it renders that JavaScript inside the preview window in realtime. What this means is in case you using any loop structure in your code, there will probably be a point when you mid way defining your loop variables, conditions, variant etc. And at that point if Web Maker renders your JavaScript, it would result in an infinite loop. Lets see with an example. Suppose I want to write a for loop to iterate 10 times, I'll start with
 
 ```
 for (var i = 0; i<10; [cursor_here]) {
