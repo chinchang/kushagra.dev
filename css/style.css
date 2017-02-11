@@ -26,9 +26,10 @@ textarea {
 
 h2, h3, h4, h5, h6 {
 	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 h2, h3, h4, h5, h6, strong {
-	color: #444;
+	color: #5d5d5d;
 }
 
 input { outline: 0; }
@@ -60,13 +61,14 @@ body{
 	width: 100%;
 	height: 100%;
 	font: 17px/1.56 'PT Serif', Helvetica, Arial, Geneva, sans-serif;
-	color: #555;
+	color: #3a3a3a;
+	-webkit-font-smoothing: antialiased;
 }
 
 a {
 	text-decoration: none;
 	color: #A3A948;
-	font-weight: 200;
+	/*font-weight: 200;*/
 }
 
 a:HOVER {
@@ -292,7 +294,7 @@ figure h3 {
 
 #main-container > nav {
 	text-align: center;
-	margin: 10px -20px 20px;
+	margin: 10px -20px 40px;
 }
 
 #main-container > nav ul {
@@ -407,7 +409,7 @@ nav > ul a svg {
 footer {
 	text-align: center;
 	padding: 40px 0 20px;
-	font-size: 12px;
+	font-size: 0.8rem;
 	width: 100%;
 }
 
@@ -493,9 +495,12 @@ article a:HOVER {
 
 .blog article a {
 	color: hsl(64, 40%, 47%); /* green */
+	border-bottom: 1px solid #e4e6ca;
 }
-
-.blog article a:HOVER {
+.blog article:not(.list-item) a:visited {
+	color: #666;
+}
+.blog article:not(.list-item) a:hover {
 	color: #F2C45A; /* yellow */
 }
 
@@ -515,16 +520,20 @@ article.list-item:last-child {
 	margin-bottom: 0;
 }
 
+article:not(.list-item) .post-title {
+	font-size: 2.3em;
+}
 article .post-title a {
 	border: 0!important;
 	color: inherit;
 }
-
 article .post-meta {
-	font-size: 12px;
+	font-size: 0.8rem;
 	color: #777;
 }
-
+article .post-content {
+	margin-top: 2em;
+}
 article .post-summary {}
 
 /* Blockquote credits: http://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/ */
@@ -551,7 +560,8 @@ article blockquote p {
 }
 
 article p {
-	line-height: 1.5em;
+	line-height: 1.7em;
+	font-size: 1.2em;
 }
 
 article img {
@@ -563,7 +573,7 @@ article img {
 }
 
 article p code {
-	font-size: 0.8em;
+	font-size: 0.9em;
 	background-color: #EEE;
 	padding: 4px 6px;
 	border-radius: 3px;
@@ -844,12 +854,28 @@ SEARCH BAR
 	visibility: visible;
 }
 
+/* Prism.css overrides */
+:not(pre)>code[class*=language-], pre[class*=language-] {
+	border: 1px solid rgb(216, 220, 160);
+	border-radius: 3px;
+}
+pre[class*=language-] {
+	padding: 0em 1em 1em!important;
+}
 
 @media (max-width: 750px) {
+	body {
+		font-size: 15px;
+	}
+	article p {
+		font-size: 1.1em;
+	}
 	#outer-container {
 		width: auto;
 	}
-
+	#main-container {
+		/*padding: 10px;*/
+	}
 	.top-header h1 {
 		font-size: 35px;
 	}

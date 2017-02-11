@@ -7,10 +7,10 @@ title: "Web Maker: Preventing Infinite Loops"
 
 When you write JavaScript in [Web Maker](https://kushagragour.in/lab/web-maker), it renders that JavaScript inside the preview window in realtime. What this means is in case you using any loop structure in your code, there will probably be a point when you mid way defining your loop variables, conditions, variant etc. And at that point if Web Maker renders your JavaScript, it would result in an infinite loop. Lets see with an example. Suppose I want to write a for loop to iterate 10 times, I'll start with
 
-```
+<pre><code class="language-javascript">
 for (var i = 0; i<10; [cursor_here]) {
 }
-```
+</code></pre>
 
 Note that my cursor would be where it says `[cursor_here]` and I am still defining my loop and going to write `i++` there. But as we render in realtime, this incomplete code would get executed in preview, resulting in an infinite loop.
 
@@ -24,46 +24,49 @@ The approach Web Maker takes to solve this is by keeping a check on the time spe
 
 So if we have a code like this:
 
-```
+<pre><code class="language-javascript">
 for ( var i = 0; i < 10;) {
 }
-```
+</code></pre>
 
 After our instrumentation, it should change to:
 
-```
+<pre><code class="language-javascript">
 var startTime = Date.now();
 for ( var i = 0; i < 10;) {
 	if (Date.now() - startTime > 1000) { break; }
 }
-```
+</code></pre>
 
-To analyze a piece of code, we need a JavaScript parser. I used Esprima for that. Lets see how we can use Esprima to instrument our code.
+To analyze a piece of code, we need a JavaScript parser. I used [Esprima](http://esprima.org/) for that. Lets see how we can use Esprima to instrument our code.
 
 ### Detecting a loop
 
 Esprima converts a string of JavaScript code into an [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST), which is basically a tree like structure representing the code snippet.
 
-```
+<pre><code class="language-javascript">
 function instrumentCode(code) {
 	var ast = esprima.parse(code);
 }
-```
+</code></pre>
 
 To get a sense of what an AST looks like, lets run esprima on the following code:
 
-```
+<pre><code class="language-javascript">
 var foo = 3;
 for (var i = 0; i < 10; i++) {}
-```
+</code></pre>
 
 This is what we'll get:
 
-![](/images/ast.png)
+<figure>
+    <img src="/images/ast.png" alt="Esprima Abstract Syntax Tree" />
+    <caption>Esprima's Abstract Syntax Tree</caption>
+</figure>
 
 Notice how the return AST is a repeating nested array structure (`body` inside `body`), with each identifiable unit as an instance of some class. Eg. `VariableDeclaration`, `ForStatement` etc. This is something we can easily traverse using recursion, like so:
 
-```
+<pre><code class="language-javascript">
 function processAst(ast) {
 	var currentElement;
 	// If this ins't actual body, recurse with the body
@@ -74,13 +77,20 @@ function processAst(ast) {
     // Traverse the body
     for (var i = ast.length; i--;) {
     	var currentElement = ast[i];
+
+        // Process `currentElement` here
+
+        // Recurse on inner body
+        if (currentElement.body) {
+            processAst(currentElement.body);
+        }
     }
 }
 function instrumentCode(code) {
 	var ast = esprima.parse(code);
     processAst(ast);
 }
-```
+</code></pre>
 
 With the above code in place, we'll keep getting different syntax structures in `currentElement`. Next, we check them and inject the actual loop protection code.
 
@@ -88,7 +98,7 @@ With the above code in place, we'll keep getting different syntax structures in 
 
 We are concerned when `currentElement` is a `for`, `while` or `do-while` loop. This can be checked by simply testing `currentElement.type`. Lets add that.
 
-```
+<pre><code class="language-javascript">
 function processAst(ast) {
 	var currentElement;
 	// If this ins't actual body, recurse with the body
@@ -99,6 +109,7 @@ function processAst(ast) {
     // Traverse the body
     for (var i = ast.length; i--;) {
     	var currentElement = ast[i];
+
         if (currentElement &&
         	currentElement.type === 'ForStatement' ||
             currentElement.type === 'WhileStatement' ||
@@ -111,11 +122,11 @@ function processAst(ast) {
         }
     }
 }
-```
+</code></pre>
 
 Next we need two of our statements to be injected in AST syntax. For that we can again use esprima. Once we covert the statements into AST objects, its just a matter of adding them to the right `body` in our AST.
 
-```
+<pre><code class="language-javascript">
 if (currentElement &&
     currentElement.type === 'ForStatement' ||
     currentElement.type === 'WhileStatement' ||
@@ -128,11 +139,11 @@ if (currentElement &&
         inside: ast2.body[0].body.body[0]
     };
 }
-```
+</code></pre>
 
 Notice, that we have assigned the current time in `myVar`. Now there could be multiple loops (even nested) in a single code snippet and they all need to be handled with their unique variables. So we replace the variable names in our insertion blocks with a 3 digit random string:
 
-```
+<pre><code class="language-javascript">
 if (currentElement &&
     currentElement.type === 'ForStatement' ||
     currentElement.type === 'WhileStatement' ||
@@ -147,11 +158,11 @@ if (currentElement &&
     randomVariableName = '_' + generateRandomId(3);
     insertionBLocks.before.declarations[0].id.name = insertionBLocks.inside.test.left.right.name = randomVariableName;
 }
-```
+</code></pre>
 
 All that is left now is to insert the insertion blocks at right places:
 
-```
+<pre><code class="language-javascript">
 if (currentElement &&
     currentElement.type === 'ForStatement' ||
     currentElement.type === 'WhileStatement' ||
@@ -181,7 +192,7 @@ if (currentElement &&
     // Insert the `If` Statement check
     currentElement.body.body.unshift(insertionBLocks.inside);
 }
-```
+</code></pre>
 
 And we are done.
 

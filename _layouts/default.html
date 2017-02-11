@@ -9,8 +9,24 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css?56465476" />
+    {% if layout.label == 'blog'%}
+    <link rel="stylesheet" href="/css/prism.css" />
+    {% endif %}
     <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700' rel='stylesheet' type='text/css'>
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss.xml">
+    <script>
+      /*var connectionCheckTimeout = setTimeout(function () {
+        window.isSlowConnection = true;
+        var style = document.createElement('style');
+        style.textContent = 'body{font: 17px/1.56 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"}';
+        document.head.appendChild(style);
+      }, 1000);
+      window.onload = function () {
+        console.log('fast connection');
+        clearTimeout(connectionCheckTimeout);
+      }*/
+    </script>
+
   </head>
 
   <body class="{% if page.label %}{{ page.label }}{% else %}{{ layout.label }}{% endif %}">
@@ -66,17 +82,19 @@
 
     {% include analytics.html %}
 
-    {% if page.label == 'blog' %}
+    <!-- {{ post }} -->
+    {% if layout.label == 'blog' or page.label == 'blog' %}
     <div class="fixed-link-box">
     <!-- Icon made by Austin Andrews from Flaticon.com -->
       <a href="/feed/rss.xml" class="rss-link" target="_blank"></a>
     </div>
+    {% endif %}
 
+    {% if layout.label == 'blog'%}
     <script type="text/javascript" src="/js/prism.js"></script>
     {% endif %}
 
     <script src="/js/script.js"></script>
-
   </body>
 
 
