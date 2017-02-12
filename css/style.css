@@ -860,7 +860,7 @@ SEARCH BAR
 	border-radius: 3px;
 }
 pre[class*=language-] {
-	padding: 0em 1em 1em!important;
+	/*padding: 0em 1em 1em!important;*/
 }
 
 @media (max-width: 750px) {
