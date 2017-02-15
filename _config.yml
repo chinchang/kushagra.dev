@@ -14,7 +14,7 @@ lab_projects:
   desc: "Put your stories up on the Internet"
 - name: "Web Maker"
   link: "web-maker/"
-  desc: "Chrome extension to convert your new tab into a web playground"
+  desc: "Chrome extension for a fast & offline we playground"
 - name: "superplaceholder.js"
   link: "superplaceholderjs/"
   desc: "Super charge your input placeholders"
