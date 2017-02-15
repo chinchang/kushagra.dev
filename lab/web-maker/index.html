@@ -72,6 +72,7 @@ name: Web Maker
 			border-radius: 8px;
 			text-transform: uppercase;
 			transition: 0.3s ease;
+			color: rgba(0,0,0,0.7);
 		}
 		.btn:hover {
 			transform: scale(1.2);
@@ -107,9 +108,6 @@ name: Web Maker
 			opacity: 1;
 		}
 		.feature-box {
-			width: 80vw;
-			min-width: 400px;
-			margin: 0 auto;
 			flex-wrap: wrap;
 			margin-top: 2em;
 			justify-content: center;
@@ -125,6 +123,9 @@ name: Web Maker
 			height: 32px;
 			fill: #444;
 		}
+		.info {
+			display: none;
+		}
 		@media (min-width: 751px) {
 			.social-bar {
 				position: fixed;
@@ -136,10 +137,34 @@ name: Web Maker
 				display: block;
 				margin-top: 10px;
 			}
+			.feature-box {
+				min-width: 400px;
+				width: 80vw;
+				margin: 0 auto;
+			}
 			.feature {
 				flex-basis: 50%;
 				max-width: 50%;
 				padding: 0.5em 2em;
+			}
+			.info {
+				display: block;
+				background: white;
+				box-shadow: 0 -10px 5px rgba(0,0,0,0.15);
+				padding: 2rem;
+				position: fixed;
+				will-change: transform;
+				bottom: 0;
+				transform: translateY(101%);
+				width: 70vw;
+				margin-left: -35vw;
+				left: 50%;
+				text-align: left;
+				font-size: 0.9em;
+				transition: 0.4s cubic-bezier(0.77, -0.1, 0.13, 0.9);
+			}
+			.info.show {
+				transform: translateY(0);
 			}
 		}
 
@@ -148,11 +173,16 @@ name: Web Maker
 		function changeLabel(label) {
 			document.querySelector('.download-btn span').innerHTML = label;
 		}
+		function closeInfo(label) {
+			info.classList.remove('show');
+		}
 		function addToChrome() {
 			_gaq && _gaq.push(['_trackEvent', 'webmaker', 'install-start']);
+			info.classList.add('show');
 			changeLabel('Installing...');
 			chrome.webstore.install(undefined, function () {
-				cta.innerHTML = 'Successfully installed! Open a new tab to use <strong>Web Maker</strong>.'
+				cta.innerHTML = 'Successfully installed!';
+				closeInfo();
 				_gaq && _gaq.push(['_trackEvent', 'webmaker', 'install-done']);
 			});
 		}
@@ -160,8 +190,7 @@ name: Web Maker
 	</head>
 	<body>
 		<h1><img class="logo" width="128" height="128" src="icon-128.png" alt="">Web Maker</h1>
-		<h2 style="margin-bottom:0.4em;">Replace your new tabs with a blazing fast & offline web playground</h2>
-		<div style="opacity: 0.4;">(Replacing new tab page is available as a configurable setting)</div>
+		<h2 style="margin-bottom:0.4em;">A blazing fast & offline web playground in your browser</h2>
 		<div style="margin-top: 30px;" id="cta">
 			<script>
 			if (chrome.app.isInstalled) {
@@ -209,6 +238,20 @@ name: Web Maker
 				<p>Done with your creation and want to share it with the world? One click and have your work open in CodePen.
 				</p>
 			</div>
+		</div>
+
+		<div id="info" class="info">
+			<p>Web Maker needs the following permissions to work with full capabilities. In words of Chrome extensions:</p>
+
+			<p><strong>Read & change all your data on the websites that you visit</strong> - Worry not. This is just required for the new tab replacement feature where Web Maker shows up only if the new tab url is chrome://newtab/. Nothing is read, stored or changed.</p>
+
+			<p><strong>Manage your downloads</strong> - Screenshot capture feature requires this to auto-download the captured screenshot.</p>
+			<h3>Disclaimer</h3>
+			<p>Web Maker <strong>does not track</strong> any user specific data. It uses Google Analytics to track aggregated events to improve user experience based on what features are used more. If still you want to opt-out of Google Analytics tracking, please visit <a href="http://tools.google.com/dlpage/gaoptout" target="_blank">http://tools.google.com/dlpage/gaoptout</a> or you can set up a filter in Adblock Plus or similar ad blocker tools like AdBlock, uBlock or Adblock Pro.</p>
+			<div style="text-align: center;">
+				<a class="btn" href="javascript:void(0)" onclick="closeInfo()">Close</a>
+			</div>
+
 		</div>
 
 		<div class="social-bar">
