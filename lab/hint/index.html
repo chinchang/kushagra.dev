@@ -65,8 +65,8 @@ name: Hint.css
 			.section:after {
 					content: '';
 					position: absolute;
-					bottom: -25px;
-					top: 100%;
+					/*bottom: -25px;*/
+					top: calc(100% - 2px);
 					left: 0;
 					border-right: 100vw solid currentColor;
 					border-bottom: 4vw solid transparent;
@@ -314,6 +314,43 @@ name: Hint.css
 					flex-direction: column;
 				}
 			}
+			.webmaker-box {
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				max-width: 90vw;
+				margin:10px auto 0;
+			}
+			@media screen and (min-width:1280px) {
+				.webmaker-box {
+					position: fixed;
+					width: calc(50vw - 450px);
+					right: 20px;
+					bottom: 20px;
+					background-color: white;
+					text-align: right;
+					padding: 1em;
+					border: rgba(0,0,0,0.3);
+					border-radius: 6px;
+					z-index: 2;
+					opacity: 0;
+					visibility: hidden;
+					transform: translateY(15px);
+					transition: 0.4s ease;
+				}
+				.webmaker-box a {
+					color: #555!important;
+				}
+				.webmaker-box svg {
+					margin-left: 10px;
+				}
+				.webmaker-box.show {
+					opacity: 1;
+					visibility: visible;
+					transform: translateY(0);
+				}
+
+			}
 		</style>
 	</head>
 	<body>
@@ -402,7 +439,7 @@ name: Hint.css
 								Medium
 							</a>
 
-							<a class="hint--top  hint--large" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
+							<a class="hint--top-left  hint--large" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
 								Large
 							</a>
 						</p>
@@ -509,11 +546,45 @@ name: Hint.css
 
 		</div>
 
-		<div class="section  footer">
+		<div class="section  footer" id="footer">
 			<iframe src="http://ghbtns.com/github-btn.html?user=chinchang&repo=hint.css&type=watch&count=true"
 	allowtransparency="true" frameborder="0" scrolling="0" width="105" height="20" style="margin-bottom:12px;"></iframe><br>
 			Made with hands by <a class="hint--top" aria-label="@chinchang457" href="https://twitter.com/chinchang457">Kushagra Gour</a> in India • <a href="/lab/">More projects</a>
+
+			<div class="webmaker-box" id="webMakerBox">
+				<div>
+					<a href="https://kushagragour.in/lab/web-maker/" target="_blank">
+					Also checkout <strong>Web Maker</strong> - a blazing fast & offline web playground.</a>
+				</div>
+				<div>
+					<a href="https://kushagragour.in/lab/web-maker/" target="_blank">
+						<svg width="100" height="60" viewBox="-145 -2 372 175">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-145.000000, -1.000000)">
+							<polygon id="Path-1" fill="#FF4600" points="31 0 232 0 132 173.310547"></polygon>
+							<polygon id="Path-1" fill="#FF6C00" points="0 0 201 0 101 173.310547"></polygon>
+							<polygon id="Path-1" fill="#FF6C00" transform="translate(271.500000, 86.500000) scale(1, -1) translate(-271.500000, -86.500000) " points="171 0 372 0 272 173.310547"></polygon>
+							<polygon id="Path-1" fill="#FF4600" transform="translate(241.500000, 86.500000) scale(1, -1) translate(-241.500000, -86.500000) " points="141 0 342 0 242 173.310547"></polygon>
+							</g>
+						</svg>
+					</a>
+				</div>
+			</div>
 		</div>
+
+		<script>
+			window.onload = function () {
+				if (window.innerWidth < 1280) return;
+				var footerTop;
+				var H = window.innerHeight;
+				window.addEventListener('scroll', function () {
+					footerTop = footer.getBoundingClientRect().top;
+					if (footerTop -  H < 300) {
+						webMakerBox.classList.add('show');
+					}
+				})
+
+			};
+		</script>
 
 		{% include analytics.html %}
 	</body>
