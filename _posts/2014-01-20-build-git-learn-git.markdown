@@ -513,4 +513,4 @@ Till next time, bbye.
 
 Thanks [JSBin](http://jsbin.com/) for your lovely console panel :)
 
-*Update: Join the [discussion on HN](https://news.ycombinator.com/item?id=7089380).*
+*Update: Join the [discussion on HN](https://news.ycombinator.com/item?id=13711798).*
