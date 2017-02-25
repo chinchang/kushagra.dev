@@ -24,6 +24,7 @@ name: Web Maker
 			background: white;
 			min-height: 100vh;
 			font-size: 18px;
+			line-height: 1.4;
 			padding: 0;
 			margin: 0;
 			color: #555;
@@ -126,6 +127,56 @@ name: Web Maker
 		.info {
 			display: none;
 		}
+		.people-say {
+			margin: 4em 0 4em;
+			width: 100vw;
+			overflow-x: hidden;
+		}
+		.people-say-top {
+			align-items: flex-end;
+		}
+		.people-say-bottom {
+			align-items: flex-start;
+		}
+		.people-say:hover .say {
+			flex-shrink: initial;
+		}
+		.people-say:hover .people-say-bottom {
+			transform: translateX(0);
+		}
+		.say {
+			color: inherit;
+			padding: 10px 20px;
+			margin: 10px 10px;
+			display: block;
+			flex-shrink: 0;
+			border-radius: 5px;
+			font-size: 0.95rem;
+			background: #f8f8f8;
+			text-align: left;
+			border: 1px solid rgba(0,0,0,0.05);
+		}
+		.say:hover {
+			border-color: rgba(0,0,0,0.2);
+		}
+		.say p {
+			margin: 10px 0 0 0;
+		}
+		.say__name {
+			font-weight: bold;
+			color: #555;
+			display: flex;
+			align-items: center;
+		}
+		.say__name img {
+			height: 40px;
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+		.say__handle {
+			opacity: 0.7;
+			font-weight: normal;
+		}
 		@media (min-width: 751px) {
 			.social-bar {
 				position: fixed;
@@ -165,6 +216,21 @@ name: Web Maker
 			}
 			.info.show {
 				transform: translateY(0);
+			}
+			.people-say-top,
+			.people-say-bottom {
+				display: flex;
+			}
+			.people-say-bottom {
+				transform: translateX(-6vw);
+			}
+			.say {
+				width: 18vw;
+				flex-shrink: 0;
+				padding: 20px;
+			}
+			.say p {
+				margin: 20px 0 0 0;
 			}
 		}
 
@@ -245,6 +311,96 @@ name: Web Maker
 				<p>Done with your creation and want to share it with the world? One click and have your work open in CodePen.
 				</p>
 			</div>
+		</div>
+
+		<div class="people-say">
+			<h3 style="color:red;font-size: 2em;margin:0;">♥</h3>
+			<div class="people-say-top">
+				<a target="_blank" href="https://twitter.com/Ryan_Random/status/832242636970930177" class="say say--twitter">
+					<div class="say__name">
+						<img src="https://pbs.twimg.com/profile_images/777487197532401665/hsnFGGH2_bigger.jpg" alt="">
+						<div>Ryan Davidson <div class="say__handle">@Ryan_Random</div></div>
+					</div>
+					<p>Really enjoying using Web Maker - super fast offline web playground.</p>
+				</a>
+				<a target="_blank" href="https://chrome.google.com/webstore/detail/web-maker/lkfkkhfhhdkiemehlpkgjeojomhpccnh/reviews" class="say">
+					<div class="say__name">
+						<img src="https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECLSb76_ywaCj7gEiC3ZjYXJkX3Bob3RvKigyMTBmZjI0YjYxM2VkZWZiNmYyNTkwZjEwN2RlNjBlYjRkOTE2YmJlMAHafGv-p112HZJ-KreQxPF8-yn0EQ" alt="">
+						<div>Joacim Nilsson</div>
+					</div>
+					<p>This is something I will be using alot. Thank you! :D</p>
+				</a>
+				<a target="_blank" href="https://blog.codepen.io/2017/01/19/web-maker/" class="say">
+					<div class="say__name">
+						<img src="https://pbs.twimg.com/profile_images/778921008979935232/5m0hKrUC_400x400.jpg" alt="">
+						<div>Chris Coyier</div>
+					</div>
+					<p>If you're looking for a CodePen-like offline editor, and use Chrome, check out Web-Maker by Kushagra Gour.</p>
+				</a>
+				<a target="_blank" href="https://twitter.com/NashVail/status/831126444486975489" class="say say--twitter">
+					<div class="say__name">
+						<img src="https://pbs.twimg.com/profile_images/798582099691212800/15i7-mX-_400x400.jpg" alt="">
+						<div>Nishant Verma <div class="say__handle">@NashVail</div></div>
+					</div>
+					<p>Finding awesome pens on @CodePen and recreating them in @webmakerApp is my new hobby</p>
+				</a>
+				<a target="_blank" href="https://chrome.google.com/webstore/detail/web-maker/lkfkkhfhhdkiemehlpkgjeojomhpccnh/reviews" class="say">
+					<div class="say__name">
+						<img src="https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCK_Jvffnu_2AXSILdmNhcmRfcGhvdG8qKDk3Njg3NDE2NjI1YThmNDgyMDk4OWM3MTBiMTMxNmUzOWQwZGNhMWEwAbe0xm_6UPdrZFAaScMLUOpKFfHP" alt="">
+						<div>Oksana Borukh</div>
+					</div>
+					<p>It's fantastic! I'm glad I've discovered it! Thanks!
+					</p>
+				</a>
+			</div>
+			<div class="people-say-bottom">
+				<a target="_blank" href="https://twitter.com/fedorloenko/status/835186942354534400" class="say">
+					<div class="say__name">
+						<img src="https://pbs.twimg.com/profile_images/826890665070059520/CfQ5_lSz_bigger.jpg" alt="">
+						<div>Fedor Loenko<div class="say__handle">@@fedorloenko</div></div>
+					</div>
+					<p>Great Chrome extension via @chinchang457. I need offline CodePen from time to time.</p>
+				</a>
+
+				<a target="_blank" href="https://twitter.com/Armstrong/status/832191260026888197" class="say say--twitter">
+					<div class="say__name">
+						<img src="https://pbs.twimg.com/profile_images/974909553/Screen_shot_2010-06-09_at_19.14.22_bigger.png" alt="">
+						<div>Chris Armstrong <div class="say__handle">@Armstrong</div></div>
+					</div>
+					<p>@webmakerApp looks like a good offline alternative to @CodePen.</p>
+				</a>
+				<a target="_blank" class="say say--twitter">
+					<div class="say__name">
+						<img src="https://pbs.twimg.com/profile_images/709990641455988736/Zn1XQhbJ_400x400.jpg" alt="">
+						<div>SitePoint <div class="say__handle">@sitepointdotcom</div></div>
+					</div>
+					<p>Meet Web Maker, an Offline, Browser-based CodePen Alternative.</p>
+				</a>
+				<a target="_blank" href="https://twitter.com/labnol/status/816576061622235136" class="say say--twitter">
+					<div class="say__name">
+						<img src="https://pbs.twimg.com/profile_images/641572075321229312/3f_9iwzr_400x400.jpg" alt="">
+						<div>Amit Agarwal <div class="say__handle">@labnol</div></div>
+					</div>
+					<p>This is like having your own copy of Codepen that also works offline.</p>
+				</a>
+
+				<a target="_blank" href="https://chrome.google.com/webstore/detail/web-maker/lkfkkhfhhdkiemehlpkgjeojomhpccnh/reviews" class="say">
+					<div class="say__name">
+						<img src="https://plus.google.com/_/focus/photos/public/AIbEiAIAAABDCNn44MXB2a_DZSILdmNhcmRfcGhvdG8qKDM2YTNiMDhkYzEyMmVkY2IyZjM2YzY0NTAzNTdjMWU5YWVhM2JmM2MwAc4a1i_Vddj6AIdGg9rpk_xdMePf" alt="">
+						<div>Steve Lack</div>
+					</div>
+					<p>Thanks for creating this. What a great tool for productivity!</p>
+				</a>
+
+				<a target="_blank" href="https://chrome.google.com/webstore/detail/web-maker/lkfkkhfhhdkiemehlpkgjeojomhpccnh/reviews" class="say">
+					<div class="say__name">
+						<img src="https://plus.google.com/_/focus/photos/public/AIbEiAIAAABECOrDgpLHt4jwzwEiC3ZjYXJkX3Bob3RvKig2ZWNkNGM4MmM0MDY2ZmFkMDUzZmE3MGY4MWE3NWM5OTIzZjA4MGRlMAEmU4uVE7yiEAzp6wGGR7B3MMjErg" alt="">
+						<div>Margaret H</div>
+					</div>
+					<p>Decided to use it to work on my latest project, it's pretty awesome! Thank you for making this!</p>
+				</a>
+			</div>
+
 		</div>
 
 		<div id="info" class="info">
