@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Kushagra Gour - Live Concert</title>
+	<link href="https://fonts.googleapis.com/css?family=Spirax" rel="stylesheet">
+	<style type="text/css">
+		body {
+			background: url(bg.jpg);
+			background-size: cover;
+			color: white;
+			font-family: 'Spirax', cursive;
+			text-align: center;
+			font-size: 30px;
+			text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+		}
+		h1 {
+			font-size: 2.7em;
+		}
+		h3 {
+			font-size: 2em;
+			margin-bottom: 0.1em;
+			margin-top: 0.5em;
+		}
+		.btn {
+			margin-top: 2em;
+			background: transparent;
+			border: 5px solid rgba(255,255,255,0.7);
+			border-radius: 50px;
+			text-transform: uppercase;
+			color: rgba(255,255,255,0.7);
+			padding: 0.5em 1em;
+			font-size: inherit;
+			cursor: pointer;
+			transition: 0.3s ease;
+			letter-spacing: 1.5px;
+			font-weight: bold;
+		}
+		.btn:hover {
+			border-color: rgba(255,255,255,1);
+			color: rgba(255,255,255,1);
+			background: white;
+			color: #444;
+		}
+		.modal {
+			width: 50vw;
+			position: fixed;
+			color: #444;
+			left: 50%;
+			top: 5%;
+			background: white;
+			border-radius: 5px;
+			box-sizing: border-box;
+			margin-left: -25vw;
+			transform: scale(0.8) translateY(-100px);
+			opacity: 0;
+			transition: 0.3s ease;
+			visibility: hidden;
+			padding: 2em;
+			font-size: 2em;
+			box-shadow: 0 10px 10px rgba(0,0,0,0.2);
+		}
+		.modal.show {
+			opacity: 1;
+			visibility: visible;
+			transform: scale(1) translateY(0px);
+		}
+		.img {
+			border-radius: 50%;
+			display: inline-block;
+			width: 80px;
+			height: 80px;
+			vertical-align: middle;
+			filter: grayscale();
+			margin-left: 1em;
+			overflow: hidden;
+			background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Shankar_Mahadevan_at_Idea_Rocks_India_5,_Bangalore,_India_(photo_-_Jim_Ankan_Deka)_(cropped).jpg/172px-Shankar_Mahadevan_at_Idea_Rocks_India_5,_Bangalore,_India_(photo_-_Jim_Ankan_Deka)_(cropped).jpg');
+			background-size: cover;
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		<h1 style="margin-bottom: 0">Kushagra Gour - Live Piano Concert</h1>
+		<h4>feat. Shankar Mahadevan <div class="img"></div></h4>
+
+		<h3>Date</h3>
+		<div>8th April, 2017</div>
+		<h3>Venue</h3>
+		<div>Siri Fort Auditorium</div>
+
+		<button class="btn" onclick="buyTicket()">Buy Tickets</button>
+	</div>
+
+<div id="modal" class="modal">अप्रैल फूल बनाया। तो उनको गुस्सा आया :)<br><br><br>Happy April Fool Day!</div>
+
+	<script type="text/javascript">
+		function buyTicket() {
+			modal.classList.toggle('show');
+		}
+	</script>
+
+</body>
+</html>
