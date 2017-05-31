@@ -3,7 +3,7 @@ layout: post
 title: "Web Maker: Forking and Fonts"
 ---
 
-I recently released v2.7.0 of [Web Maker](https://webmakerapp.com) 2 super useful features - Forking & Customizable fonts. Here is a bit about them.
+I recently released v2.7.0 of [Web Maker](https://webmakerapp.com) with 2 super useful features - Forking & Customizable fonts. Here is a bit about them.
 
 ## Forking
 
