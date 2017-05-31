@@ -23,7 +23,7 @@ Forking basically allows you to create a duplicate of any of your existing creat
 And all this user experience is completely accessible through just keyboard too!
 
 <figure>
-    <img src="/images/webmaker-fork.gif" alt="Web Maker Fork" />
+    <img src="/images/2017/webmaker-fork.gif" alt="Web Maker Fork" />
     <caption>Web Maker's Fork feature</caption>
 </figure>
 
@@ -34,7 +34,7 @@ Customizable fonts are something that developers always dig. And with the new ge
 I personally like the game-y feel of the _FixedSys_ font. Now coding feels like playing a game :)
 
 <figure>
-    <img src="/images/webmaker-fixedsys.png" alt="Web Maker FixedSys font" />
+    <img src="/images/2017/webmaker-fixedsys.png" alt="Web Maker FixedSys font" />
     <caption>FixedSys font in Web Maker</caption>
 </figure>
 
