@@ -5,7 +5,7 @@ title: "Overriding new tab page in Chrome extension, conditionally!"
 
 If you use Chrome extensions like Momentum, Panda etc you know that Chrome extensions have the ability to override your new tab pages i.e. the page you see when you open a new tab in the browser. They do this through the [*Override Pages*](https://developer.chrome.com/extensions/override) API, by doing so in the manifest file:
 
-<pre><code class="language-json">
+<pre><code class="language-javascript">
 {
   "name": "My extension",
   ...
