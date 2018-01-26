@@ -35,11 +35,10 @@ h2, h3, h4, h5, h6, strong {
 input { outline: 0; }
 input:focus { box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); }
 .clear { clear: both; }
-
 .talign-middle { text-align: center; }
-
 .valign-middle { vertical-align: middle; }
-
+.flex { display: flex; }
+.space-between { justify-content: space-between; }
 h2 {
 	font-size: 2em;
 }
@@ -529,7 +528,20 @@ article .post-title a {
 }
 article .post-meta {
 	font-size: 0.8rem;
-	color: #777;
+	color: #666;
+}
+article .post-website {
+	font-size: 0.8rem;
+	color: #666;
+	display: flex;
+}
+article .post-website:after {
+	content: url('/images/icons/open-in-new.svg');
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-left: 4px;
+	opacity: 0.6;
 }
 article .post-content {
 	margin-top: 2em;
