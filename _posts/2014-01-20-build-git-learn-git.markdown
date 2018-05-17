@@ -281,7 +281,7 @@ Then you create a new branch called *testing*:
 ![New branch 'testing'](http://git-scm.com/figures/18333fig0304-tn.png)
 
 Nothing much, just a new pointer called *testing* to the lastest commit.
-How does Git knows which branch you are on? Here comes the `HEAD`. `HEAD` points to the current branch:
+How does Git know which branch you are on? Here comes the `HEAD`. `HEAD` points to the current branch:
 ![HEAD pointing 'testing'](http://git-scm.com/figures/18333fig0306-tn.png)
 
 Now comes interesting part. Being on *testing* branch you make a commit. Notice what happens:
