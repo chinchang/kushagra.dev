@@ -33,12 +33,17 @@
       .color-light {
         color: #4e3f47;
       }
+      @media print {
+        .download-link {
+          display: none;
+        }
+      }
     </style>
   </head>
 
   <body>
     <h1>Kushagra gour - Resume</h1>
-    <button aria-label="">Download</button>
+    <a class="download-link" aria-label="Download Resume" href="/resume/kushagra-gour-resume.pdf" download>Download</a>
 
     <h2>Contact Me</h2>
     <p>
