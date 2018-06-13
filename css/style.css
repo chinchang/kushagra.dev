@@ -68,8 +68,7 @@ body{
 }
 
 a {
-	text-decoration: none;
-	color: #A3A948;
+	color: #6f7330;
 	/*font-weight: 200;*/
 }
 
@@ -229,7 +228,7 @@ figure h3 {
 	}
 }
 
-.top-header__link:hover {
+.top-header__link{
 	text-decoration: none;
 }
 
@@ -316,6 +315,7 @@ figure h3 {
 	line-height: 62px;
 	letter-spacing: -8px;
 	padding: 0 14px 0 10px;
+	text-decoration: none;
 }
 
 
@@ -411,7 +411,7 @@ nav > ul a svg {
 footer {
 	text-align: center;
 	padding: 40px 0 20px;
-	font-size: 0.8rem;
+	/* font-size: 0.8rem; */
 	width: 100%;
 }
 
@@ -492,12 +492,10 @@ article a {
 
 article a:HOVER {
 	color: #F2C45A;
-	text-decoration: none;
 }
 
 .blog article a {
 	color: hsl(64, 40%, 47%); /* green */
-	border-bottom: 1px solid #e4e6ca;
 }
 .blog article:not(.list-item) a:visited {
 	color: #666;
@@ -530,11 +528,11 @@ article .post-title a {
 	color: inherit;
 }
 article .post-meta {
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	color: #666;
 }
 article .post-website {
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	color: #666;
 	display: flex;
 }
@@ -682,7 +680,8 @@ Social bar 2
 }
 
 .social-bar-2__item:hover,
-.social-bar-2__item:focus {
+.social-bar-2__item:focus,
+.social-bar-2__item:focus-within {
 	border-top-width: 0;
 }
 
@@ -723,7 +722,8 @@ Social bar 2
 }
 
 .social-bar-2__item:hover .social-bar-2__item__text,
-.social-bar-2__item:focus .social-bar-2__item__text {
+.social-bar-2__item:focus .social-bar-2__item__text,
+.social-bar-2__item:focus-within .social-bar-2__item__text {
 	transform: translateY(0px);
 
 	opacity: 1;
