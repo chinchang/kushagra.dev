@@ -1,19 +1,18 @@
-.clear { clear: both; }
+.clear {
+	clear: both;
+}
 
-body{
+body {
 	margin: 0;
-	padding: 10px;
+	padding: 0;
 	padding-top: 55px;
 }
 
-header{
+header {
 	padding: 0 18px;
 	background: #000;
 	border-radius: 0 34px 34px 0;
 	color: #EEE;
-	position: absolute;
-	left: 0;
-	top: 10px;
 	display: inline-block;
 	font-size: 12px;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -24,7 +23,7 @@ header{
 	-o-transition: padding 300ms ease-in-out;
 }
 
-header a{
+header a {
 	color: #FFF;
 	text-decoration: none;
 	-webkit-transition: 300ms color;
@@ -32,11 +31,11 @@ header a{
 	-o-transition: 300ms color;
 }
 
-header a:HOVER{
+header a:HOVER {
 	color: #008dbe;
 }
 
-header h1{
+header h1 {
 	font-size: 50px;
 	display: inline-block;
 	font-weight: bold;
@@ -47,27 +46,27 @@ header h1{
 	line-height: 50px;
 }
 
-header em{
+header em {
 	vertical-align: middle;
 	color: #AAA;
 }
 
-header #socialz{
+header #socialz {
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 10px;
 	width: 300px;
 }
 
-header #socialz > *{
+header #socialz>* {
 	vertical-align: middle !important;
 }
 
-header:hover{
+header:hover {
 	padding-right: 80px;
 }
 
-header .button{
+header .button {
 	display: inline-block;
 	width: 25px;
 	height: 25px;
@@ -75,10 +74,12 @@ header .button{
 	background: #555;
 	vertical-align: middle;
 }
-header .button + span{
+
+header .button+span {
 	display: none;
 }
-header .button:hover + span{
+
+header .button:hover+span {
 	display: inline;
 }
 
@@ -108,6 +109,7 @@ header .button:hover + span{
 	padding-left: 80px;
 }
 
-.chrome-app #back-to-lab-button, .chrome-app .github-ribbon {
+.chrome-app #back-to-lab-button,
+.chrome-app .github-ribbon {
 	display: none;
 }
