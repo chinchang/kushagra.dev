@@ -593,20 +593,21 @@ article p code {
 }
 
 .button {
-	background-color: #F2C45A;
+	background-color: white;
 	color: #FFF !important;
 	font-weight: bold;
 	padding: 6px 12px;
 	text-align: center;
 	cursor: pointer;
-	border: none;
+	border: 3px solid #6f7330;
 	text-decoration: none !important;
 	-webkit-transition: color, background-color 200ms;
 	-moz-transition: color, background-color 200ms;
 }
 
 .button:hover, .button:focus {
-	background-color: #DDAD44;
+	background-color: #6f7330;
+	color: white;
 }
 
 .button-big {
