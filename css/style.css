@@ -235,14 +235,19 @@ figure h3 {
 }
 
 .top-header__logo {
-	width: 120px;
-	height: 120px;
+	width: 50px;
+	height: 50px;
 	overflow: hidden;
 	border-radius: 50%;
 	margin: 0 auto;
 	background: #f1f1f1;
 	animation: logo-drop 0.4s ease-out forwards 0.5s;
 	transform: translateY(-120%);
+}
+
+.top-header--home .top-header__logo {
+	width: 120px;
+	height: 120px;
 }
 
 .home .top-header__logo {
@@ -288,6 +293,12 @@ figure h3 {
 
 .top-header__link {
 	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	margin: 0 auto;
+}
+
+.top-header--home .top-header__link {
 	display: inline-block;
 }
 
