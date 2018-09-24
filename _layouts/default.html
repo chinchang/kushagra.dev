@@ -1,17 +1,25 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
   <head>
-  	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
-  	<meta name="description" content="Code and Create" />
+    <meta name="description" content="Code and Create" />
     <title>{{ page.title }} - {{ site.title }}</title>
+
+    {% if layout.label == 'blog'%}
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    {% endif %}
+
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/style.css?928389476" />
+
     {% if layout.label == 'blog'%}
     <link rel="stylesheet" href="/css/prism.css" />
-    {% endif %}
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+
     <style>
       /* latin-ext */
       @font-face {
@@ -47,6 +55,8 @@
       }
 
     </style>
+    {% endif %}
+
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss.xml">
     <script>
       /*var connectionCheckTimeout = setTimeout(function () {
@@ -67,14 +77,14 @@
 
     <a href="javascript:void(0)" title="or press '/' to search" onclick="toggleSearch()" class="search-btn">
       <svg style="width:48px;height:48px" viewBox="0 0 24 24">
-      <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+        <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
       </svg>
     </a>
 
     <div class="search" id="js-search">
       <a href="javascript:void(0)" onclick="toggleSearch()" class="search__close-btn">
         <svg style="width:48px;height:48px" viewBox="0 0 24 24">
-        <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+          <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
         </svg>
       </a>
       <input type="text" placeholder="Type here to search" class="search__input" id="js-search__input">
@@ -86,10 +96,12 @@
 
         <header class="top-header {% if page.label == 'home' %}top-header--home{% endif %}">
 
-        <div id="me2" class="top-header__logo">
-          <div></div>
-        </div>
-        <a class="top-header__link" href="/"><h1>Kushagra Gour</h1></a>
+          <div id="me2" class="top-header__logo">
+            <div></div>
+          </div>
+          <a class="top-header__link" href="/">
+            <h1>Kushagra Gour</h1>
+          </a>
           <h2>Game developer . Hacker . Creativity freak!</h2>
         </header>
 
@@ -119,7 +131,7 @@
     <!-- {{ post }} -->
     {% if layout.label == 'blog' or page.label == 'blog' %}
     <div class="fixed-link-box">
-    <!-- Icon made by Austin Andrews from Flaticon.com -->
+      <!-- Icon made by Austin Andrews from Flaticon.com -->
       <a href="/feed/rss.xml" class="rss-link" target="_blank"></a>
     </div>
     {% endif %}

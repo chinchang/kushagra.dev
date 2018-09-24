@@ -24,10 +24,13 @@ label: blog
 </div>
 
 <div class="comment-box">
-    <h3>Comments</h3>
-    <hr/>
-	{% include disqus.html %}
+	<button id="showCommentsButton" style="margin:0 auto;display:block;" class="button" onclick="window.bootDisqus();">Show
+		comments</button>
+	<div id="disqusContainerEl" style="display: none">
+		<h3>Comments</h3>
+		<hr />
+		{% include disqus.html %}
+	</div>
 </div>
-
 
 <div class="bring-to-top">TOP</div>
