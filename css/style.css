@@ -649,6 +649,7 @@ article .post-website:after {
 article .post-content {
 	font-family: 'PT Serif', Helvetica, Arial, Geneva, sans-serif;
 	margin-top: 2em;
+	word-spacing: 1px;
 }
 
 article .post-summary {}
