@@ -7,6 +7,9 @@ author:
 title: Kushagra Gour- Creativity freak!
 permalink: /blog/:year/:month/:title/
 highlighter: rouge
+url: "https://kushagragour.in"
+plugins:
+   - jekyll-sitemap
 
 lab_projects:
 - name: "Tolks"
