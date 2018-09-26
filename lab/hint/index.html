@@ -5,6 +5,7 @@ name: Hint.css
 
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,7 +16,7 @@ name: Hint.css
 
 		<link rel="stylesheet" type="text/css" href="/css/pygments-light.css" />
 		<link rel="stylesheet" type="text/css" href="hint.min.css">
-		<link rel="image_src" href="hint.png"/>
+		<link rel="image_src" href="hint.png" />
 
 		<style type="text/css">
 			body {
@@ -31,96 +32,140 @@ name: Hint.css
 
 			h1 {
 				font-size: 6em;
-					text-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
+				text-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
 				font-family: 'Lobster', cursive;
 			}
+
 			h2 {
 				font-size: 4em;
 				margin: 0.5em 0;
-					text-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
+				text-shadow: 0 6px 1px rgba(0, 0, 0, 0.2);
 				font-family: 'Lobster', cursive;
 			}
 
 			.version {
-					font-size: 0.3em;
-					border-radius: 50%;
-					padding: 1px 11px;
-					text-shadow: none;
-					top: 0px;
-					position: absolute;
-					right: -65px;
+				font-size: 0.3em;
+				border-radius: 50%;
+				padding: 1px 11px;
+				text-shadow: none;
+				top: 0px;
+				position: absolute;
+				right: -65px;
 			}
+
 			@media screen and (max-width: 400px) {
 				body {
 					font-size: 15px;
 				}
+
 				.version {
 					right: 0;
 				}
 			}
+
 			.section {
 				padding: 3em 0;
 				position: relative;
 			}
+
 			.section:after {
-					content: '';
-					position: absolute;
-					/*bottom: -25px;*/
-					top: calc(100% - 2px);
-					left: 0;
-					border-right: 100vw solid currentColor;
-					border-bottom: 4vw solid transparent;
-					border-top: 0;
-					z-index: 1;
+				content: '';
+				position: absolute;
+				/*bottom: -25px;*/
+				top: calc(100% - 2px);
+				left: 0;
+				border-right: 100vw solid currentColor;
+				border-bottom: 4vw solid transparent;
+				border-top: 0;
+				z-index: 1;
 			}
+
 			.section:last-of-type {
 				padding-bottom: 2em;
 			}
+
 			.section:last-of-type:after {
 				display: none;
 			}
+
 			.section--inverted:after {
 				border-left: 100vw solid currentColor;
 				border-right: 0;
 			}
-			.hero { background: #7D6EC6; }
-			.hero:after { color: #7D6EC6; }
 
-			.section:nth-child(2) { background: #5BC0EB; }
-			.section:nth-child(2):after { color: #5BC0EB; }
+			.hero {
+				background: #7D6EC6;
+			}
 
-			.section:nth-child(3) { background: #E4CC37; }
-			.section:nth-child(3):after { color: #E4CC37; }
+			.hero:after {
+				color: #7D6EC6;
+			}
 
-			.section:nth-child(4) { background: #7D6EC6; }
-			.section:nth-child(4):after { color: #7D6EC6; }
+			.section:nth-child(2) {
+				background: #5BC0EB;
+			}
 
-			.section:nth-child(5) { background: #5BC0EB; }
-			.section:nth-child(5):after { color: #5BC0EB; }
+			.section:nth-child(2):after {
+				color: #5BC0EB;
+			}
 
-			.section:nth-child(6) {	background: #D9623F; }
-			.section:nth-child(6):after { color: #D9623F; }
+			.section:nth-child(3) {
+				background: #E4CC37;
+			}
+
+			.section:nth-child(3):after {
+				color: #E4CC37;
+			}
+
+			.section:nth-child(4) {
+				background: #7D6EC6;
+			}
+
+			.section:nth-child(4):after {
+				color: #7D6EC6;
+			}
+
+			.section:nth-child(5) {
+				background: #5BC0EB;
+			}
+
+			.section:nth-child(5):after {
+				color: #5BC0EB;
+			}
+
+			.section:nth-child(6) {
+				background: #D9623F;
+			}
+
+			.section:nth-child(6):after {
+				color: #D9623F;
+			}
 
 
 			.section-inner {
 				max-width: 700px;
 				margin: 0 auto;
 			}
+
 			@media screen and (max-width: 650px) {
-					.section-inner {
-						width: auto;
-						padding: 0 10px;
-					}
+				.section-inner {
+					width: auto;
+					padding: 0 10px;
+				}
 			}
-			h1,h3{
+
+			h1,
+			h3 {
 				margin: 5px 0;
 			}
+
 			a {
 				color: #1A5A7A;
 				color: #fff;
 				outline: none;
 				text-decoration: none;
 			}
+
 			.btn {
 				/*background: rgba(0,0,0,0.2);*/
 				background: white;
@@ -130,21 +175,26 @@ name: Hint.css
 				text-transform: uppercase;
 				transition: 0.3s ease;
 			}
+
 			.btn:hover {
 				transform: scale(1.2);
 			}
+
 			.download-btn {
 				color: #7D6EC6;
 				margin-top: 1em;
 			}
+
 			.position-grid {
 				display: flex;
 				flex-wrap: wrap;
 			}
+
 			.position-grid__cell {
 				flex: 1 33.33%;
 				font-size: 0.8em;
 			}
+
 			.position-grid__cell a {
 				display: inline-block;
 				width: 90%;
@@ -153,21 +203,25 @@ name: Hint.css
 				margin: 2px 0;
 				padding: 16px 5px;
 			}
+
 			.status-icon {
 				background: indianred;
 				fill: white;
 				border-radius: 3px;
 				padding: 5px 6px 2px;
 				margin: 0 4px;
-				border: 1px solid rgba(0,0,0,0.2);
+				border: 1px solid rgba(0, 0, 0, 0.2);
 			}
+
 			.features ul {
 				padding: 0;
 				list-style: none;
 			}
+
 			.footer {
 				color: rgba(255, 255, 255, 0.7);
 			}
+
 			.window {
 				background: #fff;
 				width: 50vw;
@@ -175,9 +229,10 @@ name: Hint.css
 				margin: auto;
 				border: 1px solid #acacac;
 				border-radius: 6px;
-				box-shadow: 0px 6px 17px rgba(0,0,0,0.2);
+				box-shadow: 0px 6px 17px rgba(0, 0, 0, 0.2);
 				cursor: default;
 			}
+
 			@media screen and (max-width:500px) {
 				.window {
 					width: auto;
@@ -217,66 +272,80 @@ name: Hint.css
 				line-height: 11px;
 				width: 11px;
 				height: 11px;
-				border: 1px solid rgba(0,0,0,0.15);
+				border: 1px solid rgba(0, 0, 0, 0.15);
 				border-radius: 50%;
 				display: inline-block;
 				margin-right: 5px;
 				cursor: pointer;
 
 			}
+
 			.close {
 				background: #ff5c5c;
 			}
+
 			.minimize {
 				background: #ffbd4c;
 			}
+
 			.zoom {
 				background: #00ca56;
 			}
+
 			.titlebar__btn:hover {
 				border-color: rgba(0, 0, 0, 0.3);
 			}
+
 			.content {
 				padding: 50px 10px;
 				color: #777;
 			}
+
 			.content a {
 				color: #444;
 			}
+
 			.content h3 {
 				text-transform: uppercase;
 				font-size: 0.8em;
 				margin: 22px 0 0;
 				padding: 4px 0;
-				background: rgba(00,0,0,0.02);
-				color: rgba(0,0,0,0.9);
-				border-bottom: 1px solid rgba(0,0,0,0.04);
+				background: rgba(00, 0, 0, 0.02);
+				color: rgba(0, 0, 0, 0.9);
+				border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 			}
+
 			pre {
 				color: #555;
 				font-size: 1.5em;
 			}
+
 			a svg {
 				fill: rgba(255, 255, 255, 0.6);
 			}
+
 			a:hover svg {
 				fill: white;
 			}
+
 			.social-wrap {
-				position:fixed;
+				position: fixed;
 				/*z-index:2;*/
 				right: 20px;
-				top:20px;
+				top: 20px;
 			}
+
 			@media screen and (max-width:800px) {
 				.social-wrap {
 					margin-top: 20px;
 					position: static;
-		    	}
-		    }
-		    .license-wrap {
+				}
+			}
+
+			.license-wrap {
 				display: flex;
 			}
+
 			.license {
 				display: block;
 				margin: 20px;
@@ -284,24 +353,28 @@ name: Hint.css
 				padding: 20px;
 				border: 1px solid #45a3cc;
 				border-radius: 4px;
-				background: rgba(255,255,255,0.9);
-				box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+				background: rgba(255, 255, 255, 0.9);
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 				color: #555;
 				overflow: hidden;
 				cursor: pointer;
 				transition: 0.3s ease;
 			}
+
 			.license h3 {
 				font-size: 1.4em;
 				font-family: 'Lobster', cursive;
 				margin: 5px 0 5px 0;
 			}
+
 			.license:hover {
-				box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 			}
+
 			.license__project-count {
 				margin: 30px 0;
 			}
+
 			.license__price {
 				background: #34718c;
 				color: white;
@@ -309,18 +382,21 @@ name: Hint.css
 				font-size: 1.2em;
 				margin: 10px -20px -20px;
 			}
+
 			@media screen and (max-width:600px) {
 				.license-wrap {
 					flex-direction: column;
 				}
 			}
+
 			.webmaker-box {
-				display:flex;
+				display: flex;
 				justify-content: center;
 				align-items: center;
 				max-width: 90vw;
-				margin:10px auto 0;
+				margin: 10px auto 0;
 			}
+
 			@media screen and (min-width:1280px) {
 				.webmaker-box {
 					position: fixed;
@@ -330,7 +406,7 @@ name: Hint.css
 					background-color: white;
 					text-align: right;
 					padding: 1em;
-					border: rgba(0,0,0,0.3);
+					border: rgba(0, 0, 0, 0.3);
 					border-radius: 6px;
 					z-index: 2;
 					opacity: 0;
@@ -338,12 +414,15 @@ name: Hint.css
 					transform: translateY(15px);
 					transition: 0.4s ease;
 				}
+
 				.webmaker-box a {
-					color: #555!important;
+					color: #555 !important;
 				}
+
 				.webmaker-box svg {
 					margin-left: 10px;
 				}
+
 				.webmaker-box.show {
 					opacity: 1;
 					visibility: visible;
@@ -352,7 +431,15 @@ name: Hint.css
 
 			}
 		</style>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-8854840197175063",
+				enable_page_level_ads: true
+			});
+		</script>
 	</head>
+
 	<body>
 
 		<div class="section  hero">
@@ -360,21 +447,23 @@ name: Hint.css
 			<h1 style="display:inline-block;position:relative">Hint.css <small class="version">2.0</small> </h1>
 			<h3>A pure CSS tooltip library for your lovely websites</h3>
 			<br>
-			<a href="https://github.com/chinchang/hint.css/releases" class="btn  download-btn  hint--top" aria-label="Get it from Github">Download <em style="text-transform:lowercase">(1.5KB minified & gzipped)</em></a>
+			<a href="https://github.com/chinchang/hint.css/releases" class="btn  download-btn  hint--top" aria-label="Get it from Github">Download
+				<em style="text-transform:lowercase">(1.5KB minified & gzipped)</em></a>
 			<!-- <br> -->
 			<a style="display:block;margin-top:20px;" href="#commercial">Commercial Use</a>
 
 			<div class="social-wrap">
-				 <a aria-label="Fork on github" class="hint--bottom-left" href="https://github.com/chinchang/hint.css" style="margin:0 10px">
+				<a aria-label="Fork on github" class="hint--bottom-left" href="https://github.com/chinchang/hint.css" style="margin:0 10px">
 					<svg viewBox="0 0 16 16" width="48" height="48">
-						<path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+						<path d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z" />
 					</svg>
 				</a>
-				<a aria-label="Tweet about Hint.css v2" class="hint--bottom-left" title="Tweet" href="http://twitter.com/share?url=http://kushagragour.in/lab/hint/&text=Hint.css v2 - A CSS only tooltip library for your lovely websites&count=horiztonal&related=hint_css&hashtags=css,sass" target="_blank">
-					 <svg viewBox="0 0 16 16" width="48" height="48">
-							<path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
-							c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
-						</svg>
+				<a aria-label="Tweet about Hint.css v2" class="hint--bottom-left" title="Tweet" href="http://twitter.com/share?url=http://kushagragour.in/lab/hint/&text=Hint.css v2 - A CSS only tooltip library for your lovely websites&count=horiztonal&related=hint_css&hashtags=css,sass"
+				 target="_blank">
+					<svg viewBox="0 0 16 16" width="48" height="48">
+						<path d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+							c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z" />
+					</svg>
 				</a>
 			</div>
 		</div>
@@ -382,103 +471,107 @@ name: Hint.css
 		<div class="section  section--inverted">
 			<h2>Tryout</h2>
 
-				<div class="window">
-					<div class="titlebar">
-						<div class="buttons">
-							<a class="titlebar__btn  close  hint--bottom-right" aria-label="Close"></a>
-							<a class="titlebar__btn  minimize  hint--bottom-right" aria-label="Minimize"></a>
-							<a class="titlebar__btn  zoom  hint--bottom-right" aria-label="Zoom"></a>
-						</div>
-						Try hovering over different things
+			<div class="window">
+				<div class="titlebar">
+					<div class="buttons">
+						<a class="titlebar__btn  close  hint--bottom-right" aria-label="Close"></a>
+						<a class="titlebar__btn  minimize  hint--bottom-right" aria-label="Minimize"></a>
+						<a class="titlebar__btn  zoom  hint--bottom-right" aria-label="Zoom"></a>
 					</div>
-					<div class="content">
-						<div class="position-grid">
-							<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="bottom-right" class="hint--bottom-right">bottom-right</a></div>
-							<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="bottom" class="hint--bottom">bottom</a></div>
-							<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="bottom-left" class="hint--bottom-left">bottom-left</a></div>
-							<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="right" class="hint--right">right</a></div>
-							<div class="position-grid__cell"><a>.</a></div>
-							<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="left" class="hint--left">left</a></div>
-							<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="top-right" class="hint--top-right">top-right</a></div>
-							<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="top" class="hint--top">top</a></div>
-							<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="top-left" class="hint--top-left">top-left</a></div>
-						</div>
-
-						<h3>Color Modifiers</h3>
-						<p>
-							<a class="status-icon  hint--bottom-right  hint--error" style="background:indianred" aria-label="This is an error tooltip">
-								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
-										<path fill="#ffffff" d="M8.27,3L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3M8.41,7L12,10.59L15.59,7L17,8.41L13.41,12L17,15.59L15.59,17L12,13.41L8.41,17L7,15.59L10.59,12L7,8.41" />
-								</svg>
-							</a>
-							<a class="status-icon  hint--bottom-right  hint--warning" style="background:orange" aria-label="This is a warning tooltip">
-								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
-										<path fill="#ffffff" d="M11,4.5H13V15.5H11V4.5M13,17.5V19.5H11V17.5H13Z" />
-								</svg>
-							</a>
-							<a class="status-icon  hint--bottom-left  hint--info" style="background:lightblue" aria-label="This is an info tooltip">
-								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
-										<path fill="#ffffff" d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11.05 8.23,12.81 10,13.58V16H14V13.58C15.77,12.81 17,11.05 17,9A5,5 0 0,0 12,4Z" />
-								</svg>
-							</a>
-							<a class="status-icon  hint--bottom-left  hint--success" style="background:lightgreen" aria-label="This is success tooltip">
-								<svg style="width:24px;height:24px" viewBox="0 0 24 24">
-									<path fill="#ffffff" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
-								</svg>
-							</a>
-						</p>
-
-						<h3>Size variations</h3>
-
-						<p>
-							<a class="hint--top  hint--small" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
-								Small
-							</a>
-
-							<a class="hint--top  hint--medium" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
-								Medium
-							</a>
-
-							<a class="hint--top-left  hint--large" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
-								Large
-							</a>
-						</p>
-
-						<h3>Extra</h3>
-
-						<p style="margin-bottom:50px">
-							<a class="hint--bottom  hint--always" aria-label="...which always keep showing">You can also make tooltips...</a>
-						</p>
-
-						<p>
-							<a class="hint--bottom  hint--rounded" aria-label="We have rounded corners for you">Hmm...So you don't like sharp edges?</a>
-						</p>
-
-						<h3>Effects</h3>
-
-						<p>
-							<a class="hint--top  hint--no-animate" aria-label="Get a simple show/hide tooltip">Dont like animation?</a>
-						</p>
-						<p>
-							<a class="hint--bottom  hint--bounce" aria-label="Bounce">Adding a <code>hint--bounce</code> class gives you that...</a>
-						</p>
+					Try hovering over different things
+				</div>
+				<div class="content">
+					<div class="position-grid">
+						<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="bottom-right" class="hint--bottom-right">bottom-right</a></div>
+						<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="bottom" class="hint--bottom">bottom</a></div>
+						<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="bottom-left" class="hint--bottom-left">bottom-left</a></div>
+						<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="right" class="hint--right">right</a></div>
+						<div class="position-grid__cell"><a>.</a></div>
+						<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="left" class="hint--left">left</a></div>
+						<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="top-right" class="hint--top-right">top-right</a></div>
+						<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="top" class="hint--top">top</a></div>
+						<div class="position-grid__cell"><a href="javascript:void(0)" aria-label="top-left" class="hint--top-left">top-left</a></div>
 					</div>
-				</div>
 
-				<div class="section-inner" style="opacity: 0.7; margin-top: 25px">
-					<strong>Upgrading from v1.x</strong>: If you are already using v1.x, you may need to tweak certain position classes because of the way tooltips are positioned in v2.
+					<h3>Color Modifiers</h3>
+					<p>
+						<a class="status-icon  hint--bottom-right  hint--error" style="background:indianred" aria-label="This is an error tooltip">
+							<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+								<path fill="#ffffff" d="M8.27,3L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3M8.41,7L12,10.59L15.59,7L17,8.41L13.41,12L17,15.59L15.59,17L12,13.41L8.41,17L7,15.59L10.59,12L7,8.41" />
+							</svg>
+						</a>
+						<a class="status-icon  hint--bottom-right  hint--warning" style="background:orange" aria-label="This is a warning tooltip">
+							<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+								<path fill="#ffffff" d="M11,4.5H13V15.5H11V4.5M13,17.5V19.5H11V17.5H13Z" />
+							</svg>
+						</a>
+						<a class="status-icon  hint--bottom-left  hint--info" style="background:lightblue" aria-label="This is an info tooltip">
+							<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+								<path fill="#ffffff" d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11.05 8.23,12.81 10,13.58V16H14V13.58C15.77,12.81 17,11.05 17,9A5,5 0 0,0 12,4Z" />
+							</svg>
+						</a>
+						<a class="status-icon  hint--bottom-left  hint--success" style="background:lightgreen" aria-label="This is success tooltip">
+							<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+								<path fill="#ffffff" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z" />
+							</svg>
+						</a>
+					</p>
+
+					<h3>Size variations</h3>
+
+					<p>
+						<a class="hint--top  hint--small" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
+							Small
+						</a>
+
+						<a class="hint--top  hint--medium" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;" data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
+							Medium
+						</a>
+
+						<a class="hint--top-left  hint--large" style="border: 1px solid #eee;padding:3px 6px;border-radius:4px;"
+						 data-hint="You can show very very long sentences inside tooltips by using various available size variation classes.">
+							Large
+						</a>
+					</p>
+
+					<h3>Extra</h3>
+
+					<p style="margin-bottom:50px">
+						<a class="hint--bottom  hint--always" aria-label="...which always keep showing">You can also make tooltips...</a>
+					</p>
+
+					<p>
+						<a class="hint--bottom  hint--rounded" aria-label="We have rounded corners for you">Hmm...So you don't like sharp
+							edges?</a>
+					</p>
+
+					<h3>Effects</h3>
+
+					<p>
+						<a class="hint--top  hint--no-animate" aria-label="Get a simple show/hide tooltip">Dont like animation?</a>
+					</p>
+					<p>
+						<a class="hint--bottom  hint--bounce" aria-label="Bounce">Adding a <code>hint--bounce</code> class gives you
+							that...</a>
+					</p>
 				</div>
+			</div>
+
+			<div class="section-inner" style="opacity: 0.7; margin-top: 25px">
+				<strong>Upgrading from v1.x</strong>: If you are already using v1.x, you may need to tweak certain position classes
+				because of the way tooltips are positioned in v2.
+			</div>
 		</div>
 
 		<div class="section  features">
 			<h2>Features</h2>
 
 			<style>
-			li:before {
-				content: '☺';
-				color: white;
-				font-size: 2em;
-			}
+				li:before {
+					content: '☺';
+					color: white;
+					font-size: 2em;
+				}
 			</style>
 			<div class="section-inner">
 				<ul>
@@ -498,19 +591,25 @@ name: Hint.css
 			<div class="section-inner">
 
 				<p>
-				First get the library from the <a href="https://github.com/chinchang/hint.css">github repo</a>. Then in your HTML include the library CSS:
+					First get the library from the <a href="https://github.com/chinchang/hint.css">github repo</a>. Then in your HTML
+					include the library CSS:
 
-				{% highlight html %}<link rel="stylesheet" href="hint.css">{% endhighlight %}
+					{% highlight html %}
+					<link rel="stylesheet" href="hint.css">{% endhighlight %}
 
-				<p>
-					Now, all you need to do is give your element any position class and tooltip text using the <code>aria-label</code> or <code>data-hint</code> attribute:
+					<p>
+						Now, all you need to do is give your element any position class and tooltip text using the <code>aria-label</code>
+						or <code>data-hint</code> attribute:
 
-					{% highlight html %}Hello Sir, <span class="hint--bottom" aria-label="Thank you!">hover over me.</span>{% endhighlight %}
-				</p>
+						{% highlight html %}Hello Sir, <span class="hint--bottom" aria-label="Thank you!">hover over me.</span>{%
+						endhighlight %}
+					</p>
 
-				<p>
-				Use it with other available modifiers in various combinations. Available modifiers: <code>hint--error</code>, <code>hint--info</code>, <code>hint--warning</code>, <code>hint--success</code>, <code>hint--rounded</code> and <code>hint--bounce</code>.
-				</p>
+					<p>
+						Use it with other available modifiers in various combinations. Available modifiers: <code>hint--error</code>,
+						<code>hint--info</code>, <code>hint--warning</code>, <code>hint--success</code>, <code>hint--rounded</code> and
+						<code>hint--bounce</code>.
+					</p>
 			</div>
 
 		</div>
@@ -519,11 +618,15 @@ name: Hint.css
 			<h2 id="commercial">Commercial License</h2>
 
 			<div class="section-inner">
-				<p>Hint.css is a free and open-source library, however, if you are using the library for business, commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. <a href="https://www.uplabs.com/market/license" target="_blank">Read more about UpLabs commercial licensing</a>.
+				<p>Hint.css is a free and open-source library, however, if you are using the library for business, commercial
+					sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option,
+					your source code is kept proprietary. <a href="https://www.uplabs.com/market/license" target="_blank">Read more
+						about UpLabs commercial licensing</a>.
 				</p>
 
 				<p>
-					Once purchased, you’ll receive a commercial license PDF and be all set to use Hint.css in your commercial applications.
+					Once purchased, you’ll receive a commercial license PDF and be all set to use Hint.css in your commercial
+					applications.
 				</p>
 
 				<div class="license-wrap">
@@ -547,23 +650,26 @@ name: Hint.css
 		</div>
 
 		<div class="section  footer" id="footer">
-			<iframe src="http://ghbtns.com/github-btn.html?user=chinchang&repo=hint.css&type=watch&count=true"
-	allowtransparency="true" frameborder="0" scrolling="0" width="105" height="20" style="margin-bottom:12px;"></iframe><br>
-			Made with hands by <a class="hint--top" aria-label="@chinchang457" href="https://twitter.com/chinchang457">Kushagra Gour</a> in India • <a href="/lab/">More projects</a>
+			<iframe src="http://ghbtns.com/github-btn.html?user=chinchang&repo=hint.css&type=watch&count=true" allowtransparency="true"
+			 frameborder="0" scrolling="0" width="105" height="20" style="margin-bottom:12px;"></iframe><br>
+			Made with hands by <a class="hint--top" aria-label="@chinchang457" href="https://twitter.com/chinchang457">Kushagra
+				Gour</a> in India • <a href="/lab/">More projects</a>
 
 			<div class="webmaker-box" id="webMakerBox">
 				<div>
 					<a href="https://kushagragour.in/lab/web-maker/" target="_blank">
-					Also checkout <strong>Web Maker</strong> - a blazing fast & offline web playground.</a>
+						Also checkout <strong>Web Maker</strong> - a blazing fast & offline web playground.</a>
 				</div>
 				<div>
 					<a href="https://kushagragour.in/lab/web-maker/" target="_blank">
 						<svg width="100" height="60" viewBox="-145 -2 372 175">
 							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-145.000000, -1.000000)">
-							<polygon id="Path-1" fill="#FF4600" points="31 0 232 0 132 173.310547"></polygon>
-							<polygon id="Path-1" fill="#FF6C00" points="0 0 201 0 101 173.310547"></polygon>
-							<polygon id="Path-1" fill="#FF6C00" transform="translate(271.500000, 86.500000) scale(1, -1) translate(-271.500000, -86.500000) " points="171 0 372 0 272 173.310547"></polygon>
-							<polygon id="Path-1" fill="#FF4600" transform="translate(241.500000, 86.500000) scale(1, -1) translate(-241.500000, -86.500000) " points="141 0 342 0 242 173.310547"></polygon>
+								<polygon id="Path-1" fill="#FF4600" points="31 0 232 0 132 173.310547"></polygon>
+								<polygon id="Path-1" fill="#FF6C00" points="0 0 201 0 101 173.310547"></polygon>
+								<polygon id="Path-1" fill="#FF6C00" transform="translate(271.500000, 86.500000) scale(1, -1) translate(-271.500000, -86.500000) "
+								 points="171 0 372 0 272 173.310547"></polygon>
+								<polygon id="Path-1" fill="#FF4600" transform="translate(241.500000, 86.500000) scale(1, -1) translate(-241.500000, -86.500000) "
+								 points="141 0 342 0 242 173.310547"></polygon>
 							</g>
 						</svg>
 					</a>
@@ -578,7 +684,7 @@ name: Hint.css
 				var H = window.innerHeight;
 				window.addEventListener('scroll', function () {
 					footerTop = footer.getBoundingClientRect().top;
-					if (footerTop -  H < 300) {
+					if (footerTop - H < 300) {
 						webMakerBox.classList.add('show');
 					}
 				})
@@ -588,4 +694,5 @@ name: Hint.css
 
 		{% include analytics.html %}
 	</body>
+
 </html>
