@@ -4,17 +4,20 @@ title: Games
 name: games
 ---
 
-<div style="overflow: hidden;">
-	
-	{% for game in site.games %}
-		
-	<article class="list-item  list-item--game">
-		<a href="{{ game.link }}/">
-			<img width="150" height="150" src="/images/games/thumbnails/{{ game.link }}.jpg" alt="">
+{% for game in site.data.games %}
+
+<article class="list-item  list-item--tile list-item--game list-item--with-picture">
+	{% if game.image %}
+	<div class="list-item__image" style="background-image: url(/images/games/thumbnails/{{ game.image }})"></div>
+	{% else %}
+	<div class="list-item__image" style="background-image: url(/images/games/thumbnails/{{ game.link }}.jpg)"></div>
+	{% endif %}
+
+	<div class="list-item__content">
+		<a href="{{ game.link }}">
 			<h3 class="post-title">{{ game.name }}</h3>
 		</a>
-	</article>
+	</div>
+</article>
 
-	{% endfor %}
-
-</div>
+{% endfor %}
