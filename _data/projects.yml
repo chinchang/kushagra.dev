@@ -8,6 +8,10 @@
   desc: 'A tooltip library in CSS for your lovely websites'
   image: 'https://kushagragour.in/lab/hint/hint.png'
 
+- name: 'Loremizer'
+  link: 'loremizer/'
+  desc: 'A browser extension lorem ipsum-ize any web page!'
+
 - name: 'Prototyp'
   link: 'http://prototyp.in'
   desc: 'App for quick and easy interaction prototyping'
