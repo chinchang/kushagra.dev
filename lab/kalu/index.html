@@ -1,4 +1,6 @@
+<!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +15,7 @@
 		<link rel="stylesheet" href="lib/codemirror/theme/monokai.css">
 
 		<style>
-		html, body {
+			html, body {
 			height: 100%;
 		}
 		body {
@@ -104,32 +106,49 @@
 					<a class="inline-link" href="https://github.com/chinchang/kalu">Source Code</a>
 					<a class="inline-link" href="http://kushagragour.in/lab/">More projects</a>
 				</p>
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kushagragour.in/lab/kalu" data-via="chinchang457" data-hashtags="calculator,javascript">Tweet</a>
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://kushagragour.in/lab/kalu"
+				 data-via="chinchang457" data-hashtags="calculator,javascript">Tweet</a>
 			</div>
 		</label>
 		<div id="js-cm" class="cm"></div>
 
 
-	    <script src="lib/codemirror/lib/codemirror.js"></script>
-	    <script src="lib/codemirror/mode/javascript/javascript.js"></script>
+		<script src="lib/codemirror/lib/codemirror.js"></script>
+		<script src="lib/codemirror/mode/javascript/javascript.js"></script>
 		<script src="lib/codemirror/addon/edit/closebrackets.js"></script>
-	    <script src="lib/codemirror/addon/search/searchcursor.js"></script>
+		<script src="lib/codemirror/addon/search/searchcursor.js"></script>
 
-	    <script src="script.js?v=1"></script>
-	    <script>
-		if ('ontouchend' in document) {
-			document.body.classList.remove('has-mouse');
-		}
+		<script src="script.js?v=1"></script>
+		<script>
+			if ('ontouchend' in document) {
+				document.body.classList.remove('has-mouse');
+			}
 		</script>
 
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		<script>var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-19798102-1']);
-		_gaq.push(['_trackPageview']);
-		(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async=!0;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();</script>
+		<script>
+			! function (d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (!d.getElementById(id)) {
+					js = d.createElement(s);
+					js.id = id;
+					js.src = "//platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore(js, fjs);
+				}
+			}(document, "script", "twitter-wjs");
+		</script>
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-19798102-1']);
+			_gaq.push(['_trackPageview']);
+			(function () {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = !0;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
 	</body>
+
 </html>
