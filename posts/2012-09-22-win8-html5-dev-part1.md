@@ -1,11 +1,11 @@
 ---
 layout: post
-title: '[Tutorial] Win8 HTML5 app development- I'
+title: "[Tutorial] Win8 HTML5 app development- I"
 ---
 
 Hola!
 
-I recently received a prototype of the next generation Ultrabook device from Intel to support my Windows 8 app developments which had Windows 8 Release Preview installed. 
+I recently received a prototype of the next generation Ultrabook device from Intel to support my Windows 8 app developments which had Windows 8 Release Preview installed.
 
 [<img src="/images/ubook.jpg" alt="Ultrabook" title="Next-gen ultrabook" />](/images/ubook.png)
 
@@ -20,13 +20,14 @@ Okay, so to develop apps for Windows 8 we need Microsoft Visual 2012 which suppo
 
 Then I downloaded **Visual Studio Express 2012 for Windows 8** from there. But upon installing, it gave a weird error:
 
->Windows 8 Release Preview does not have the required .NET framework 4.5.50709
+> Windows 8 Release Preview does not have the required .NET framework 4.5.50709
 
-Well, that was annoying as I expected my windows 8 to come bundled with all the dependencies. My next step was to obviously search the Microsoft website for the required .NET updates. I even found some updates to .NET but each one on installation gave the message that ***I already had the same .NET version installed***. That was more weird.
+Well, that was annoying as I expected my windows 8 to come bundled with all the dependencies. My next step was to obviously search the Microsoft website for the required .NET updates. I even found some updates to .NET but each one on installation gave the message that **_I already had the same .NET version installed_**. That was more weird.
 
 After some googling about the issue, I hit a [Stackoverflow page](http://stackoverflow.com/questions/12389297/unable-to-install-visual-studio-professional-2012-on-windows-8-cp-and-also-not-o) that had the information I wanted. So it turns out that Visual Studio cannot be installed on Windows 8 Release Preview due to some restrictions by Microsoft. It can be installed only on Windows 8 RTM. Besides this, if you want to have Visual Studio 2012 for Win 8 RP, you can do so using Visual Studio 2012 Release Candidate. God bless Microsoft!
 
 So basically I had 2 options now to choose from:
+
 - Get Windows 8 RTM
 - Get Visual Studio 2012 RC
 
@@ -39,18 +40,20 @@ And there I had in front of my eyes, the beautiful new UI of Micorsoft Visual St
 Just to try out things, I made a new Javascript Blank Project which provides you with a <code>default.html</code>, <code>default.js</code> and <code>default.css</code> files with some basic setup code. I added some code to make a simple Hello World app:
 
 **HTML**
-{% highlight html linenos %}
+
+```html
 <div id="hello-world">Hello World!</div>
-{% endhighlight %}
+```
 
 **CSS**
-{% highlight css linenos %}
+
+```css
 #hello-world {
-	text-align: center;
-	font-size: 220px;
-	margin-top: 300px;
+  text-align: center;
+  font-size: 220px;
+  margin-top: 300px;
 }
-{% endhighlight %}
+```
 
 And I have my first hello world HTML5 window 8 app ready :)
 
@@ -58,6 +61,7 @@ And I have my first hello world HTML5 window 8 app ready :)
 
 ###Whats up next?###
 It seems the dev environment is setup now. Next, this is what I am going to do:
+
 - Port [HTML5 Bouncy](https://github.com/chinchang/Bouncy_HTML5) to Visual Studio (shouldn't be much of pain)
 - Explore how to use device accelerometer with Javascript
 - Add some features to the game to exploit accelerometer capabilities
