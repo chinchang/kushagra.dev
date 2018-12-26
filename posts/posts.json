@@ -1,0 +1,3 @@
+{
+  "permalink": "/blog/{{ page.date | date: '%Y/%m' }}/{{ page.fileSlug }}/index.html"
+}

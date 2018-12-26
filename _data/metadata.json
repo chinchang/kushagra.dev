@@ -1,0 +1,14 @@
+{
+  "title": "Kushagra Gour- Creativity freak!",
+  "url": "http://kushagragour.in",
+  "feed": {
+    "subtitle": "Kushagra Gour- Creativity freak!",
+    "filename": "feed.xml",
+    "path": "/feed/rss.xml",
+    "url": "https://kushagragour.in/feed/feed.xml",
+    "id": "https://kushagragour.in/"
+  },
+  "author": {
+    "name": "Kushagra Gour"
+  }
+}

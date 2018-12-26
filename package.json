@@ -1,6 +1,6 @@
 {
   "name": "kushagragour-website",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "My personal website.",
   "author": "Kushagra Gour <chinchang457@gmail.com>",
   "repository": {
@@ -8,8 +8,10 @@
     "url": "git://github.com/chinchang/chinchang.github.com.git"
   },
   "devDependencies": {
-    "gulp": "~3.8.10",
-    "gulp-minify-css": "~0.3.11",
-    "gulp-concat": "~2.4.3"
+    "@11ty/eleventy-plugin-rss": "^1.0.5",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.6.0"
   }
 }

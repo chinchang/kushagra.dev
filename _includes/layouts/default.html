@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="description" content="Code and Create" />
+  <title>{{ title }} - {{ metadata.title }}</title>
+  {% if layout == 'post'%}
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  {% endif %}
+
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css?v=1" />
+
+  {% if layout == 'post' %}
+  <link rel="stylesheet" href="/css/prism.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+
+  <style>
+    /* latin-ext */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: local('PT Serif'), local('PTSerif-Regular'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRVQgYoZZY2vCFuvAFYzr-_dSb_nco.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: local('PT Serif'), local('PTSerif-Regular'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRVQgYoZZY2vCFuvAFWzr-_dSb_.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 700;
+        src: local('PT Serif Bold'), local('PTSerif-Bold'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRSQgYoZZY2vCFuvAnt66qcVyvVp8NAyIw.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 700;
+        src: local('PT Serif Bold'), local('PTSerif-Bold'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRSQgYoZZY2vCFuvAnt66qSVyvVp8NA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+    </style>
+  {% endif %}
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss.xml">
+  <script>
+    /*var connectionCheckTimeout = setTimeout(function () {
+        window.isSlowConnection = true;
+        var style = document.createElement('style');
+        style.textContent = 'body{font: 17px/1.56 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"}';
+        document.head.appendChild(style);
+      }, 1000);
+      window.onload = function () {
+        console.log('fast connection');
+        clearTimeout(connectionCheckTimeout);
+      }*/
+    </script>
+
+</head>
+
+<body class="{% if label %}{{ label }}{% else %}{{ layout }}{% endif %}">
+  <a href="javascript:void(0)" title="or press '/' to search" onclick="toggleSearch()" class="search-btn">
+    <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+      <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+    </svg>
+  </a>
+
+  <div class="search" id="js-search">
+    <a href="javascript:void(0)" onclick="toggleSearch()" class="search__close-btn">
+      <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+        <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+      </svg>
+    </a>
+    <input type="text" placeholder="Type here to search" class="search__input" id="js-search__input">
+    <ul class="search__results" id="js-search__results"></ul>
+  </div>
+
+  <div id="outer-container">
+    <div id="main-container">
+
+      <header class="top-header {% if page.label == 'home' %}top-header--home{% endif %}">
+
+
+        <a class="top-header__link" href="/">
+          <div id="me2" class="top-header__logo">
+            <div></div>
+          </div>
+          <h1>Kushagra Gour</h1>
+        </a>
+        <h2>Game developer . Hacker . Creativity freak!</h2>
+      </header>
+
+      {% include nav.html %}
+
+      <div id="content">
+        {{ content }}
+      </div>
+
+    </div>
+  </div>
+
+  {% include footer.html %}
+
+  {% include analytics.html %}
+
+  <!-- {{ post }} -->
+  {% if label == 'blog' %}
+  <div class="fixed-link-box">
+    <!-- Icon made by Austin Andrews from Flaticon.com -->
+    <a href="/feed/feed.xml" class="rss-link" target="_blank"></a>
+  </div>
+  {% endif %}
+
+  <script src="/js/script.js"></script>
+</body>
+
+
+</html>

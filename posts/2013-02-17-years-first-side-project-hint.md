@@ -11,7 +11,7 @@ First I would like to mention how nicely it was received and appreciated by the 
 
 - I [released it on Hacker News](http://news.ycombinator.com/item?id=5164029) on 4th Feb 2013 where it attained #1 ranking just after half an hour or so. Cool eh? BTW, this was the first time my submission got to #1 :) It got **224 upvotes**. Thank you!
 
-- As a result of the above, the project page around 20K+ unique views. Heres an image showing some realtime stats after ~3 hours of release (*Note: The realtime count did went above 300, but come on...I was not in a state to take a screenshot then :P*):
+- As a result of the above, the project page around 20K+ unique views. Heres an image showing some realtime stats after ~3 hours of release (_Note: The realtime count did went above 300, but come on...I was not in a state to take a screenshot then :P_):
 
 <img src="/images/2013/hint-realtime-stats.png" alt="Hint GA realtime stats">
 
@@ -35,22 +35,22 @@ Pseudo elements are a gift for web developers which open numerous possibilities 
 
 This has the advantage that you do not have to add any extra markup on your page. But it has a downside too. As the tooltip is created using pseudo elements, its not possible to use them for any other purpose on the element you put tooltip on.
 
-####2. data-* attributes
-The tooltips need to be told what text to show. How do we provide this text? [<code>data-* </code>](http://www.w3.org/TR/2011/WD-html5-20110525/elements.html#embedding-custom-non-visible-data-with-the-data-attributes) attributes to the rescue. They let you put custom data on any element using attributes. So **hint.css** expects you to define an attribute called <code>data-hint</code> on the element which needs a tooltip:
+####2. data-_ attributes
+The tooltips need to be told what text to show. How do we provide this text? [<code>data-_ </code>](http://www.w3.org/TR/2011/WD-html5-20110525/elements.html#embedding-custom-non-visible-data-with-the-data-attributes) attributes to the rescue. They let you put custom data on any element using attributes. So **hint.css** expects you to define an attribute called <code>data-hint</code> on the element which needs a tooltip:
 
-{% highlight html linenos %}
-Out of the many, <span data-hint="Tooltip text">this</span> word needs a tooltip.
-{% endhighlight %}
-
+```html
+Out of the many, <span data-hint="Tooltip text">this</span> word needs a
+tooltip.
+```
 
 ####3. attr function for content
 Now the most important part on which **hint.css** is based on. You may have heard about the <code>content</code> property of pseudo elements. As is clear from the name, it lets you specify content of the pseudo element.
 
 What was really great for me was the **attr** function which gives you the power of grabbing the value of any attribute on the element and set it as the pseudo element's content. Isn't that really neat? So the meat of the library is this one line:
 
-{% highlight css linenos %}
+```css
 content: attr(data-hint);
-{% endhighlight %}
+```
 
 And you are DONE!
 
@@ -58,7 +58,6 @@ And you are DONE!
 Finally to add some eye candy, the tooltips are loaded with subtle fade & translate effect using [CSS3 Transitions](https://developer.mozilla.org/en-US/docs/CSS/Tutorials/Using_CSS_transitions).
 
 One thing to note here is that Transitions on pseudo elements work only in Firefox presently. But do not worry guyz...thanks to Elliott Sprehn, [the feature](https://bugs.webkit.org/show_bug.cgi?id=92591) has arrived in Google Chrome 26 dev version and it's not too far when we'll all have it in the stable one too :)
-
 
 ###What I learned
 
@@ -74,7 +73,7 @@ I had never felt the need of using a preprocessor ever. And same was with **hint
 
 Adding any new type of tooltip required to change certain properties on all four tooltip positions (top, bottom, left and right) which I had to write again and again. Also at times, inconsistencies occurred with respect to color values and other static numbers used at different places. And hence I was forced to look into a preprocessor that could make me write smarter code.
 
-Basically its the *mixins* (check out [src/color-types.scss](https://github.com/chinchang/hint.css/blob/master/src/hint-color-types.scss) for example) and *variables* that made the whole library very easy to extend and consistent everywhere.
+Basically its the _mixins_ (check out [src/color-types.scss](https://github.com/chinchang/hint.css/blob/master/src/hint-color-types.scss) for example) and _variables_ that made the whole library very easy to extend and consistent everywhere.
 
 ####Grunt
 
@@ -86,6 +85,7 @@ It has worked quite well till now. I had to install some extra tasks for [SASS c
 
 This one is a tough and I would say a phase which needs more consideration and effort than the actual development itself.
 Coding the library hardly took a day or two but rest of the work took around 300% of the already spent time and that includes:
+
 - Writing README for the repo
 - Creating a project page with demo, usage explanation etc
 - Writing a blog post about the project
@@ -104,7 +104,6 @@ Finally **Hint.css** was released as an Open Source project on Github. But it di
 Doing all this is fun. I am getting to know GIT better and better now that I have started using branches, merging etc a lot. I only hope I don't face the [Cute Puppy Syndrome](http://fat.github.com/slides-os-guilt/) (a term coined by [@fat](https://twitter.com/fat)) in future :P
 
 Talking about issues, one thing that I have been [hearing a lot from people](https://github.com/chinchang/hint.css/issues/12) is that BEM naming convention is kind of an overkill, specifically in **Hint**. For example people prefer <code>hint-top</code> class over <code>hint--top</code>. I am still thinking over this if BEM was at all necessary or is really an overkill in my library. Though I would really appreciate if BEM masters could really comment on this.
-
 
 Would love to hear your comments, suggestion or anything you feel like saying about my work, this post...anything.
 
