@@ -1,0 +1,102 @@
+.clear {
+	clear: both;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	padding: 0 18px;
+	background: #000;
+	width: 100vw;
+	box-sizing: border-box;
+	color: #EEE;
+	display: inline-block;
+	font-size: 12px;
+	margin-bottom: 1rem;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	overflow: hidden;
+	/* white-space: nowrap; */
+	transition: padding 300ms ease-in-out;
+}
+
+header a {
+	color: #FFF;
+	text-decoration: none;
+	transition: 300ms color;
+}
+
+header a:HOVER {
+	color: #008dbe;
+}
+
+header h1 {
+	font-size: 48px;
+	display: inline-block;
+	color: #EEE;
+	margin: -5px 12px -3px 0;
+}
+
+header em {
+	vertical-align: middle;
+	color: #AAA;
+}
+
+header #socialz {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	width: 300px;
+}
+
+header #socialz>* {
+	vertical-align: middle !important;
+}
+
+header .button {
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	border-radius: 12px;
+	background: #555;
+	vertical-align: middle;
+}
+
+header .button+span {
+	display: none;
+}
+
+header .button:hover+span {
+	display: inline;
+}
+
+#back-to-lab-button {
+	padding: 0 18px;
+	background: #000;
+	border-radius: 34px 0 0 34px;
+	color: #EEE;
+	position: fixed;
+	right: 0;
+	bottom: 10px;
+	display: block;
+	font-size: 12px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 20px;
+	opacity: 0.7;
+	text-decoration: none;
+	transition: opacity 200ms, padding 200ms ease-in-out;
+}
+
+#back-to-lab-button:hover {
+	opacity: 1;
+	padding-left: 80px;
+}
+
+.chrome-app #back-to-lab-button,
+.chrome-app .github-ribbon {
+	display: none;
+}

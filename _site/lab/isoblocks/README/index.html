@@ -1,0 +1,32 @@
+<h1>IsoBlocks</h1>
+<h2>What is it?</h2>
+<p>IsoBlocks is an experimental library to create eye-candy isometric texts. It is written in <strong>coffeescript</strong>, uses <strong>CSS3 transforms</strong> for creating the cubes and <strong>CSS3 transitions</strong> for the animation.</p>
+<h2>How to use</h2>
+<p>To use the library, you need to include the following files:</p>
+<ul>
+<li>js/characters.js</li>
+<li>js/isoblocks.js</li>
+<li>css/isoblocks.css</li>
+</ul>
+<p>Put the following in your HTML:</p>
+<pre><code>&lt;div id=&quot;iso_container&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>Then in your code create an instance of <strong>IsoBlocks</strong> class and call the <strong>generate</strong> method to create the text you want:</p>
+<p><strong>NOTE:</strong> IsoBlocks requires jQuery to be included before it.</p>
+<pre><code>var iso = new IsoBlocks(400); // pass the number of blocks to pre-generate
+iso.generate('Your Text Here'); // By Default starts from lower left of the screen
+</code></pre>
+<p>Position it:</p>
+<pre><code>iso.generate('Your Text Here', {x: 320, y: 600});
+</code></pre>
+<p>Colorize it (Presently supports- green, red, pink, blue, yellow only):</p>
+<pre><code>iso.generate('Your Text Here', {x: 320, y: 600, colors: 'green'}); // Pass a color using 'colors' option
+</code></pre>
+<p>Use multiple colors:</p>
+<pre><code>iso.generate('Your Text Here', {x: 320, y: 600, colors: ['green', 'yellow']}); // Pass an array of colors in 'colors'
+</code></pre>
+<h2>Try it out</h2>
+<p>Demo: <a href="http://kushagragour.in/lab/isoblocks/">http://kushagragour.in/lab/isoblocks/</a></p>
+<p>[Works best in Google Chrome]</p>
+<h2>License</h2>
+<p>Licensed under The MIT License</p>

@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="description" content="Code and Create" />
+  <title>Journey with Rubik's Cube - Kushagra Gour- Creativity freak!</title>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  
+
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css?v=1" />
+
+  
+  <link rel="stylesheet" href="/css/prism.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+
+  <style>
+    /* latin-ext */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: local('PT Serif'), local('PTSerif-Regular'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRVQgYoZZY2vCFuvAFYzr-_dSb_nco.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: local('PT Serif'), local('PTSerif-Regular'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRVQgYoZZY2vCFuvAFWzr-_dSb_.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 700;
+        src: local('PT Serif Bold'), local('PTSerif-Bold'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRSQgYoZZY2vCFuvAnt66qcVyvVp8NAyIw.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 700;
+        src: local('PT Serif Bold'), local('PTSerif-Bold'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRSQgYoZZY2vCFuvAnt66qSVyvVp8NA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+    </style>
+  
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss.xml">
+  <script>
+    /*var connectionCheckTimeout = setTimeout(function () {
+        window.isSlowConnection = true;
+        var style = document.createElement('style');
+        style.textContent = 'body{font: 17px/1.56 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"}';
+        document.head.appendChild(style);
+      }, 1000);
+      window.onload = function () {
+        console.log('fast connection');
+        clearTimeout(connectionCheckTimeout);
+      }*/
+    </script>
+
+</head>
+
+<body class="blog">
+  <a href="javascript:void(0)" title="or press '/' to search" onclick="toggleSearch()" class="search-btn">
+    <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+      <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+    </svg>
+  </a>
+
+  <div class="search" id="js-search">
+    <a href="javascript:void(0)" onclick="toggleSearch()" class="search__close-btn">
+      <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+        <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+      </svg>
+    </a>
+    <input type="text" placeholder="Type here to search" class="search__input" id="js-search__input">
+    <ul class="search__results" id="js-search__results"></ul>
+  </div>
+
+  <div id="outer-container">
+    <div id="main-container">
+
+      <header class="top-header ">
+
+
+        <a class="top-header__link" href="/">
+          <div id="me2" class="top-header__logo">
+            <div></div>
+          </div>
+          <h1>Kushagra Gour</h1>
+        </a>
+        <h2>Game developer . Hacker . Creativity freak!</h2>
+      </header>
+
+      <nav>
+  <ul>
+    <li class="color-block"><a href="/games/" class="">
+<svg viewBox="0 0 24 24">
+    <path d="M7,6H17A6,6 0 0,1 23,12A6,6 0 0,1 17,18C15.22,18 13.63,17.23 12.53,16H11.47C10.37,17.23 8.78,18 7,18A6,6 0 0,1 1,12A6,6 0 0,1 7,6M6,9V11H4V13H6V15H8V13H10V11H8V9H6M15.5,12A1.5,1.5 0 0,0 14,13.5A1.5,1.5 0 0,0 15.5,15A1.5,1.5 0 0,0 17,13.5A1.5,1.5 0 0,0 15.5,12M18.5,9A1.5,1.5 0 0,0 17,10.5A1.5,1.5 0 0,0 18.5,12A1.5,1.5 0 0,0 20,10.5A1.5,1.5 0 0,0 18.5,9Z" />
+</svg>
+    games</a></li>
+
+    <li class="color-block"><a href="/lab/" class="">
+<svg viewBox="0 0 24 24">
+    <path d="M6,22A3,3 0 0,1 3,19C3,18.4 3.18,17.84 3.5,17.37L9,7.81V6A1,1 0 0,1 8,5V4A2,2 0 0,1 10,2H14A2,2 0 0,1 16,4V5A1,1 0 0,1 15,6V7.81L20.5,17.37C20.82,17.84 21,18.4 21,19A3,3 0 0,1 18,22H6M5,19A1,1 0 0,0 6,20H18A1,1 0 0,0 19,19C19,18.79 18.93,18.59 18.82,18.43L16.53,14.47L14,17L8.93,11.93L5.18,18.43C5.07,18.59 5,18.79 5,19M13,10A1,1 0 0,0 12,11A1,1 0 0,0 13,12A1,1 0 0,0 14,11A1,1 0 0,0 13,10Z" />
+</svg>
+    lab</a></li>
+
+    <li class="color-block"><a href="/blog/" class="">
+<svg viewBox="0 0 24 24">
+    <path d="M16.84,2.73C16.45,2.73 16.07,2.88 15.77,3.17L13.65,5.29L18.95,10.6L21.07,8.5C21.67,7.89 21.67,6.94 21.07,6.36L17.9,3.17C17.6,2.88 17.22,2.73 16.84,2.73M12.94,6L4.84,14.11L7.4,14.39L7.58,16.68L9.86,16.85L10.15,19.41L18.25,11.3M4.25,15.04L2.5,21.73L9.2,19.94L8.96,17.78L6.65,17.61L6.47,15.29" />
+</svg>
+    blog</a></li>
+
+    <li class="color-block"><a href="http://draw.kushagragour.in" target="_blank">
+<svg viewBox="0 0 24 24">
+    <path d="M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A1.5,1.5 0 0,0 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.5C12.88,18.23 12.73,17.88 12.73,17.5A1.5,1.5 0 0,1 14.23,16H16A5,5 0 0,0 21,11C21,6.58 16.97,3 12,3Z" />
+</svg>
+    draw</a></li>
+
+    <li class="color-block"><a href="http://travel.kushagragour.in" target="_blank">
+<svg viewBox="0 0 24 24">
+    <path d="M11,23A2,2 0 0,1 9,21V19H15V21A2,2 0 0,1 13,23H11M12,1C12.71,1 13.39,1.09 14.05,1.26C15.22,2.83 16,5.71 16,9C16,11.28 15.62,13.37 15,16A2,2 0 0,1 13,18H11A2,2 0 0,1 9,16C8.38,13.37 8,11.28 8,9C8,5.71 8.78,2.83 9.95,1.26C10.61,1.09 11.29,1 12,1M20,8C20,11.18 18.15,15.92 15.46,17.21C16.41,15.39 17,11.83 17,9C17,6.17 16.41,3.61 15.46,1.79C18.15,3.08 20,4.82 20,8M4,8C4,4.82 5.85,3.08 8.54,1.79C7.59,3.61 7,6.17 7,9C7,11.83 7.59,15.39 8.54,17.21C5.85,15.92 4,11.18 4,8Z" />
+</svg>
+    travel</a></li>
+
+    <li class="color-block"><a href="/about/" class="">
+    <svg  viewBox="0 0 24 24">
+    <path  d="M12,1C10.89,1 10,1.9 10,3C10,4.11 10.89,5 12,5C13.11,5 14,4.11 14,3A2,2 0 0,0 12,1M10,6C9.73,6 9.5,6.11 9.31,6.28H9.3L4,11.59L5.42,13L9,9.41V22H11V15H13V22H15V9.41L18.58,13L20,11.59L14.7,6.28C14.5,6.11 14.27,6 14,6" />
+</svg>
+    me</a></li>
+  </ul>
+  <div class="clear"></div>
+
+</nav>
+
+
+      <div id="content">
+        <article>
+	<h2 class="post-title">Journey with Rubik's Cube</h2>
+	<div class="post-meta">April 04, 2015</div>
+
+
+	<div class="post-content"><p>Yes, I started playing with Rubik's cube recently. I have had rubik's cube (very cheap one though) since I was 14, but it was just time-pass then. I didn't know how to solve it. It was just one-sided play (if you get what I mean) as I could figure how to solve only one side completely. But this January my cousin came to our place for his vacations and he brought along a rubik's cube (probably just like me back then). As anyone would do now-a-days to know how something is done, I google-d too. And a lot of videos on how to solve rubik's cube showed up. Me and my cousin together learned how to solve the cube with the very basic method and have been practicing since then. I am writing this post to document the approach I have taken to learn whatever I know on solving a 3x3x3 rubik's cube. Lets start.</p>
+<h3>Learning Beginner's method</h3>
+<p>My very first step was a <a href="https://www.youtube.com/watch?v=MaltgJGz-dU">youtube video</a> explaining the most basic method for solving a 3x3x3 rubik's cube, also called as &quot;Beginner's method&quot;.</p>
+<p>It requires you to know very few algorithms (5 to be exact) and is obviously a little slower compared to other methods. Once I had all the 5 algorithms by heart, I was able to solve a 3x3x3 cube in around 10 minutes on average. Remember this was with a very okayish cube.</p>
+<p><a><strong>Average Time: ~ 10 minutes</strong></a></p>
+<h3>Getting a new cube</h3>
+<p>As soon as my cousin left, I ordered a new cube online. It was a Taxton T-3 stickerless speedcube. It was damn smooth and I could just turn it the whole day. My solve times on that cube improved a lot, got almost 2x faster!</p>
+<p><img src="/images/2015/taxton.jpg" alt="Taxton speedcube"></p>
+<p><a><strong>Average Time: ~ 5:20 minutes</strong><a></p>
+<h3>Getting faster with finger tricks</h3>
+<p>I kept seeing videos of rubik's cube championships and various tips and tricks on solving the cube faster. Soon it became clear that to lower my solve time I had 2 options:</p>
+<ol>
+<li>Learn a faster method of solving (Fridrich method)</li>
+<li>Get faster with what I already knew</li>
+</ol>
+<p>Upon a quick glance at the Fridrich method, I realized it was better not to take it at that time :P It has huge number of algorithms that one needs to learn to execute it perfectly. All rubik's cube champions use this method, in pure or derivative form. So I went with the second option, also called as finger tricks in puzzle world.</p>
+<p>Finger tricks basically refers to using your fingers to turn the cube instead of using complete hand (which is slower). Also it emphasizes on smooth transitions from one algorithm to another without wasting much time in getting ready to execute the next one. This is how those sub-20 second guyz are able to turn the cube layers sooooo fast! So I got down to this, practicing each algorithm individually I knew whenever I got time - in bus, train, office, home...everywhere. I actually did not do even a single solve for about 2 weeks, just practice individual algorithms and developing my own finger turn-style. And then I did a timed solve just to show a colleague I could also solve the cube apart from just turning it seemingly ad-hoc - I did it in 2:40 minutes that day!</p>
+<p><a><strong>Average Time: ~ 3 minutes</strong></a></p>
+<h3>Move to Fridrich Method?</h3>
+<p>Getting down to 3 minutes on average, I started feeling that I was not able to go lower than that. Also honestly I was getting a little bored with doing those algorithms over and over and over again. So I decided on giving Fridrich method a shot. Fridrich method involves large no. of algorithms which can be divided into categories:</p>
+<ol>
+<li>to solve 1st and 2nd layer - F2L</li>
+<li>to solve 3rd layer - PLL and OLL</li>
+</ol>
+<p>Approaching step by step, I decided to learn F2L (first two layers) first. F2L basically aims at solving the first 2 layers together as opposed to solving then one after other in beginner's method. Plan was to get F2L perfect for first 2 layers and use the already know algorithms for the 3rd layer. So I started learning and practicing F2L algorithms. There being too many of them, I felt friction in learning them :P So I looked for easier ways to perform F2L. There are quite a few <a href="https://www.youtube.com/watch?v=2ewy0eOg2Do">nice tutorials on easier F2L</a> method which is also called as <a href="https://www.youtube.com/watch?v=jGeTtD4tB5w">intuitive F2L</a>.</p>
+<p>I practiced it for a week, but the results were not very impressive. I hardly got any better with F2L. I realized it was not a flaw with the method itself, but the time I devoted to it. It demands much much more time to get better with it.
+It was at this time when I saw a video on youtube where a guy could do a 3x3x3 solve in under <a href="https://www.youtube.com/watch?v=qLki-254ZKA">20 seconds with beginner's method</a>! The trick was simple - faster turns. So I decided to do away with F2L and focus back on my finger tricks.</p>
+<p><a><strong>Average Time: ~ 3 minutes</strong></a></p>
+<h3>More practice - cross and 3rd layer algorithms</h3>
+<p>I focused for a while on improving my cross times and 3rd layer algorithms. Meanwhile I also came to know about a technique called look-ahead that advanced level solvers use to avoid time spent in figuring out the next move. I realized it was a very essential technique to get faster considering that my most of the time was spent in actually rotating the cube to see what to execute next. But this comes only with time and practice. I tried practicing look-aheads for 2nd layer.</p>
+<p>I bought another cube so that I didn't have to scramble after every solve during solve sprints :P It is a Shengshou 3x3x3 sticker cube. Much better than the taxton T-3. I love its turn sound!</p>
+<p><img src="/images/2015/shenshou.jpg" alt="Shenshou speedcube"></p>
+<p><a><strong>Average Time: ~ 100 seconds</strong></a></p>
+<h3>These days...</h3>
+<p>I have been focusing more on improving the individual steps rather than complete solves lately.</p>
+<ul>
+<li>Faster cross</li>
+<li>2nd and 3rd layer algorithms</li>
+<li>2nd layer look-ahead</li>
+</ul>
+<p>Here is a sample solve in 76 seconds:</p>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/hVr-DeIR7TY" frameborder="0" allowfullscreen></iframe>
+<p>My aim is to get atleast sub-60 seconds with just beginner's method before I move onto learning more advanced techniques. Wish me luck. Looking forward to hear your rubik's cube experiences.</p>
+</div>
+
+	<div class="share-bar">
+	
+
+	<a href="http://twitter.com/share?url=/blog/2015/04/journey-with-rubik-cube/&text=&via=chinchang457&related=chinchang457">Tweet</a>
+</div>
+</article>
+
+<div class="blog-navigation-buttons">
+	
+
+	
+</div>
+
+<div class="comment-box">
+	<button id="showCommentsButton" style="margin:0 auto;display:block;" class="button" onclick="window.bootDisqus();">Show
+		comments</button>
+	<div id="disqusContainerEl" style="display: none">
+		<h3>Comments</h3>
+		<hr />
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'kushagragour';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    window.bootDisqus = function () {
+        disqusContainerEl.style.display = 'block';
+        showCommentsButton.style.display = 'none';
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+</div>
+
+<div class="bring-to-top">TOP</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <section class="social-bar-2">
+
+	<a class="social-bar-2__item  social-bar-2__item--twitter" href="https://twitter.com/chinchang457">
+		<span class="social-bar-2__item__text">Twitter</span>
+	</a>
+	<a class="social-bar-2__item  social-bar-2__item--github" href="https://github.com/chinchang">
+		<span class="social-bar-2__item__text">Github</span>
+	</a>
+	<a class="social-bar-2__item  social-bar-2__item--facebook" href="https://www.facebook.com/kgcodes">
+		<span class="social-bar-2__item__text">Facebook</span>
+	</a>
+
+</section>
+
+
+    Designed by <a href="http://twitter.com/chinchang457" target="_blank">Kushagra Gour</a> . Powered by <a href="https://11ty.io/"
+        target="_blank">Eleventy</a> . Hosted on <a href="https://github.com/chinchang/chinchang.github.com" target="_blank">Github</a>
+</footer>
+
+  <script type="text/javascript">
+if (location.host.indexOf('localhost') === -1) {
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-19798102-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+}
+</script>
+
+  <!--  -->
+  
+  <div class="fixed-link-box">
+    <!-- Icon made by Austin Andrews from Flaticon.com -->
+    <a href="/feed/feed.xml" class="rss-link" target="_blank"></a>
+  </div>
+  
+
+  <script src="/js/script.js"></script>
+</body>
+
+
+</html>

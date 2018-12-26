@@ -1,0 +1,650 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="description" content="Code and Create" />
+  <title>Build GIT - Learn GIT (P1) - Kushagra Gour- Creativity freak!</title>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  
+
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css?v=1" />
+
+  
+  <link rel="stylesheet" href="/css/prism.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+
+  <style>
+    /* latin-ext */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: local('PT Serif'), local('PTSerif-Regular'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRVQgYoZZY2vCFuvAFYzr-_dSb_nco.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: local('PT Serif'), local('PTSerif-Regular'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRVQgYoZZY2vCFuvAFWzr-_dSb_.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 700;
+        src: local('PT Serif Bold'), local('PTSerif-Bold'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRSQgYoZZY2vCFuvAnt66qcVyvVp8NAyIw.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 700;
+        src: local('PT Serif Bold'), local('PTSerif-Bold'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRSQgYoZZY2vCFuvAnt66qSVyvVp8NA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+    </style>
+  
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss.xml">
+  <script>
+    /*var connectionCheckTimeout = setTimeout(function () {
+        window.isSlowConnection = true;
+        var style = document.createElement('style');
+        style.textContent = 'body{font: 17px/1.56 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"}';
+        document.head.appendChild(style);
+      }, 1000);
+      window.onload = function () {
+        console.log('fast connection');
+        clearTimeout(connectionCheckTimeout);
+      }*/
+    </script>
+
+</head>
+
+<body class="blog">
+  <a href="javascript:void(0)" title="or press '/' to search" onclick="toggleSearch()" class="search-btn">
+    <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+      <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+    </svg>
+  </a>
+
+  <div class="search" id="js-search">
+    <a href="javascript:void(0)" onclick="toggleSearch()" class="search__close-btn">
+      <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+        <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+      </svg>
+    </a>
+    <input type="text" placeholder="Type here to search" class="search__input" id="js-search__input">
+    <ul class="search__results" id="js-search__results"></ul>
+  </div>
+
+  <div id="outer-container">
+    <div id="main-container">
+
+      <header class="top-header ">
+
+
+        <a class="top-header__link" href="/">
+          <div id="me2" class="top-header__logo">
+            <div></div>
+          </div>
+          <h1>Kushagra Gour</h1>
+        </a>
+        <h2>Game developer . Hacker . Creativity freak!</h2>
+      </header>
+
+      <nav>
+  <ul>
+    <li class="color-block"><a href="/games/" class="">
+<svg viewBox="0 0 24 24">
+    <path d="M7,6H17A6,6 0 0,1 23,12A6,6 0 0,1 17,18C15.22,18 13.63,17.23 12.53,16H11.47C10.37,17.23 8.78,18 7,18A6,6 0 0,1 1,12A6,6 0 0,1 7,6M6,9V11H4V13H6V15H8V13H10V11H8V9H6M15.5,12A1.5,1.5 0 0,0 14,13.5A1.5,1.5 0 0,0 15.5,15A1.5,1.5 0 0,0 17,13.5A1.5,1.5 0 0,0 15.5,12M18.5,9A1.5,1.5 0 0,0 17,10.5A1.5,1.5 0 0,0 18.5,12A1.5,1.5 0 0,0 20,10.5A1.5,1.5 0 0,0 18.5,9Z" />
+</svg>
+    games</a></li>
+
+    <li class="color-block"><a href="/lab/" class="">
+<svg viewBox="0 0 24 24">
+    <path d="M6,22A3,3 0 0,1 3,19C3,18.4 3.18,17.84 3.5,17.37L9,7.81V6A1,1 0 0,1 8,5V4A2,2 0 0,1 10,2H14A2,2 0 0,1 16,4V5A1,1 0 0,1 15,6V7.81L20.5,17.37C20.82,17.84 21,18.4 21,19A3,3 0 0,1 18,22H6M5,19A1,1 0 0,0 6,20H18A1,1 0 0,0 19,19C19,18.79 18.93,18.59 18.82,18.43L16.53,14.47L14,17L8.93,11.93L5.18,18.43C5.07,18.59 5,18.79 5,19M13,10A1,1 0 0,0 12,11A1,1 0 0,0 13,12A1,1 0 0,0 14,11A1,1 0 0,0 13,10Z" />
+</svg>
+    lab</a></li>
+
+    <li class="color-block"><a href="/blog/" class="">
+<svg viewBox="0 0 24 24">
+    <path d="M16.84,2.73C16.45,2.73 16.07,2.88 15.77,3.17L13.65,5.29L18.95,10.6L21.07,8.5C21.67,7.89 21.67,6.94 21.07,6.36L17.9,3.17C17.6,2.88 17.22,2.73 16.84,2.73M12.94,6L4.84,14.11L7.4,14.39L7.58,16.68L9.86,16.85L10.15,19.41L18.25,11.3M4.25,15.04L2.5,21.73L9.2,19.94L8.96,17.78L6.65,17.61L6.47,15.29" />
+</svg>
+    blog</a></li>
+
+    <li class="color-block"><a href="http://draw.kushagragour.in" target="_blank">
+<svg viewBox="0 0 24 24">
+    <path d="M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A1.5,1.5 0 0,0 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.5C12.88,18.23 12.73,17.88 12.73,17.5A1.5,1.5 0 0,1 14.23,16H16A5,5 0 0,0 21,11C21,6.58 16.97,3 12,3Z" />
+</svg>
+    draw</a></li>
+
+    <li class="color-block"><a href="http://travel.kushagragour.in" target="_blank">
+<svg viewBox="0 0 24 24">
+    <path d="M11,23A2,2 0 0,1 9,21V19H15V21A2,2 0 0,1 13,23H11M12,1C12.71,1 13.39,1.09 14.05,1.26C15.22,2.83 16,5.71 16,9C16,11.28 15.62,13.37 15,16A2,2 0 0,1 13,18H11A2,2 0 0,1 9,16C8.38,13.37 8,11.28 8,9C8,5.71 8.78,2.83 9.95,1.26C10.61,1.09 11.29,1 12,1M20,8C20,11.18 18.15,15.92 15.46,17.21C16.41,15.39 17,11.83 17,9C17,6.17 16.41,3.61 15.46,1.79C18.15,3.08 20,4.82 20,8M4,8C4,4.82 5.85,3.08 8.54,1.79C7.59,3.61 7,6.17 7,9C7,11.83 7.59,15.39 8.54,17.21C5.85,15.92 4,11.18 4,8Z" />
+</svg>
+    travel</a></li>
+
+    <li class="color-block"><a href="/about/" class="">
+    <svg  viewBox="0 0 24 24">
+    <path  d="M12,1C10.89,1 10,1.9 10,3C10,4.11 10.89,5 12,5C13.11,5 14,4.11 14,3A2,2 0 0,0 12,1M10,6C9.73,6 9.5,6.11 9.31,6.28H9.3L4,11.59L5.42,13L9,9.41V22H11V15H13V22H15V9.41L18.58,13L20,11.59L14.7,6.28C14.5,6.11 14.27,6 14,6" />
+</svg>
+    me</a></li>
+  </ul>
+  <div class="clear"></div>
+
+</nav>
+
+
+      <div id="content">
+        <article>
+	<h2 class="post-title">Build GIT - Learn GIT (P1)</h2>
+	<div class="post-meta">January 20, 2014</div>
+
+
+	<div class="post-content"><p>If you are reading this post, you probably are using Git or want to use Git. I am a big fan of Git and also <a href="http://teropa.info/blog/2013/11/03/make-your-own-angular-part-1-scopes-and-digest.html">those posts</a> where people <a href="http://modernjavascript.blogspot.in/2013/08/promisesa-understanding-by-doing.html">implement some piece of an existing technology</a> in order to understand how their work in the core. Point being that if you have implemented something, you obviously know how it works, right? This is one such post written to spread my love for Git. <strong>Yes, we'll implement Git!</strong>...in JavaScript.</p>
+<p>This part implements basics of the following concepts:</p>
+<ol>
+<li>Repository.</li>
+<li>Commit.</li>
+<li>Commit chaining.</li>
+<li>Branch.</li>
+</ol>
+<p>All the code written is available in a Github repo:</p>
+<p><a href="https://github.com/chinchang/build-git-learn-git/" class="button button-big">Github Repo</a></p>
+<h3>What is Git?</h3>
+<hr>
+<p>There is a very simple definition of Git at <a href="https://www.kernel.org/pub/software/scm/git/docs/user-manual.html#repositories-and-branches">kernel.org</a>:</p>
+<blockquote>
+Git is best thought of as a tool for storing the history of a collection of files.
+</blockquote>
+<p>Yeah, that is essentially why one uses Git...to maintain a history of changes in a project.</p>
+<h3>Repository (repo)</h3>
+<hr>
+<p>When you want to use Git in your project, you create something called a <strong>Repository</strong>. Now we could refer the <a href="https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html">Git documentation</a> which defines a repo as follows:</p>
+<blockquote>
+A collection of refs together with an object database containing all objects which are reachable from the refs, possibly accompanied by meta data from one or more porcelains. A repository can share an object database with other repositories via alternates mechanism.
+</blockquote>
+<p>Well, that is too much to grasp, isn't it? And that is not what we are here for. So lets make things simple.
+Consider a Git repository as a collection of everything related to Git. So when you make a project folder a Git repo, Git basically creates some of its internal stuff there and encapsulates them into it. Having said that, lets make a simple class called <code>Git</code> which will basically represent a repo.</p>
+<pre ><code class="language-javascript">
+function Git(name) {
+	this.name = name; // Repo name
+}
+</code></pre>
+<p>Great! Now making a repo simply requires us to instantiate the <code>Git</code> class passing in the name of the repo:</p>
+<pre ><code class="language-javascript">
+var repo = new Git('my-repo');
+
+// Actual command:
+// > git init
+</code></pre>
+<h3>Commit</h3>
+<hr>
+<p>Next concept one needs to know about is a <strong>Commit</strong>. In very simple terms, a commit is a snapshot of your project's contents. It is these commits which when chained together form the history of your project.</p>
+<p>From the looks of it, a simple <code>Commit</code> class would have and <em>id</em> to reference it and a <em>change</em> containing the snapshot of change made. Understanding how a change is actually stored is beyond the scope of this implementation. So lets drop the <em>change</em> part and assume that every commit has the change with it:</p>
+<pre ><code class="language-javascript">
+function Commit(id) {
+	this.id = id;
+	// Assume that 'this' has a 'change' property too.
+}
+</code></pre>
+<p>In Git, when you commit after making some changes, you can give it a message which describes the change you are commiting. This is called the <em>commit message</em> which we'll add to our <code>Commit</code> class:</p>
+<pre data-line="2,4" ><code class="language-javascript">
+function Commit(id, message) {
+	this.id = id;
+	this.message = message;
+}
+</code></pre>
+<p>Lets add the ability on our <code>Git</code> class to create a commit or commit (verb):</p>
+<pre ><code class="language-javascript">
+Git.prototype.commit = function (message) {
+	var commit = new Commit();
+	return commit;
+};
+</code></pre>
+<p>We add a function called <code>commit</code> on the <code>Git</code> prototype. It accepts a string message, creates a new <strong>Commit</strong> instance and returns it. Note that we are not passing in anything yet in the <code>Commit</code> constructor. We need an id to give to the new commit. We'll make the <code>Git</code> class keep track of the commit ids by keeping a counter called <code>lastCommitId</code> with it:</p>
+<pre data-line="3" ><code class="language-javascript">
+function Git() {
+	this.lastCommitId = -1;
+}
+</code></pre>
+<p>Note: In actual Git, commit id is a 40-hexdigit number also called as &quot;SHA-1 id&quot;. But for keeping things simple we are using integers here.</p>
+<p>The <code>commit</code> function can now pass a new id (incremented) along with the message in the constructor:</p>
+<pre data-line="3" ><code class="language-javascript">
+Git.prototype.commit = function (message) {
+	var commit = new Commit(++this.lastCommitId, message);
+	return commit;
+};
+</code></pre>
+<p>We can now commit anytime like so:</p>
+<pre ><code class="language-javascript">
+repo.commit('Make commit work');
+
+// Actual command:
+// > git commit -m "Make commit work"
+</code></pre>
+<h4>Match your code</h4>
+<hr>
+<p>At this point you should have your implementation that looks like <a href="https://github.com/chinchang/build-git-learn-git/blob/ffb353b30e5eee92190e42a989c14ca0a74bb65a/git-part1.js">the one here</a>. I have wrapped the whole code in an Immediately invoking function expression (IIFE) and exposed the <code>Git</code> class manually to keep global space clean.</p>
+<h3>Commit history - chaining the commits</h3>
+<hr>
+<p>Git has a command called <code>log</code> which shows the commit history in reverse chronological order, i.e. first the lastest commit followed by previous ones.</p>
+<p>Lets implement this <code>log</code> command as a method on our <code>Git</code> class. Our log function will return an array of commits in reverse chronological order.</p>
+<p>Here is a simple test which should pass for our log function:</p>
+<pre ><code class="language-javascript">
+console.log('Git.log() test');
+var repo = new Git('test');
+repo.commit('Initial commit');
+repo.commit('Change 1');
+
+var log = repo.log();
+console.assert(log.length === 2); // Should have 2 commits.
+console.assert(!!log[0] &amp;&amp; log[0].id === 1); // Commit 1 should be first.
+console.assert(!!log[1] &amp;&amp; log[1].id === 0); // And then Commit 0.
+</code></pre>
+<p>Onto the implementation.</p>
+<pre ><code class="language-javascript">
+Git.prototype.log = function () {
+	var history = []; // array of commits in reverse order.
+
+	// 1. Start from last commit
+	// 2. Go back tracing to the first commit
+	// 3. Push in `history`
+
+	return history;
+};
+</code></pre>
+<p>The <code>log</code> function has only pseudo code right now in form of comments which tell us the logic of the function. To implement such logic 2 requirements arise:</p>
+<ol>
+<li>We need to know the last commit.</li>
+<li>Every commit should somehow know which commit was made before it.</li>
+</ol>
+<p>We have a failing test case right now:
+<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/1/embed?js,console">Build Git - Learn Git (part 1)</a></p>
+<script src="http://static.jsbin.com/js/embed.js"></script>
+<p>Lets take up the first requirement: Knowing the last commit.</p>
+<p>Git has something called a <strong>HEAD</strong>. In actual Git it is simply a pointer to your current branch. But since we have not covered branches yet, we'll relax the definition here...temporarily.</p>
+<p>What we'll do is add a property called <code>HEAD</code> in the <code>Git</code> class which will reference the last commit's <code>Commit</code> object:</p>
+<pre data-line="5" ><code class="language-javascript">
+function Git(name) {
+	this.name = name; // Repo name
+	this.lastCommitId = -1; // Keep track of last commit id.
+	this.HEAD = null; // Reference to last Commit.
+}
+</code></pre>
+<p><code>HEAD</code> will be updated everytime a commit is made i.e. in the <code>commit()</code> function.</p>
+<pre data-line="6-7" ><code class="language-javascript">
+Git.prototype.commit = function (message) {
+	// Increment last commit id and pass into new commit.
+	var commit = new Commit(++this.lastCommitId, message);
+
+	// Update HEAD and current branch.
+	this.HEAD = commit;
+
+	return commit;
+};
+</code></pre>
+<p>Simple! Now we always know which was the last commit made.</p>
+<p>Getting on the 2nd requirement: Every commit should somehow know which commit was made before it. This brings up the concept of <strong>parent</strong> in Git. Commits in Git are kept together in form a data structure called <a href="http://en.wikipedia.org/wiki/Linked_list"><strong>Linked Lists</strong></a>. Simply put, in a Linked List every item stores with itself a pointer to its parent item. This is done so that from every item, we can reach its parent item and keep following the pointers to get an ordered list. This diagram from Wikipedia will will make more sense:</p>
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg" alt="Linked list"></p>
+<p>For this, we add a property called <code>parent</code> in the <code>Commit</code> class which will reference its parent commit object:</p>
+<pre data-line="2,4" ><code class="language-javascript">
+function Commit(id, parent, message) {
+	this.id = id;
+	this.parent = parent;
+	this.message = message;
+}
+</code></pre>
+<p>The parent commit also needs to be passed into the <code>Commit</code> constructor. If you think, for a new commit what is the parent/previous commit? Yes, the current commit or the <code>HEAD</code>.</p>
+<pre data-line="4" ><code class="language-javascript">
+Git.prototype.commit = function (message) {
+	// Increment last commit id and pass into new commit.
+	var commit = new Commit(++this.lastCommitId, this.HEAD, message);
+</code></pre>
+<p>Having our requirements in place, lets implement the <code>log()</code> function:</p>
+<pre ><code class="language-javascript">
+Git.prototype.log = function () {
+	// Start from HEAD
+	var commit = this.HEAD,
+		history = [];
+
+	while (commit) {
+		history.push(commit);
+		// Keep following the parent
+		commit = commit.parent;
+	}
+
+	return history;
+};
+
+// Can be used as repo.log();
+// Actual command:
+// > git log
+</code></pre>
+<p>Our test should pass now:
+<a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/2/embed?js,console">Build Git - Learn Git (part 1)</a></p>
+<script src="http://static.jsbin.com/js/embed.js"></script>
+<h4>Match your code</h4>
+<hr>
+<p>At this point our code looks <a href="https://github.com/chinchang/build-git-learn-git/blob/116871ab54376e489af538fa1ba1a7e04359e704/git-part1.js">like this</a>.
+Next up is Branches!</p>
+<h3>Branches</h3>
+<hr>
+<p>Hurray, we have reached at the most interesting &amp; powerful feature of Git: Branches. So what is a Branch and what is it used for?</p>
+<p>Imagine this scenario, you are working on a project making commits now and then. At some point may be you or one of your teammate wants to experiment something on your current work, say a different algorithm. You could surely keep making those experimental commits, but remember this was your experiment and hence not guaranteed to be kept in the main project. This way you polluted your main project.</p>
+<p><strong>Branches to the rescue</strong>. What you need to do here is branch out from your current line of commits so that the commits you make do not pollute the main line of development.</p>
+<p>To quote the definition at kernel.org:</p>
+<blockquote>
+A "branch" is an active line of development. The most recent commit on a branch is referred to as the tip of that branch. The tip of the branch is referenced by a branch head, which moves forward as additional development is done on the branch. A single git repository can track an arbitrary number of branches
+</blockquote>
+<p>Lets understand what a branch is. A branch is nothing but a mere pointer to some commit. Seriously, that is it. That is what makes branches in Git so lightweight and use-n-throw type. You may say <code>HEAD</code> was exactly this. You are right. The only difference being that <code>HEAD</code> is just one (because at a given time you are only on a single commit) but branches can be many, each pointing to a commit.</p>
+<p>The <strong>'master' branch</strong></p>
+<p>Each Git repo when initialized comes with a default branch called <em>master</em>. Lets understand branches through some diagrams from <a href="http://git-scm.com/book/en/Git-Branching-What-a-Branch-Is">git-scm.com</a>:</p>
+<p>You create a new repository and make some commits:
+<img src="http://git-scm.com/figures/18333fig0303-tn.png" alt="Just master"></p>
+<p>Then you create a new branch called <em>testing</em>:
+<img src="http://git-scm.com/figures/18333fig0304-tn.png" alt="New branch 'testing'"></p>
+<p>Nothing much, just a new pointer called <em>testing</em> to the lastest commit.
+How does Git know which branch you are on? Here comes the <code>HEAD</code>. <code>HEAD</code> points to the current branch:
+<img src="http://git-scm.com/figures/18333fig0306-tn.png" alt="HEAD pointing 'testing'"></p>
+<p>Now comes interesting part. Being on <em>testing</em> branch you make a commit. Notice what happens:</p>
+<p><img src="http://git-scm.com/figures/18333fig0307-tn.png" alt="'testing' moves"></p>
+<p>From now on, the <em>testing</em> branch/pointer only moves and not <em>master</em>. Looking at the above diagram and keeping our <code>log()</code> algorithm in mind, lets see what history would each branch return.</p>
+<ul>
+<li>
+<p><em>testing branch</em>: Currently we are on <em>testing</em> branch. Moving backwards from <code>HEAD</code>(commit <em>c2b9e</em>) and tracking the visible linkages, we get the history as:
+|c2b9e| -&gt; |f30ab| -&gt; |34ac2| -&gt; |98ca9|</p>
+</li>
+<li>
+<p><em>master branch</em>: If we switch to <em>master</em> branch, we would have a state as follows:
+<img src="http://git-scm.com/figures/18333fig0308-tn.png" alt="Back to master"></p>
+</li>
+</ul>
+<p>Now tracing back from <code>HEAD</code> gives us the history as:
+|f30ab| -&gt; |34ac2| -&gt; |98ca9|</p>
+<p>You see what we acheived? We were able to make some experimental changes/commits without polluting the main branch (master) history using branches. Isn't that cool!!!</p>
+<p>Enough said, lets code. First lets make a new class for a branch. A branch, as we saw, has a name and a reference to some commit:</p>
+<pre ><code class="language-javascript">
+function Branch(name, commit) {
+	this.name = name;
+	this.commit = commit;
+}
+</code></pre>
+<p>By default, Git gives you a branch called <em>master</em>. Lets create one:</p>
+<pre data-line="7"><code class="language-javascript">
+function Git(name) {
+	this.name = name; // Repo name
+	this.lastCommitId = -1; // Keep track of last commit id.
+	this.HEAD = null; // Reference to last Commit.
+
+	var master = new Branch('master', null); // null is passed as we don't have any commit yet.
+}
+</code></pre>
+<p>Remember we changed the meaning of <code>HEAD</code> in the beginning as we were still to cover branches? Its time we make it do what its meant for i.e. reference the current branch (<em>master</em> when repo is created):</p>
+<pre data-line="8"><code class="language-javascript">
+function Git(name) {
+	this.name = name; // Repo name
+	this.lastCommitId = -1; // Keep track of last commit id.
+
+	var master = new Branch('master', null); // null is passed as we don't have any commit yet.
+
+	this.HEAD = master; // HEAD points to current branch.
+}
+</code></pre>
+<p>This will require certain changes in the <code>commit()</code> function as <code>HEAD</code> is no longer referencing a <code>Commit</code> but a <code>Branch</code> now:</p>
+<pre data-line="4,6-7"><code class="language-javascript">
+Git.prototype.commit = function (message) {
+	// Increment last commit id and pass into new commit.
+	var commit = new Commit(++this.lastCommitId, this.HEAD.commit, message);
+
+	// Update the current branch pointer to new commit.
+	this.HEAD.commit = commit;
+
+	return commit;
+};
+</code></pre>
+<p>And a minor change in <code>log</code> function. We start from <code>HEAD.commit</code> now:</p>
+<pre data-line="4"><code class="language-javascript">
+Git.prototype.log = function () {
+	// Start from HEAD commit
+	var commit = this.HEAD.commit,
+</code></pre>
+<p>Everything works as before. To really verify what we deduced in theory by calculating history of those 2 branches above, we need one final method on our <code>Git</code> class: <strong>checkout</strong>.</p>
+<p>To begin with, consider <em>checkout</em> as switching branches. By default we are on <em>master</em> branch. If I do something like <code>repo.checkout('testing')</code>, I should jump to <em>testing</em> branch...provided it is already created. But if its not created already, a new branch with that name should be created. Lets write a test for this method.</p>
+<pre ><code class="language-javascript">
+console.log('Git.checkout() test')
+var repo = new Git('test');
+repo.commit('Initial commit');
+
+console.assert(repo.HEAD.name === 'master'); // Should be on master branch.
+repo.checkout('testing');
+console.assert(repo.HEAD.name === 'testing'); // Should be on new testing branch.
+repo.checkout('master');
+console.assert(repo.HEAD.name === 'master'); // Should be on master branch.
+repo.checkout('testing');
+console.assert(repo.HEAD.name === 'testing'); // Should be on testing branch again.
+</code></pre>
+<p>This test fails right now as we don't have a <code>checkout</code> method yet. Lets write one:</p>
+<pre ><code class="language-javascript">
+Git.prototype.checkout = function (branchName) {
+	// Check if a branch already exists with name = branchName
+}
+</code></pre>
+<p>The comment in above code requires that the repo maintains a list of all created branches. So we put a property called <code>branches</code> on <code>Git</code> class with initially having only <em>master</em> in it:</p>
+<pre data-line="5,8"><code class="language-javascript">
+function Git(name) {
+	this.name = name; // Repo name
+	this.lastCommitId = -1; // Keep track of last commit id.
+	this.branches = []; // List of all branches.
+
+	var master = new Branch('master', null); // No commit yet, so null is passed.
+	this.branches.push(master); // Store master branch.
+
+	this.HEAD = master; // HEAD points to current branch.
+}
+</code></pre>
+<p>Continuing with the <code>checkout</code> function now. Taking first case when we find an existing branch, all we need to do is point the <code>HEAD</code>, the current branch pointer, to that existing branch:</p>
+<pre><code class="language-javascript">
+Git.prototype.checkout = function (branchName) {
+	// Loop through all branches and see if we have a branch
+	// called `branchName`.
+	for (var i = this.branches.length; i--;){
+		if (this.branches[i].name === branchName) {
+			// We found an existing branch
+			console.log('Switched to existing branch: ' + branchName);
+			this.HEAD = this.branches[i];
+			return this;
+		}
+	}
+
+	// We reach here when no matching branch is found.
+}
+</code></pre>
+<p>I returned <code>this</code> from that method so that methods can be chanined. Next, incase we don't find a branch with the passed name, we create one just like we did for <em>master</em>:</p>
+<pre data-line="14-22"><code class="language-javascript">
+Git.prototype.checkout = function (branchName) {
+	// Loop through all branches and see if we have a branch
+	// called `branchName`.
+	for (var i = this.branches.length; i--;){
+		if (this.branches[i].name === branchName) {
+			// We found an existing branch
+			console.log('Switched to existing branch: ' + branchName);
+			this.HEAD = this.branches[i];
+			return this;
+		}
+	}
+
+	// If branch was not found, create a new one.
+	var newBranch = new Branch(branchName, this.HEAD.commit);
+	// Store branch.
+	this.branches.push(newBranch);
+	// Update HEAD
+	this.HEAD = newBranch;
+
+	console.log('Switched to new branch: ' + branchName);
+	return this;
+
+}
+
+// Actual command:
+// > git checkout existing-branch
+// > git checkout -b new-branch
+</code></pre>
+<p>Eureka! Now our <code>checkout</code> tests pass :)</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/3/embed?js,console">Build Git - Learn Git (part 1)</a></p>
+<script src="http://static.jsbin.com/js/embed.js"></script>
+<p>Now the grand moment for which we created the <code>checkout</code> function. Verifying the awesomeness of branches through the theory we saw earlier. We'll write one final test to verify the same:</p>
+<pre><code class="language-javascript">
+console.log('3. Branches test');
+
+var repo = new Git('test');
+repo.commit('Initial commit');
+repo.commit('Change 1');
+
+// Maps the array of commits into a string of commit ids.
+// For [C2, C1,C3], it returns "2-1-0"
+function historyToIdMapper (history) {
+	var ids = history.map(function (commit) {
+		return commit.id;
+	});
+	return ids.join('-');
+}
+
+console.assert(historyToIdMapper(repo.log()) === '1-0'); // Should show 2 commits.
+
+repo.checkout('testing');
+repo.commit('Change 3');
+
+console.assert(historyToIdMapper(repo.log()) === '2-1-0'); // Should show 3 commits.
+
+repo.checkout('master');
+console.assert(historyToIdMapper(repo.log()) === '1-0'); // Should show 2 commits. Master unpolluted.
+
+repo.commit('Change 3');
+console.assert(historyToIdMapper(repo.log()) === '3-1-0'); // Continue on master with 4th commit.
+</code></pre>
+<p>This test basically represents the diagrams we saw earlier explaining the working of branches. Lets see if our implementation is inline with the theory:</p>
+<p><a class="jsbin-embed" href="http://jsbin.com/AqAbEmuN/4/embed?js,console">Build Git - Learn Git (part 1)</a></p>
+<script src="http://static.jsbin.com/js/embed.js"></script>
+<p>Wonderful! Our implementation is right. The final code for this part can be found in GIT repo: <code>git-part1.js</code>.</p>
+<p><a href="https://github.com/chinchang/build-git-learn-git/" class="button button-big">Github Repo</a></p>
+<h3>Whats next?</h3>
+<hr>
+<p>Next I plan to implement concepts like merging (Fast-forward and 3-way-merge) and rebasing of branches.</p>
+<p>I had a lot of fun writing this and hope you enjoyed it too. If you did, share the Git love with others.</p>
+<p>Till next time, bbye.</p>
+<h4>References</h4>
+<hr>
+<ul>
+<li><a href="http://git-scm.com/book/en/">http://git-scm.com/book/en/</a> (Where I learned Git from)</li>
+<li><a href="https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html">https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html</a></li>
+</ul>
+<p>Thanks <a href="http://jsbin.com/">JSBin</a> for your lovely console panel :)</p>
+<p><em>Update: Join the <a href="https://news.ycombinator.com/item?id=13711798">discussion on HN</a>.</em></p>
+</div>
+
+	<div class="share-bar">
+	
+
+	<a href="http://twitter.com/share?url=/blog/2014/01/build-git-learn-git/&text=&via=chinchang457&related=chinchang457">Tweet</a>
+</div>
+</article>
+
+<div class="blog-navigation-buttons">
+	
+
+	
+</div>
+
+<div class="comment-box">
+	<button id="showCommentsButton" style="margin:0 auto;display:block;" class="button" onclick="window.bootDisqus();">Show
+		comments</button>
+	<div id="disqusContainerEl" style="display: none">
+		<h3>Comments</h3>
+		<hr />
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'kushagragour';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    window.bootDisqus = function () {
+        disqusContainerEl.style.display = 'block';
+        showCommentsButton.style.display = 'none';
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+</div>
+
+<div class="bring-to-top">TOP</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <section class="social-bar-2">
+
+	<a class="social-bar-2__item  social-bar-2__item--twitter" href="https://twitter.com/chinchang457">
+		<span class="social-bar-2__item__text">Twitter</span>
+	</a>
+	<a class="social-bar-2__item  social-bar-2__item--github" href="https://github.com/chinchang">
+		<span class="social-bar-2__item__text">Github</span>
+	</a>
+	<a class="social-bar-2__item  social-bar-2__item--facebook" href="https://www.facebook.com/kgcodes">
+		<span class="social-bar-2__item__text">Facebook</span>
+	</a>
+
+</section>
+
+
+    Designed by <a href="http://twitter.com/chinchang457" target="_blank">Kushagra Gour</a> . Powered by <a href="https://11ty.io/"
+        target="_blank">Eleventy</a> . Hosted on <a href="https://github.com/chinchang/chinchang.github.com" target="_blank">Github</a>
+</footer>
+
+  <script type="text/javascript">
+if (location.host.indexOf('localhost') === -1) {
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-19798102-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+}
+</script>
+
+  <!--  -->
+  
+  <div class="fixed-link-box">
+    <!-- Icon made by Austin Andrews from Flaticon.com -->
+    <a href="/feed/feed.xml" class="rss-link" target="_blank"></a>
+  </div>
+  
+
+  <script src="/js/script.js"></script>
+</body>
+
+
+</html>

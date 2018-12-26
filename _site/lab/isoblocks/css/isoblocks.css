@@ -1,0 +1,76 @@
+.iso_block{
+	position: absolute;
+	height: 15px;
+	width: 15px;
+	background-color: #CCC;
+	-webkit-transform: scaleY(0.5)rotate(-45deg);
+	-moz-transform: scaleY(0.5)rotate(-45deg);
+	-o-transform: scaleY(0.5)rotate(-45deg);
+	
+	-webkit-transition-property: top, left, opacity, background-color;
+	-moz-transition-property: top, left, opacity, background-color;
+	-o-transition-property: top, left, opacity, background-color;
+
+	-webkit-transition-timing-function: ease;
+	-moz-transition-timing-function: ease;
+	-o-transition-timing-function: ease;
+
+	-webkit-transition-duration: 500ms;
+	-moz-transition-duration: 500ms;
+	-o-transition-duration: 500ms;
+}
+
+.iso_block.move{
+	margin-top: 132px;
+}
+
+.iso_block:before, .iso_block:after{
+	content: '';
+	position: absolute;
+	height: 15px;
+	width: 15px;
+}
+
+.iso_block:before{
+	top: 9px;
+	left: -16px;
+	background-color: #AAA;
+	-webkit-transform: skew(-15deg,-15deg)rotate(45deg)skewY(30deg)scale(1,1.3);
+	-moz-transform: skew(-15deg,-15deg)rotate(45deg)skewY(30deg)scale(1,1.3);
+	-o-transform: skew(-15deg,-15deg)rotate(45deg)skewY(30deg)scale(1,1.3);
+}
+
+.iso_block:after{
+	top: 16px;
+	left: -9px;
+	background-color: #888;
+	-webkit-transform: skew(-15deg,-15deg)rotate(45deg)skewY(-30deg)scale(1,1.3);
+	-moz-transform: skew(-15deg,-15deg)rotate(45deg)skewY(-30deg)scale(1,1.3);
+	-o-transform: skew(-15deg,-15deg)rotate(45deg)skewY(-30deg)scale(1,1.3);
+}
+
+/* Color schemes */
+.iso_block.iso_color_yellow { background-color: #FAE163; }
+.iso_block.iso_color_yellow:before { background-color: #f8d421; }
+.iso_block.iso_color_yellow:after { background-color: #cfad07; }
+
+.iso_block.iso_color_green { background-color: #6ec276; }
+.iso_block.iso_color_green:before { background-color: #4bb255; }
+.iso_block.iso_color_green:after { background-color: #2d6a33; }
+
+.iso_block.iso_color_pink { background-color: #f1708c; }
+.iso_block.iso_color_pink:before { background-color: #ee5173; }
+.iso_block.iso_color_pink:after { background-color: #e9234e; }
+
+.iso_block.iso_color_red { background-color: #f33; }
+.iso_block.iso_color_red:before { background-color: #f00; }
+.iso_block.iso_color_red:after { background-color: #b00; }
+
+.iso_block.iso_color_blue { background-color: #00a7e0; }
+.iso_block.iso_color_blue:before { background-color: #008dbe; }
+.iso_block.iso_color_blue:after { background-color: #00749C; }
+
+
+.iso_block.unused{
+	opacity: 0;
+}

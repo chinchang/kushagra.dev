@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name="description" content="Code and Create" />
+  <title>Year's first side project- Hint.css - Kushagra Gour- Creativity freak!</title>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  
+
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css?v=1" />
+
+  
+  <link rel="stylesheet" href="/css/prism.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+
+  <style>
+    /* latin-ext */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: local('PT Serif'), local('PTSerif-Regular'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRVQgYoZZY2vCFuvAFYzr-_dSb_nco.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 400;
+        src: local('PT Serif'), local('PTSerif-Regular'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRVQgYoZZY2vCFuvAFWzr-_dSb_.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 700;
+        src: local('PT Serif Bold'), local('PTSerif-Bold'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRSQgYoZZY2vCFuvAnt66qcVyvVp8NAyIw.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'PT Serif';
+        font-style: normal;
+        font-weight: 700;
+        src: local('PT Serif Bold'), local('PTSerif-Bold'), url(https://fonts.gstatic.com/s/ptserif/v9/EJRSQgYoZZY2vCFuvAnt66qSVyvVp8NA.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+    </style>
+  
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed/rss.xml">
+  <script>
+    /*var connectionCheckTimeout = setTimeout(function () {
+        window.isSlowConnection = true;
+        var style = document.createElement('style');
+        style.textContent = 'body{font: 17px/1.56 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"}';
+        document.head.appendChild(style);
+      }, 1000);
+      window.onload = function () {
+        console.log('fast connection');
+        clearTimeout(connectionCheckTimeout);
+      }*/
+    </script>
+
+</head>
+
+<body class="blog">
+  <a href="javascript:void(0)" title="or press '/' to search" onclick="toggleSearch()" class="search-btn">
+    <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+      <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
+    </svg>
+  </a>
+
+  <div class="search" id="js-search">
+    <a href="javascript:void(0)" onclick="toggleSearch()" class="search__close-btn">
+      <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+        <path d="M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z" />
+      </svg>
+    </a>
+    <input type="text" placeholder="Type here to search" class="search__input" id="js-search__input">
+    <ul class="search__results" id="js-search__results"></ul>
+  </div>
+
+  <div id="outer-container">
+    <div id="main-container">
+
+      <header class="top-header ">
+
+
+        <a class="top-header__link" href="/">
+          <div id="me2" class="top-header__logo">
+            <div></div>
+          </div>
+          <h1>Kushagra Gour</h1>
+        </a>
+        <h2>Game developer . Hacker . Creativity freak!</h2>
+      </header>
+
+      <nav>
+  <ul>
+    <li class="color-block"><a href="/games/" class="">
+<svg viewBox="0 0 24 24">
+    <path d="M7,6H17A6,6 0 0,1 23,12A6,6 0 0,1 17,18C15.22,18 13.63,17.23 12.53,16H11.47C10.37,17.23 8.78,18 7,18A6,6 0 0,1 1,12A6,6 0 0,1 7,6M6,9V11H4V13H6V15H8V13H10V11H8V9H6M15.5,12A1.5,1.5 0 0,0 14,13.5A1.5,1.5 0 0,0 15.5,15A1.5,1.5 0 0,0 17,13.5A1.5,1.5 0 0,0 15.5,12M18.5,9A1.5,1.5 0 0,0 17,10.5A1.5,1.5 0 0,0 18.5,12A1.5,1.5 0 0,0 20,10.5A1.5,1.5 0 0,0 18.5,9Z" />
+</svg>
+    games</a></li>
+
+    <li class="color-block"><a href="/lab/" class="">
+<svg viewBox="0 0 24 24">
+    <path d="M6,22A3,3 0 0,1 3,19C3,18.4 3.18,17.84 3.5,17.37L9,7.81V6A1,1 0 0,1 8,5V4A2,2 0 0,1 10,2H14A2,2 0 0,1 16,4V5A1,1 0 0,1 15,6V7.81L20.5,17.37C20.82,17.84 21,18.4 21,19A3,3 0 0,1 18,22H6M5,19A1,1 0 0,0 6,20H18A1,1 0 0,0 19,19C19,18.79 18.93,18.59 18.82,18.43L16.53,14.47L14,17L8.93,11.93L5.18,18.43C5.07,18.59 5,18.79 5,19M13,10A1,1 0 0,0 12,11A1,1 0 0,0 13,12A1,1 0 0,0 14,11A1,1 0 0,0 13,10Z" />
+</svg>
+    lab</a></li>
+
+    <li class="color-block"><a href="/blog/" class="">
+<svg viewBox="0 0 24 24">
+    <path d="M16.84,2.73C16.45,2.73 16.07,2.88 15.77,3.17L13.65,5.29L18.95,10.6L21.07,8.5C21.67,7.89 21.67,6.94 21.07,6.36L17.9,3.17C17.6,2.88 17.22,2.73 16.84,2.73M12.94,6L4.84,14.11L7.4,14.39L7.58,16.68L9.86,16.85L10.15,19.41L18.25,11.3M4.25,15.04L2.5,21.73L9.2,19.94L8.96,17.78L6.65,17.61L6.47,15.29" />
+</svg>
+    blog</a></li>
+
+    <li class="color-block"><a href="http://draw.kushagragour.in" target="_blank">
+<svg viewBox="0 0 24 24">
+    <path d="M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A1.5,1.5 0 0,0 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.5C12.88,18.23 12.73,17.88 12.73,17.5A1.5,1.5 0 0,1 14.23,16H16A5,5 0 0,0 21,11C21,6.58 16.97,3 12,3Z" />
+</svg>
+    draw</a></li>
+
+    <li class="color-block"><a href="http://travel.kushagragour.in" target="_blank">
+<svg viewBox="0 0 24 24">
+    <path d="M11,23A2,2 0 0,1 9,21V19H15V21A2,2 0 0,1 13,23H11M12,1C12.71,1 13.39,1.09 14.05,1.26C15.22,2.83 16,5.71 16,9C16,11.28 15.62,13.37 15,16A2,2 0 0,1 13,18H11A2,2 0 0,1 9,16C8.38,13.37 8,11.28 8,9C8,5.71 8.78,2.83 9.95,1.26C10.61,1.09 11.29,1 12,1M20,8C20,11.18 18.15,15.92 15.46,17.21C16.41,15.39 17,11.83 17,9C17,6.17 16.41,3.61 15.46,1.79C18.15,3.08 20,4.82 20,8M4,8C4,4.82 5.85,3.08 8.54,1.79C7.59,3.61 7,6.17 7,9C7,11.83 7.59,15.39 8.54,17.21C5.85,15.92 4,11.18 4,8Z" />
+</svg>
+    travel</a></li>
+
+    <li class="color-block"><a href="/about/" class="">
+    <svg  viewBox="0 0 24 24">
+    <path  d="M12,1C10.89,1 10,1.9 10,3C10,4.11 10.89,5 12,5C13.11,5 14,4.11 14,3A2,2 0 0,0 12,1M10,6C9.73,6 9.5,6.11 9.31,6.28H9.3L4,11.59L5.42,13L9,9.41V22H11V15H13V22H15V9.41L18.58,13L20,11.59L14.7,6.28C14.5,6.11 14.27,6 14,6" />
+</svg>
+    me</a></li>
+  </ul>
+  <div class="clear"></div>
+
+</nav>
+
+
+      <div id="content">
+        <article>
+	<h2 class="post-title">Year's first side project- Hint.css</h2>
+	<div class="post-meta">February 17, 2013</div>
+
+
+	<div class="post-content"><p>Hey everyone!</p>
+<p>It has been around a month and a half since we jumped into 2013. And this is my first post of the year. I released a side project called <a href="http://kushagragour.in/lab/hint/"><strong>Hint.css</strong></a> some days back on Hacker News and this post is primarily about what it is, how it works and what all I learned while creating it.</p>
+<p>First I would like to mention how nicely it was received and appreciated by the community. Here are some stats for the same:</p>
+<ul>
+<li>
+<p>I <a href="http://news.ycombinator.com/item?id=5164029">released it on Hacker News</a> on 4th Feb 2013 where it attained #1 ranking just after half an hour or so. Cool eh? BTW, this was the first time my submission got to #1 :) It got <strong>224 upvotes</strong>. Thank you!</p>
+</li>
+<li>
+<p>As a result of the above, the project page around 20K+ unique views. Heres an image showing some realtime stats after ~3 hours of release (<em>Note: The realtime count did went above 300, but come on...I was not in a state to take a screenshot then :P</em>):</p>
+</li>
+</ul>
+<img src="/images/2013/hint-realtime-stats.png" alt="Hint GA realtime stats">
+<ul>
+<li>
+<p>The <a href="https://github.com/chinchang/hint.css/">github repo</a> has been starred and forked 1.4K+ and 100+ times respectively.</p>
+</li>
+<li>
+<p>Also the repo is still in the <a href="https://github.com/explore/month">list of most trending repos</a> on github.</p>
+</li>
+</ul>
+<p>So all in all, the launch was beyond expectations and really good.</p>
+<p>###About hint.css</p>
+<p><strong>hint.css</strong> is a library written in SASS to create simple tooltips. So basically it uses only HTML and CSS to create tooltips for your lovely websites. Yes you heard that right, no JavaScript required. <a href="http://kushagragour.in/lab/hint/">Learn more</a> about how to use it.</p>
+<p>The library uses the <a href="https://gist.github.com/necolas/1309546">BEM naming convention</a> by <a href="http://nicolasgallagher.com/about-html-semantics-front-end-architecture/">Nicolas Gallagher</a>.</p>
+<p>###How does it work
+The library uses 4 basic concepts to create the tooltips without a line of JavaScript or any extra markup:</p>
+<p>####1. Pseudo elements
+Pseudo elements are a gift for web developers which open numerous possibilities for creating amazing stuff. <strong>Hint.css</strong> makes use of these pseudo elements (<code>::before</code> and <code>::after</code> elements) to create the actual tooltip.</p>
+<p>This has the advantage that you do not have to add any extra markup on your page. But it has a downside too. As the tooltip is created using pseudo elements, its not possible to use them for any other purpose on the element you put tooltip on.</p>
+<p>####2. data-_ attributes
+The tooltips need to be told what text to show. How do we provide this text? <a href="http://www.w3.org/TR/2011/WD-html5-20110525/elements.html#embedding-custom-non-visible-data-with-the-data-attributes"><code>data-_ </code></a> attributes to the rescue. They let you put custom data on any element using attributes. So <strong>hint.css</strong> expects you to define an attribute called <code>data-hint</code> on the element which needs a tooltip:</p>
+<pre class="language-html"><code class="language-html"><span class="highlight-line">Out of the many, <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">data-hint</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Tooltip text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>this<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span> word needs a</span><br><span class="highlight-line">tooltip.</span></code></pre>
+<p>####3. attr function for content
+Now the most important part on which <strong>hint.css</strong> is based on. You may have heard about the <code>content</code> property of pseudo elements. As is clear from the name, it lets you specify content of the pseudo element.</p>
+<p>What was really great for me was the <strong>attr</strong> function which gives you the power of grabbing the value of any attribute on the element and set it as the pseudo element's content. Isn't that really neat? So the meat of the library is this one line:</p>
+<pre class="language-css"><code class="language-css"><span class="highlight-line"><span class="token property">content</span><span class="token punctuation">:</span> <span class="token function">attr</span><span class="token punctuation">(</span>data-hint<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>And you are DONE!</p>
+<p>####4. CSS3 transitions
+Finally to add some eye candy, the tooltips are loaded with subtle fade &amp; translate effect using <a href="https://developer.mozilla.org/en-US/docs/CSS/Tutorials/Using_CSS_transitions">CSS3 Transitions</a>.</p>
+<p>One thing to note here is that Transitions on pseudo elements work only in Firefox presently. But do not worry guyz...thanks to Elliott Sprehn, <a href="https://bugs.webkit.org/show_bug.cgi?id=92591">the feature</a> has arrived in Google Chrome 26 dev version and it's not too far when we'll all have it in the stable one too :)</p>
+<p>###What I learned</p>
+<p>If you are passionate about creating cool new stuff, you surely understand the importance of developing small side projects, something you can own completely. It teaches you a hell lot of things...not only about the tech side but about managing stuff from planning to releasing to maintaining a small product. You should probably read this <a href="http://sachagreif.com/the-side-project-project/">awesome post on creating side projects</a> by <a href="http://sachagreif.com/">Sacha Grief</a>.</p>
+<p>While making <strong>hint.css</strong> I too learned many things which I would like to share here.</p>
+<p>####SASS</p>
+<p>This was the first time I tried <a href="http://sass-lang.com/">SASS</a>. SASS is basically a CSS preprocessor...meaning it provides you some great features (like variables, mixins etc) to write your CSS in a more efficient way.</p>
+<p>I had never felt the need of using a preprocessor ever. And same was with <strong>hint</strong> also. If you happen to see the <a href="http://codepen.io/chinchang/pen/lICaq">original demo of <strong>hint.css</strong></a> I released, it was written in CSS. Even when I started writing the actual library I was using plain CSS but then things started getting very repetitive and unmanageable.</p>
+<p>Adding any new type of tooltip required to change certain properties on all four tooltip positions (top, bottom, left and right) which I had to write again and again. Also at times, inconsistencies occurred with respect to color values and other static numbers used at different places. And hence I was forced to look into a preprocessor that could make me write smarter code.</p>
+<p>Basically its the <em>mixins</em> (check out <a href="https://github.com/chinchang/hint.css/blob/master/src/hint-color-types.scss">src/color-types.scss</a> for example) and <em>variables</em> that made the whole library very easy to extend and consistent everywhere.</p>
+<p>####Grunt</p>
+<p><a href="http://gruntjs.com/">Grunt</a> is a build tool basically made for JavaScript projects. I helps you create a build flow using variety of tasks it supports like concatenation, minification etc. As I started using SASS for <strong>Hint</strong> it made sense to incorporate a build tool in my workflow and having a little experience of using Grunt in my previous game projects, I thought why not try it on a CSS project.</p>
+<p>It has worked quite well till now. I had to install some extra tasks for <a href="https://github.com/sindresorhus/grunt-sass">SASS compilation</a> and <a href="https://npmjs.org/package/grunt-contrib-mincss">CSS minification</a> as they don't come bundled by default with Grunt and now I simply run <code>grunt watch</code> and all building happens silently in the background as I develop.</p>
+<p>####Release preparation</p>
+<p>This one is a tough and I would say a phase which needs more consideration and effort than the actual development itself.
+Coding the library hardly took a day or two but rest of the work took around 300% of the already spent time and that includes:</p>
+<ul>
+<li>Writing README for the repo</li>
+<li>Creating a project page with demo, usage explanation etc</li>
+<li>Writing a blog post about the project</li>
+<li>Making sure I did not miss anything</li>
+<li>Finally releasing!</li>
+</ul>
+<p>During this I became better at writing (I only love writing code though) and managing multiple tasks.</p>
+<p>####More CSS knowledge
+Last but not the least, as I was working on a CSS library I came to know more about it as mentioned earlier. CSS is really beautiful :)</p>
+<p>###In the end</p>
+<p>Finally <strong>Hint.css</strong> was released as an Open Source project on Github. But it didn't stop there. People have been liking it and started using and <a href="https://github.com/chinchang/hint.css/pulls">contributing to it</a> which marks the beginning of the final phase of a software: Maintenance. To keep a library fresh you need to constantly keep it up to date with latest technology, keep adding new features your users want, fix bugs that get reported regularly. And all this in very organized and planned manner so that the user's know exactly what changed when, whats coming up etc. In short, everyone should be able to track the project without difficulties.</p>
+<p>Doing all this is fun. I am getting to know GIT better and better now that I have started using branches, merging etc a lot. I only hope I don't face the <a href="http://fat.github.com/slides-os-guilt/">Cute Puppy Syndrome</a> (a term coined by <a href="https://twitter.com/fat">@fat</a>) in future :P</p>
+<p>Talking about issues, one thing that I have been <a href="https://github.com/chinchang/hint.css/issues/12">hearing a lot from people</a> is that BEM naming convention is kind of an overkill, specifically in <strong>Hint</strong>. For example people prefer <code>hint-top</code> class over <code>hint--top</code>. I am still thinking over this if BEM was at all necessary or is really an overkill in my library. Though I would really appreciate if BEM masters could really comment on this.</p>
+<p>Would love to hear your comments, suggestion or anything you feel like saying about my work, this post...anything.</p>
+<p><a href="http://kushagragour.in/lab/hint/" class="button button-big">Take me to Hint.css</a></p>
+<p>P.S. Discussion on <a href="http://news.ycombinator.com/item?id=5164029">Hacker News</a>.</p>
+<p>Cheers!</p>
+</div>
+
+	<div class="share-bar">
+	
+
+	<a href="http://twitter.com/share?url=/blog/2013/02/years-first-side-project-hint/&text=&via=chinchang457&related=chinchang457">Tweet</a>
+</div>
+</article>
+
+<div class="blog-navigation-buttons">
+	
+
+	
+</div>
+
+<div class="comment-box">
+	<button id="showCommentsButton" style="margin:0 auto;display:block;" class="button" onclick="window.bootDisqus();">Show
+		comments</button>
+	<div id="disqusContainerEl" style="display: none">
+		<h3>Comments</h3>
+		<hr />
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'kushagragour';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    window.bootDisqus = function () {
+        disqusContainerEl.style.display = 'block';
+        showCommentsButton.style.display = 'none';
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+</div>
+
+<div class="bring-to-top">TOP</div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <section class="social-bar-2">
+
+	<a class="social-bar-2__item  social-bar-2__item--twitter" href="https://twitter.com/chinchang457">
+		<span class="social-bar-2__item__text">Twitter</span>
+	</a>
+	<a class="social-bar-2__item  social-bar-2__item--github" href="https://github.com/chinchang">
+		<span class="social-bar-2__item__text">Github</span>
+	</a>
+	<a class="social-bar-2__item  social-bar-2__item--facebook" href="https://www.facebook.com/kgcodes">
+		<span class="social-bar-2__item__text">Facebook</span>
+	</a>
+
+</section>
+
+
+    Designed by <a href="http://twitter.com/chinchang457" target="_blank">Kushagra Gour</a> . Powered by <a href="https://11ty.io/"
+        target="_blank">Eleventy</a> . Hosted on <a href="https://github.com/chinchang/chinchang.github.com" target="_blank">Github</a>
+</footer>
+
+  <script type="text/javascript">
+if (location.host.indexOf('localhost') === -1) {
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-19798102-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+}
+</script>
+
+  <!--  -->
+  
+  <div class="fixed-link-box">
+    <!-- Icon made by Austin Andrews from Flaticon.com -->
+    <a href="/feed/feed.xml" class="rss-link" target="_blank"></a>
+  </div>
+  
+
+  <script src="/js/script.js"></script>
+</body>
+
+
+</html>

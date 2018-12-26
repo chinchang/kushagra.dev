@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+	<link rel="stylesheet" href="lib/css/reveal.min.css">
+	<link rel="stylesheet" href="lib/css/night.css" id="theme">
+	<link rel="stylesheet" href="lib/css/solarized_dark.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'lib/css/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<style>
+	.topic {
+		margin: 50px 0 !important;
+	}
+	canvas, .game-help {
+		position: fixed;
+		bottom: -600px;
+		z-index: 1;
+		transition: 0.5s ease;
+	}
+	.show canvas {
+		bottom: 0;
+	}
+	.game-help {
+		font-size: 5em;
+		background: #71c5cf;
+		/*background: rgba(0,0,0,0.8);*/
+		color: white;
+		padding-top: 40px;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+	.game-help {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+	}
+	.show .game-help {
+		opacity: 1;
+		visibility: visible;
+	}
+	.reveal .main-title {
+		font-size: 2.3em;
+		text-transform: uppercase;
+		margin-bottom: 50px;
+	}
+	.reveal .main-subtitle {
+		margin-bottom: 150px;
+	}
+	code {
+		/*font-size: 0.8em !important;*/
+	}
+	.reveal { font-size: 36px; }
+	.reveal li {
+		margin-top: 20px;
+	}
+
+	.reveal table {
+		width: 100%;
+	}
+	.reveal table td {
+		vertical-align: top !important;
+	}
+	.reveal pre code {
+		max-height: 570px;
+	}
+	.code-container {
+		font-size: 130% !important;
+	}
+	.grid {
+		overflow: hidden;
+	}
+	.grid__item { float: left; }
+	.half { width: 50%; }
+	.bad { color: indianred!important; }
+	.highlight-line,
+	.highlight-code {
+		color: white !important;
+		background: #135768;
+	}
+	.highlight-line {
+		display: inline-block;
+		width: 100%;
+	}
+	.focus-letter {
+		font-size: 1.5em !important;
+		font-size: bold;
+		color: #e7ad52;
+	}
+	.slider {
+		position: relative;
+		display: inline-block;
+		height: 40px;
+		min-width: 500px;
+		margin: 25px auto !important;
+	}
+	.slider__track {
+		border-radius: 10px;
+		border: 5px solid #e7ad52 !important;
+		background: white;
+		height: 20px;
+	}
+	.slider__knob {
+		background: #e7ad52;
+		position: absolute;
+		left: 20%;
+		top: -0.2em;
+		border-radius: 50%;
+		width: 1.2em;
+		height: 1.2em;
+	}
+	.slider__input { position: absolute; left: 100%;
+		font-size: 1em;
+		top: -7px;
+		margin-left: 10px;
+		width: 80px;
+	}
+	.pdf-link {
+		position: fixed!important;
+		bottom: 4px;
+		right: 34px;
+		font-size: 17px!important;
+		z-index: 11;
+		opacity: 0.5;
+	}
+	.pdf-link:hover {
+		opacity: 1;
+	}
+	.reveal .controls {
+		bottom: 20px;
+	}
+	</style>
+</head>
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+
+			<!-- <section>
+				<h2 class="main-title"><pre>.commandments[for='efficient architecture'] {
+	column-count: 10;
+}</pre></h2>
+				<h3>Yes CSS can have architecture too!</h4>
+				<h4>
+					<a href="http://kushagragour.in">Kushagra Gour</a><a href="http://twitter.com/chinchang457">@chinchang457</a>
+				</h4>
+			</section> -->
+
+			<section>
+				<h2 class="main-title">10<span style="vertical-align: text-top">*</span> commandments for efficient CSS architecture</h2>
+				<h3 class="main-subtitle"><em>Yes, CSS can have architecture too!</em></h4>
+				<h4>
+					<a href="http://kushagragour.in">Kushagra Gour</a>&nbsp;&nbsp;<a href="http://twitter.com/chinchang457">@chinchang457</a>
+				</h4>
+				<small>*&nbsp;&nbsp;Conditions apply.</small>
+			</section>
+
+			<section>
+				<section>
+					<h2>/me</h2>
+					<ul>
+						<li>My name is <a>Kushagra Gour</a>. Better know as <a>chinchang</a> on the web.</li>
+						<li data-fragment-index="1" class="fragment" style="position: relative">I am from<br>
+							<h2>Delhi, India</h2>
+							<img class="fragment" data-fragment-index="2" src="assets/snake.png" width="200" style="position: absolut">
+							<img class="fragment" data-fragment-index="3" src="assets/boy.png" style="position: absolut">
+							<img class="fragment" data-fragment-index="2" src="assets/tiger.png" width="200" alt="TIGERS"  style="position: absolut">
+						</li>
+						<!-- <li class="fragment">We have started writing CSS there too.</li> -->
+					</ul>
+				</section>
+
+				<section data-transition="linear" data-background-transition="slide">
+					<h2>/me more</h2>
+					<ul>
+						<li>I am a Front-end developer at a wonderful startup called <span style="color:#EA2B2A;font-family: Garamond;">Wingify</span>.</p>
+						</li>
+						<li class="fragment">Open-source stuff like <a href="http://kushagragour.in/lab/hint">Hint.css</a> and <a href="http://kushagragour.in/lab/picssel-art/">piCSSel-art.</a></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<h2>Whats this talk about?</h2>
+				<ul>
+					<li class="fragment  slide-up">Some CSS goodies learnt from experience.</li>
+
+					<li class="fragment  slide-up">Would help in better CSS architecture. Easy to understand and extend in future. No more <br><span class="focus-letter">C</span>areless <span class="focus-letter">S</span>tyle <span class="focus-letter">S</span>prinkling.</li>
+
+					<li class="fragment  slide-up">First time speaking at a conference and that too at such a big one. Not really good at speaking & making presentations.</li>
+
+					<li class="fragment  slide-up">// TODO: Add a game if slides don't complete. <br>Good at making games. Added a game we can all play together and have fun! Seriously!</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<a href="">Commandment #1</a>
+					<h1 class="fragment  topic">Keep File Sizes Small</h1>
+					<h3><em>"Thy height shalt remain greater than thy file sizes at all times"</em></h3>
+				</section>
+
+				<section>
+					<h3>Keep File Sizes Small</h3>
+					<h4><a>Why?</a></h4>
+					<ul>
+						<li class="fragment">It helps keeping things modular.</li>
+						<li class="fragment">Important for faster search in future because you know where things are when something needs to be changed.</li>
+					</ul>
+
+					<br><br>
+					<h4><a>What?</a></h4>
+					<p class="fragment">
+						Keep dividing and refactoring files as and when they get too big.
+					</p>
+
+				</section>
+
+				<section>
+					<h3><a>1st day of christmas</a></h3><br><br>
+					<h2>style.css</h2>
+				</section>
+
+				<section>
+					<h3><a>4th day of christmas</a></h3><br><br>
+
+					<ol>
+						<li><h2>base.css</h2></li>
+						<li><h2>helpers.css</h2></li>
+						<li><h2>components.css</h2></li>
+						<li><h2>theme.css</h2></li>
+						<li class="fragment"><h2>mixins.scss (SASS)</h2></li>
+					</ol>
+				</section>
+
+				<section>
+					<h3><a>8th day of christmas</a></h3><br><br>
+
+					<ol>
+						<li><h2>base.css</h2></li>
+						<li><h2>helpers.css</h2></li>
+						<li><h2>components/</h2>
+							<ol>buttons.css</ol>
+							<ol>dropdowns.css</ol>
+							<ol>tooltips.css</ol>
+						</li>
+						<li><h2>theme.css</h2></li>
+					</ol>
+				</section>
+
+
+				<section>
+					<h3><a>12th day of christmas</a></h3><br><br>
+					<img src="assets/dancing-baby.gif" alt="">
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<a href="">Commandment #2</a>
+					<h1 class="fragment  topic">Use Variables</h1>
+					<h3><em>Thy code config shalt remain at one place.</em></h3>
+				</section>
+
+				<section>
+					<h3>Use Variables</h3>
+
+					<p>Your layout:</p>
+
+					<div class="grid">
+						<div class="grid__item" style="width: 350px;">
+							<style>
+								.eg1 {
+									width: 100%;
+									position: relative;
+									width: 300px;
+									height: 400px;
+								}
+								.eg1-header, .eg1-sidebar, .eg1-main {
+									position: absolute;
+									top: 0; left: 0;
+									color: white;
+									font-size: 0.6em !important;
+									text-align: center;
+								}
+								.eg1-header {
+									background: #666;
+									right: 0;
+									height: 50px;
+								}
+								.eg1-sidebar {
+									background: #AAA;
+									width: 100px;
+									top: 50px;
+									bottom: 0;
+								}
+								.eg1-main {
+									background: #888;
+									top: 50px;
+									left: 100px;
+									right: 0;
+									bottom: 0;
+								}
+
+							</style>
+							<div class="eg1">
+								<div class="eg1-header">HEADER</div>
+								<div class="eg1-sidebar">SIDEBAR</div>
+								<div class="eg1-main">CONTENT</div>
+							</div>
+						</div>
+
+						<div class="code-container">
+							<pre style="margin: 0;"><code data-trim contenteditable><span class="fragment" data-fragment-index="1">.header {
+	width: 100%;
+	height: 50px; <span class="fragment" data-fragment-index="4">// Magic number</span>
+}</span>
+<span class="fragment" data-fragment-index="2">
+.sidebar {
+	width: 100px; <span class="fragment" data-fragment-index="4">// Magic number</span>
+	height: 100%;
+	top: 50px;  <span class="fragment" data-fragment-index="4">// Magic number</span>
+}</span>
+<span class="fragment" data-fragment-index="3">
+.content {
+	top: 50px; <span class="fragment" data-fragment-index="4">// Magic number</span>
+	bottom: 0;
+	left: 100px; <span class="fragment" data-fragment-index="4">// Magic number</span>
+	right: 0;
+}</span>
+</code></pre>
+						</div>
+					</div><!-- grid -->
+
+					<p class="fragment  bad" data-fragment-index="3">Too many magic numbers!</p>
+				</section>
+
+				<section>
+					<h3>Use Variables</h3>
+
+					<p>Better approach</p>
+
+					<div class="code-container"><pre><code data-trim contenteditable>$header-height: 50px;
+$sidebar-width: 100px;
+
+.header {
+	width: 100%;
+	height: $header-height;
+}
+
+.sidebar {
+	width: $sidebar-width;
+	height: 100%;
+}
+
+.content {
+	top: $header-height;
+	bottom: 0;
+	left: $sidebar-width;
+	right: 0;
+}</code></pre></div>
+
+				</section>
+
+				<section>
+					<h3>Use Variables</h3>
+
+					<p>Better approach</p>
+
+					<div class="grid">
+						<div class="grid__item  half">
+							<pre><code data-trim contenteditable>$header-height: 50px;
+$sidebar-width: 100px;
+
+.header {
+	width: 100%;
+	height: $header-height;
+}
+
+.sidebar {
+	width: $sidebar-width;
+	height: 100%;
+}
+
+.content {
+	top: $header-height;
+	bottom: 0;
+	left: $sidebar-width;
+	right: 0;
+}</code></pre>
+						</div>
+						<div class="grid__item half">
+							<ul>
+								<li class="fragment">Less error prone</li>
+								<li class="fragment">Easy extensibility</li>
+							</ul>
+						</div>
+					</div> <!-- grid -->
+
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<a href="">Commandment #3</a>
+					<h1 class="fragment  topic">Component Abstraction</h1>
+					<h3><em>Thou shalt believe in abstractions</em></h3>
+				</section>
+
+				<section data-background="assets/hud.jpg">
+					<h3>Component Abstractions</h3>
+					<h4>Scenario: HUD elements on a game screen</h4>
+
+					<div class="fragment  code-container"><pre><code data-trim style="">.hud-stats {
+	position: fixed;
+	opacity: 0.7;
+	filter: sepia(90%);
+	bottom: 20px;
+	left: 20px;
+}
+
+<span class="fragment">.hud-map {
+	position: fixed;
+	opacity: 0.7;
+	filter: sepia(90%);
+	top: 20px;
+	right: 20px;
+}</span></code></pre></div>
+				</section>
+
+				<section data-background="assets/hud.jpg">
+					<h3>Component Abstractions</h3>
+					<h4>Scenario: HUD elements on a game screen</h4>
+
+					<div class="code-container"><pre><code data-trim style="">.hud-stats {
+	<span class="highlight-line">position: fixed;</span>
+	<span class="highlight-line">opacity: 0.7;</span>
+	<span class="highlight-line">filter: sepia(90%);</span>
+	bottom: 20px;
+	left: 20px;
+}
+
+.hud-map {
+	<span class="highlight-line">position: fixed;</span>
+	<span class="highlight-line">opacity: 0.7;</span>
+	<span class="highlight-line">filter: sepia(90%);</span>
+	top: 20px;
+	right: 20px;
+}</code></pre></div>
+
+					<h3>Too much repeatition.</h3>
+
+				</section>
+
+				<section>
+					<h3>Component Abstractions</h3>
+
+					<img src="assets/dry.png" alt="">
+					<h2>Don't Repeat yourself</h2>
+
+				</section>
+
+				<section data-background="assets/hud.jpg">
+					<h3>Component Abstractions</h3>
+					<h4>HUD elements on a game screen (Better)</h4>
+
+					<div class="code-container"><pre><code data-trim style="">.hud-element {
+	position: fixed;
+	opacity: 0.7;
+	filter: sepia(90%);
+}
+
+.hud-stats {
+	bottom: 20px;
+	left: 20px;
+}
+
+.hud-map {
+	top: 20px;
+	right: 20px;
+}</code></pre></div>
+					<div class="code-container  fragment"  data-fragment-index="1"><pre><code data-trim style="">&lt;div class="hud-element  hud-stats"&gt;9999&lt;/div&gt;</code></pre></div>
+
+					<h3 class="fragment"  data-fragment-index="1">No repeation. Much cleaner.</h3>
+
+				</section>
+
+				<section data-background="assets/hud.jpg">
+					<h3>Component Abstractions</h3>
+					<h4>HUD elements on a game screen (Better)(SASS)</h4>
+
+					<div class="code-container"><pre><code data-trim style="">%hud-element {
+	position: fixed;
+	opacity: 0.7;
+	filter: sepia(90%);
+}
+
+.hud-stats {
+	@extend %hud-element;
+	bottom: 20px;
+	left: 20px;
+}
+
+.hud-map {
+	@extend %hud-element;
+	top: 20px;
+	right: 20px;
+}</code></pre></div>
+
+					<div class="code-container"><pre><code data-trim style="">&lt;div class="hud-stats"&gt;9999&lt;/div&gt;</code></pre></div>
+
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<a href="">Commandment #4</a>
+					<h1 class="fragment  topic">Keep Selector Strengths Low</h1>
+					<h3><em>Thou shalt spread peace and stop thy selectors from fighting.</em></h3>
+				</section>
+
+				<section>
+					<h3>Keep Selector Strengths Low</h3>
+					<p>Selectors have strengths...and they do fight!</p>
+					<p class="fragment" data-fragment-index="1">
+						<strong>Example:</strong>
+					</p>
+
+					<div class="code-container">
+
+						<pre class="fragment" data-fragment-index="1"><code data-trim contenteditable>div.tabs {
+	width: 100%;
+}</code></pre>
+						<pre class="fragment" data-fragment-index="1"><code data-trim contenteditable>&lt;div class="tabs"&gt;&lt;/div&gt;</code></pre>
+
+						<pre class="fragment" data-fragment-index="2"><code data-trim contenteditable>.tabs-half {
+	width: 50%;
+}</code></pre>
+						<pre class="fragment" data-fragment-index="2"><code data-trim contenteditable>&lt;div class="tabs tabs-half"&gt;&lt;/div&gt;</code></pre>
+					</div>
+
+
+					<h4 class="fragment  bad">WON'T WORK!</h4>
+
+					<h3><code class="fragment"><strong>strength</strong>(div.tabs) > <strong>strength</strong>(.tabs-half)</h3>
+					</code>
+				</section>
+
+				<section>
+					<h3>Keep Selector Strengths Low</h3>
+
+					<h4>How things get messier...</h4>
+					<ul>
+						<li><h4>Either prefix your class name with <a>DIV</a> tag.</h4></li>
+						<li class="fragment"><h4>Use the all 'awesome and criticized' <a><code>!important</code></a></h4></li>
+						<li class="fragment"><h4>Plus, tabs can only be made up of <a>DIV</a> tags.</h4></li>
+					</ul>
+
+				</section>
+
+				<section>
+					<h3>Keep Selector Strengths Low</h3><br><br>
+
+					<h2 style="text-decoration:line-through;">No <a><code>div.tabs</code></a></h3>
+					<h2>Simply have <a><code>.tabs</code></a></h3>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<a href="">Commandment #5</a>
+					<h1 class="fragment  topic">Naming Convention</h1>
+					<h3><em>Thou shalt treat your classes as thy own children. Name them with equal love.</em></h3>
+				</section>
+
+				<section>
+					<h3>Naming Convention</h3>
+
+					<ul>
+						<li>Most important thing in CSS. Much more important than any other languauge.</li>
+						<li class="fragment">Some things are bad in CSS (ahem...!important) and can be eliminated through better naming.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Naming Convention</h3><br><br>
+
+					<h1>BEM</h1>
+					<h3><a>to the rescue</a></h3>
+
+				</section>
+
+				<section>
+					<h3>Naming Convention</h3><br><br>
+
+					<h3><a>BEM</a>: Block - Element - Modifier</h3>
+
+					<ul>
+						<li><a>Block</a> - Component</li>
+						<li><a>Element</a> - Sub-part of component</li>
+						<li><a>Modifier</a> - Variation of component</li>
+					</ul>
+
+					<br><br><br>
+					<p>Supports Component abstraction</p>
+
+				</section>
+
+				<section>
+					<h3>Naming Convention</h3><br><br>
+
+					<h3><a>BEM</a>: Naming</h3>
+
+					<ul>
+						<li><a>Block</a> - <code>.component</code></li>
+						<li><a>Element</a> - <code>.component__sub-part</code></li>
+						<li><a>Modifier</a> - <code>.component--variation</code></li>
+					</ul>
+
+				</section>
+
+				<section>
+					<h3>Naming Convention</h3><br>
+
+					<h4><a>BEM</a> - Example - Without BEM</h4>
+
+					<div style="text-align: center">
+						<div class="slider">
+							<div class="slider__track"></div>
+							<div class="slider__knob"></div>
+							<input class="slider__input  fragment" data-fragment-index="1" value="20">
+						</div>
+					</div>
+
+					<div class="code-container">
+						<pre><code data-trim>.slider { position: relative; }
+
+.slider .slider-track { background: white; }
+
+.slider .knob { position: absolute; }
+
+<span class="fragment" data-fragment-index="1">// Variation
+.slider.slider-with-input .slider-input { display: block; }</span></code></pre>
+					</div>
+
+				</section>
+
+				<section>
+					<h3>Naming Convention</h3><br>
+
+					<h4><a>BEM</a> - Example - With BEM</h4>
+
+					<div style="text-align: center">
+						<div class="slider">
+							<div class="slider__track"></div>
+							<div class="slider__knob"></div>
+						</div>
+					</div>
+
+					<div class="code-container">
+						<pre><code data-trim>.slider { position: relative; }
+
+.slider__track { background: white; }
+
+.slider__knob { position: absolute; }
+
+// Variation
+.slider--with-input .slider__input { display: block; }</code></pre>
+					</div>
+
+					<p>Selectors - Less specific. More uniform.</p>
+
+				</section>
+
+			</section>
+
+
+
+			<section>
+				<section>
+					<a href="">Commandment #6</a>
+					<h1 class="fragment  topic">z-index Management</h1>
+					<h3><em>Thou shalt not mix up thy ego and z-indexes</em></h3>
+				</section>
+
+				<section data-transition="linear" data-background-transition="slide">
+					<h2>z-index Management</h2>
+					<p>Issue?</p>
+
+					<img src="assets/over9000.jpg" alt="">
+				</section>
+
+				<section data-transition="linear" data-background-transition="slide">
+					<h2>z-index Management</h2>
+					<p>Separate them out into your config as variables</p>
+
+					<div style="font-size: 160%"><pre><code data-trim>$z-index-overlay: 1;
+$z-index-slideout-backdrop: 1;
+$z-index-slideout: 1;
+$z-index-sidebar: 2; // above help panel for tooltips
+$z-index-navigation: 4; // top of sidebar
+$z-index-header: 4;
+$z-index-modal-underlay: 4; // Below modal-box & top of others.
+$z-index-modal-box: 5; // on top of everything</code></pre></div>
+				</section>
+
+				<section data-transition="linear" data-background-transition="slide">
+					<h2>z-index Management</h2>
+
+					<ul>
+						<li class="fragment">
+							<p>Changing existing z-indexes become really easy because you know what might break.</p>
+						</li>
+						<li class="fragment">
+							<p>Setting z-index for new UI elements is very easy because you can actually position it in a similar hierarchy.</p>
+						</li>
+					</ul>
+				</section>
+
+				<section data-transition="linear" data-background-transition="slide">
+					<h3>z-index Management</h3><br><br>
+
+					<h2>No more </h2>
+					<h2><code>z-index: 99999;</code></h2>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<a href="">Commandment #7</a>
+					<h1 class="fragment  topic">@extend - Avoid Selector Hell</h1>
+					<h3><em>Inheritance doesn't always gives thou $$$$.</em></h3>
+				</section>
+
+				<section>
+					<h3>@extend - Avoid Selector Hell</h2>
+					<p>Simple example:</p>
+
+					<div class="code-container">SASS<br><pre><code data-trim contenteditable>.error {
+	color: red;
+	background: #ff8888;
+}
+<span class="fragment">
+.sidebar {
+	.error {
+		padding: 10px;
+	}
+}</span>
+<span class="fragment">
+.error-notification {
+	@extend .error; <span class="fragment">// GONNA BE BAD!!!</span>
+}
+</span></code></pre>
+					</div>
+				</section>
+
+				<section>
+					<h3>@extend - Avoid Selector Hell</h2>
+					<p>Result</p>
+
+					<div class="grid">
+						<div class="grid__item  half  code-container" style="">SASS:<br>
+							<pre><code data-trim contenteditable>.error {
+	color: red;
+	background: #ff8888;
+}
+
+.sidebar {
+	.error {
+		padding: 10px;
+	}
+}
+
+.error-notification {
+	@extend .error;
+}</code></pre>
+						</div>
+
+						<div class="grid__item  half  code-container">CSS:<br>
+							<pre><code data-trim contenteditable>.error, .error-notification {
+	color: red;
+ 	background: #ff8888;
+}
+
+.sidebar .error,
+<span class="highlight-line">.sidebar .error-notification {</span>
+	padding: 10px;
+}</code></pre></div>
+					</div>
+
+					<p class="bad">Unnecessary CSS generated</p>
+
+				</section>
+
+				<section data-background="assets/selector-hell.png">
+					<h2 class="fragment" data-fragment-index="1">This is REAL!</h2>
+					<img src="assets/use-sass-like-hell.jpg" alt="" class="fragment" data-fragment-index="1">
+				</section>
+
+				<section>
+					<h3>@extend - Avoid Selector Hell</h2>
+					<p>Solution: Use placeholders</p>
+
+					<div class="grid">
+						<div class="grid__item  half  code-container" style="">SASS:<br>
+							<pre><code data-trim contenteditable>%error {
+	color: red;
+	background: #ff8888;
+}
+
+.error {
+	@extend %error;
+}
+
+.sidebar {
+	.error {
+		padding: 10px;
+	}
+}
+
+.error-notification {
+	@extend %error;
+}</code></pre>
+						</div>
+
+						<div class="grid__item  half  code-container">CSS:<br>
+							<pre><code data-trim contenteditable>.error, .error-notification {
+	color: red;
+	background: #ff8888;
+}
+
+.sidebar .error {
+ 	padding: 10px;
+}</code></pre></div>
+					</div>
+
+				</section>
+
+				<section>
+					<h3>@extend - Avoid Selector Hell</h2><br><br>
+
+					<h2>We reduced compilation time by 76%</h2>
+				</section>
+			</section>
+
+			<section>
+				<h1>Play Time :)</h1>
+				<br>
+				<a href="javascript:void(0)">Press 'g'</a><br>
+				<!-- <a href="http://bit.ly/cssconfasia">bit.ly/cssconfasia</a> -->
+			</section>
+
+			<section>
+				<h1>Thanks</h1>
+				<h3>for listening :)</h3>
+			</section>
+
+		</div>
+
+		<a href="https://speakerdeck.com/chinchang/10-commandments-for-efficient-css-architecture-cssconf-dot-asia-14" target="_blank" class="pdf-link">See PDF</a>
+
+	</div>
+
+	<div class="game-help">
+		Open <code style="background:#46A0AA">PUT_YOUR_IP_HERE:8000</code> on your mobiles/laptop to play along
+	</div>
+
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="lib/js/reveal.min.js"></script>
+	<script src="game/phaser.js"></script>
+	<script src="lib/js/socket.io.js"></script>
+	<script>
+		if (!window.location.search.match( /print-pdf/gi )) {
+			var s = document.createElement('script');
+			s.src = 'game/script.js';
+			document.getElementsByTagName( 'head' )[0].appendChild(s);
+		}
+	</script>
+
+
+	<script>
+
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			// keyboard: false,
+			//controls: false,
+			progress: true,
+			history: true,
+			center: true,
+
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+			// Parallax scrolling
+			// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+			// parallaxBackgroundSize: '2100px 900px',
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{
+					src: 'lib/js/highlight.js', async: true, callback: function() {
+						hljs.configure({
+  							tabReplace: '   ', // 4 spaces
+  						});
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+
+		if (!window.location.search.match( /print-pdf/gi )) {
+			window.addEventListener('keydown', onKeyDown);
+		}
+
+		function onKeyDown(e) {
+			var canvas = document.querySelector('canvas');
+
+			if (e.which === 71) {
+				if (!/show/.test(document.body.className)) {
+					window.noRevealKeyboard = true;
+					document.body.classList.add('show');
+				}
+				else {
+					window.noRevealKeyboard = false;
+					document.body.classList.remove('show');
+				}
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-19798102-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+
+	</script>
+
+</body>
+</html>

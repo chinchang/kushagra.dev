@@ -1,0 +1,206 @@
+.hidden {
+	display: none;
+}
+
+.clear {
+	clear: both;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Arial;
+	background-color: hsl(0, 0%, 80%);
+	color: #666;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	text-align: center;
+}
+
+h1, h2, h3, h4 {
+	margin-bottom: 20px;
+}
+
+body.hit {
+	-webkit-transition: 1s ease;
+	-moz-transition: 1s ease;
+}
+
+a {
+	color: #588618;
+	text-decoration: none;
+}
+
+button {
+	background: hsl(2, 61%, 57%);
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	-webkit-transition: 0.25s ease;
+	-moz-transition: 0.25s ease;
+}
+
+button:hover {
+	background: hsl(2, 61%, 45%);
+}
+
+.title {
+	font-size: 80px;
+	color: #D5544F;
+	text-shadow: 0 1px 0 hsl(2, 61%, 45%), 0 2px 0 hsl(2, 61%, 45%), 0 4px 0 hsl(2, 61%, 45%), 0 5px 0 hsl(2, 61%, 45%)
+}
+
+canvas {
+	background-color: #9CC5C9;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+.canvas-container {
+	position: relative;
+}
+
+.gameover-msg {
+	height: 0;
+	-moz-transition: 0.3s ease;
+	-webkit-transition: 0.3s ease;
+	overflow: hidden;
+}
+
+.gameover .gameover-msg {
+	height: 100px;
+}
+
+.screen.game {
+}
+
+.gameover .screen.game {
+}
+
+.hud {
+	padding: 10px;
+	font-size: 30px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.hud--left {
+	float: left;
+}
+
+.hud--right {
+	float: right;
+}
+
+.hud--life {
+	display: inline-block;
+	overflow: hidden;
+	font-size: 0;
+}
+
+.hud--life__item {
+	list-style: none;
+	display: inline-block;
+	color: indianred;
+	position: relative;
+	font-size: 25px;
+	width: 28px;
+}
+
+.hud--life.l2 .hud--life__item {
+	left: -28px;
+}
+
+.hud--life.l1 .hud--life__item {
+	left: -56px;
+}
+
+.player {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left: 20%;
+	top: -9999px;
+	background-color: #D5544F;
+	-webkit-transform: rotate(-35deg);
+	-moz-transform: rotate(-35deg);
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+/* eyes */
+.player:after,
+.player:before {
+	content: '';
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #222;
+	display: block;
+	top: 20px;
+	position: absolute;
+}
+
+.player:before {
+	left: 25px;
+}
+
+.player:after {
+	left: 68px;
+}
+
+/* mouth */
+.player__mouth {
+	width: 60px;
+	height: 30px;
+	border-radius: 30px 30px 0 0;
+	background: #222;
+	top: 50px;
+	left: 50%;
+	margin-left: -30px;
+	position: absolute;
+}
+
+.callout {
+	display: inline-block;
+	padding: 20px;
+	position: absolute;
+	background: white;
+	border-radius: 8px;
+	color: #333;
+	left: 30%;
+	top: -9999px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+.callout:after {
+	content: '';
+	position: absolute;
+	bottom: 20px;
+	right: 100%;
+	display: block;
+	border: 10px solid transparent;
+	border-right-color: white;
+}
+
+.ggj-logo {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+footer {
+	margin: 20px 0;
+}
+
+footer a {
+	color: #999;
+	font-size: 12px;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>piCSSel-art - Draw pixel art using CSS only!</title>
+		<meta name="description" content="piCSSel-art lets you draw pixel art using CSS only" />
+		<meta name="keywords" content="pixel,css,draw,art,coffeescript">
+		<meta name="author" content="Kushagra Gour" />
+
+		<link href="https://kushagragour.in/css/lab.css?v3" rel="stylesheet" type="text/css" />
+		<link href="style.css?v4" rel="stylesheet" type="text/css" />
+		<link rel="image_src" href="ss.png" />
+
+		<script type="text/javascript">
+			if (typeof chrome != 'undefined' && chrome.app.isInstalled) {
+				document.querySelectorAll('html')[0].className = document.querySelectorAll('html')[0].className + ' chrome-app ';
+			}
+		</script>
+
+	</head>
+
+	<body>
+		<header>
+			<h1>PICSSEL ART
+				<small>- draw pixel art with CSS</small>
+			</h1>
+			<div class="socialz">
+				<a href="https://github.com/chinchang/picssel-art" target="_blank" rel="noopener">
+					<svg style="width:32px;height:32px" viewBox="0 0 24 24">
+						<path fill="white" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
+						/>
+					</svg>
+				</a>
+
+				<a class="ph-link" href="https://www.producthunt.com/posts/picssel-art" target="_blank" rel="noopener">
+					Upvote on ProductHunt
+				</a>
+			</div>
+		</header>
+
+		<div class="flex">
+			<div class="left-sidebar">
+				<div class="panel">
+					<label class="d-b" for="">Canvas size</label>
+					<div class="flex ai-c">
+						<button id="sizedown-button" data-amount=-1 class="button" title="Decrease canvas size">-</button>
+						<span id="canvasSizeEl"></span>
+						<button id="sizeup-button" data-amount=1 class="button" title="Increase canvas size">+</button>
+					</div>
+				</div>
+				<div class="panel">
+					<label class="d-b" for="pixelSizeSlider">Pixel size
+					</label>
+					<div class="flex ai-c">
+						<input type="range" value="4" step="1" min="1" max="24" id="pixelSizeSlider" />
+						<span id="pixelSizeEl"></span>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="flex">
+						<button id="undo-button" class="button button--full" title="Undo last change">Undo</button>
+						<button id="clear-button" class="button button--full" title="Clear the canvas">Clear</button>
+					</div>
+					<button id="generate-button" class="button button--full" title="Generate code!">Generate Code!</button>
+				</div>
+				<div class="panel">
+					<label>
+						<input id="showGridCheckbox" checked type="checkbox" />Show grid</label>
+				</div>
+				<div class="panel">
+					<label for="current-color">Select color</label>
+					<input id="current-color" class="color" value="#518B41" style="background-color: rgb(81, 139, 65)" title="Change color" />
+					<div id="paletteEl">
+					</div>
+				</div>
+
+				<div id="sample-art">
+					<div></div>
+				</div>
+			</div>
+			<div id="main-container">
+				<div class="help">
+					<ul>
+						<li>
+							<strong>Ctrl/Cmd + Click</strong> to clear pixel</li>
+						<li>
+							<strong>Click</strong> to draw pixel</li>
+						<li>
+							<strong>Shift + Click</strong> to select color</li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+
+				<div class="draw-area">
+					<canvas id="c" width="120" height="120"></canvas>
+					<div class="render" id="art"></div>
+					<div id="grid" class="grid"></div>
+				</div>
+			</div>
+			<div class="right-sidebar">
+				<section id="right" class="box">
+					HTML code:
+					<div class="code-container">
+						<pre id="html-code">&lt;div id="art"&gt;&lt;/div&gt;</pre>
+
+
+						<button class="js-copy-btn copy-button button" data-clipboard-target="#html-code">Copy</button>
+					</div>
+					CSS code:
+					<div class="code-container">
+						<pre id="css-code"></pre>
+						<button class="js-copy-btn copy-button button" data-clipboard-target="#css-code">Copy</button>
+					</div>
+					<form action="https://codepen.io/pen/define" method="POST" target="_blank" class="ralign">
+						<input id="js-form-data" type="hidden" name="data" value="">
+						<input type="submit" class="button button--full" value="See your art on Codepen.io">
+					</form>
+					<!-- See your art on <a href="javascript:void(0)" target="blank" onclick="openOnCodepen()">Codepen.io</a>. -->
+
+					<button type="button" id="shareBtn" class="button button--full button--twitter">Share your art on Twitter</button>
+					<button type="button" id="savePngBtn" class="button button--full button--twitter">Save as .png file</button>
+				</section>
+			</div>
+		</div>
+
+
+		<div id="bottom-container">
+			Created by
+			<a href="https://twitter.com/chinchang457" title="@chinchang457" target="blank" rel="noopener">Kushagra Gour</a>.</em> -
+
+			<a href="https://github.com/chinchang/picssel-art">piCSSel-art</a> is open-source under the MIT License.
+		</div>
+
+		<script src="js/jscolor.js"></script>
+		<script src="js/clipboard.min.js"></script>
+		<script src="js/pako.min.js"></script>
+		<script src="picssel.js?v=4"></script>
+
+		<a id="back-to-lab-button" href="https://webmakerapp.com" target="_blank">Also checkout Web Maker</a>
+
+		<style id="renderStyles"></style>
+
+		<!-- google analyitcs -->
+		<script type="text/javascript">
+			if (location.href.indexOf('localhost') === -1) {
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-19798102-1']);
+				_gaq.push(['_trackPageview']);
+
+				(function () {
+					var ga = document.createElement('script');
+					ga.type = 'text/javascript';
+					ga.async = true;
+					ga.src = 'https://ssl.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(ga, s);
+				})();
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.cf {
+    overflow: hidden;
+    zoom: 1;
+}
+.hidden { display: none; }
+.ta-center{ text-align: center; }
+a {
+    color: #666;
+}
+body {
+    font-size: 16px;
+    font-family: 'Yanone Kaffeesatz';
+    color: #777;
+    letter-spacing: 3px;
+    background: #EEE;
+    //background: url(http://subtlepatterns.com/patterns/ricepaper.png);
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.screen {
+    position: absolute;
+    width: 600px;
+    left: 50%;
+    margin-left: -300px;
+}
+.canvas-wrap > * {
+    position: absolute;
+}
+
+.screen.hidden {
+    pointer-events: none;
+}
+
+/* HUD */
+.hud-wrap {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    pointer-events: auto;
+    width: 100%;
+}
+.hud-wrap > * {
+    position: absolute;
+}
+.hud-level {
+    white-space: nowrap;
+    top: 2px;
+    left: 6px;
+}
+.hud-level-time {
+    white-space: nowrap;
+    top: 22px;
+    left: 6px;
+}
+.hud-score {
+    white-space: nowrap;
+    top: 42px;
+    left: 6px;
+}
+.hud-highscore {
+    white-space: nowrap;
+    top: 62px;
+    left: 6px;
+}
+.hud-target {
+    white-space: nowrap;
+    top: 2px;
+    right: 6px;
+    font-size: 14px;
+}
+.hud-guy-list {
+    white-space: nowrap;
+    top: 22px;
+    right: 6px;
+}
+.hud-chances {
+    white-space: nowrap;
+    top: 57px;
+    right: 6px;
+}
+
+.narration {
+    color: #444;
+    margin-top: 10px;
+    letter-spacing: normal;
+    font-family: courier;
+}
+
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+
+.canvas-wrap {
+    position: relative;
+    height: 300px;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #DDD;
+    cursor: crosshair;
+}
+
+#fg1 {
+    pointer-events: none;
+}
+.btn {
+    /* Styles from http://www.paulund.co.uk/create-a-css-3d-push-button */
+    position:relative;
+    color:#FFF;
+    font-size: 50px;
+    font-family: 'Yanone Kaffeesatz';
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px auto;
+    border-radius: 5px;
+    border: solid 1px #D94E3B;
+    background: #cb3b27;
+    text-align: center;
+    padding: 8px 35px;
+    outline: none;
+    cursor: pointer;
+    
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+    
+    -webkit-box-shadow: 0px 7px 0px #84261a;
+    -moz-box-shadow: 0px 7px 0px #84261a;
+    box-shadow: 0px 7px 0px #84261a;
+}
+.btn:hover, .btn:focus {
+    opacity: 0.7;
+    pointer-events: inherit;    
+}
+
+.btn:active {
+    -webkit-box-shadow: 0px 2px 0px #444;
+    -moz-box-shadow: 0px 2px 0px #444;
+    box-shadow: 0px 2px 0px #444;
+    position:relative;
+    top:7px;
+}
+
+.btn--twitter {
+    /*display: block;*/
+    border-color: hsl(196, 100%, 47%);
+    background: hsl(196, 100%, 47%);
+    -webkit-box-shadow: 0px 7px 0px hsl(196, 100%, 27%);
+    -moz-box-shadow: 0px 7px 0px hsl(196, 100%, 27%);
+    box-shadow: 0px 7px 0px hsl(196, 100%, 27%);
+}
+
+.btn--mini {
+    font-size: 16px;
+    padding: 4px 8px;
+    -webkit-box-shadow: 0px 4px 0px #84261a;
+    -moz-box-shadow: 0px 4px 0px #84261a;
+    box-shadow: 0px 4px 0px #84261a;
+}
+.btn--mini:active {
+    top: 2px;
+}

@@ -1,0 +1,50 @@
+<h1>cta.js</h1>
+<p><em>A call to animate, your action-to-effect path</em></p>
+<hr>
+<p>cta.js or &quot;Call to Animation&quot; is a light-weight performant library to animate any element (&quot;action&quot;) onto any other element (&quot;effect&quot;) on the page.</p>
+<p>To see what you can do with this, checkout the demo:</p>
+<h3><a href="http://kushagragour.in/lab/ctajs">Demo</a>.</h3>
+<h2>Installation</h2>
+<pre><code>bower install ctajs
+</code></pre>
+<p><em>or</em></p>
+<pre><code>npm install ctajs
+</code></pre>
+<p><em>or</em> simply <a href="https://github.com/chinchang/cta.js/blob/master/cta.min.js">download from Github</a>.</p>
+<h2>Usage</h2>
+<p>In very basic form, you can animate an element with selector X onto an element with selector Y:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> e1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token constant">X</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	e2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token constant">Y</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token function">cta</span><span class="token punctuation">(</span>e1<span class="token punctuation">,</span> e2<span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Triggering a reverse animation;</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> e1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#js-source-element'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	e2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#js-target-element'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">var</span> reverseAnimate <span class="token operator">=</span> <span class="token function">cta</span><span class="token punctuation">(</span>e1<span class="token punctuation">,</span> e2<span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment">// Reverse previous animation</span></span><br><span class="highlight-line"><span class="token function">reverseAnimate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Specify animation duration:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> e1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#js-source-element'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	e2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#js-target-element'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token function">cta</span><span class="token punctuation">(</span>e1<span class="token punctuation">,</span> e2<span class="token punctuation">,</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">	duration<span class="token punctuation">:</span> <span class="token number">0.3</span> <span class="token comment">// seconds</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>Specify a callback to execute after animation:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">var</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#js-button'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span><br><span class="highlight-line">	hiddenModal <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#js-modal'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token function">cta</span><span class="token punctuation">(</span>button<span class="token punctuation">,</span> hiddenModal<span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">	<span class="token function">showModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>More documentation coming up.</p>
+<h2>Public API</h2>
+<h3>cta(sourceElement, targetElement [, options] [, callback] )</h3>
+<p>Animate an element <code>sourceElement</code> onto <code>targetElement</code>.</p>
+<ul>
+<li><code>sourceElement</code> - DOM Element which is the starting point of animation.</li>
+<li><code>targetElement</code> - DOM Element which is the end point of animation.</li>
+<li><code>options</code> - A map of additional options to control the animation behaviour.
+<ul>
+<li><code>duration</code> - Duration (in seconds) of animation. Default is <code>0.3</code> seconds.</li>
+<li><code>targetShowDuration</code> - Duration (in seconds) of <code>targetElement</code> to become visible, if hidden initially. The library will automatically try to figure this out from the element's computed styles. Default is <code>0</code> seconds.</li>
+<li><code>relativeToWindow</code> - Set to true if your target element is fixed positioned in the window. Default is relative to document (works good with normal elements).</li>
+</ul>
+</li>
+<li><code>callback</code> - Optional callback to execute after animation completes.</li>
+</ul>
+<h2>Browser Support</h2>
+<p><strong>cta.js</strong> works on Google Chrome only currently. Firefox support is under development.</p>
+<h2>Contributing</h2>
+<p>Interested in contributing features and fixes?</p>
+<p><a href="./CONTRIBUTING.md">Read more on contributing</a>.</p>
+<h2>Changelog</h2>
+<p>See the <a href="https://github.com/chinchang/cta.js/wiki/Changelog">Changelog</a></p>
+<h2>License</h2>
+<p>Copyright (c) 2015 Kushagra Gour, http://kushagragour.in
+Licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.</p>
+<h2>Credits</h2>
+<p>Paul Lewis - for this awesome performance tip on scaling elements.</p>
