@@ -43,14 +43,14 @@ Consider a Git repository as a collection of everything related to Git. So when 
 
 ```js
 function Git(name) {
-	this.name = name; // Repo name
+  this.name = name; // Repo name
 }
 ```
 
 Great! Now making a repo simply requires us to instantiate the <code>Git</code> class passing in the name of the repo:
 
 ```js
-var repo = new Git('my-repo');
+var repo = new Git("my-repo");
 
 // Actual command:
 // > git init
@@ -66,34 +66,34 @@ From the looks of it, a simple <code>Commit</code> class would have and _id_ to 
 
 ```js
 function Commit(id) {
-	this.id = id;
-	// Assume that 'this' has a 'change' property too.
+  this.id = id;
+  // Assume that 'this' has a 'change' property too.
 }
 ```
 
 In Git, when you commit after making some changes, you can give it a message which describes the change you are commiting. This is called the _commit message_ which we'll add to our <code>Commit</code> class:
 
-```js/2,4
+```js/2
 function Commit(id, message) {
-	this.id = id;
-	this.message = message;
+  this.id = id;
+  this.message = message;
 }
 ```
 
 Lets add the ability on our <code>Git</code> class to create a commit or commit (verb):
 
 ```js
-Git.prototype.commit = function (message) {
-	var commit = new Commit();
-	return commit;
+Git.prototype.commit = function(message) {
+  var commit = new Commit();
+  return commit;
 };
 ```
 
 We add a function called <code>commit</code> on the <code>Git</code> prototype. It accepts a string message, creates a new **Commit** instance and returns it. Note that we are not passing in anything yet in the <code>Commit</code> constructor. We need an id to give to the new commit. We'll make the <code>Git</code> class keep track of the commit ids by keeping a counter called <code>lastCommitId</code> with it:
 
-```js/3
+```js
 function Git() {
-	this.lastCommitId = -1;
+  this.lastCommitId = -1;
 }
 ```
 
@@ -101,17 +101,17 @@ Note: In actual Git, commit id is a 40-hexdigit number also called as "SHA-1 id"
 
 The <code>commit</code> function can now pass a new id (incremented) along with the message in the constructor:
 
-```js/3
-Git.prototype.commit = function (message) {
-	var commit = new Commit(++this.lastCommitId, message);
-	return commit;
+```js/1
+Git.prototype.commit = function(message) {
+  var commit = new Commit(++this.lastCommitId, message);
+  return commit;
 };
 ```
 
 We can now commit anytime like so:
 
 ```js
-repo.commit('Make commit work');
+repo.commit("Make commit work");
 
 // Actual command:
 // > git commit -m "Make commit work"
@@ -134,28 +134,28 @@ Lets implement this <code>log</code> command as a method on our <code>Git</code>
 Here is a simple test which should pass for our log function:
 
 ```js
-console.log('Git.log() test');
-var repo = new Git('test');
-repo.commit('Initial commit');
-repo.commit('Change 1');
+console.log("Git.log() test");
+var repo = new Git("test");
+repo.commit("Initial commit");
+repo.commit("Change 1");
 
 var log = repo.log();
 console.assert(log.length === 2); // Should have 2 commits.
-console.assert(!!log[0] &amp;&amp; log[0].id === 1); // Commit 1 should be first.
-console.assert(!!log[1] &amp;&amp; log[1].id === 0); // And then Commit 0.
+console.assert(!!log[0] && log[0].id === 1); // Commit 1 should be first.
+console.assert(!!log[1] && log[1].id === 0); // And then Commit 0.
 ```
 
 Onto the implementation.
 
 ```js
-Git.prototype.log = function () {
-	var history = []; // array of commits in reverse order.
+Git.prototype.log = function() {
+  var history = []; // array of commits in reverse order.
 
-	// 1. Start from last commit
-	// 2. Go back tracing to the first commit
-	// 3. Push in `history`
+  // 1. Start from last commit
+  // 2. Go back tracing to the first commit
+  // 3. Push in `history`
 
-	return history;
+  return history;
 };
 ```
 
@@ -175,25 +175,25 @@ Git has something called a **HEAD**. In actual Git it is simply a pointer to you
 
 What we'll do is add a property called `HEAD` in the `Git` class which will reference the last commit's `Commit` object:
 
-```js/5
+```js/3
 function Git(name) {
-	this.name = name; // Repo name
-	this.lastCommitId = -1; // Keep track of last commit id.
-	this.HEAD = null; // Reference to last Commit.
+  this.name = name; // Repo name
+  this.lastCommitId = -1; // Keep track of last commit id.
+  this.HEAD = null; // Reference to last Commit.
 }
 ```
 
 `HEAD` will be updated everytime a commit is made i.e. in the `commit()` function.
 
-```js/6,7
-Git.prototype.commit = function (message) {
-	// Increment last commit id and pass into new commit.
-	var commit = new Commit(++this.lastCommitId, message);
+```js/5,6
+Git.prototype.commit = function(message) {
+  // Increment last commit id and pass into new commit.
+  var commit = new Commit(++this.lastCommitId, message);
 
-	// Update HEAD and current branch.
-	this.HEAD = commit;
+  // Update HEAD and current branch.
+  this.HEAD = commit;
 
-	return commit;
+  return commit;
 };
 ```
 
@@ -205,17 +205,17 @@ Getting on the 2nd requirement: Every commit should somehow know which commit wa
 
 For this, we add a property called `parent` in the `Commit` class which will reference its parent commit object:
 
-```js/2,4
+```js/2
 function Commit(id, parent, message) {
-	this.id = id;
-	this.parent = parent;
-	this.message = message;
+  this.id = id;
+  this.parent = parent;
+  this.message = message;
 }
 ```
 
 The parent commit also needs to be passed into the `Commit` constructor. If you think, for a new commit what is the parent/previous commit? Yes, the current commit or the `HEAD`.
 
-```js/4
+```js/2
 Git.prototype.commit = function (message) {
 	// Increment last commit id and pass into new commit.
 	var commit = new Commit(++this.lastCommitId, this.HEAD, message);
@@ -224,18 +224,18 @@ Git.prototype.commit = function (message) {
 Having our requirements in place, lets implement the `log()` function:
 
 ```js
-Git.prototype.log = function () {
-	// Start from HEAD
-	var commit = this.HEAD,
-		history = [];
+Git.prototype.log = function() {
+  // Start from HEAD
+  var commit = this.HEAD,
+    history = [];
 
-	while (commit) {
-		history.push(commit);
-		// Keep following the parent
-		commit = commit.parent;
-	}
+  while (commit) {
+    history.push(commit);
+    // Keep following the parent
+    commit = commit.parent;
+  }
 
-	return history;
+  return history;
 };
 
 // Can be used as repo.log();
@@ -308,53 +308,53 @@ Enough said, lets code. First lets make a new class for a branch. A branch, as w
 
 ```js
 function Branch(name, commit) {
-	this.name = name;
-	this.commit = commit;
+  this.name = name;
+  this.commit = commit;
 }
 ```
 
 By default, Git gives you a branch called _master_. Lets create one:
 
-```js/7
+```js/5
 function Git(name) {
-	this.name = name; // Repo name
-	this.lastCommitId = -1; // Keep track of last commit id.
-	this.HEAD = null; // Reference to last Commit.
+  this.name = name; // Repo name
+  this.lastCommitId = -1; // Keep track of last commit id.
+  this.HEAD = null; // Reference to last Commit.
 
-	var master = new Branch('master', null); // null is passed as we don't have any commit yet.
+  var master = new Branch("master", null); // null is passed as we don't have any commit yet.
 }
 ```
 
 Remember we changed the meaning of `HEAD` in the beginning as we were still to cover branches? Its time we make it do what its meant for i.e. reference the current branch (_master_ when repo is created):
 
-```js/8
+```js/6
 function Git(name) {
-	this.name = name; // Repo name
-	this.lastCommitId = -1; // Keep track of last commit id.
+  this.name = name; // Repo name
+  this.lastCommitId = -1; // Keep track of last commit id.
 
-	var master = new Branch('master', null); // null is passed as we don't have any commit yet.
+  var master = new Branch("master", null); // null is passed as we don't have any commit yet.
 
-	this.HEAD = master; // HEAD points to current branch.
+  this.HEAD = master; // HEAD points to current branch.
 }
 ```
 
 This will require certain changes in the `commit()` function as `HEAD` is no longer referencing a `Commit` but a `Branch` now:
 
-```js/4,6,7
-Git.prototype.commit = function (message) {
-	// Increment last commit id and pass into new commit.
-	var commit = new Commit(++this.lastCommitId, this.HEAD.commit, message);
+```js/3-6
+Git.prototype.commit = function(message) {
+  // Increment last commit id and pass into new commit.
+  var commit = new Commit(++this.lastCommitId, this.HEAD.commit, message);
 
-	// Update the current branch pointer to new commit.
-	this.HEAD.commit = commit;
+  // Update the current branch pointer to new commit.
+  this.HEAD.commit = commit;
 
-	return commit;
+  return commit;
 };
 ```
 
 And a minor change in `log` function. We start from `HEAD.commit` now:
 
-```js/4
+```js/1-2
 Git.prototype.log = function () {
 	// Start from HEAD commit
 	var commit = this.HEAD.commit,
@@ -365,87 +365,86 @@ Everything works as before. To really verify what we deduced in theory by calcul
 To begin with, consider _checkout_ as switching branches. By default we are on _master_ branch. If I do something like `repo.checkout('testing')`, I should jump to _testing_ branch...provided it is already created. But if its not created already, a new branch with that name should be created. Lets write a test for this method.
 
 ```js
-console.log('Git.checkout() test')
-var repo = new Git('test');
-repo.commit('Initial commit');
+console.log("Git.checkout() test");
+var repo = new Git("test");
+repo.commit("Initial commit");
 
-console.assert(repo.HEAD.name === 'master'); // Should be on master branch.
-repo.checkout('testing');
-console.assert(repo.HEAD.name === 'testing'); // Should be on new testing branch.
-repo.checkout('master');
-console.assert(repo.HEAD.name === 'master'); // Should be on master branch.
-repo.checkout('testing');
-console.assert(repo.HEAD.name === 'testing'); // Should be on testing branch again.
+console.assert(repo.HEAD.name === "master"); // Should be on master branch.
+repo.checkout("testing");
+console.assert(repo.HEAD.name === "testing"); // Should be on new testing branch.
+repo.checkout("master");
+console.assert(repo.HEAD.name === "master"); // Should be on master branch.
+repo.checkout("testing");
+console.assert(repo.HEAD.name === "testing"); // Should be on testing branch again.
 ```
 
 This test fails right now as we don't have a `checkout` method yet. Lets write one:
 
 ```js
-Git.prototype.checkout = function (branchName) {
-	// Check if a branch already exists with name = branchName
-}
+Git.prototype.checkout = function(branchName) {
+  // Check if a branch already exists with name = branchName
+};
 ```
 
 The comment in above code requires that the repo maintains a list of all created branches. So we put a property called `branches` on `Git` class with initially having only _master_ in it:
 
-```js/5-8
+```js/3,6
 function Git(name) {
-	this.name = name; // Repo name
-	this.lastCommitId = -1; // Keep track of last commit id.
-	this.branches = []; // List of all branches.
+  this.name = name; // Repo name
+  this.lastCommitId = -1; // Keep track of last commit id.
+  this.branches = []; // List of all branches.
 
-	var master = new Branch('master', null); // No commit yet, so null is passed.
-	this.branches.push(master); // Store master branch.
+  var master = new Branch("master", null); // No commit yet, so null is passed.
+  this.branches.push(master); // Store master branch.
 
-	this.HEAD = master; // HEAD points to current branch.
+  this.HEAD = master; // HEAD points to current branch.
 }
 ```
 
 Continuing with the `checkout` function now. Taking first case when we find an existing branch, all we need to do is point the `HEAD`, the current branch pointer, to that existing branch:
 
 ```js
-Git.prototype.checkout = function (branchName) {
-	// Loop through all branches and see if we have a branch
-	// called `branchName`.
-	for (var i = this.branches.length; i--;){
-		if (this.branches[i].name === branchName) {
-			// We found an existing branch
-			console.log('Switched to existing branch: ' + branchName);
-			this.HEAD = this.branches[i];
-			return this;
-		}
-	}
+Git.prototype.checkout = function(branchName) {
+  // Loop through all branches and see if we have a branch
+  // called `branchName`.
+  for (var i = this.branches.length; i--; ) {
+    if (this.branches[i].name === branchName) {
+      // We found an existing branch
+      console.log("Switched to existing branch: " + branchName);
+      this.HEAD = this.branches[i];
+      return this;
+    }
+  }
 
-	// We reach here when no matching branch is found.
-}
+  // We reach here when no matching branch is found.
+};
 ```
 
 I returned `this` from that method so that methods can be chanined. Next, incase we don't find a branch with the passed name, we create one just like we did for _master_:
 
-```js/14-22
-Git.prototype.checkout = function (branchName) {
-	// Loop through all branches and see if we have a branch
-	// called `branchName`.
-	for (var i = this.branches.length; i--;){
-		if (this.branches[i].name === branchName) {
-			// We found an existing branch
-			console.log('Switched to existing branch: ' + branchName);
-			this.HEAD = this.branches[i];
-			return this;
-		}
-	}
+```js/12-20
+Git.prototype.checkout = function(branchName) {
+  // Loop through all branches and see if we have a branch
+  // called `branchName`.
+  for (var i = this.branches.length; i--; ) {
+    if (this.branches[i].name === branchName) {
+      // We found an existing branch
+      console.log("Switched to existing branch: " + branchName);
+      this.HEAD = this.branches[i];
+      return this;
+    }
+  }
 
-	// If branch was not found, create a new one.
-	var newBranch = new Branch(branchName, this.HEAD.commit);
-	// Store branch.
-	this.branches.push(newBranch);
-	// Update HEAD
-	this.HEAD = newBranch;
+  // If branch was not found, create a new one.
+  var newBranch = new Branch(branchName, this.HEAD.commit);
+  // Store branch.
+  this.branches.push(newBranch);
+  // Update HEAD
+  this.HEAD = newBranch;
 
-	console.log('Switched to new branch: ' + branchName);
-	return this;
-
-}
+  console.log("Switched to new branch: " + branchName);
+  return this;
+};
 
 // Actual command:
 // > git checkout existing-branch
@@ -461,33 +460,33 @@ Eureka! Now our `checkout` tests pass :)
 Now the grand moment for which we created the `checkout` function. Verifying the awesomeness of branches through the theory we saw earlier. We'll write one final test to verify the same:
 
 ```js
-console.log('3. Branches test');
+console.log("3. Branches test");
 
-var repo = new Git('test');
-repo.commit('Initial commit');
-repo.commit('Change 1');
+var repo = new Git("test");
+repo.commit("Initial commit");
+repo.commit("Change 1");
 
 // Maps the array of commits into a string of commit ids.
 // For [C2, C1,C3], it returns "2-1-0"
-function historyToIdMapper (history) {
-	var ids = history.map(function (commit) {
-		return commit.id;
-	});
-	return ids.join('-');
+function historyToIdMapper(history) {
+  var ids = history.map(function(commit) {
+    return commit.id;
+  });
+  return ids.join("-");
 }
 
-console.assert(historyToIdMapper(repo.log()) === '1-0'); // Should show 2 commits.
+console.assert(historyToIdMapper(repo.log()) === "1-0"); // Should show 2 commits.
 
-repo.checkout('testing');
-repo.commit('Change 3');
+repo.checkout("testing");
+repo.commit("Change 3");
 
-console.assert(historyToIdMapper(repo.log()) === '2-1-0'); // Should show 3 commits.
+console.assert(historyToIdMapper(repo.log()) === "2-1-0"); // Should show 3 commits.
 
-repo.checkout('master');
-console.assert(historyToIdMapper(repo.log()) === '1-0'); // Should show 2 commits. Master unpolluted.
+repo.checkout("master");
+console.assert(historyToIdMapper(repo.log()) === "1-0"); // Should show 2 commits. Master unpolluted.
 
-repo.commit('Change 3');
-console.assert(historyToIdMapper(repo.log()) === '3-1-0'); // Continue on master with 4th commit.
+repo.commit("Change 3");
+console.assert(historyToIdMapper(repo.log()) === "3-1-0"); // Continue on master with 4th commit.
 ```
 
 This test basically represents the diagrams we saw earlier explaining the working of branches. Lets see if our implementation is inline with the theory:

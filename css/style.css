@@ -870,6 +870,16 @@ pre[class*="language-"] {
   border-radius: 3px;
 }
 
+.highlight-line {
+  display: block;
+  padding: 0.125em 1em;
+  text-decoration: none;
+  color: inherit;
+}
+.highlight-line + br {
+  display: none;
+}
+
 @media (max-width: 750px) {
   body {
     font-size: 15px;
