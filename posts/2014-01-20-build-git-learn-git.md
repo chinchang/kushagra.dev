@@ -73,7 +73,7 @@ function Commit(id) {
 
 In Git, when you commit after making some changes, you can give it a message which describes the change you are commiting. This is called the _commit message_ which we'll add to our <code>Commit</code> class:
 
-<pre data-line="2,4" ><code class="language-javascript">
+```js/2,4
 function Commit(id, message) {
 	this.id = id;
 	this.message = message;
@@ -91,7 +91,7 @@ Git.prototype.commit = function (message) {
 
 We add a function called <code>commit</code> on the <code>Git</code> prototype. It accepts a string message, creates a new **Commit** instance and returns it. Note that we are not passing in anything yet in the <code>Commit</code> constructor. We need an id to give to the new commit. We'll make the <code>Git</code> class keep track of the commit ids by keeping a counter called <code>lastCommitId</code> with it:
 
-<pre data-line="3" ><code class="language-javascript">
+```js/3
 function Git() {
 	this.lastCommitId = -1;
 }
@@ -101,7 +101,7 @@ Note: In actual Git, commit id is a 40-hexdigit number also called as "SHA-1 id"
 
 The <code>commit</code> function can now pass a new id (incremented) along with the message in the constructor:
 
-<pre data-line="3" ><code class="language-javascript">
+```js/3
 Git.prototype.commit = function (message) {
 	var commit = new Commit(++this.lastCommitId, message);
 	return commit;
@@ -175,7 +175,7 @@ Git has something called a **HEAD**. In actual Git it is simply a pointer to you
 
 What we'll do is add a property called `HEAD` in the `Git` class which will reference the last commit's `Commit` object:
 
-<pre data-line="5" ><code class="language-javascript">
+```js/5
 function Git(name) {
 	this.name = name; // Repo name
 	this.lastCommitId = -1; // Keep track of last commit id.
@@ -185,7 +185,7 @@ function Git(name) {
 
 `HEAD` will be updated everytime a commit is made i.e. in the `commit()` function.
 
-<pre data-line="6-7" ><code class="language-javascript">
+```js/6,7
 Git.prototype.commit = function (message) {
 	// Increment last commit id and pass into new commit.
 	var commit = new Commit(++this.lastCommitId, message);
@@ -205,7 +205,7 @@ Getting on the 2nd requirement: Every commit should somehow know which commit wa
 
 For this, we add a property called `parent` in the `Commit` class which will reference its parent commit object:
 
-<pre data-line="2,4" ><code class="language-javascript">
+```js/2,4
 function Commit(id, parent, message) {
 	this.id = id;
 	this.parent = parent;
@@ -215,7 +215,7 @@ function Commit(id, parent, message) {
 
 The parent commit also needs to be passed into the `Commit` constructor. If you think, for a new commit what is the parent/previous commit? Yes, the current commit or the `HEAD`.
 
-<pre data-line="4" ><code class="language-javascript">
+```js/4
 Git.prototype.commit = function (message) {
 	// Increment last commit id and pass into new commit.
 	var commit = new Commit(++this.lastCommitId, this.HEAD, message);
@@ -315,7 +315,7 @@ function Branch(name, commit) {
 
 By default, Git gives you a branch called _master_. Lets create one:
 
-<pre data-line="7"><code class="language-javascript">
+```js/7
 function Git(name) {
 	this.name = name; // Repo name
 	this.lastCommitId = -1; // Keep track of last commit id.
@@ -327,7 +327,7 @@ function Git(name) {
 
 Remember we changed the meaning of `HEAD` in the beginning as we were still to cover branches? Its time we make it do what its meant for i.e. reference the current branch (_master_ when repo is created):
 
-<pre data-line="8"><code class="language-javascript">
+```js/8
 function Git(name) {
 	this.name = name; // Repo name
 	this.lastCommitId = -1; // Keep track of last commit id.
@@ -340,7 +340,7 @@ function Git(name) {
 
 This will require certain changes in the `commit()` function as `HEAD` is no longer referencing a `Commit` but a `Branch` now:
 
-<pre data-line="4,6-7"><code class="language-javascript">
+```js/4,6,7
 Git.prototype.commit = function (message) {
 	// Increment last commit id and pass into new commit.
 	var commit = new Commit(++this.lastCommitId, this.HEAD.commit, message);
@@ -354,7 +354,7 @@ Git.prototype.commit = function (message) {
 
 And a minor change in `log` function. We start from `HEAD.commit` now:
 
-<pre data-line="4"><code class="language-javascript">
+```js/4
 Git.prototype.log = function () {
 	// Start from HEAD commit
 	var commit = this.HEAD.commit,
@@ -388,7 +388,7 @@ Git.prototype.checkout = function (branchName) {
 
 The comment in above code requires that the repo maintains a list of all created branches. So we put a property called `branches` on `Git` class with initially having only _master_ in it:
 
-<pre data-line="5,8"><code class="language-javascript">
+```js/5-8
 function Git(name) {
 	this.name = name; // Repo name
 	this.lastCommitId = -1; // Keep track of last commit id.
@@ -403,7 +403,7 @@ function Git(name) {
 
 Continuing with the `checkout` function now. Taking first case when we find an existing branch, all we need to do is point the `HEAD`, the current branch pointer, to that existing branch:
 
-<pre><code class="language-javascript">
+```js
 Git.prototype.checkout = function (branchName) {
 	// Loop through all branches and see if we have a branch
 	// called `branchName`.
@@ -422,7 +422,7 @@ Git.prototype.checkout = function (branchName) {
 
 I returned `this` from that method so that methods can be chanined. Next, incase we don't find a branch with the passed name, we create one just like we did for _master_:
 
-<pre data-line="14-22"><code class="language-javascript">
+```js/14-22
 Git.prototype.checkout = function (branchName) {
 	// Loop through all branches and see if we have a branch
 	// called `branchName`.
@@ -460,7 +460,7 @@ Eureka! Now our `checkout` tests pass :)
 
 Now the grand moment for which we created the `checkout` function. Verifying the awesomeness of branches through the theory we saw earlier. We'll write one final test to verify the same:
 
-<pre><code class="language-javascript">
+```js
 console.log('3. Branches test');
 
 var repo = new Git('test');
