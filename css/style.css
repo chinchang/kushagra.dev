@@ -29,7 +29,7 @@ h4,
 h5,
 h6,
 strong {
-  color: #40413a;
+  color: #2e2e29;
 }
 
 *:focus {
@@ -579,11 +579,14 @@ article blockquote p {
   display: inline;
 }
 
-article p {
+article {
   line-height: 1.7em;
   font-size: 1.2em;
 }
 
+article li {
+  margin-bottom: 1em;
+}
 article img {
   border: 6px solid rgba(255, 255, 255, 0.09);
   border-radius: 4px;
@@ -885,7 +888,7 @@ pre[class*="language-"] {
     font-size: 15px;
   }
 
-  article p {
+  article {
     font-size: 1.1em;
   }
 
