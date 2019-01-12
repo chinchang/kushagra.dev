@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Web Maker: Console is here!"
+tags:
+  - product
 ---
 
 I have an awesome news to share with all the [Web Maker](https://webmakerapp.com) users out there. The most [requested feature](https://github.com/chinchang/web-maker/issues/56) has finally landed in version 2.6 - The "Console". Yes, you heard it right, you now have an inbuilt Console right inside the Web Maker interface.
@@ -23,4 +25,3 @@ You often use various log functions in your code, like `console.log`, `console.e
 Apart from this, you can also evaluate any custom JavaScript code in your preview's context right from the Console. Just type it in the console input and press Enter.
 
 I had real fun developing Console into Web Maker. Hope it makes you more productive. If you loved this new feature, tweet out your love to [@webmakerapp](https://twitter.com/webmakerapp). Cheers!
-

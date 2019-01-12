@@ -2,7 +2,7 @@
 layout: post
 title: "Things I Don't Know as of 2018"
 tags:
-  - life
+  - personal
   - learning
 ---
 

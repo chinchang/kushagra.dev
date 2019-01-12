@@ -3,8 +3,8 @@ comments: true
 layout: post
 slug: one-year-at-wingify
 title: I complete an year at Wingify
-categories:
-- achievement
+tags:
+  - personal
 ---
 
 Today is quite a big day for me. Last year on this very date, I joined my first job at a startup called **[Wingify](http://www.wingify.com)** which was not much known name to me at that time. And today I complete an year working at Wingify and immensely proud and privileged of having been part of a bunch of talented geeks!
@@ -16,7 +16,7 @@ Writing this post, lots of memories of the past year strike my mind (whatever my
 Since then, it has been a journey filled with lots of learning, making awesome stuff and wonderful parties :)
 Being a startup I have got the opportunity to work in various domains here which has really helped me grow, learn new things and become better at whatever I do. Here, I have created frontends, backends, [doodles](http://team.wingify.com/our-christmas-logo), christmas cards (this was a [tough job](http://team.wingify.com/greeting-card-day-at-wingify-office) for our team) and what not. And the most important thing which sets Wingify apart from the rest is the creative freedom and casual environment it provides to the team which lets us create better and better product for our customers.
 
-Talking about the past year, one thing that I can't forget is the [crazy trip to Thailand](http://team.wingify.com/thailand-trip-pictures) that we had on Christmas. 
+Talking about the past year, one thing that I can't forget is the [crazy trip to Thailand](http://team.wingify.com/thailand-trip-pictures) that we had on Christmas.
 
 <img src="/images/team-at-thailand.jpg" title="Team in Thailand" />
 

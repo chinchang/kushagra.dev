@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Adding search in your jekyll blog"
+tags:
+  - tutorial
 ---
 
 I recently implemented search on this website (made in Jekyll). Its a complete client-side search and hence very quick and easy to use. To try it out, press the '/' or ESC key and type something.
@@ -17,20 +19,22 @@ Lets start implementing the search.
 
 First thing we need to do is fetch the RSS feed XML. This is simple with `XMLHttpRequest`. We fetch the XML and create a DOM out of it for parsing later.
 
-<pre><code class="language-javascript">
-var xmlhttp=new XMLHttpRequest();
-xmlhttp.open('GET', '/feed.xml');
-xmlhttp.onreadystatechange = function () {
-	if (xmlhttp.readyState != 4) return;
-	if (xmlhttp.status != 200 && xmlhttp.status != 304) { return; }
+```js
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET", "/feed.xml");
+xmlhttp.onreadystatechange = function() {
+  if (xmlhttp.readyState != 4) return;
+  if (xmlhttp.status != 200 && xmlhttp.status != 304) {
+    return;
+  }
 
-	// Create a DOM out of the XML string.
-	var node = (new DOMParser).parseFromString(xmlhttp.responseText, 'text/xml');
-	node = node.children[0];
-	posts = xmlToJson(node).channel.item;
-}
+  // Create a DOM out of the XML string.
+  var node = new DOMParser().parseFromString(xmlhttp.responseText, "text/xml");
+  node = node.children[0];
+  posts = xmlToJson(node).channel.item;
+};
 xmlhttp.send();
-</code></pre>
+```
 
 ### Parsing XML feeds into JSON
 

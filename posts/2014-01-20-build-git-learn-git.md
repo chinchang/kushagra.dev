@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "Build GIT - Learn GIT (P1)"
+tags:
+  - javascript
+  - GIT
+  - tutorial
 ---
 
 If you are reading this post, you probably are using Git or want to use Git. I am a big fan of Git and also [those posts](https://teropa.info/blog/2013/11/03/make-your-own-angular-part-1-scopes-and-digest.html) where people [implement some piece of an existing technology](https://modernjavascript.blogspot.in/2013/08/promisesa-understanding-by-doing.html) in order to understand how their work in the core. Point being that if you have implemented something, you obviously know how it works, right? This is one such post written to spread my love for Git. **Yes, we'll implement Git!**...in JavaScript.

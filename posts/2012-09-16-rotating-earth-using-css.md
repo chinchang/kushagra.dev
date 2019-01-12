@@ -1,6 +1,9 @@
 ---
 layout: post
-title: "[Tutorial] Rotating earth using pure CSS"
+title: "Rotating earth using pure CSS"
+tags:
+  - css
+  - tutorial
 ---
 
 Recently after seeing a pen on <a target="_blank" href="http://www.codepen.io">codepen</a> by [Jack Rugile](http://codepen.io/jackrugile/pen/sadvF) and a creation on [CSSDeck](http://www.cssdeck.com) by [Tim Holman](http://cssdeck.com/labs/animated-map-icon), I thought why not use the two concepts to come up with something interesting. An illusion of a 3D rotating planet using just CSS. And so I [hacked down a pen](http://codepen.io/chinchang/pen/ygHBc) (this does a little more than mentioned, not nicely enough though).

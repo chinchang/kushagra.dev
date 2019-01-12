@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "[Tutorial] Win8 HTML5 app development- I"
+tags:
+  - javascript
+  - tutorial
+  - gamedev
 ---
 
 Hola!

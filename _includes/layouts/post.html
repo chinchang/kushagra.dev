@@ -5,7 +5,12 @@ label: blog
 ---
 <article>
 	<h2 class="post-title">{{ title }}</h2>
-	<div class="post-meta">{{ page.date | date: "%B %d, %Y" }}</div>
+	<div class="post-meta">Published <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time> · Tagged
+		with
+		{% for tag in tags %}
+		<a href="/blog/tags/{{ tag | slug }}" class="tag">{{ tag }}</a>
+		{% endfor %}
+	</div>
 
 
 	<div class="post-content">{{ content | safe }}</div>
@@ -14,6 +19,8 @@ label: blog
 </article>
 
 <div class="blog-navigation-buttons">
+	<a class="button  prev-post-button" href="/blog">&larr; Back to Blog</a>
+
 	{% if page.previous %}
 	<a class="button  prev-post-button" href="{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Prev Post</a>
 	{% endif %}

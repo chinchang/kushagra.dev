@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "My personal website.",
   "author": "Kushagra Gour <chinchang457@gmail.com>",
+  "scripts": {
+    "start": "eleventy --quiet --serve --port=8081"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/chinchang/chinchang.github.com.git"
@@ -12,6 +15,8 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.6.0"
+    "@11ty/eleventy": "^0.6.0",
+    "markdown-it": "^8.4.2",
+    "markdown-it-anchor": "^5.0.2"
   }
 }

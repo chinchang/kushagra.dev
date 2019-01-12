@@ -4,11 +4,10 @@ date: 2011-11-15 01:24:51
 layout: post
 slug: fun-at-nasscom-gdc-byog
 title: Fun at Nasscom GDC BYOG 2011!
-categories:
-- achievements
-- events
-- flash
-- games
+tags:
+  - personal
+  - flash
+  - gamedev
 ---
 
 Hey fellow developers!

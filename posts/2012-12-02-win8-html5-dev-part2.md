@@ -1,6 +1,10 @@
 ---
 layout: post
 title: "[Tutorial] Win8 HTML5 app development- II"
+tags:
+  - javascript
+  - tutorial
+  - gamedev
 ---
 
 Finally I got the opportunity to write the second part of the tutorial series on HTML5 game development for Windows 8.

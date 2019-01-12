@@ -447,7 +447,8 @@ article a {
 }
 
 article a:hover {
-  color: #f2c45a;
+  background-color: #f2c45a;
+  /* color: #f2c45a; */
 }
 
 .blog article a {
@@ -459,7 +460,7 @@ article a:hover {
 }
 
 .blog article:not(.list-item) a:hover {
-  color: #f2c45a;
+  /* color: #f2c45a; */
   /* yellow */
 }
 
@@ -527,7 +528,7 @@ article:not(.list-item) .post-title {
 
 article .post-title a {
   border: 0 !important;
-  color: inherit;
+  /* color: inherit; */
 }
 
 article .post-meta {
@@ -881,6 +882,11 @@ pre[class*="language-"] {
 }
 .highlight-line + br {
   display: none;
+}
+.tag {
+  background-color: #f6f7e8;
+  padding: 3px 7px;
+  font-size: 0.8em;
 }
 
 @media (max-width: 750px) {

@@ -3,10 +3,10 @@ comments: true
 date: 2011-05-28 01:21:59
 layout: post
 slug: creating-a-lan-wireless-lan-using-ad-hoc-network
-title: '[Creating a LAN] Wireless LAN using ad-hoc network'
-categories:
-- tutorials
-- windows
+title: "[Creating a LAN] Wireless LAN using ad-hoc network"
+tags:
+  - tutorial
+  - networking
 ---
 
 This is the second part of the **CREATING A LAN series - Wireless LAN**.
@@ -17,14 +17,9 @@ Now some real stuff.
 
 **Requirements for this tutorial :**
 
+- Upto 9 Computer machines having wifi.
 
-
-	
-  * Upto 9 Computer machines having wifi.
-
-	
-  * Windows 7 OS (Windows Vista will also work)
-
+- Windows 7 OS (Windows Vista will also work)
 
 (**NOTE** : The tutorial visuals shown here are of Win 7, though it would work just fine on Windows Vista also.)
 

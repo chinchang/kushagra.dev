@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Journey with Rubik's Cube"
+tags:
+  - personal
+  - learning
 ---
 
 Yes, I started playing with Rubik's cube recently. I have had rubik's cube (very cheap one though) since I was 14, but it was just time-pass then. I didn't know how to solve it. It was just one-sided play (if you get what I mean) as I could figure how to solve only one side completely. But this January my cousin came to our place for his vacations and he brought along a rubik's cube (probably just like me back then). As anyone would do now-a-days to know how something is done, I google-d too. And a lot of videos on how to solve rubik's cube showed up. Me and my cousin together learned how to solve the cube with the very basic method and have been practicing since then. I am writing this post to document the approach I have taken to learn whatever I know on solving a 3x3x3 rubik's cube. Lets start.
@@ -33,7 +36,6 @@ Upon a quick glance at the Fridrich method, I realized it was better not to take
 Finger tricks basically refers to using your fingers to turn the cube instead of using complete hand (which is slower). Also it emphasizes on smooth transitions from one algorithm to another without wasting much time in getting ready to execute the next one. This is how those sub-20 second guyz are able to turn the cube layers sooooo fast! So I got down to this, practicing each algorithm individually I knew whenever I got time - in bus, train, office, home...everywhere. I actually did not do even a single solve for about 2 weeks, just practice individual algorithms and developing my own finger turn-style. And then I did a timed solve just to show a colleague I could also solve the cube apart from just turning it seemingly ad-hoc - I did it in 2:40 minutes that day!
 
 <a>**Average Time: ~ 3 minutes**</a>
-
 
 ### Move to Fridrich Method?
 

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Year's first side project- Hint.css
+tags:
+  - css
+  - product
 ---
 
 Hey everyone!

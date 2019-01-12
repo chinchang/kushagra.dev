@@ -1,6 +1,9 @@
 ---
 layout: post
-title: "[Tutorial] Getting started with Chart.js"
+title: "Getting started with Chart.js"
+tags:
+  - tutorial
+  - javascript
 ---
 
 I had been recording data from Alexa since [Hint.css](http://kushagragour.in/lab/hint/) went live just to track its popularity and reach. Nothing too complex, just maintained a JSON file and added new object in an array for each data point. I had been thinking if I could visualize this data, just for fun. Did try [d3.js](http://d3js.org/). Though its a really awesome library for data visualization and all, it surely has some learning curve before you can have something out of it.

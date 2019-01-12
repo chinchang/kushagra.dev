@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Web Maker: Preventing Infinite Loops"
+tags:
+  - javascript
+  - product
 ---
 
 ## The Problem
@@ -20,7 +23,7 @@ Therefore we need a way to prevent such intermediate incomplete loops from runni
 
 There is a [lot of discussion on the Web](http://mca.nowgray.com/2017/01/can-runtime-environment-detect-infinite.html) regarding how difficult it is to detect an infinite loop in runtime, simply because any runtime cannot actually diffrentiate between a normal loop and one that is going to run infinitely. There are some analyzers that try to solve this issue but static analysis can only do so much.
 
-The approach Web Maker takes to solve this is by keeping a check on the time spent inside a loop. To be specific, I check if the loop isn't taking more than 1 second. Otherwise its marked as an infinite loop. To be able to keep track of this time, we need to have a time check inside the loop and hence this requires changing the actual loop code, also called as [Code Instrumentation](https://en.wikipedia.org/wiki/Instrumentation_(computer_programming)).
+The approach Web Maker takes to solve this is by keeping a check on the time spent inside a loop. To be specific, I check if the loop isn't taking more than 1 second. Otherwise its marked as an infinite loop. To be able to keep track of this time, we need to have a time check inside the loop and hence this requires changing the actual loop code, also called as [Code Instrumentation](<https://en.wikipedia.org/wiki/Instrumentation_(computer_programming)>).
 
 So if we have a code like this:
 
@@ -197,4 +200,3 @@ if (currentElement &&
 And we are done.
 
 You can also see the actual Web Maker [source code for this logic](https://github.com/chinchang/web-maker/blob/master/src/utils.js).
-

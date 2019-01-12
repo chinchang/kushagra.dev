@@ -9,6 +9,9 @@ label: blog
 <article class="list-item {% if post.data.link %}list-item--external{% endif %}">
 	<h3 class="post-title">
 		<a href="{% if post.data.link %}{{ post.data.link }}{% else %}{{ post.url | url }}{% endif %}">{{ post.data.title }}</a>
+		{% for tag in post.data.tags %}
+		<a href="/blog/tags/{{ tag | slug }}" class="tag">{{ tag }}</a>
+		{% endfor %}
 	</h3>
 	<div class="flex space-between">
 		<div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div>

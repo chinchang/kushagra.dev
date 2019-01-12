@@ -4,17 +4,14 @@ date: 2012-01-01 20:06:20
 layout: post
 slug: copter-clone-open-source-on-github
 title: Copter clone- open source on github
-categories:
-- actionscript
-- games
-- open source
+tags:
+  - actionscript
+  - gamedev
 ---
 
 Hey everyone
 
-
 # **HAPPY NEW YEAR TO ALL!**
-
 
 It has been an awesome year in 2011, with many things happening as expected and many unexpectedly. But overall...superb.
 

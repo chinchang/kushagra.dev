@@ -1,11 +1,15 @@
 ---
 layout: post
-title: 'Using background color in currentColor'
+title: "Using background color in currentColor"
+tags:
+  - css
+  - trick
 ---
 
 I had the following situation recently - I have a container with some background color and it needs to have an arrow coming out from inside of the same background color. I implemented the arrow using `:after` pseudo element. Something like this:
 
 ![](/images/2016/currentcolor-propagation.png)
+
 <pre><code class="language-css">
 .container {
   display: inline-block;
@@ -50,7 +54,6 @@ Now this code works, but the container could be multi-colored and also the arrow
 }
 </code></pre>
 
-
 **Bad Demo:**
 
 <p data-height="268" data-theme-id="0" data-slug-hash="rxKrag" data-default-tab="result" data-user="chinchang" data-preview="true" class='codepen'>See the Pen <a href='http://codepen.io/chinchang/pen/rxKrag/'>BjVPNJ</a> by Kushagra Gour (<a href='http://codepen.io/chinchang'>@chinchang</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
@@ -68,7 +71,6 @@ This code has 2 visible issues:
 One thing that might come to your mind to prevent these issues is `currentColor`. Close enough, just that `currentColor` refers to the `color` property and not `background-color`. Bummer!
 
 To overcome this limitation I came up with a trick I call `currentColor propagation` :) The trick is basically to propagate `background-color` to `color` property of the arrow and then use `currentColor` for coloring arrows! That solves both our issues:
-
 
 <pre><code class="language-css">
 .container {
@@ -103,4 +105,3 @@ Yes, we need still need to mention color 2 times for each new container, but sti
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 Thats it for this article. Hope it will help you sometime :)
-
