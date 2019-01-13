@@ -532,7 +532,7 @@ article .post-title a {
 }
 
 article .post-meta {
-  font-size: 0.9rem;
+  margin-top: 8px;
   color: #666;
 }
 
@@ -883,7 +883,7 @@ pre[class*="language-"] {
 .highlight-line + br {
   display: none;
 }
-.tag {
+.content-tag {
   background-color: #f6f7e8;
   padding: 3px 7px;
   font-size: 0.8em;

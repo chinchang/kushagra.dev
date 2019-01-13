@@ -10,7 +10,7 @@ I had the following situation recently - I have a container with some background
 
 ![](/images/2016/currentcolor-propagation.png)
 
-<pre><code class="language-css">
+```css
 .container {
   display: inline-block;
   padding: 30px;
@@ -20,7 +20,7 @@ I had the following situation recently - I have a container with some background
 
 /* Arrow */
 .container:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 100%;
@@ -28,11 +28,11 @@ I had the following situation recently - I have a container with some background
   border: 10px solid transparent;
   border-left-color: indianred;
 }
-</code></pre>
+```
 
 Now this code works, but the container could be multi-colored and also the arrow can show either right or left for any container. With above implementation, for each different container, we'll have to change the border color as well like so:
 
-<pre><code class="language-css">
+```css
 /* Modifier for a container having left arrow */
 .container--inverted:after {
   left: auto;
@@ -52,7 +52,7 @@ Now this code works, but the container could be multi-colored and also the arrow
 .container--2.container--inverted:after {
   border-right-color: skyblue;
 }
-</code></pre>
+```
 
 **Bad Demo:**
 
@@ -72,19 +72,19 @@ One thing that might come to your mind to prevent these issues is `currentColor`
 
 To overcome this limitation I came up with a trick I call `currentColor propagation` :) The trick is basically to propagate `background-color` to `color` property of the arrow and then use `currentColor` for coloring arrows! That solves both our issues:
 
-<pre><code class="language-css">
+```css
 .container {
-	/* Other styles here */
-	background-color: indianred;
+  /* Other styles here */
+  background-color: indianred;
 }
 .container:after {
-	/* Other styles here */
-	color: indianred;
-	border-left-color: currentColor;
+  /* Other styles here */
+  color: indianred;
+  border-left-color: currentColor;
 }
 .container--inverted:after {
-	border-left-color: transparent;
-	border-right-color: currentColor;
+  border-left-color: transparent;
+  border-right-color: currentColor;
 }
 
 /* Modifiers can just be like so */
@@ -95,7 +95,7 @@ To overcome this limitation I came up with a trick I call `currentColor propagat
 .container--2:after {
   color: skyblue;
 }
-</code></pre>
+```
 
 Yes, we need still need to mention color 2 times for each new container, but still better than 3 times. More importantly, all the arrow related code is just at one place and not duplicated for each container. Plus we don't have to use that dirty `!important` and have much less code.
 

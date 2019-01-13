@@ -10,7 +10,7 @@ label: blog
 	<h3 class="post-title">
 		<a href="{% if post.data.link %}{{ post.data.link }}{% else %}{{ post.url | url }}{% endif %}">{{ post.data.title }}</a>
 		{% for tag in post.data.tags %}
-		<a href="/blog/tags/{{ tag | slug }}" class="tag">{{ tag }}</a>
+		<a href="/blog/tags/{{ tag | slug }}" class="content-tag">{{ tag }}</a>
 		{% endfor %}
 	</h3>
 	<div class="flex space-between">
