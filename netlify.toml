@@ -21,3 +21,9 @@ ID = "chinchang"
   to = "/blog/:slug"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/lab/web-maker"
+  to = "https://webmakerapp.com"
+  status = 301
+  force = true
