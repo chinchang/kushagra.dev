@@ -27,3 +27,9 @@ ID = "chinchang"
   to = "https://webmakerapp.com"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://chinchang.netlify.com/*"
+  to = "https://kushagragour.in/:splat"
+  status = 301
+  force = true
