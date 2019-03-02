@@ -71,6 +71,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("cssconfasia");
   eleventyConfig.addPassthroughCopy("stuff");
   eleventyConfig.addPassthroughCopy("concert");
-  eleventyConfig.addPassthroughCopy("README.md");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
   return {};
 };
