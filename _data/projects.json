@@ -1,9 +1,20 @@
 [
   {
+    "name": "CSSBattle",
+    "link": "https://cssbattle.dev/",
+    "desc": "First ever code-golfing platform for CSS!",
+    "image": "https://cssbattle.dev/images/banner.png"
+  },
+  {
+    "name": "Accessibility for Managers",
+    "link": "https://a11yformanagers.now.sh/",
+    "desc": "Fun app that turn real accessibility issues on a website into fake feedbacks from fake users."
+  },
+  {
     "name": "Web Maker",
-    "link": "https://webmakerapp.com/",
+    "link": "https://webmaker.app/",
     "desc": "Blazing fast & offline frontend playground",
-    "image": "https://webmakerapp.com/ss1.png?v3.0.0beta"
+    "image": "https://webmaker.app/images/ss1.png"
   },
   {
     "name": "Hint.css",
