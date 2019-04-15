@@ -33,3 +33,8 @@ ID = "chinchang"
   to = "https://kushagragour.in/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/code-blast-codemirror/demo/index.html"
+  to = "/lab/code-blast-codemirror/demo/index.html"
+  status = 301
