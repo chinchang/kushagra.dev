@@ -213,6 +213,10 @@ figure h3 {
   display: inline-block;
   margin: 4px 2px;
   background: #45b98a;
+  transform: skewX(-14deg);
+}
+.color-block > * {
+  transform: skewX(14deg);
 }
 
 .color-block > a {
@@ -272,14 +276,8 @@ figure h3 {
 }
 
 #main-container > nav a {
-  font-size: 62px;
-  line-height: 62px;
-  letter-spacing: -8px;
   padding: 0 14px 0 10px;
   text-decoration: none;
-}
-
-.blog #main-container > nav a {
   font-size: 32px;
   line-height: 32px;
   letter-spacing: -4px;
@@ -297,6 +295,7 @@ figure h3 {
 }
 
 .home #main-container nav > ul a {
+  font-size: 3rem;
   line-height: calc(100vh - 520px);
 }
 
@@ -427,7 +426,9 @@ article a:hover {
 article.list-item:last-child {
   margin-bottom: 0;
 }
-
+.post-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
 article:not(.list-item) .post-title {
   font-size: 2.3em;
 }
@@ -458,7 +459,7 @@ article .post-website:after {
 }
 
 article .post-content {
-  font-family: "PT Serif", Helvetica, Arial, Geneva, sans-serif;
+  font-family: Georgia, serif;
   margin-top: 2em;
   word-spacing: 1px;
 }
@@ -487,7 +488,7 @@ article blockquote p {
 }
 
 article {
-  line-height: 1.7em;
+  line-height: 1.7;
   font-size: 1.2em;
 }
 
