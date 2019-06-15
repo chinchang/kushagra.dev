@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Ensuring missing fields in Firestore security rules"
+title: "Restrict specific fields updation in Firestore"
 tags:
   - firebase
   - firestore
