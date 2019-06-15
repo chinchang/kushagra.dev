@@ -5,7 +5,7 @@
 	{% for post in posts %}
 	<li>
 		<article class="list-item {% if post.data.link %}list-item--external{% endif %}">
-			<h3 class="post-title">
+			<h3 class="mb-xs">
 				<a href="{% if post.data.link %}{{ post.data.link }}{% else %}{{ post.url | url }}{% endif %}">{{ post.data.title }}</a>
 			</h3>
 			

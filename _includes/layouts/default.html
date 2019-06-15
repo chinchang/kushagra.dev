@@ -96,11 +96,26 @@
         Kushagra Gour's Website
       </div>
 
-      <div class="container container--small ta-c">
-        <a href="/">Home</a>
-        <span class="breadcrumb__separator">↠</span>
-        <a href="/blog/">Blog</a>
+      {% if page.url != '/' %}
+      <div class="container container--small ta-c d-f jc-sb">
+        <div>
+          <a href="/">Home</a>
+          {% if parent %}
+          <span class="link-separator">↠</span>
+          <a href="{{ parent.url || page.url }}">{{ parent.title || title }}</a>
+          {% endif %}
+        </div>
+        <div>
+          <a href="/lab/">Lab</a>
+          <span class="link-separator">❀</span>
+          <a href="/games/">Games</a>
+          <span class="link-separator">❀</span>
+          <a href="/blog/">Blog</a>
+          <span class="link-separator">❀</span>
+          <a href="/about/">Me</a>
+        </div>
       </div>
+      {% endif %}
 
       <div class="container">{{ content | safe }}</div>
     </div>

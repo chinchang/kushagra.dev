@@ -4,20 +4,28 @@ title: Lab
 name: lab
 ---
 
-{% for project in projects %}
+<h1 class="post__title">Lab</h1>
 
-<article class="list-item  list-item--tile list-item--lab {% if project.image %}list-item--with-picture{% endif %}">
-	{% if project.image %}
-	<div class="list-item__image" style="background-image: url({{ project.image }})"></div>
-	{% endif %}
-	<div class="list-item__content">
+<div class="container container--small">
+  {% for project in projects %}
 
-		<a href="{{ project.link }}">
-			<h3 class="post-title">{{ project.name }}</h3>
-		</a>
-		<span class="list-item--lab__desc">{{ project.desc }}</span>
-	</div>
-	<!-- <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div> -->
-</article>
+  <article
+    class="list-item  list-item--tile list-item--lab {% if project.image %}list-item--with-picture{% endif %}"
+  >
+    {% if project.image %}
+    <div
+      class="list-item__image"
+      style="background-image: url({{ project.image }})"
+    ></div>
+    {% endif %}
+    <div class="list-item__content">
+      <a href="{{ project.link }}">
+        <h3 class="post-title">{{ project.name }}</h3>
+      </a>
+      <span class="list-item--lab__desc">{{ project.desc }}</span>
+    </div>
+    <!-- <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div> -->
+  </article>
 
-{% endfor %}
+  {% endfor %}
+</div>

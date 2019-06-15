@@ -1,3 +1,7 @@
 {
-  "permalink": "/blog/{{ page.fileSlug }}/index.html"
+  "permalink": "/blog/{{ page.fileSlug }}/index.html",
+  "parent": {
+    "title": "Blog",
+    "url": "/blog/"
+  }
 }
