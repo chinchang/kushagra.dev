@@ -3,34 +3,45 @@ layout: default
 name: blog
 label: blog
 ---
-<article>
-	<h2 class="post-title">{{ title }}</h2>
-	<div class="post-meta">Published on <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time> ·
-		Tagged
-		with
-		{% for tag in tags %}
-		<a href="/blog/tags/{{ tag | slug }}" class="content-tag">{{ tag }}</a>
-		{% endfor %}
-	</div>
 
+<article class="post">
+  <header class="post__header">
+    <h2 class="post__title">{{ title }}</h2>
+    <div class="post__meta container--small">
+      Published on
+      <time datetime="{{ page.date }}">{{
+        page.date | date: "%B %d, %Y"
+      }}</time>
+      · Tagged with {% for tag in tags %}
+      <a href="/blog/tags/{{ tag | slug }}" class="post-tag">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </header>
 
-	<div class="post-content">{{ content | safe }}</div>
-
-	{% include share_bar.html %}
+  <div class="post__content container--small">{{ content | safe }}</div>
 </article>
 
-<div class="blog-navigation-buttons">
-	<a class="button  prev-post-button" href="/blog">&larr; Back to Blog</a>
+<div class="blog-navigation-buttons ta-c">
+  <a class="button  prev-post-button" href="/blog">&larr; Back to Blog</a>
 
-	{% if page.previous %}
-	<a class="button  prev-post-button" href="{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Prev Post</a>
-	{% endif %}
-
-	{% if page.next %}
-	<a class="button  next-post-button" href="{{ page.next.url }}" title="{{ page.next.title }}">Next Post &rarr;</a>
-	{% endif %}
+  {% if page.previous %}
+  <a
+    class="button  prev-post-button"
+    href="{{ page.previous.url }}"
+    title="{{ page.previous.title }}"
+    >&larr; Prev Post</a
+  >
+  {% endif %} {% if page.next %}
+  <a
+    class="button  next-post-button"
+    href="{{ page.next.url }}"
+    title="{{ page.next.title }}"
+    >Next Post &rarr;</a
+  >
+  {% endif %}
 </div>
 
+<!-- 
 <div class="comment-box">
 	<button id="showCommentsButton" style="margin:0 auto;display:block;" class="button" onclick="window.bootDisqus();">Show
 		comments</button>
@@ -39,6 +50,6 @@ label: blog
 		<hr />
 		{% include disqus.html %}
 	</div>
-</div>
+</div> -->
 
-<div class="bring-to-top">TOP</div>
+<!-- <div class="bring-to-top">TOP</div> -->

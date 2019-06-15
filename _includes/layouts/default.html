@@ -35,7 +35,7 @@
   </head>
 
   <body class="{% if label %}{{ label }}{% else %}{{ layout }}{% endif %}">
-    <a
+    <!-- <a
       href="javascript:void(0)"
       title="or press '/' to search"
       onclick="toggleSearch()"
@@ -67,9 +67,9 @@
         id="js-search__input"
       />
       <ul class="search__results" id="js-search__results"></ul>
-    </div>
+    </div> -->
 
-    <div id="outer-container">
+    <!-- <div id="outer-container">
       <div id="main-container">
         <header
           class="top-header {% if page.label == 'home' %}top-header--home{% endif %}"
@@ -87,11 +87,21 @@
 
         {% include nav.html %}
 
-        <div id="content">
-          {{ content }}
-        </div>
+        
       </div>
+    </div> -->
+
+    <div class="container ta-c brand-color mb-l font-serif">
+      Kushagra Gour's Website
     </div>
+
+    <div class="container container--small ta-c">
+      <a href="/">Home</a>
+      <span class="breadcrumb__separator">↠</span>
+      <a href="/blog/">Blog</a>
+    </div>
+
+    <div class="container">{{ content | safe }}</div>
 
     {% include footer.html %} {% include analytics.html %}
 
