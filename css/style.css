@@ -95,7 +95,7 @@ body {
   background-color: #fcfafc;
   width: 100%;
   height: 100%;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.56;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -490,7 +490,7 @@ article blockquote p {
 
 article {
   line-height: 1.7;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 article li {
