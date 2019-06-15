@@ -509,6 +509,8 @@ article p code {
   background-color: #eee;
   padding: 4px 6px;
   border-radius: 3px;
+  border: 1px solid #0002;
+  border-top-width: 1px;
 }
 
 .button {
@@ -795,7 +797,7 @@ pre[class*="language-"] {
   }
 
   article {
-    font-size: 1.1em;
+    font-size: 1.3em;
   }
 
   #outer-container {
