@@ -46,6 +46,8 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   padding: 0;
   margin: 0;
   overflow-x: hidden;
@@ -64,6 +66,7 @@ a {
   color: var(--color-link);
 }
 
+h1,
 h2,
 h3,
 h4,
@@ -80,6 +83,9 @@ h6 {
 }
 .ta-c {
   text-align: center;
+}
+.fxg-1 {
+  flex-grow: 1;
 }
 .mb-xs {
   margin-bottom: 0.5rem;
@@ -116,7 +122,7 @@ h6 {
   border-radius: 5px;
   padding: 4px 12px;
 }
-code {
+code:not([class]) {
   background: #efdfdf;
   padding: 4px 4px;
   border: 1px solid #dcabab;
@@ -127,6 +133,7 @@ code {
   position: relative;
   text-align: center;
   padding: 2rem;
+  margin-top: auto;
 }
 .site-footer__bg {
   position: absolute;
@@ -138,4 +145,9 @@ code {
 
 .social-bar {
   margin: 1rem 0 2rem;
+}
+
+.homepage-title {
+  text-align: center;
+  font-size: 5rem;
 }
