@@ -3,6 +3,7 @@
   --color-link: #914949;
   --color-heading: #914949;
   --color-brand: #914949;
+  --color-focus: #914949;
   --base-font-size: 1.4em;
   --font-family-serif: Georgia, "Times New Roman", Times, serif;
   --max-content-width: 800px;
@@ -35,8 +36,8 @@ h6 {
 
 *:focus {
   outline: 4px solid;
-  outline-color: #222;
-  outline-offset: 2px;
+  outline-color: var(--color-focus);
+  outline-offset: 4px;
 }
 
 html {
@@ -75,6 +76,9 @@ h6 {
   color: var(--color-heading);
   font-family: Arial Rounded MT Bold;
 }
+img {
+  max-width: 100%;
+}
 .brand-color {
   color: var(--color-brand);
 }
@@ -83,6 +87,12 @@ h6 {
 }
 .ta-c {
   text-align: center;
+}
+.d-f {
+  display: flex;
+}
+.jc-sb {
+  justify-content: space-between;
 }
 .fxg-1 {
   flex-grow: 1;
@@ -115,6 +125,7 @@ h6 {
   text-align: center;
 }
 .post__content {
+  margin-top: 4rem;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 .post-tag {
@@ -150,4 +161,8 @@ code:not([class]) {
 .homepage-title {
   text-align: center;
   font-size: 5rem;
+}
+
+.list-item {
+  margin-bottom: 2rem;
 }

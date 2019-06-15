@@ -1,0 +1,10 @@
+---
+layout: default
+title: Blog
+label: blog
+---
+
+<h1 class="post__title">My Articles</h1>
+
+{% set posts = collections.posts | reverse %}
+{% include "posts.njk" %}

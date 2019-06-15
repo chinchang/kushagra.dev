@@ -37,7 +37,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #2b2b2b;
+  background: #351818;
 }
 
 /* Inline code */
