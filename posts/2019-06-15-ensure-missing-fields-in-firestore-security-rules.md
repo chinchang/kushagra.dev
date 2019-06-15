@@ -32,7 +32,7 @@ This is the half solution for ensuring the username doesn't conflict. Remember t
 
 ## resource & request
 
-For that, we need to know about these 2 variables: `resource.data` and `request.resource.data`.
+For that, we need to know about these 2 variables: `resource.data` and `request.resource.data`. These are available to use while writing the Firestore security rules.
 
 ### resource.data
 
@@ -40,7 +40,7 @@ This is simple. It's your document's current state, before the write. More preci
 
 ### request.resource.data
 
-This one is tricky. Let's day you send an `update` request to update your document's `name` field, like so:
+This one is tricky. Let's say you send an `update` request to update your document's `name` field, like so:
 
 ```js
 db.collection("users/user_id_1").update({
@@ -65,7 +65,7 @@ This is exactly what `request.resource.data` is - A map with all your future doc
 
 ### Back to ensuring the missing field
 
-Once you understand what `resource.data` and `request.resource.data` are, you soon realize why we cannot simply check that `username` should be `undefined` in our `request.resource.data`. Because `request.resource.data` is the object you send. It is the object that your document will become if the write happens, and in that object `username` still lives. So what do we do now?
+Once you understand what `resource.data` and `request.resource.data` are, you soon realize why we cannot simply check that `username` should be `undefined` in our `request.resource.data`. Because `request.resource.data` is not the object you send. But it is the object that your document will become if the write happens, and in that object `username` still lives. So what do we do now?
 
 Let's take a small example:
 
@@ -79,7 +79,7 @@ Current document:
 }
 ```
 
-And we send an update request like so: `db.collection('users/user_id_1').update({ name: 'John Doe - the great' })`. Here is what our future document will look like, i.e. our`request.resource.data`:
+And we send an update request like so: `db.collection('users/user_id_1').update({ name: 'John Doe - the great' })`. Here is what our future document will look like, i.e. our `request.resource.data`:
 
 ```js
 // request.resource.data
@@ -94,17 +94,17 @@ If you compare the current and future state, you'll notice that the username rem
 ```js
 match /users/{userId} {
   allow write: if userId == request.auth.uid
-    && resource.data.username == request.resource.username;
+    && resource.data.username == request.resource.data.username;
 }
 ```
 
-Are we done? No, one more small thing. There could be a scenario where the `username` field doesn't exist in the current document. In that case, the above security rule errors out (it probably shouldn't, but it does) with a strange error `Property username is undefined on object`! To bypass this error, we can simply check for the field `username` to not be present in future state (`request.resource.data`). Because if there was no `username` initially and we don't update it, it won't be present in the future state too. Here is how we do that:
+Are we done? No, one more small thing. There could be a scenario where the `username` field doesn't exist in the current document. In that case, the above security rule errors out (it probably shouldn't, but it does) with a strange error `Property username is undefined on object`! To bypass this error, we can simply check for the field `username` to be absent in future state (`request.resource.data`). Because if there was no `username` initially and we don't update it, it won't be present in the future state too. Here is how we do that:
 
 ```js
 match /users/{userId} {
   allow write: if userId == request.auth.uid
     && !('username' in request.resource.data)
-    || resource.data.username == request.resource.username;
+    || resource.data.username == request.resource.data.username;
 }
 ```
 
@@ -119,7 +119,7 @@ function notUpdating(field) {
 
 match /users/{userId} {
   allow write: if userId == request.auth.uid
-    && notUpdating('username');
+    && notUpdating('username') && notUpdating('isAdmin');
 }
 ```
 
