@@ -432,6 +432,8 @@ article.list-item:last-child {
 }
 article:not(.list-item) .post-title {
   font-size: 2.3em;
+  text-align: center;
+  margin: 0 calc(50% - 50vw);
 }
 
 article .post-title a {
