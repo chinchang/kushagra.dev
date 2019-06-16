@@ -198,6 +198,7 @@ code:not([class]) {
   display: flex;
   justify-content: space-evenly;
   padding: 0;
+  flex-wrap: wrap;
 }
 .nav-item {
   font-size: 2rem;
@@ -249,25 +250,43 @@ pre[class*="language-"] {
   padding: 1rem calc(50vw - 50%) !important;
 }
 .cloud {
+  --color-cloud-bg: white;
+
   z-index: -1;
   position: absolute;
   width: 340px;
   height: 210px;
   background-image: radial-gradient(
       circle at 90px 130px,
-      white 60px,
+      var(--color-cloud-bg) 60px,
       transparent 0
     ),
-    radial-gradient(circle at 170px 110px, white 90px, transparent 0),
-    radial-gradient(circle at 230px 140px, white 50px, transparent 0),
-    radial-gradient(ellipse at 280px 160px, white 50px, transparent 0),
-    radial-gradient(ellipse at 50px 160px, white 50px, transparent 0);
+    radial-gradient(
+      circle at 170px 110px,
+      var(--color-cloud-bg) 90px,
+      transparent 0
+    ),
+    radial-gradient(
+      circle at 230px 140px,
+      var(--color-cloud-bg) 50px,
+      transparent 0
+    ),
+    radial-gradient(
+      ellipse at 280px 160px,
+      var(--color-cloud-bg) 50px,
+      transparent 0
+    ),
+    radial-gradient(
+      ellipse at 50px 160px,
+      var(--color-cloud-bg) 50px,
+      transparent 0
+    );
 
   animation: cloud-to-right 300s linear;
 }
 .cloud--small {
   transform: scale(0.8);
-  animation-name: clou-to-left;
+  animation-name: cloud-to-left;
 }
 @keyframes cloud-to-right {
   to {
@@ -296,4 +315,19 @@ pre[class*="language-"] {
   border-radius: 50%;
   background-size: 48px;
   margin: 0 10px;
+}
+
+@media (max-width: 500px) {
+  :root {
+    --base-font-size: 1.2em;
+  }
+  .homepage-title {
+    font-size: 3rem;
+  }
+  .site-footer__bg {
+    bottom: -8px;
+  }
+  .cloud {
+    transform: scale(0.3);
+  }
 }
