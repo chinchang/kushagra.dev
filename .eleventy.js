@@ -11,7 +11,7 @@ const markdownItConfig = {
 const markdownItAnchorConfig = {
   permalink: true,
   permalinkClass: "bookmark",
-  permalinkSymbol: "ℙ"
+  permalinkSymbol: "#"
 };
 
 const markdownLib = markdownIt(markdownItConfig).use(

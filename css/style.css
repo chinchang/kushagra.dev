@@ -6,7 +6,18 @@
   --color-focus: #914949;
   --base-font-size: 1.4em;
   --font-family-serif: Georgia, "Times New Roman", Times, serif;
+  --font-family-heading: "M PLUS Rounded 1c", Arial, serif;
   --max-content-width: 800px;
+}
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("M PLUS Rounded 1c Bold"), local("MPLUSRounded1c-Bold"),
+    url(https://fonts.gstatic.com/l/font?kit=VdGBAYIAV6gnpUpoWwNkYvrugw9RuM064ZsPxeymzy58a3SC4nQHbWaNigsw5ll4QX1f1hM3_699PCT9466nXmi5Pi7bZ98aggta7ZKytDdj76bt7yVbfA&skey=92d2a5b6547955f2&v=v9)
+      format("woff2");
 }
 
 *,
@@ -74,7 +85,7 @@ h4,
 h5,
 h6 {
   color: var(--color-heading);
-  font-family: Arial Rounded MT Bold;
+  font-family: var(--font-family-heading);
 }
 img {
   max-width: 100%;
