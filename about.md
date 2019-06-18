@@ -8,7 +8,7 @@ name: about
 
 <div class="container container--small">
 
-<img width="250px" src="/images/me4.jpg">
+<!-- <img width="250px" src="/images/me4.jpg"> -->
 
 नमस्ते (Namaste/Hello)
 
