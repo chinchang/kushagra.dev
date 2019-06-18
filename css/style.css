@@ -174,7 +174,7 @@ code:not([class]) {
   filter: sepia(0.4);
   border-radius: 50%;
   overflow: hidden;
-  background: url(/images/me3.jpg);
+  background: url(/images/me-small.jpg);
   background-size: cover;
 }
 .site-footer {
