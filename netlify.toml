@@ -1,5 +1,5 @@
 [Settings]
-ID = "chinchang"
+ID = "kushagra"
 
 # Settings in the [build] context are global and are applied to all contexts 
 # unless otherwise overridden by more specific contexts.  
@@ -29,7 +29,7 @@ ID = "chinchang"
   force = true
 
 [[redirects]]
-  from = "https://chinchang.netlify.com/*"
+  from = "https://kushagra.netlify.com/*"
   to = "https://kushagra.dev/:splat"
   status = 301
   force = true
