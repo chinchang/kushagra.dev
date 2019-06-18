@@ -245,7 +245,7 @@ code:not([class]) {
   padding: 1rem;
 }
 .link-separator {
-  margin: 0 0.6rem;
+  margin: 0 0.4rem;
 }
 
 .post-website:after {
@@ -308,7 +308,7 @@ pre[class*="language-"] {
 }
 @keyframes cloud-to-left {
   to {
-    left: 0;
+    right: 0;
   }
 }
 .fixed-link-box {
