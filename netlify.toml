@@ -1,5 +1,5 @@
 [Settings]
-ID = "chinchang"
+ID = "kushagra"
 
 # Settings in the [build] context are global and are applied to all contexts 
 # unless otherwise overridden by more specific contexts.  
@@ -24,13 +24,13 @@ ID = "chinchang"
 
 [[redirects]]
   from = "/lab/web-maker"
-  to = "https://webmakerapp.com"
+  to = "https://webmaker.app"
   status = 301
   force = true
 
 [[redirects]]
-  from = "https://chinchang.netlify.com/*"
-  to = "https://kushagragour.in/:splat"
+  from = "https://kushagra.netlify.com/*"
+  to = "https://kushagra.dev/:splat"
   status = 301
   force = true
 

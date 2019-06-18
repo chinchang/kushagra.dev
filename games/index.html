@@ -4,20 +4,31 @@ title: Games
 name: games
 ---
 
-{% for game in games %}
+<h1 class="post__title">Games</h1>
 
-<article class="list-item  list-item--tile list-item--game list-item--with-picture">
-	{% if game.image %}
-	<div class="list-item__image" style="background-image: url(/images/games/thumbnails/{{ game.image }})"></div>
-	{% else %}
-	<div class="list-item__image" style="background-image: url(/images/games/thumbnails/{{ game.link }}.jpg)"></div>
-	{% endif %}
+<div class="container container--small tile-container">
+  {% for game in games %}
+  <article class="tile tile--game tile--with-picture">
+    {% if game.image %}
+    <div
+      class="tile__image"
+      style="background-image: url(/images/games/thumbnails/{{ game.image }})"
+    ></div>
+    {% else %}
+    <div
+      class="tile__image"
+      style="background-image: url(/images/games/thumbnails/{{
+        game.link
+      }}.jpg)"
+    ></div>
+    {% endif %}
 
-	<div class="list-item__content">
-		<a href="{{ game.link }}">
-			<h3 class="post-title">{{ game.name }}</h3>
-		</a>
-	</div>
-</article>
+    <div class="tile__content">
+      <a href="{{ game.link }}">
+        <h3 class="tile__title">{{ game.name }}</h3>
+      </a>
+    </div>
+  </article>
 
-{% endfor %}
+  {% endfor %}
+</div>

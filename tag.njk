@@ -12,7 +12,7 @@ pagination:
     - tagList
 layout: default
 ---
-<h1>Blog posts tagged “{{ tag }}”</h1>
+<h1 class="post__title">Blog posts tagged “{{ tag }}”</h1>
 
 {% set posts = collections[ tag ] | reverse %}
 {% include "posts.njk" %}

@@ -8,6 +8,12 @@
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-'!"
+      rel="stylesheet"
+    /> -->
+
     <link rel="stylesheet" href="/css/style.css?v=😌🥳" />
 
     {% if layout == 'post' %}
@@ -35,7 +41,7 @@
   </head>
 
   <body class="{% if label %}{{ label }}{% else %}{{ layout }}{% endif %}">
-    <a
+    <!-- <a
       href="javascript:void(0)"
       title="or press '/' to search"
       onclick="toggleSearch()"
@@ -67,30 +73,46 @@
         id="js-search__input"
       />
       <ul class="search__results" id="js-search__results"></ul>
-    </div>
+    </div> -->
 
-    <div id="outer-container">
-      <div id="main-container">
-        <header
-          class="top-header {% if page.label == 'home' %}top-header--home{% endif %}"
-        >
-          <a class="top-header__link" href="/">
-            <div id="me2" class="top-header__logo">
-              <div></div>
-            </div>
-            <div>
-              <h1>Kushagra Gour</h1>
-              <h2>Game developer . Hacker . Creativity freak!</h2>
-            </div>
-          </a>
-        </header>
+    <div>
+      <div class="cloud" style="top:20%;left:6vw;"></div>
+      <div
+        class="cloud cloud--small cloud--move-lef"
+        style="top:30%;left:2vw;animation-duration: 300s"
+      ></div>
+      <div
+        class="cloud cloud--move-left"
+        style="top:60%;right:3vw;animation-duration: 200s"
+      ></div>
 
-        {% include nav.html %}
+      <div class="container site-name-header">
+        <a class="site-name-header__img" aria-label="Home" href="/"></a>
+        Kushagra Gour's Website
+      </div>
 
-        <div id="content">
-          {{ content }}
+      {% if page.url != '/' %}
+      <div class="container container--small ta-c d-f jc-sb">
+        <div>
+          <a href="/">Home</a>
+          {% if parent %}
+          <span class="link-separator">↠</span>
+          <a href="{{ parent.url || page.url }}">{{ parent.title || title }}</a>
+          {% endif %}
+        </div>
+        <div>
+          <a href="/lab/">Lab</a>
+          <span class="link-separator">❀</span>
+          <a href="/games/">Games</a>
+          <span class="link-separator">❀</span>
+          <a href="/blog/">Blog</a>
+          <span class="link-separator">❀</span>
+          <a href="/about/">Me</a>
         </div>
       </div>
+      {% endif %}
+
+      <div>{{ content | safe }}</div>
     </div>
 
     {% include footer.html %} {% include analytics.html %}
