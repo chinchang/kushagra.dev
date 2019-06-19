@@ -7,8 +7,11 @@
     lastSearchResultHash,
     posts = [];
 
-  // Changes XML to JSON
-  // Modified version from here: http://davidwalsh.name/convert-xml-json
+  /**
+   * Changes XML to JSON
+   * Modified version from here: http://davidwalsh.name/convert-xml-json
+   * @param {string} xml XML DOM tree
+   */
   function xmlToJson(xml) {
     // Create the return object
     var obj = {};
