@@ -20,9 +20,7 @@ All the code written is available in a Github repo:
 
 <a href="https://github.com/chinchang/build-git-learn-git/" class="button button-big">Github Repo</a>
 
-### What is Git?
-
----
+## What is Git?
 
 There is a very simple definition of Git at [kernel.org](https://www.kernel.org/pub/software/scm/git/docs/user-manual.html#repositories-and-branches):
 
@@ -32,9 +30,7 @@ Git is best thought of as a tool for storing the history of a collection of file
 
 Yeah, that is essentially why one uses Git...to maintain a history of changes in a project.
 
-### Repository (repo)
-
----
+## Repository (repo)
 
 When you want to use Git in your project, you create something called a **Repository**. Now we could refer the [Git documentation](https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html) which defines a repo as follows:
 
@@ -60,9 +56,7 @@ var repo = new Git("my-repo");
 // > git init
 ```
 
-### Commit
-
----
+## Commit
 
 Next concept one needs to know about is a **Commit**. In very simple terms, a commit is a snapshot of your project's contents. It is these commits which when chained together form the history of your project.
 
@@ -121,15 +115,11 @@ repo.commit("Make commit work");
 // > git commit -m "Make commit work"
 ```
 
-#### Match your code
-
----
+## Match your code
 
 At this point you should have your implementation that looks like [the one here](https://github.com/chinchang/build-git-learn-git/blob/ffb353b30e5eee92190e42a989c14ca0a74bb65a/git-part1.js). I have wrapped the whole code in an Immediately invoking function expression (IIFE) and exposed the <code>Git</code> class manually to keep global space clean.
 
-### Commit history - chaining the commits
-
----
+## Commit history - chaining the commits
 
 Git has a command called <code>log</code> which shows the commit history in reverse chronological order, i.e. first the lastest commit followed by previous ones.
 
@@ -252,16 +242,12 @@ Our test should pass now:
 
 <script src="https://static.jsbin.com/js/embed.js"></script>
 
-#### Match your code
-
----
+## Match your code
 
 At this point our code looks [like this](https://github.com/chinchang/build-git-learn-git/blob/116871ab54376e489af538fa1ba1a7e04359e704/git-part1.js).
 Next up is Branches!
 
-### Branches
-
----
+## Branches
 
 Hurray, we have reached at the most interesting &amp; powerful feature of Git: Branches. So what is a Branch and what is it used for?
 
@@ -503,9 +489,7 @@ Wonderful! Our implementation is right. The final code for this part can be foun
 
 <a href="https://github.com/chinchang/build-git-learn-git/" class="button button-big">Github Repo</a>
 
-### Whats next?
-
----
+## Whats next?
 
 Next I plan to implement concepts like merging (Fast-forward and 3-way-merge) and rebasing of branches.
 
@@ -513,9 +497,7 @@ I had a lot of fun writing this and hope you enjoyed it too. If you did, share t
 
 Till next time, bbye.
 
-#### References
-
----
+## References
 
 - [https://git-scm.com/book/en/](https://git-scm.com/book/en/) (Where I learned Git from)
 - [https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html](https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html)
