@@ -4,6 +4,7 @@
   --color-heading: #914949;
   --color-brand: #914949;
   --color-focus: #914949;
+  --color-blockquote-bg: #f4e1cf;
   --base-font-size: 1.4em;
   --font-family-serif: Georgia, "Times New Roman", Times, serif;
   --font-family-heading: "M PLUS Rounded 1c", Arial, serif;
@@ -16,7 +17,7 @@
   font-weight: 700;
   font-display: swap;
   src: local("M PLUS Rounded 1c Bold"), local("MPLUSRounded1c-Bold"),
-    url(https://fonts.gstatic.com/l/font?kit=VdGBAYIAV6gnpUpoWwNkYvrugw9RuM064ZsPxeymzy58a3SC4nQHbWaNigsw5ll4QX1f1hM3_699PCT9466nXmi5Pi7bZ98aggta7ZKytDdj76bt7yVbfA&skey=92d2a5b6547955f2&v=v9)
+    url(https://fonts.gstatic.com/l/font?kit=VdGBAYIAV6gnpUpoWwNkYvrugw9RuM064ZsPxeymzy4Ka3SCkwd2Ghf--3RBlVN2T3dVwAUt5bFjJj7r9aSXbliJDh7rV-8qiAVU55ikoi158bj39TNNdp2fr2uBV1TgMpQ&skey=92d2a5b6547955f2&v=v9)
       format("woff2");
 }
 
@@ -158,6 +159,32 @@ code:not([class]) {
   border: 1px solid #dcabab;
   border-radius: 5px;
 }
+
+blockquote {
+  width: 80%;
+  margin: 2rem auto;
+  padding: 1.2em 30px 1.2em 75px;
+  line-height: 1.6;
+  position: relative;
+  background: var(--color-blockquote-bg);
+  box-shadow: 1rem 0.5rem #914949;
+}
+
+blockquote::before {
+  font-family: Arial;
+  content: "\201C";
+  color: var(--color-brand);
+  font-size: 5em;
+  position: absolute;
+  left: 10px;
+  top: -2.5rem;
+}
+blockquote div {
+  display: block;
+  text-align: right;
+  font-style: italic;
+  margin-top: 1em;
+}
 .site-name-header {
   text-align: center;
   color: var(--color-brand);
@@ -277,9 +304,30 @@ code:not([class]) {
   opacity: 0.6;
 }
 pre[class*="language-"] {
+  position: relative;
   margin: 2rem calc(50% - 50vw) !important;
-  padding: 1rem calc(50vw - 50%) !important;
+  padding: 1.2rem calc(50vw - 50%) 1rem !important;
 }
+pre[class*="language-"]:after {
+  text-transform: uppercase;
+  background: black;
+  color: white;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  padding: 0 5px;
+  font-size: 0.8em;
+}
+pre[class*="language-html"]:after {
+  content: "html";
+}
+pre[class*="language-css"]:after {
+  content: "css";
+}
+pre[class*="language-js"]:after {
+  content: "javascript";
+}
+
 .cloud {
   --color-cloud-bg: #fce0e0;
 

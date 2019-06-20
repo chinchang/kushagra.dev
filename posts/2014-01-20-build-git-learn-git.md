@@ -26,6 +26,7 @@ There is a very simple definition of Git at [kernel.org](https://www.kernel.org/
 
 <blockquote>
 Git is best thought of as a tool for storing the history of a collection of files.
+<div>- <a href="https://www.kernel.org/pub/software/scm/git/docs/user-manual.html#repositories-and-branches">kernel.org</a><div>
 </blockquote>
 
 Yeah, that is essentially why one uses Git...to maintain a history of changes in a project.
@@ -36,6 +37,8 @@ When you want to use Git in your project, you create something called a **Reposi
 
 <blockquote>
 A collection of refs together with an object database containing all objects which are reachable from the refs, possibly accompanied by meta data from one or more porcelains. A repository can share an object database with other repositories via alternates mechanism.
+<div>- <a href="https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html">kernel.org</a><div>
+ 
 </blockquote>
 
 Well, that is too much to grasp, isn't it? And that is not what we are here for. So lets make things simple.
