@@ -6,15 +6,20 @@
     "image": "https://cssbattle.dev/images/banner.png"
   },
   {
-    "name": "Accessibility for Managers",
-    "link": "https://a11yformanagers.now.sh/",
-    "desc": "Fun app that turn real accessibility issues on a website into fake feedbacks from fake users."
+    "name": "Introduction to Accessibility",
+    "link": "https://introtoaccessibility.com",
+    "desc": "An interactive and practical introduction to Web Accessibility for everyone."
   },
   {
     "name": "Web Maker",
     "link": "https://webmaker.app/",
     "desc": "Blazing fast & offline frontend playground",
     "image": "https://webmaker.app/images/ss1.png"
+  },
+  {
+    "name": "Accessibility for Managers",
+    "link": "https://a11yformanagers.now.sh/",
+    "desc": "Fun app that turn real accessibility issues on a website into fake feedbacks from fake users."
   },
   {
     "name": "Hint.css",
