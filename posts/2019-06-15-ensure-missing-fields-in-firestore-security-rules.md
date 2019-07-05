@@ -125,4 +125,4 @@ match /users/{userId} {
 
 Neat, right?
 
-That's all folks. If you have any questions or comments, reply in the comments or ask on Twitter [@chinchang457](https://twitter.com/chinchang457).
+That's all folks. If you have any questions or comments, reply in the comments or ask on Twitter [@chinchang457](https://twitter.com/chinchang457) (DMs are open).
