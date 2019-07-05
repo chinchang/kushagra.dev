@@ -47,7 +47,7 @@ This situation leads to `Page2.js` being a synchronous dependency to render `App
 
 ## Solution
 
-The solution is pretty neat and easy. React recently introduced a new API: [`React.lazy`](). And an accompanying component called [`Suspense`](). Here is how we use them to fix our problem.
+The solution is pretty neat and easy. React recently introduced a new API: [`React.lazy`][react-lazy]. And an accompanying component called [`Suspense`][react-suspense]. Here is how we use them to fix our problem.
 
 ## Step 1: Make the import lazy
 
