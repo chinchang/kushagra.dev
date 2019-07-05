@@ -327,6 +327,10 @@ pre[class*="language-css"]:after {
 pre[class*="language-js"]:after {
   content: "javascript";
 }
+pre mark {
+  background-color: #434328;
+  color: inherit;
+}
 
 .cloud {
   --color-cloud-bg: #fce0e0;
