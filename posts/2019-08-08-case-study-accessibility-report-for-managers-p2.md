@@ -8,6 +8,15 @@ tags:
   - tutorial
 ---
 
+<div class="info-box">
+<p>
+This is a two part case-study of why and how I created my recent side-project - <a href="https://a11yformanagers.now.sh">Accessibility Report for Managers</a>.</p>
+<ol>
+  <li>Part 1 - <a href="/blog/case-study-accessibility-report-for-managers-p1/">Idea & Frontend</a></li>
+  <li>Part 2 - Backend & Deployment</li>
+</ol>
+</div>
+
 In the [previous chapter](/blog/case-study-accessibility-report-for-managers-p1/), I took you through why I made [**Accessibility Report for Managers**][a11yformanagers] and the rationale behind it. Also, we saw how different parts of the frontend are created. In this chapter, I’ll take you into how the app works behind the scene - The Backend and how the complete app is deployed. Let’s dive in.
 
 ## Backend
@@ -52,7 +61,7 @@ Remember the result object we get from pa11y?
 
 It also gives us the CSS selector of the page element that the Accessibility is found on. Now that we have the selector, how do we take an image of it? Enter [Puppeteer](https://pptr.dev/).
 
-<p style="padding:1rem;background:var(--color-blockquote-bg)">
+<p class="info-box">
 Puppeteer is a high-level API to control a Chrome or Chromium browser (and now Firefox also). It runs the browser in headless mode by default - meaning the core of the browser runs without all the UI and visual stuff. Hence it is faster than running a normal browser instance.
 </p>
 
@@ -152,7 +161,7 @@ Just like put an entry in the `builds` array for our frontend app, we’ll put a
 
 Same as before, we tell is the script to run, we tell it to use `Node.js` for it and finally some serverless environment config to limit the memory available to our code.
 
-<p style="padding:1rem;background:var(--color-blockquote-bg)">
+<p class="info-box">
 The total of 40mb memory size is why we need things like 'chrome-aws-lambda' and 'puppeteer-core' which provide us the absolute minimal version of their respective capabilities. Thus making them faster and lighter to run.
 </p>
 

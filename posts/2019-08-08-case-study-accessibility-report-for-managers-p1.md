@@ -7,7 +7,14 @@ tags:
   - tutorial
 ---
 
-_This is a case-study of why and how I created my recent side-project - [Accessibility Report for Managers][a11yformanagers]. Part 1 talks about the idea behind it and how the Frontend was created._
+<div class="info-box">
+<p>
+This is a two part case-study of why and how I created my recent side-project - <a href="https://a11yformanagers.now.sh">Accessibility Report for Managers</a>.</p>
+<ol>
+  <li>Part 1 - Idea & Frontend</li>
+  <li>Part 2 - <a href="/blog/case-study-accessibility-report-for-managers-p2/">Backend & Deployment</a></li>
+</ol>
+</div>
 
 Accessibility is a very important aspect of any product. If your product isn’t accessible to every possible user, then you are simply losing out on potential users. Over the past few years, I have grown to care more and more about accessibility in every work I do, not just web development, but everything. With that also comes the disappointment to see all these websites out that that break even the basic accessibility rules.
 
@@ -25,7 +32,7 @@ Hey, do we really have those kinds of users? Has anyone ever complained about ou
 
 This gave me an idea - why not make an app that gives these people what they want - real feedback from actual users. But then I thought, the primary aim here is “real feedback”, not “actual users” 😉 This led to the whole concept for “Accessibility Report For Managers” - website where you can enter any website URL and generate a report full of dummy feedbacks about actual Accessibility issues on that website, by dummy users 🙂 You take this report to your manager who was asking for real customer feedback all this time, and voila!
 
-<p style="padding:1rem;background:var(--color-blockquote-bg)">
+<p class="info-box">
 <strong>Disclaimer</strong>: The idea here is not at all to diminish the importance of actual accessibility testing and feedback submitted by real users. That is at most important. This app is just a fun attempt to bring a different perspective to look at real accessibility issues.
 </p>
 
