@@ -3,6 +3,7 @@ layout: post
 title: "How I saved 100KB with React.lazy"
 tags:
   - react
+  - javascript
 ---
 
 This post is about how I was able to reduce my homepage JavaScript by more around 100Kb.
