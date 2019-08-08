@@ -429,6 +429,12 @@ pre mark {
   animation-delay: -2s;
 }
 
+figure {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1rem;
+}
+
 @media (max-width: 500px) {
   :root {
     --base-font-size: 1.2em;
