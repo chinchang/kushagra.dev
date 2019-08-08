@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Case Study: Accessibility for Managers - Part 2"
+title: "Case Study: Accessibility Report for Managers - Part 2"
 tags:
   - backend
   - api

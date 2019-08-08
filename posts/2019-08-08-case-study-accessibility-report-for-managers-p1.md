@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Case Study: Accessibility for Managers - Part 1"
+title: "Case Study: Accessibility Report for Managers - Part 1"
 tags:
   - preact
   - react
