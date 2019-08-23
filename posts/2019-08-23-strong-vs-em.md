@@ -10,6 +10,10 @@ tags:
 
 If you also face that slight confusion which using `<strong>` and `<em>` tags, you are at the right place. This article tries to re-express the learnings I got by reading the <cite>w3 specification</cite>.
 
+## TL;DR
+
+If it's just visual importance, you want `strong`. If it alters the sentence meaning, use `em`.
+
 ## The `<strong>` tag
 
 Firstly, to quote the <cite><a href="https://www.w3.org/TR/html50/text-level-semantics.html#the-strong-element">W3C specification</a></cite>
@@ -22,7 +26,7 @@ Let's try to understand those 3 use cases.
 
 ### Importance
 
-Importance can be thought of say hierarchy. For example, say you are describing certain items in different paragraphs. You will probably start the paragraph by putting the item name in `strong` tags, like so:
+Importance can be thought of "hierarchy". For example, say you are describing certain items in different paragraphs. You will probably start the paragraph by putting the item name in `strong` tags, like so:
 
 ```html
 <p>
@@ -118,7 +122,7 @@ Hope these examples make it all clear.
 
 `<strong>` and `<em>` are not just meant to convey semantics visually, but they are also supposed to convey the same meaning to screen reader users too, ideally through a change of voice.
 
-From what I could test, Voiceover doesn't seem to differentiate normal text from the emphasized text. Also, there seems to be no recent studies on the Web for other screen readers like Jaws and NVDA. Hence, I am not covering this topic in much details. I would appreciate if someone can share studies on this matter, which I can update here.
+From what I could test, VoiceOver doesn't seem to differentiate normal text from the emphasized text. Also, there seems to be no recent studies on the Web for other screen readers like JAWS and NVDA. Hence, I am not covering this topic in much details. I would appreciate if someone can share studies on this matter, which I can update here.
 
 Nevertheless, screen readers are continuously improving and our correct use of the tags will only help users eventually.
 
@@ -126,4 +130,4 @@ Nevertheless, screen readers are continuously improving and our correct use of t
 
 Next time you get confused which tag to use out of `strong` and `em`, think about this: What's your intention to change the visual appearance of a certain word or phrase? Is it just visual importance of does your stress actually help in communicating better by changing the meaning of the sentence (like you would have stressed while speaking)?
 
-If it's just visual importance, you want `strong`. If it alters the sentence meaning, go with `em`.
+If it's just visual importance, you want `strong`. If it alters the sentence meaning, use `em`.
