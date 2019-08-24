@@ -448,6 +448,7 @@ figure {
   background: var(--color-blockquote-bg);
   border: 2px solid #c48d8d;
   border-radius: 7px;
+  margin-bottom: 1rem;
 }
 @media (max-width: 500px) {
   :root {
@@ -461,5 +462,11 @@ figure {
   }
   .cloud {
     transform: scale(0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud {
+    animation: none;
   }
 }

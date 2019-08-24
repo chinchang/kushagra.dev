@@ -8,11 +8,13 @@ tags:
 
 `<strong>` and `<em>` are two of the most basic tags that we learn when we start learning HTML. I am sure you must have used both these tags multiple times. I have too. But somewhere at the back of my mind I always had that slight confusion about which cases each should be used. In fact about which places one tag shouldn't be used. So I finally decided to look up the specifications to clear that doubt once and for all. And I must admit, the specification does a great job at explaining the purpose of each.
 
-If you also face that slight confusion which using `<strong>` and `<em>` tags, you are at the right place. This article tries to re-express the learnings I got by reading the <cite>w3 specification</cite>.
+If you also face that slight confusion about using `<strong>` and `<em>` tags, you are at the right place. This article tries to re-express the learnings I got by reading the <cite>W3C specification</cite>.
 
 ## TL;DR
 
-If it's just visual importance, you want `strong`. If it alters the sentence meaning, use `em`.
+<div class="info-box">
+If it's just visual importance, you want <code>strong</code>. If it alters the sentence meaning, use <code>em</code>.
+</div>
 
 ## The `<strong>` tag
 
@@ -40,11 +42,11 @@ Importance can be thought of "hierarchy". For example, say you are describing ce
 </p>
 ```
 
-I compare importance with hierarchy because if someone needs to quickly scan all such item described in the paragraphs, they can just glance at the `strong` texts which also appear bold.
+I compare importance with hierarchy because if someone needs to quickly scan all such items described in the paragraphs, they can just glance at the `strong` texts which also appear bold.
 
 ### Seriousness
 
-A classic example of this is when you need to show a warning or error. You could simply show a sentence describing the whole warning but there could be a chance that user ignores reading the whole text, and thus the warning. To make it more evident that the particular text is conveying a warning, we can wrap it in`strong` tags. Again, the bold appearance of the `strong` tag helps us convey that this is not just another text. It's something serious and needs to be seen.
+A classic example of this is when you need to show a warning or error. You could simply show a sentence describing the whole warning but there could be a chance that user ignores reading the whole text, and thus the warning. To make it more evident that the particular text is conveying a warning, we can wrap it in `strong` tags. Again, the bold appearance of the `strong` tag helps us convey that this is not just another text. It's something serious and needs to be seen.
 
 A simple example:
 
@@ -60,7 +62,7 @@ which renders as:
 
 This use case is something I have encountered quite a lot, especially while writing emails. Say you are writing a long paragraph and there are certain things that you want the reader to read first and foremost. Those things can be wrapped in `strong` tags.
 
-Again, the whole premise is that assume the person reading your long text doesn't have the time to read all the text and even if they do, there might be certain important pieces of text that are intended to be read first and act urgently. `strong` tag helps us achieve that.
+Again, the whole premise is that assume the person reading your long text doesn't have the time to read all the text and even if they do, there might be certain important pieces of text that are intended to be read first and act urgently. The `strong` tag helps us achieve that.
 
 I know all the 3 use cases seem similar and overlapping each other. That is true. But overall they do help to construct a good domain of intentions where you would use the `strong` tag.
 
@@ -74,10 +76,10 @@ Again, to quote the <cite><a href="https://www.w3.org/TR/html50/text-level-seman
 The em element represents stress emphasis of its contents.
 </blockquote>
 
-**Stress emphasis** is the important thing to note here. It actually has to do with how you speak a particular piece of text
+**Stress emphasis** is the important thing to note here. It actually has to do with how you speak a particular piece of text.
 Let me explain the gist of `em` tag with a gif:
 
-<img src="" class="visually-hidden" alt="a person saying, Get the laundry, while making a 2 finger quote gesture">
+<img src="" class="visually-hidden" alt="A person making air quotes while text shows on then screen: Get the &quot;Laundry&quot; (with quotes around the word - &quot;laundry&quot;)">
 <iframe tabindex="-1" aria-hidden="true" src="https://giphy.com/embed/31P5RGyIVBhMMfw0F7" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com">via GIPHY</a></p>
 
 I am sure you have seen people doing this quote gesture while speaking a particular word or phrase in a long sentence. Imagine they hadn't done that gesture while speaking that word/phrase. Would you have got the same meaning out of that speaker? No. Because the specific stress that the speaker put on that particular part of the sentence, changed their intended meaning.
@@ -125,6 +127,8 @@ Hope these examples make it all clear.
 From what I could test, VoiceOver doesn't seem to differentiate normal text from the emphasized text. Also, there seems to be no recent studies on the Web for other screen readers like JAWS and NVDA. Hence, I am not covering this topic in much details. I would appreciate if someone can share studies on this matter, which I can update here.
 
 Nevertheless, screen readers are continuously improving and our correct use of the tags will only help users eventually.
+
+Also, it's worth noting that accessibility isn't always about screen readers. The visual difference that comes with `strong`/`em` tag is great for increasing reading comprehension and helping with cognitive disabilities like dyslexia.
 
 ## Summary
 
