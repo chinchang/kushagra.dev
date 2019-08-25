@@ -91,6 +91,15 @@ h6 {
 img {
   max-width: 100%;
 }
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
+}
 .brand-color {
   color: var(--color-brand);
 }
@@ -144,6 +153,13 @@ img {
 }
 .post__content p {
   line-height: 1.7;
+}
+.post_divider {
+  width: 50%;
+  margin: 2.5rem auto;
+  background: linear-gradient(90deg, transparent 20%, #af7f7f, transparent 80%);
+  border: 0;
+  height: 1px;
 }
 .post li {
   margin-bottom: 1rem;
@@ -439,6 +455,7 @@ figure {
   background: var(--color-blockquote-bg);
   border: 2px solid #c48d8d;
   border-radius: 7px;
+  margin-bottom: 1rem;
 }
 @media (max-width: 500px) {
   :root {
@@ -452,5 +469,11 @@ figure {
   }
   .cloud {
     transform: scale(0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud {
+    animation: none;
   }
 }
