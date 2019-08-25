@@ -28,7 +28,7 @@ Let's try to understand those 3 use cases.
 
 ### Importance
 
-Importance can be thought of "hierarchy". For example, say you are describing certain items in different paragraphs. You will probably start the paragraph by putting the item name in `strong` tags, like so:
+Importance can be thought of like "hierarchy". For example, say you are describing certain items in different paragraphs. You will probably start the paragraph by putting the item name in `strong` tags, like so:
 
 ```html
 <p>
@@ -42,7 +42,7 @@ Importance can be thought of "hierarchy". For example, say you are describing ce
 </p>
 ```
 
-I compare importance with hierarchy because if someone needs to quickly scan all such items described in the paragraphs, they can just glance at the `strong` texts which also appear bold.
+They are acting similar to headings, visually. I compare importance with hierarchy because if someone needs to quickly scan all such items described in the paragraphs, they can just glance at the `strong` texts which also appear bold (and hence seemingly higher up the hierarchy).
 
 ### Seriousness
 
@@ -62,9 +62,9 @@ which renders as:
 
 This use case is something I have encountered quite a lot, especially while writing emails. Say you are writing a long paragraph and there are certain things that you want the reader to read first and foremost. Those things can be wrapped in `strong` tags.
 
-Again, the whole premise is that assume the person reading your long text doesn't have the time to read all the text and even if they do, there might be certain important pieces of text that are intended to be read first and act urgently. The `strong` tag helps us achieve that.
+Again, the whole premise is that the person reading your long text doesn't have the time to read all the text and even if they do, there might be certain important pieces of text that are intended to be read first and act urgently. The `strong` tag helps us achieve that.
 
-I know all the 3 use cases seem similar and overlapping each other. That is true. But overall they do help to construct a good domain of intentions where you would use the `strong` tag.
+I know all the 3 use cases seem similar and overlapping each other. That is true. But overall they do help to construct a good set of intentions where you would use the `strong` tag.
 
 ## The `<em>` tag
 
@@ -135,3 +135,20 @@ Also, it's worth noting that accessibility isn't always about screen readers. Th
 Next time you get confused which tag to use out of `strong` and `em`, think about this: What's your intention to change the visual appearance of a certain word or phrase? Is it just visual importance of does your stress actually help in communicating better by changing the meaning of the sentence (like you would have stressed while speaking)?
 
 If it's just visual importance, you want `strong`. If it alters the sentence meaning, use `em`.
+
+## What about `b` and `i` tags?
+
+There is also a common confusion while choosing between `strong`/`b` and `em`/`i`. Visually they look exactly the same as their counterparts. Then what's the difference?
+
+The difference lies in semantics. `strong` and `em` bring in some additional context or meaning wherever used. On the other hand, `b` and `i` are just for styling and visually differentiating some part of the sentence from the rest. You can consider `b` tag the same as a `span` with a CSS of `font-weight: bold` applied on it. Similarly, `i` can be thought of as a `span` with CSS of `font-style: italics` applied on it.
+
+So if you want to communicate importance, urgency or seriousness, use `strong`. If you just need to draw attention without any importance, use `b` or rather just use CSS `font-weight`. Similarly, if you want put stress on something, use `em`. If it's just about highlighting a different type of text, such as a word in another language, then use `<i>` or just CSS `font-style`.
+
+[Read more about `b` tag](https://www.w3.org/TR/html50/text-level-semantics.html#the-b-element)
+[Read more about `i` tag](https://www.w3.org/TR/html50/text-level-semantics.html#the-i-element)
+
+That is all for this post. Hope this helps understand these common tags better.
+
+<hr class="post__divider" />
+
+Special thanks to [Jitendra Vyas](https://twitter.com/jitendravyas), [@stommepoes](https://twitter.com/stommepoes), and the lovely members of [Slack Web Accessibility group](https://web-a11y.slack.com) for reviewing this post.

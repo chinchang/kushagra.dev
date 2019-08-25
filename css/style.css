@@ -154,6 +154,13 @@ img {
 .post__content p {
   line-height: 1.7;
 }
+.post_divider {
+  width: 50%;
+  margin: 2.5rem auto;
+  background: linear-gradient(90deg, transparent 20%, #af7f7f, transparent 80%);
+  border: 0;
+  height: 1px;
+}
 .post li {
   margin-bottom: 1rem;
 }
