@@ -348,7 +348,7 @@ pre mark {
   color: inherit;
 }
 h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre {
-  margin-top: 0;
+  margin-top: 0!important;
 }
 .cloud {
   --color-cloud-bg: #fce0e0;
