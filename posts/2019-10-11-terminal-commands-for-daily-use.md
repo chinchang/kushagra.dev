@@ -60,7 +60,7 @@ mv oldFile.js newFile.js
 code fileName.css
 ```
 
-This is really useful. If you are not aware, VSCode can be added as a shell command too. Here is [how to add VSCode as shell command][vscode-command].
+This is really useful. If you are not aware, VSCode can be added as a shell command too. Here is [how to add VSCode as shell command][vscode-shell].
 
 ## Git commands
 
