@@ -243,11 +243,6 @@ name: Hint.css
 		}
 
 		.titlebar {
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ebebeb, color-stop(1, #d5d5d5)));
-			background: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
-			background: -moz-linear-gradient(top, #ebebeb, #d5d5d5);
-			background: -ms-linear-gradient(top, #ebebeb, #d5d5d5);
-			background: -o-linear-gradient(top, #ebebeb, #d5d5d5);
 			background: linear-gradient(top, #ebebeb, #d5d5d5);
 			color: #4d494d;
 			font-size: 11pt;
@@ -344,53 +339,6 @@ name: Hint.css
 			}
 		}
 
-		.license-wrap {
-			display: flex;
-		}
-
-		.license {
-			display: block;
-			margin: 20px;
-			flex: 1;
-			padding: 20px;
-			border: 1px solid #45a3cc;
-			border-radius: 4px;
-			background: rgba(255, 255, 255, 0.9);
-			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-			color: #555;
-			overflow: hidden;
-			cursor: pointer;
-			transition: 0.3s ease;
-		}
-
-		.license h3 {
-			font-size: 1.4em;
-			font-family: 'Lobster', cursive;
-			margin: 5px 0 5px 0;
-		}
-
-		.license:hover {
-			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-		}
-
-		.license__project-count {
-			margin: 30px 0;
-		}
-
-		.license__price {
-			background: #34718c;
-			color: white;
-			padding: 20px;
-			font-size: 1.2em;
-			margin: 10px -20px -20px;
-		}
-
-		@media screen and (max-width:600px) {
-			.license-wrap {
-				flex-direction: column;
-			}
-		}
-
 		.webmaker-box {
 			display: flex;
 			justify-content: center;
@@ -452,7 +400,7 @@ name: Hint.css
 		<a href="https://github.com/chinchang/hint.css/releases" class="btn  download-btn  hint--top" aria-label="Get it from Github">Download
 			<em style="text-transform:lowercase">(1.5KB minified & gzipped)</em></a>
 		<!-- <br> -->
-		<a style="display:block;margin-top:20px;" href="#commercial">Commercial Use</a>
+		<em style="display:block;margin-top:20px;">Hint.css is free to use for personal and commercial projects</em>
 
 		<div class="social-wrap">
 			<a aria-label="Fork on github" class="hint--bottom-left" href="https://github.com/chinchang/hint.css" style="margin:0 10px">
@@ -611,41 +559,6 @@ name: Hint.css
 					<code>hint--info</code>, <code>hint--warning</code>, <code>hint--success</code>, <code>hint--rounded</code> and
 					<code>hint--bounce</code>.
 				</p>
-		</div>
-
-	</div>
-
-	<div class="section  buy">
-		<h2 id="commercial">Commercial License</h2>
-
-		<div class="section-inner">
-			<p>Hint.css is a free and open-source library, however, if you are using the library for business, commercial
-				sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option,
-				your source code is kept proprietary. <a href="https://www.uplabs.com/market/license" target="_blank">Read more
-					about UpLabs commercial licensing</a>.
-			</p>
-
-			<p>
-				Once purchased, you’ll receive a commercial license PDF and you are all set to use Hint.css in your commercial
-				applications.
-			</p>
-
-			<div class="license-wrap">
-				<a class="license" href="https://www.uplabs.com/posts/hint-css" target="_blank">
-					<small>Commercial</small>
-					<h3>Developer</h3>
-					<small>License</small>
-					<div class="license__project-count">For 1 Project</div>
-					<div class="license__price">$15</div>
-				</a>
-				<a class="license" href="https://www.uplabs.com/posts/hint-css" target="_blank">
-					<small>Commercial</small>
-					<h3>Team</h3>
-					<small>License</small>
-					<div class="license__project-count">For Unlimited Projects</div>
-					<div class="license__price">$70</div>
-				</a>
-			</div>
 		</div>
 
 	</div>
