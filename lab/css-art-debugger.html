@@ -11,31 +11,43 @@
       content="A calculator concept for long and inter-linked calculations"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap"
       rel="stylesheet"
     />
 
     <style>
-      html,
-      body {
-        height: 100%;
+      * {
+        box-sizing: border-box;
       }
       body {
         overflow: hidden;
+        min-height: 100vh;
         margin: 0;
         padding: 4rem 2rem;
         background: #fefefe;
         color: #252555;
         font-size: 200%;
-        font-family: "Balsamiq Sans", Georgia, sans-serif;
+        font-family: "Nunito", sans-serif;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+      @media screen and (max-width: 1024px) {
+        body {
+          font-size: 140%;
+        }
+      }
+      p {
+        margin-top: 0;
+        margin-bottom: 1rem;
       }
       a {
         color: crimson;
       }
       h1 {
-        font-size: min(10vw, 90px);
+        font-size: 4rem;
       }
       .help {
         animation: pulse 2s infinite;
@@ -46,21 +58,34 @@
           transform: translateY(40px);
         }
       }
+      footer {
+        margin-top: auto;
+      }
     </style>
   </head>
 
-  <body class="has-mouse">
-    <h1>CSS Art Debugger</h1>
+  <body>
+    <div>
+      <h1>CSS Art Debugger</h1>
 
-    <a
-      href="javascript:if(document.querySelector('#cssArtDebugger')) {window.cssArtDebugger.remove();}else{var __s =document.createElement('style');__s.id='cssArtDebugger';__s.textContent='div,div:before,div:after,span,span:before,span:after,p,p:before,p:after,img,img:before,img:after { background: rgba(0,0,0,0.3)!important;outline: 2px solid black !important;}div:before,span:before,p:before,img:before {outline-color: blue!important;}div:after,span:after,p:after,img:after { outline-color: red!important;}';document.body.append(__s);}"
-      >CSS Art Debugger</a
-    >
+      <a
+        href="javascript:if(document.querySelector('#cssArtDebugger')) {window.cssArtDebugger.remove();}else{var __s =document.createElement('style');__s.id='cssArtDebugger';__s.textContent='div,div:before,div:after,span,span:before,span:after,p,p:before,p:after,img,img:before,img:after { background: rgba(0,0,0,0.3)!important;outline: 2px solid black !important;}div:before,span:before,p:before,img:before {outline-color: blue!important;}div:after,span:after,p:after,img:after { outline-color: red!important;}';document.body.append(__s);}"
+        >CSS Art Debugger</a
+      >
 
-    <div class="help">
-      <p>👆🏽</p>
-      <p>Drag the above link into your Bookmark bar.</p>
+      <div class="help">
+        <p>👆🏽</p>
+        <p>Drag the above link into your Bookmark bar.</p>
+        <p>Then click on it to try on this page.</p>
+      </div>
     </div>
+
+    <footer>
+      Made by
+      <a href="https://twitter.com/chinchang457" target="_blank"
+        >Kushagra Gour</a
+      >
+    </footer>
 
     <script>
       var _gaq = _gaq || [];
