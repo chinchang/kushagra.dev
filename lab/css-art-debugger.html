@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+      CSS Art Debugger - X-ray vision
+    </title>
+    <meta name="author" content="Kushagra Gour" />
+    <meta
+      name="description"
+      content="A calculator concept for long and inter-linked calculations"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        overflow: hidden;
+        margin: 0;
+        padding: 4rem 2rem;
+        background: #fefefe;
+        color: #252555;
+        font-size: 200%;
+        font-family: "Balsamiq Sans", Georgia, sans-serif;
+        text-align: center;
+      }
+      a {
+        color: crimson;
+      }
+      h1 {
+        font-size: min(10vw, 90px);
+      }
+      .help {
+        animation: pulse 2s infinite;
+        transform: translateY(0);
+      }
+      @keyframes pulse {
+        50% {
+          transform: translateY(40px);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="has-mouse">
+    <h1>CSS Art Debugger</h1>
+
+    <a
+      href="javascript:if(document.querySelector('#cssArtDebugger')) {window.cssArtDebugger.remove();}else{var __s =document.createElement('style');__s.id='cssArtDebugger';__s.textContent='div,div:before,div:after,span,span:before,span:after,p,p:before,p:after,img,img:before,img:after { background: rgba(0,0,0,0.3)!important;outline: 2px solid black !important;}div:before,span:before,p:before,img:before {outline-color: blue!important;}div:after,span:after,p:after,img:after { outline-color: red!important;}';document.body.append(__s);}"
+      >CSS Art Debugger</a
+    >
+
+    <div class="help">
+      <p>👆🏽</p>
+      <p>Drag the above link into your Bookmark bar.</p>
+    </div>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-19798102-1"]);
+      _gaq.push(["_trackPageview"]);
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = !0;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

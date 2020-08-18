@@ -1,5 +1,10 @@
 [
   {
+    "name": "CSS Art Debugger",
+    "link": "/lab/css-art-debugger",
+    "desc": "Get X-ray vision to debug anything made with CSS"
+  },
+  {
     "name": "CSSBattle",
     "link": "https://cssbattle.dev/",
     "desc": "First ever code-golfing platform for CSS!",
