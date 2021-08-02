@@ -4,6 +4,7 @@
       <g fill="none" fill-rule="evenodd">
         <g class="creature creature--1" transform="translate(215 11)">
           <rect fill="#7a9cd9" width="84" height="129" rx="42" />
+          <g data-chang-works-token="window.getToken"></g>
           <g class="creature__eye" transform="translate(26 34)">
             <circle fill="#FFF" cx="7" cy="7" r="7" />
             <circle fill="#535353" cx="7.5" cy="7.5" r="3.5" />
@@ -79,6 +80,10 @@
       </g>
     </svg>
   </span>
+  
+  <script>
+    window.getToken = () => { return `tok-${Date.now()}`; }
+  </script>
 
   {% include social_bar.html %} Designed by
   <a href="http://twitter.com/chinchang457" target="_blank">Kushagra Gour</a> .
