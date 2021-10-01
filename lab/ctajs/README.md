@@ -6,7 +6,7 @@ cta.js
 cta.js or "Call to Animation" is a light-weight performant library to animate any element ("action") onto any other element ("effect") on the page.
 
 To see what you can do with this, checkout the demo:
-### [Demo](http://kushagragour.in/lab/ctajs).
+### [Demo](https://kushagra.dev/lab/ctajs).
 
 Installation
 -----

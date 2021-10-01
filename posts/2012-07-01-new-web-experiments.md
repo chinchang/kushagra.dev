@@ -21,9 +21,9 @@ This is my post after a long long time. Well, I am here to introduce 2 recent ex
 
 The first one of them is actually a small library used to create cool looking isometric text in the browser using CSS3 _[transitions](https://developer.mozilla.org/en/CSS/CSS_transitions/)_ and _[transforms](https://developer.mozilla.org/en/CSS/transform)_.
 
-[Try out ISO-BLOCKS](http://kushagragour.in/lab/isoblocks/)
+[Try out ISO-BLOCKS](https://kushagra.dev/lab/isoblocks/)
 
-## [piCSSel-art](http://kushagragour.in/lab/picssel-art/)
+## [piCSSel-art](https://kushagra.dev/lab/picssel-art/)
 
 [![](/images/picssel-ss-244x300.png)](/images/picssel-ss.png)
 
@@ -31,7 +31,7 @@ This is a recent thing I have been working on. The inspiration behind this was t
 
 Having the app done, I'll can now start working on my new website design which is gonna be hell lot of fun with this.
 
-[Try out piCSSel-art](http://kushagragour.in/lab/picssel-art/)
+[Try out piCSSel-art](https://kushagra.dev/lab/picssel-art/)
 
 Both the above experiments are in the open-source world for anyone who wants to tinker with them. So fork and play with them.
 
