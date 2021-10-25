@@ -38,3 +38,8 @@ ID = "kushagra"
   from = "/code-blast-codemirror/demo/index.html"
   to = "/lab/code-blast-codemirror/demo/index.html"
   status = 301
+  
+[[redirects]]
+  from = "internship.kushagra.dev"
+  to = "https://kushagragour.notion.site/ChangWorks-Internship-program-f4874e5da1fc4efca6f630d571f69237"
+  status = 302
