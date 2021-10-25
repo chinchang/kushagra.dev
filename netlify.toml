@@ -40,6 +40,6 @@ ID = "kushagra"
   status = 301
   
 [[redirects]]
-  from = "internship.kushagra.dev"
+  from = "/internship"
   to = "https://kushagragour.notion.site/ChangWorks-Internship-program-f4874e5da1fc4efca6f630d571f69237"
   status = 302
