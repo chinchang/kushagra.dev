@@ -26,3 +26,5 @@ There are many definitions out there for the term "Financial Freedom". So let me
 ## Side Projects?
 
 Just to be clear - I haven't mentioned "Side Projects" in my list above, doesn't mean it's not on my list. It's love for me, I don't think I can ever stop building products. I'll keep doing them, on my side, forever! ♥️
+
+Do you have a similar list? Share with me on [this Twitter post](https://twitter.com/chinchang457/status/1589827525626466304).
