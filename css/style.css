@@ -225,9 +225,9 @@ blockquote div {
   text-align: center;
   padding: 2rem;
   margin-top: auto;
-  overflow: hidden;
 }
 .site-footer__bg {
+  display: flex;
   position: absolute;
   bottom: -20px;
   width: 100vw;
