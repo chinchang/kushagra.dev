@@ -14,8 +14,8 @@ There are many definitions out there for the term "Financial Freedom". So let me
 
 ## My TODO List
 
-- **Cab Driver** - I want to be a cab driver for sometime. I like driving. I feel I like helping people reach their destination 😅 I might also choose to be a cab driver in a tech-savvy place like Bangalore where I could converse with my passengers and discuss tech with them, may be solve a problem or two for them 😄
-- **At a restaurant counter** - I want to be at the pay counter of McDonalds or something where I can take food orders, provide money change to customers and get them their food.
+- **Cab Driver** - I want to be a cab driver for sometime. I like driving. I feel I like helping people reach their destination 😅 I might also choose to be a cab driver in a tech-savvy place like Bangalore where I could converse with my passengers and discuss tech with them, may be solve a problem or two for them - B.Tech Cab-wala? 😄
+- **At a restaurant counter** - I want to be at the pay counter of McDonalds or a similar place where I can take food orders, provide money change to customers and get them their food.
 - **Weekly sessions to teach programming** - I want to sit with kids and tell them about my experiences around programming (whatever I can remember and write by then). Guide them on how to be a good programmer and a product builder.
 - **Fast food joint** -  I want to open a fast food joint...probably just a small counter under a big umbrella with some seating. Something I can take places and serve food. I specifically want to serve sandwiches & burgers and some drinks alongside.
 - **Do customer support** - I want to join a good company as a customer support representative for them. Customer support people are the people who interact with the customers the most and are make or break for any company. I have always fancied talking to customers and solving their problems. I already do some of it, but I want to do it full-time and really take it to the next level.
