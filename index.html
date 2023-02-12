@@ -55,7 +55,6 @@
       .img {
         display: flex;
         position: relative;
-        justify-content: center;
       }
       .kush {
         --starting-x: 3vw;
@@ -180,7 +179,10 @@
         }
       }
       /* media query for mobile  */
-      @media (max-width: 1168px) {
+      @media (max-width: 1260px) {
+        body {
+          font-size: 16px;
+        }
         .container {
           flex-direction: column-reverse;
         }
