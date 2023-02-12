@@ -4,7 +4,7 @@
   "description": "My personal website.",
   "author": "Kushagra Gour <chinchang457@gmail.com>",
   "scripts": {
-    "start": "eleventy --quiet --serve --port=8081",
+    "start": "eleventy --quiet --serve --port=5000",
     "build": "cp -R _site/* ./ && rm -rf _site"
   },
   "repository": {

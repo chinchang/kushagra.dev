@@ -1,85 +1,249 @@
----
-layout: default
-title: Home
-name: home
-label: home
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Code and Create" />
+    <title>Kushagra's World</title>
 
-<h1 class="homepage-title">Kushagra's World</h1>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-<nav>
-  <ul class="nav-items">
-    <li class="nav-item">
-      <a href="/lab/" class="{% if page.name == 'lab' %}selected{% endif %}">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M6,22A3,3 0 0,1 3,19C3,18.4 3.18,17.84 3.5,17.37L9,7.81V6A1,1 0 0,1 8,5V4A2,2 0 0,1 10,2H14A2,2 0 0,1 16,4V5A1,1 0 0,1 15,6V7.81L20.5,17.37C20.82,17.84 21,18.4 21,19A3,3 0 0,1 18,22H6M5,19A1,1 0 0,0 6,20H18A1,1 0 0,0 19,19C19,18.79 18.93,18.59 18.82,18.43L16.53,14.47L14,17L8.93,11.93L5.18,18.43C5.07,18.59 5,18.79 5,19M13,10A1,1 0 0,0 12,11A1,1 0 0,0 13,12A1,1 0 0,0 14,11A1,1 0 0,0 13,10Z"
-          />
-        </svg>
-        lab</a
-      >
-    </li>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS"
+      href="/feed/rss.xml"
+    />
 
-    <li class="nav-item">
-      <a
-        href="/games/"
-        class="{% if page.name == 'games' %}selected{% endif %}"
-      >
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M7,6H17A6,6 0 0,1 23,12A6,6 0 0,1 17,18C15.22,18 13.63,17.23 12.53,16H11.47C10.37,17.23 8.78,18 7,18A6,6 0 0,1 1,12A6,6 0 0,1 7,6M6,9V11H4V13H6V15H8V13H10V11H8V9H6M15.5,12A1.5,1.5 0 0,0 14,13.5A1.5,1.5 0 0,0 15.5,15A1.5,1.5 0 0,0 17,13.5A1.5,1.5 0 0,0 15.5,12M18.5,9A1.5,1.5 0 0,0 17,10.5A1.5,1.5 0 0,0 18.5,12A1.5,1.5 0 0,0 20,10.5A1.5,1.5 0 0,0 18.5,9Z"
-          />
-        </svg>
-        games</a
-      >
-    </li>
+    <style>
+      :root {
+        /* --main-text-color: #ffc107; */
+        --main-text-color: #dcb236;
+      }
+      body {
+        margin: 0;
+        background: darkseagreen;
+        background: #5a74cb;
+        background-color: #3d2335;
+        background: #eaa13a;
+        background: linear-gradient(
+          180deg,
+          #141142 0%,
+          #58549c 82%,
+          #46345a 100%
+        );
+        font-family: "Fugaz One", cursive;
+        font-size: 40px;
+        color: floralwhite;
+      }
+      .container {
+        display: flex;
+      }
+      .container > div {
+        /* width: 50%; */
+        height: 100vh;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: space-between;
+        perspective: 800px;
+        flex: 1;
+        overflow: hidden;
+      }
+      .img {
+        display: flex;
+        position: relative;
+        justify-content: center;
+      }
+      .kush {
+        --starting-x: 3vw;
 
-    <li class="nav-item">
-      <a href="/blog/" class="{% if page.name == 'blog' %}selected{% endif %}">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M16.84,2.73C16.45,2.73 16.07,2.88 15.77,3.17L13.65,5.29L18.95,10.6L21.07,8.5C21.67,7.89 21.67,6.94 21.07,6.36L17.9,3.17C17.6,2.88 17.22,2.73 16.84,2.73M12.94,6L4.84,14.11L7.4,14.39L7.58,16.68L9.86,16.85L10.15,19.41L18.25,11.3M4.25,15.04L2.5,21.73L9.2,19.94L8.96,17.78L6.65,17.61L6.47,15.29"
-          />
-        </svg>
-        blog</a
-      >
-    </li>
+        height: 100%;
+        position: relative;
+        filter: contrast(1.2) hue-rotate(0deg);
+        opacity: 0;
+        mix-blend-mode: color-dodge;
+        animation: show-x 0.6s ease-in-out forwards;
+      }
+      .kush--shadow {
+        animation-delay: 0.15s;
+        position: absolute;
+        mix-blend-mode: saturation;
+        left: 15rem;
+      }
 
-    <li class="nav-item">
-      <a href="https://kushagradraws.tumblr.com/" target="_blank">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M17.5,12A1.5,1.5 0 0,1 16,10.5A1.5,1.5 0 0,1 17.5,9A1.5,1.5 0 0,1 19,10.5A1.5,1.5 0 0,1 17.5,12M14.5,8A1.5,1.5 0 0,1 13,6.5A1.5,1.5 0 0,1 14.5,5A1.5,1.5 0 0,1 16,6.5A1.5,1.5 0 0,1 14.5,8M9.5,8A1.5,1.5 0 0,1 8,6.5A1.5,1.5 0 0,1 9.5,5A1.5,1.5 0 0,1 11,6.5A1.5,1.5 0 0,1 9.5,8M6.5,12A1.5,1.5 0 0,1 5,10.5A1.5,1.5 0 0,1 6.5,9A1.5,1.5 0 0,1 8,10.5A1.5,1.5 0 0,1 6.5,12M12,3A9,9 0 0,0 3,12A9,9 0 0,0 12,21A1.5,1.5 0 0,0 13.5,19.5C13.5,19.11 13.35,18.76 13.11,18.5C12.88,18.23 12.73,17.88 12.73,17.5A1.5,1.5 0 0,1 14.23,16H16A5,5 0 0,0 21,11C21,6.58 16.97,3 12,3Z"
-          />
-        </svg>
-        draw</a
-      >
-    </li>
+      .title-wrap {
+        /* color: #fad888; */
+        /* color: #529f6d; */
+        line-height: 1;
+        transform: rotateY(-25deg);
+        transform-style: preserve-3d;
+        transform: skew(0deg, -3.3deg) rotateY(-10deg);
+      }
+      .title {
+        --starting-x: -3vw;
 
-    <li class="nav-item">
-      <a href="https://kushagratravels.tumblr.com/" target="_blank">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M11,23A2,2 0 0,1 9,21V19H15V21A2,2 0 0,1 13,23H11M12,1C12.71,1 13.39,1.09 14.05,1.26C15.22,2.83 16,5.71 16,9C16,11.28 15.62,13.37 15,16A2,2 0 0,1 13,18H11A2,2 0 0,1 9,16C8.38,13.37 8,11.28 8,9C8,5.71 8.78,2.83 9.95,1.26C10.61,1.09 11.29,1 12,1M20,8C20,11.18 18.15,15.92 15.46,17.21C16.41,15.39 17,11.83 17,9C17,6.17 16.41,3.61 15.46,1.79C18.15,3.08 20,4.82 20,8M4,8C4,4.82 5.85,3.08 8.54,1.79C7.59,3.61 7,6.17 7,9C7,11.83 7.59,15.39 8.54,17.21C5.85,15.92 4,11.18 4,8Z"
-          />
-        </svg>
-        travel</a
-      >
-    </li>
+        font-size: calc(2.5rem + 4.5vw);
+        font-size: calc(var(--width) / 9 * 1);
+        text-transform: uppercase;
+        margin-top: 1.5rem;
+        text-shadow: 3px 0 #0000007d;
+        color: var(--main-text-color);
+        opacity: 0;
+        animation: show-x 0.6s ease-in-out forwards;
+        font-family: "Press Start 2P", cursive;
+        /* font-family: "Fugaz One", cursive; */
+      }
+      .sub-title {
+        --starting-y: 10px;
+        font-family: "Fugaz One", cursive;
+        font-size: 2.8rem;
+        animation: show-y 0.3s ease-in-out forwards;
+        animation-delay: 0.7s;
+        opacity: 0;
+      }
+      header,
+      footer {
+        display: flex;
+        gap: 3rem;
+        padding: 1rem;
+        justify-content: center;
+        opacity: 0;
+        animation: show-y cubic-bezier(0.19, 1, 0.22, 1) 1s forwards;
+        animation-delay: 1s;
+      }
+      header {
+        --starting-y: -30px;
+      }
+      footer {
+        --starting-y: 30px;
+        font-size: 0.7em;
+      }
+      a {
+        color: var(--main-text-color);
+      }
+      a:hover,
+      a:focus {
+        color: white;
+      }
+      p {
+        opacity: 0;
+        animation: show 0.3s ease-in-out forwards 0.6s;
+      }
+      .overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 50%,
+          rgba(0, 0, 0, 0.2) 70%,
+          rgba(0, 0, 0, 0.4)
+        );
+        background-size: 5px 5px;
+        pointer-events: none;
+        position: fixed;
+        z-index: 3;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: 0.4;
+      }
 
-    <li class="nav-item">
-      <a
-        href="/about/"
-        class="{% if page.name == 'about' %}selected{% endif %}"
-      >
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M12,1C10.89,1 10,1.9 10,3C10,4.11 10.89,5 12,5C13.11,5 14,4.11 14,3A2,2 0 0,0 12,1M10,6C9.73,6 9.5,6.11 9.31,6.28H9.3L4,11.59L5.42,13L9,9.41V22H11V15H13V22H15V9.41L18.58,13L20,11.59L14.7,6.28C14.5,6.11 14.27,6 14,6"
-          />
-        </svg>
-        me</a
-      >
-    </li>
-  </ul>
-  <div class="clear"></div>
-</nav>
+      @keyframes show-x {
+        0% {
+          opacity: 0;
+          transform: translateX(var(--starting-x));
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes show-y {
+        0% {
+          opacity: 0;
+          transform: translateY(var(--starting-y));
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes show {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      /* media query for mobile  */
+      @media (max-width: 1168px) {
+        .container {
+          flex-direction: column-reverse;
+        }
+        .content {
+          padding: 2rem;
+        }
+        .img {
+          overflow: hidden;
+        }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="img">
+        <img class="kush kush--shadow" src="/images/kush3.webp" alt="" />
+        <img class="kush" src="/images/kush3.webp" alt="" />
+      </div>
+      <div class="js-content content">
+        <header>
+          <a href="/lab/">Lab</a>
+          <a href="/games/">Games</a>
+          <a href="/blog/">Blog</a>
+          <a href="/about/">About</a>
+        </header>
+
+        <div class="title-wrap">
+          <div class="js-sub-title sub-title">Your creative guy</div>
+
+          <h1 class="title">Kushagra <br />Gour.</h1>
+          <p><strike>Award winning</strike> Frontend Developer</p>
+        </div>
+
+        <footer>
+          <a href="https://twitter.com/chinchang457">Twitter</a>
+          <a href="https://github.com/chinchang">Github</a>
+          <a href="https://cssbattle.dev/player/chinchang">CSSBattle</a>
+        </footer>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <script>
+      var contentWidth = document.querySelector(".js-content").offsetWidth;
+      console.log({ contentWidth });
+      document.documentElement.style.setProperty(
+        "--width",
+        contentWidth + "px"
+      );
+
+      setTimeout(() => {
+        document.querySelector(".js-sub-title").textContent += "!";
+      }, 2000);
+    </script>
+
+    {% include analytics.html %}
+  </body>
+</html>
