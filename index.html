@@ -20,6 +20,9 @@
         /* --main-text-color: #ffc107; */
         --main-text-color: #dcb236;
       }
+      *:focus {
+        outline-color: var(--main-text-color);
+      }
       body {
         margin: 0;
         background: darkseagreen;
@@ -67,6 +70,8 @@
         animation: show-x 0.6s ease-in-out forwards;
       }
       .kush--shadow {
+        --starting-x: -2vw;
+
         animation-delay: 0.15s;
         position: absolute;
         mix-blend-mode: saturation;
@@ -122,10 +127,21 @@
       }
       a {
         color: var(--main-text-color);
+        position: relative;
       }
-      a:hover,
-      a:focus {
+      a:after {
+        content: attr(data-anchor);
+        display: block;
+        position: absolute;
         color: white;
+        left: 0;
+        top: 0;
+        clip-path: polygon(0 0, 0px 0, 0px 100%, 0 100%);
+        transition: 0.5s ease;
+      }
+      a:hover:after,
+      a:focus:after {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
       }
       p {
         opacity: 0;
@@ -211,10 +227,10 @@
       </div>
       <div class="js-content content">
         <header>
-          <a href="/lab/">Lab</a>
-          <a href="/games/">Games</a>
-          <a href="/blog/">Blog</a>
-          <a href="/about/">About</a>
+          <a href="/lab/" data-anchor="Lab" aria-label="Lab">Lab</a>
+          <a href="/games/" data-anchor="Games" aria-label="Games">Games</a>
+          <a href="/blog/" data-anchor="Blog" aria-label="Blog">Blog</a>
+          <a href="/about/" data-anchor="About" aria-label="About">About</a>
         </header>
 
         <div class="title-wrap">
@@ -225,9 +241,24 @@
         </div>
 
         <footer>
-          <a href="https://twitter.com/chinchang457">Twitter</a>
-          <a href="https://github.com/chinchang">Github</a>
-          <a href="https://cssbattle.dev/player/chinchang">CSSBattle</a>
+          <a
+            href="https://twitter.com/chinchang457"
+            data-anchor="Twitter"
+            aria-label="Twitter"
+            >Twitter</a
+          >
+          <a
+            href="https://github.com/chinchang"
+            data-anchor="Github"
+            aria-label="Github"
+            >Github</a
+          >
+          <a
+            href="https://cssbattle.dev/player/chinchang"
+            data-anchor="CSSBattle"
+            aria-label="CSSBattle"
+            >CSSBattle</a
+          >
         </footer>
       </div>
     </div>
