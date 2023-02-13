@@ -70,7 +70,7 @@
         animation-delay: 0.15s;
         position: absolute;
         mix-blend-mode: saturation;
-        left: 15rem;
+        margin-left: 18rem;
       }
 
       .title-wrap {
@@ -85,7 +85,7 @@
         --starting-x: -3vw;
 
         font-size: calc(2.5rem + 4.5vw);
-        font-size: calc(var(--width) / 9 * 1);
+        font-size: calc(var(--width) / 9.5 * 1);
         text-transform: uppercase;
         margin-top: 1.5rem;
         text-shadow: 3px 0 #0000007d;
@@ -98,7 +98,7 @@
       .sub-title {
         --starting-y: 10px;
         font-family: "Fugaz One", cursive;
-        font-size: 2.8rem;
+        /* font-size: 2.8rem; */
         animation: show-y 0.3s ease-in-out forwards;
         animation-delay: 0.7s;
         opacity: 0;
@@ -181,7 +181,7 @@
       /* media query for mobile  */
       @media (max-width: 1260px) {
         body {
-          font-size: 16px;
+          font-size: clamp(16px, 3vw, 3vw);
         }
         .container {
           flex-direction: column-reverse;
@@ -191,6 +191,7 @@
         }
         .img {
           overflow: hidden;
+          /* justify-content: center; */
         }
       }
     </style>
@@ -234,12 +235,21 @@
     <div class="overlay"></div>
 
     <script>
-      var contentWidth = document.querySelector(".js-content").offsetWidth;
-      console.log({ contentWidth });
-      document.documentElement.style.setProperty(
-        "--width",
-        contentWidth + "px"
-      );
+      function setContentWidth() {
+        var contentWidth = document.querySelector(".js-content").offsetWidth;
+        console.log({ contentWidth });
+        document.documentElement.style.setProperty(
+          "--width",
+          contentWidth + "px"
+        );
+      }
+      setContentWidth();
+      // preload an image
+      var img = new Image();
+      img.src = "/images/kush3.webp";
+      img.onload = function () {
+        setContentWidth();
+      };
 
       setTimeout(() => {
         document.querySelector(".js-sub-title").textContent += "!";
