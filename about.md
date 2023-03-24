@@ -18,4 +18,12 @@ I like to write [code](https://github.com/chinchang) and build things that peopl
 
 <div style="text-align: center;"><em><strong>Creativity Is My Life</strong></em></div>
 
+<p style="display: flex; justify-content: center">
+  <img
+    height="100"
+    src="/images/signature.jpg"
+    style="mix-blend-mode: multiply"
+  />
+</p>
+
 </div>
