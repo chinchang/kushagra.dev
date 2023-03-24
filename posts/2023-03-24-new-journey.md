@@ -19,7 +19,7 @@ But what about job and financial stability? That is another reason why people te
 
 You never know when there pops another product that builds on top of yours. This doesn’t mean I am scared of competition or don’t want one. I have confidence that nobody can build this thing better than us! But competition would be bad if that becomes a reason for me to quit my job one day in haste. You can’t compete with a product being worked full-time on while you take yours as a side project. I wanted me to control my decision, not a competition that comes in the future.
 
-Moreover, each person I have talked to about CSSBattle and shared our vision with has only shared astonishment on where this has come and that gives me reassurance on what this can become! PS: I am lucky to have such friends around me who constantly motivate you to live your passion! And when I know where we can take CSSBattle, there is no point in delaying it further.
+Moreover, each person I have talked to about CSSBattle and shared our vision with has only shared astonishment on where this has come and that gives me reassurance on what this can become! PS: I am lucky to have such friends around me who constantly motivate you to live your passion and are ready to support you in any way required! I am thankfull to them 🙏🏼. And when I know where we can take CSSBattle, there is no point in delaying it further.
 
 ## But going indie, with a kid?
 
