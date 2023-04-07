@@ -7,7 +7,7 @@ tags:
   - debugging
 ---
 
-I broke CSSBattle’s leaderboard recently because of an interesting bug. We had a piece of code, whose simplified version looked something like this:
+I broke [CSSBattle’s](https://cssbattle.dev) leaderboard recently because of an interesting bug. We had a piece of code, whose simplified version looked something like this:
 
 ```jsx
 const isMore = a.score > b.score;
