@@ -29,6 +29,7 @@ But that is not actually the solution to the problem. I can make the same mistak
   <figcaption>My terminal prompt</figcaption>
   </figure>
 - I use a shell script that internally does Firebase deployment. I could make that script print out loud something like “DEPLOYING TO X PROJECT”…in s big font! So that as soon as deployment starts, I clearly see where I am deploying.
+- (Added on 12th April '23) Right now I use a single npm command `npm run deploy` to deploy. I could break that command into `npm run deploy:staging` and `npm run deploy:prod` to make it very explicit where I am deploying! And inside those commands I can set the right project with `firebase use`.
 
 I think I’ll go with 2nd one and see how it goes. Do you have a better solution to this? Let me know on [Twitter](https://twitter.com/chinchang457) or [LinkedIn](https://www.linkedin.com/in/chinchang/).
 
