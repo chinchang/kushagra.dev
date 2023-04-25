@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Logging query docs in Firebase"
+title: "Logging query docs in Firebase Firestore"
 tags:
   - firebase
   - debugging
