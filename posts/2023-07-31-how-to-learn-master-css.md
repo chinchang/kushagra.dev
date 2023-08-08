@@ -22,19 +22,19 @@ This involves understanding the CSS specific concepts, theoretically. Things lik
 The resources I recommend for this are:
 
 1. [web.dev guide](https://web.dev/learn/css) - Super nice articles explaining each of the concepts in CSS. Must read!
-2. CSSBattles’s [Learn CSS course](https://cssbattle.dev/learn) - they just have beginner course for now but its a unique interactive game-like experience to understand the basic of CSS, while not feeling daunting with just reading long articles.
-3. Josh Comeau's [CSS for JavaScript developers](https://css-for-js.dev/) course. This man is a wizard in CSS and teaching - an extra-ordinary combination that makes his course excellent for learning CSS.
+2. CSSBattles’s [Learn CSS course](https://cssbattle.dev/learn) - they just have a beginner course for now but it's a unique interactive game-like experience to understand the basics of CSS, while not feeling daunted with just reading long articles.
+3. Josh Comeau's [CSS for JavaScript developers](https://css-for-js.dev/) course. This man is a wizard in CSS and teaching - an extraordinary combination that makes his course excellent for learning CSS.
 
 ### Learning about Properties and Values
 
-The only resource I recommend here is the MDN docs. To learn properties and values, you should read the MDN docs on various properties. MDN docs provide an in-depth explanation of each property, including its syntax, possible values, interactive examples and browser support. As a routine you can visit the MDN pages of the first 2-3 properties you use daily…its fun!
+The only resource I recommend here is the MDN docs. To learn properties and values, you should read the MDN docs on various properties. MDN docs provide an in-depth explanation of each property, including its syntax, possible values, interactive examples and browser support. As a routine, you can visit the MDN pages of the first 2-3 properties you use daily…its fun!
 
 ## Practice
 
-Once you get a basic knowledge about the core concepts and properties, practice is of utmost important to turn your acquired knowledge into skills. Here are the 2 directions I recommend practicing CSS in:
+Once you get a basic knowledge about the core concepts and properties, practice is of utmost importance to turn your acquired knowledge into skills. Here are the 2 directions I recommend practicing CSS in:
 
 1. **Page layouts by building pages** - this is an excellent way to practice what you have learned. It will give you real-world experience in applying CSS concepts and properties to create practical layouts and structures. You can start with building static webpages - grab a design from Dribbble/Behance and turn into HTML & CSS. Then move onto building simple apps like a landing page or a portfolio website.
-2. **Properties-values in CSSBattle** - [CSSBattle](https://cssbattle.dev) is a game where you play each level by replicating a given image as close as possible in just CSS in minimum number of characters (also called as code-golfing). Now writing minimum CSS may sound very impractical and it is! But you don't need to do code-golfing and can just focus on the matching the image part. Now even that might sound impractical, and yes that is! But suprisingly that gives you a very good practice in CSS properties and also helps develop your creative thinking when you come up with different approaches to replicate each level's image. There are so many levels on CSSBattle that doing them regularly will force you to experiment with each property and explore it in the process! I have personally learnt a lot of properties here like clip-path, radial-gradient and much more.
+2. **Properties-values in CSSBattle** - [CSSBattle](https://cssbattle.dev) is a game where you play each level by replicating a given image as close as possible in just CSS in minimum number of characters (also called as code-golfing). Now writing minimum CSS may sound very impractical and it is! But you don't need to do code-golfing and can just focus on the matching the image part. Now even that might sound impractical, and yes that is! But suprisingly that gives you a very good practice in CSS properties and also helps develop your creative thinking when you come up with different approaches to replicate each level's image. There are so many levels on CSSBattle that doing them regularly will force you to experiment with each property and explore it in the process! I have personally learned a lot of properties here like clip-path, radial-gradient and much more.
 
 <div class="info-box">
 Disclaimer: I recommend CSSBattle in this post wich I have created. As biased as it may sound, I don't recommend it because I am the creator. It has been my first-hand experience learning a lot on that platform, accompanied by testimonials from a lot of other players.
