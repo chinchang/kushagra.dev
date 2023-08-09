@@ -2,16 +2,17 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
 
 const markdownItConfig = {
   html: true,
   breaks: true,
-  linkify: true
+  linkify: true,
 };
 const markdownItAnchorConfig = {
   permalink: true,
   permalinkClass: "bookmark",
-  permalinkSymbol: "#"
+  permalinkSymbol: "#",
 };
 
 const markdownLib = markdownIt(markdownItConfig).use(
@@ -19,31 +20,32 @@ const markdownLib = markdownIt(markdownItConfig).use(
   markdownItAnchorConfig
 );
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(UpgradeHelper);
   eleventyConfig.setLibrary("md", markdownLib);
 
   eleventyConfig.addLayoutAlias("default", "layouts/default.html");
   eleventyConfig.addLayoutAlias("post", "layouts/post.html");
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-  eleventyConfig.addFilter("readableDate", dateObj => {
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
     const d = new Date(dateObj);
     return d.toDateString().substr(4);
   });
 
   // only content in the `posts/` directory
-  eleventyConfig.addCollection("posts", function(collection) {
+  eleventyConfig.addCollection("posts", function (collection) {
     return collection
       .getFilteredByGlob("./posts/*")
-      .sort(function(a, b) {
+      .sort(function (a, b) {
         return a.date - b.date;
       })
       .reverse();
   });
 
-  eleventyConfig.addCollection("tagList", collection => {
+  eleventyConfig.addCollection("tagList", (collection) => {
     const set = new Set();
     const coll = collection.getAllSorted();
 

@@ -118,10 +118,10 @@
       </div>
       {% endif %}
 
-      <div>{{ content | safe }}</div>
+      <div>{{ content }}</div>
     </div>
 
-    {% include footer.html %} {% include analytics.html %}
+    {% include 'footer.html' %} {% include 'analytics.html' %}
 
     <!-- {{ post }} -->
     {% if label == 'blog' %}

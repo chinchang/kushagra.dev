@@ -80,12 +80,14 @@
       </g>
     </svg>
   </span>
-  
+
   <script>
-    window.getToken = () => { return `tok-${Date.now()}`; }
+    window.getToken = () => {
+      return `tok-${Date.now()}`;
+    };
   </script>
 
-  {% include social_bar.html %} Designed by
+  {% include 'social_bar.html' %} Designed by
   <a href="https://twitter.com/chinchang457" target="_blank">Kushagra Gour</a> .
   Powered by <a href="https://11ty.io/" target="_blank">Eleventy</a> . Hosted on
   <a href="https://netlify.com" target="_blank">Netlify</a>
