@@ -16,8 +16,8 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.2",
-    "@11ty/eleventy-upgrade-help": "^1.0.1",
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-upgrade-help": "^2.0.5",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2"
   }

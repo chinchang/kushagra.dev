@@ -103,7 +103,11 @@
           <a href="/">Home</a>
           {% if parent %}
           <span class="link-separator">↠</span>
-          <a href="{{ parent.url || page.url }}">{{ parent.title || title }}</a>
+          <a
+            href="{% if parent.url %}{{ parent.url }}{% else %}{{ page.url }}{% endif %}"
+            >{% if parent.title %}{{ parent.title }}{% else %}{{ title }}{%
+            endif %}</a
+          >
           {% endif %}
         </div>
         <div>

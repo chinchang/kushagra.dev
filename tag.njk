@@ -1,7 +1,7 @@
 ---
-renderData:
-  title: 'Blog posts tagged “{{ tag }}”'
-permalink: /blog/tags/{{ tag | slug }}/
+eleventyComputed:
+  title: Blog posts tagged “{{ tag }}”
+permalink: /blog/tags/{{ tag | slugify }}/
 pagination:
   data: collections
   size: 1

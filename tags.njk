@@ -7,6 +7,6 @@ layout: default
 
 <ul>
 {% for tag in collections.tagList %}
-  <li><a href="/blog/tags/{{ tag | slug }}">{{ tag }}</a></li>
+  <li><a href="/blog/tags/{{ tag | slugify }}">{{ tag }}</a></li>
 {% endfor %}
 </ul>
