@@ -28,6 +28,17 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("default", "layouts/default.html");
   eleventyConfig.addLayoutAlias("post", "layouts/post.html");
 
+  eleventyConfig.addPairedShortcode("demo", function (content, height) {
+    // console.log(122, content);
+    const html = content.replace(/\n/g, "").replace(/\s\s+/g, "");
+    // console.log(99, html);
+    return `
+       <div class="demo-frame" ${
+         height ? `style="--height:${height}"` : ""
+       }> <iframe  srcDoc='${html}'></iframe> </div>
+      `;
+  });
+
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     const d = new Date(dateObj);

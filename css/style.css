@@ -347,8 +347,13 @@ pre mark {
   background-color: #434328;
   color: inherit;
 }
-h1 + pre, h2 + pre, h3 + pre, h4 + pre, h5 + pre, h6 + pre {
-  margin-top: 0!important;
+h1 + pre,
+h2 + pre,
+h3 + pre,
+h4 + pre,
+h5 + pre,
+h6 + pre {
+  margin-top: 0 !important;
 }
 .cloud {
   --color-cloud-bg: #fce0e0;
@@ -458,6 +463,17 @@ figure {
   border: 2px solid #c48d8d;
   border-radius: 7px;
   margin-bottom: 1rem;
+}
+.demo-frame {
+  margin: 2rem calc(50% - 50vw) !important;
+  padding: 1.2rem calc(50vw - 50%) 1rem !important;
+}
+.demo-frame > iframe {
+  width: 100%;
+  height: var(--height, 400px);
+  border: 0;
+  background: #0000000a;
+  border-radius: 0.5rem;
 }
 @media (max-width: 500px) {
   :root {
