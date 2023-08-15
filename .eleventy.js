@@ -2,6 +2,8 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 
 const markdownItConfig = {
   html: true,
@@ -22,6 +24,10 @@ const markdownLib = markdownIt(markdownItConfig).use(
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(pluginWebc, {
+    components: "_includes/components/**/*.webc",
+  });
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   eleventyConfig.setLibrary("md", markdownLib);
 
