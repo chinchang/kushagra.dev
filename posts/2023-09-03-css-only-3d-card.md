@@ -7,11 +7,11 @@ tags:
   - tutorial
 ---
 
-Today we'll build a 3D card with just CSS. Yes, just CSS! This is sort of an extension to my last post - "scroll-baded 3d cards". So if you haven't read that already, I recommend to read that first.
+Today we'll build a 3D card with just CSS. Yes, just CSS! This is sort of an extension to my last post - ["Scroll-based 3d cards"](/blog/scroll-based-3d-cards/). So if you haven't read that already, I recommend you read that first.
 
-Few more things about what we are building here. It will be a 3d card that can be rotated and viewed by same gesture as if you are scrolling the page - horizontally and vertically. [See the final demo](#final-demo-🥳).
+Few more things about what we are building here. It will be a 3d card that can be rotated and viewed by same gesture as if you are scrolling the page - horizontally and vertically. This used scroll-linked animations feature in CSS, which as of writing this article is only supported in Chrome & Edge. [See the final demo](#final-demo-🥳).
 
-## 1. Get the card
+## 1. Get the Card
 
 ```html
 <div class="card-wrap">
@@ -21,7 +21,6 @@ Few more things about what we are building here. It will be a 3d card that can b
 
 ```css
 .card-wrap {
-  position: fixed;
   display: grid;
   place-content: center;
   inset: 0;
@@ -41,8 +40,8 @@ Few more things about what we are building here. It will be a 3d card that can b
 
 Few things about the code above:
 
-1. `card-wrap` solves 2 purposes here - acts as a container to center our card. And also to give a 3D perspective to our card.
-2. `card` is a usual card which takes 80% of viewport height and has 16:9 aspect ratio. It has a cool background which I generated through Midjourney for this demo.
+1. `.card-wrap` solves 2 purposes here - acts as a container to center our card. And also to give a 3D perspective to our card.
+2. `.card` is a usual card which takes 80% of viewport height and has 16:9 aspect ratio. It has a cool background image which I generated through Midjourney for this demo.
 3. For now the card has a static shadow and rotation which we'll make dynamic as we go!
 
 Here is what we get:
@@ -74,9 +73,9 @@ Here is what we get:
 
 ## 2. Bring in some scroll
 
-This is an interesting illusion! As I mentioned before, we'll enable card rotation through scroll. Which means if you have double finger scroll gesture on your track pad, you can very intuitively use it explore the card from all angles. But, how do we get scroll on the page,...there is nothing overflowing from our page? For that, we'll create a dummy invisble element which is so big that it overflows out of our viewport.
+This is an interesting illusion! As I mentioned before, we'll enable card rotation through scroll. Which means if you have double finger scroll gesture on your track pad, you can very intuitively use it to explore the card from all angles. But, how do we get scroll on the page,...there is nothing overflowing from our page? For that, we'll create a dummy invisble element which is so big that it overflows out of our viewport.
 
-This creates another issue that our card will also glide along with the scroll. But we don't want that. So what we do is make the `card-wrap` fixed positioned. So now you get this nice illusion where you are scrolling on the page technically but nothing scrolls.
+This creates another issue that our card will also glide along with the scroll. But we don't want that. So what we do is make `.card-wrap` fixed positioned. Now you get this nice illusion where you are scrolling on the page technically but nothing scrolls.
 
 ```html
 <div class="dummy"></div>
@@ -101,7 +100,7 @@ This creates another issue that our card will also glide along with the scroll. 
 ```
 
 1. Our dummy element is set to be 150% (i.e. 1.5 times) of our viewport. You can increase/decrease it based on how much do you want user to scroll to see the effect.
-2. `card-wrap` is now fixed positioned so as to be independent from the page scroll.
+2. `.card-wrap` is now fixed positioned so as to be independent from the page scroll.
 
 Notice that now our page has scrolls.
 
@@ -171,6 +170,7 @@ We'll have the card rotated from `-10deg` to `10deg` on x and y axes as we scrol
 1. `rotate-x` & `rotate-y` are 2 animations that rotate from -10deg to 10deg respectively.
 2. We add 2 animations on the card. Note how we also assign 2 different animation timelines because we want to attach the `rotate-x` animation with y-direction scroll and `rotate-y` animation with x-direction scroll.
 3. Another thing different from the previous blog post is that we are not creating a named scroll here. Another shortcut to attach animation timeline to scroll is using the `scroll` function. `root` inside `scroll` simply means we are referring to document's root scroll.
+4. Notice how x rotation goes from positive to negative while y rotation is opposite? This is just to make the rotation direction consistent with the scroll direction.
 
 Except that this doesn't work as expected! Try for yourself and observe how it behaves:
 
@@ -181,6 +181,9 @@ Except that this doesn't work as expected! Try for yourself and observe how it b
   <div class="card"></div>
 </div>
 <style>
+  :root {
+  --rotation: 10deg;
+}
 .card-wrap {
   position: fixed;
   display: grid;
@@ -222,13 +225,13 @@ Except that this doesn't work as expected! Try for yourself and observe how it b
 </style>
 {% enddemo %}
 
-The card rotates nicely as you scroll vertically. But horizontal scroll doesn't affect the card's rotation. Do see what's wrong? Hint: It's the 2 keyframe animations.
+The card rotates nicely as you scroll vertically. But horizontal scroll doesn't affect the card's rotation. Do you see what's wrong? Hint: It's the 2 keyframe animations.
 
 The issue is - both animations modify the `transform` property of the card. So one overrides other. Since `rotate-y` is set after `rotate-x` on the card in the `animation` property, vertical scroll works. Let's fix this issue next.
 
 ## 4. Making both rotations work
 
-It's clear that our animations can't simply work on the `transform` property since one overrides other. One solution here is to have each animation only work a particular axis rotation. But there are no `rotateX` or `rotateY` properties in CSS. Custom properties to the rescue! When the property we want isn't there, we can create our own custom properties.
+It's clear that our animations can't simply work on the `transform` property since one overrides other. One solution here is to have each animation only work on a particular axis rotation. But there are no `rotateX` or `rotateY` properties in CSS. Custom properties to the rescue! When the property we want isn't there, we can create our own custom properties.
 
 ```css
 .card {
@@ -265,8 +268,8 @@ It's clear that our animations can't simply work on the `transform` property sin
 ```
 
 1. Our keyframe animations now modify `--rx` and `--ry` custom properties now.
-2. Custom properties by default are not animatable. Unless we defined what kind of value they can contain, through the `@property` rule. We define our custom properties to be of type `<angle>`.
-3. And now our card uses the 2 custom properties as `transform: rotateX(var(--ry)) rotateY(var(--rx))`.
+2. Custom properties by default are non-animatable. Unless we define what kind of value they can contain, through the `@property` rule. We define our custom properties to be of type `<angle>`.
+3. Our card uses the 2 custom properties as `transform: rotateX(var(--ry)) rotateY(var(--rx))`.
 
 {% demo "600px" %}
 
