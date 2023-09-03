@@ -36,16 +36,6 @@ textarea {
   font-size: inherit;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
 *:focus {
   outline: 4px solid;
   outline-color: var(--color-focus);
@@ -85,6 +75,7 @@ h3,
 h4,
 h5,
 h6 {
+  margin-top: 0;
   color: var(--color-heading);
   font-family: var(--font-family-heading);
 }
@@ -138,7 +129,8 @@ img {
   margin: 0 auto;
 }
 .post__title {
-  margin-bottom: 1rem;
+  margin-block-start: 2rem;
+  margin-block-end: 1rem;
   text-align: center;
   font-size: 3.2rem;
   font-weight: 400;
@@ -465,7 +457,8 @@ figure {
   margin-bottom: 1rem;
 }
 .demo-frame {
-  margin: 2rem calc(50% - 50vw) !important;
+  position: relative;
+  margin: 1rem calc(50% - 50vw) !important;
   padding: 1.2rem calc(50vw - 50%) 1rem !important;
 }
 .demo-frame > iframe {
@@ -475,6 +468,20 @@ figure {
   background: #0000000a;
   border-radius: 0.5rem;
 }
+.demo-frame:before {
+  display: block;
+  content: "Live demo";
+  text-transform: uppercase;
+  background: #914949;
+  color: white;
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.7rem;
+  font-family: sans-serif;
+}
+
 @media (max-width: 500px) {
   :root {
     --base-font-size: 1.2em;

@@ -36,7 +36,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPairedShortcode("demo", function (content, height) {
     // console.log(122, content);
-    const html = content.replace(/\n/g, "").replace(/\s\s+/g, "");
+    const html = content
+      .replace(/\n/g, "")
+      .replace(/\s\s+/g, "")
+      .replace(/\\\*/g, "*");
     // console.log(99, html);
     return `
        <div class="demo-frame" ${
