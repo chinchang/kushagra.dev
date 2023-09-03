@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CSS only 3D card"
+title: "CSS-only 3D card"
 tags:
   - css
   - learning
