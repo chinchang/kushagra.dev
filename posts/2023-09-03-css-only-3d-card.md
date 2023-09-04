@@ -7,7 +7,7 @@ tags:
   - tutorial
 ---
 
-Today we'll build a 3D card with just CSS. Yes, just CSS! This is sort of an extension to my last post - ["Scroll-based 3d cards"](/blog/scroll-based-3d-cards/). So if you haven't read that already, I recommend you read that first.
+In this post we'll build a 3D card with just CSS. Yes, just CSS! This is sort of an extension to my last post - ["Scroll-based 3d cards"](/blog/scroll-based-3d-cards/). So if you haven't read that already, I recommend you read that first.
 
 Few more things about what we are building here. It will be a 3d card that can be rotated and viewed by same gesture as if you are scrolling the page - horizontally and vertically. This used scroll-linked animations feature in CSS, which as of writing this article is only supported in Chrome & Edge. [See the final demo](#final-demo-🥳).
 

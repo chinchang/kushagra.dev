@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scroll-based 3D cards"
+title: "Scroll-based 3D card carousel"
 tags:
   - css
   - learning
