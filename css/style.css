@@ -103,6 +103,9 @@ img {
 .d-f {
   display: flex;
 }
+.jc-c {
+  justify-content: center;
+}
 .jc-sb {
   justify-content: space-between;
 }
