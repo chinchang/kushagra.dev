@@ -582,19 +582,19 @@ name: Hint.css
         <div class="titlebar">
           <div class="buttons">
             <a
-              class="titlebar__btn close hint--bottom-right"
+              class="titlebar__btn close hint--bottom-right hint--rounded"
               aria-label="Close"
             ></a>
             <a
-              class="titlebar__btn minimize hint--bottom-right"
+              class="titlebar__btn minimize hint--bottom-right hint--rounded"
               aria-label="Minimize"
             ></a>
             <a
-              class="titlebar__btn zoom hint--bottom-right"
+              class="titlebar__btn zoom hint--bottom-right hint--rounded"
               aria-label="Zoom"
             ></a>
           </div>
-          Try hovering over different things
+          hint--rounded Try hovering over different things
         </div>
         <div class="content">
           <div class="position-grid">
@@ -602,7 +602,7 @@ name: Hint.css
               <a
                 href="javascript:void(0)"
                 aria-label="bottom-right"
-                class="hint--bottom-right"
+                class="hint--bottom-right hint--rounded"
                 >bottom-right</a
               >
             </div>
@@ -610,7 +610,7 @@ name: Hint.css
               <a
                 href="javascript:void(0)"
                 aria-label="bottom"
-                class="hint--bottom"
+                class="hint--bottom hint--rounded"
                 >bottom</a
               >
             </div>
@@ -618,7 +618,7 @@ name: Hint.css
               <a
                 href="javascript:void(0)"
                 aria-label="bottom-left"
-                class="hint--bottom-left"
+                class="hint--bottom-left hint--rounded"
                 >bottom-left</a
               >
             </div>
@@ -626,13 +626,16 @@ name: Hint.css
               <a
                 href="javascript:void(0)"
                 aria-label="right"
-                class="hint--right"
+                class="hint--right hint--rounded"
                 >right</a
               >
             </div>
             <div class="position-grid__cell"><a>.</a></div>
             <div class="position-grid__cell">
-              <a href="javascript:void(0)" aria-label="left" class="hint--left"
+              <a
+                href="javascript:void(0)"
+                aria-label="left"
+                class="hint--left hint--rounded"
                 >left</a
               >
             </div>
@@ -640,12 +643,15 @@ name: Hint.css
               <a
                 href="javascript:void(0)"
                 aria-label="top-right"
-                class="hint--top-right"
+                class="hint--top-right hint--rounded"
                 >top-right</a
               >
             </div>
             <div class="position-grid__cell">
-              <a href="javascript:void(0)" aria-label="top" class="hint--top"
+              <a
+                href="javascript:void(0)"
+                aria-label="top"
+                class="hint--top hint--rounded"
                 >top</a
               >
             </div>
@@ -653,7 +659,7 @@ name: Hint.css
               <a
                 href="javascript:void(0)"
                 aria-label="top-left"
-                class="hint--top-left"
+                class="hint--top-left hint--rounded"
                 >top-left</a
               >
             </div>
@@ -757,7 +763,7 @@ name: Hint.css
                 padding: 3px 56px;
                 border-radius: 4px;
               "
-              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes."
+              data-hint="Fit gives you a tooltip which is as wide as the element it shows on. hint--fit"
             >
               Fit
             </a>
