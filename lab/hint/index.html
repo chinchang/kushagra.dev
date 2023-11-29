@@ -199,7 +199,7 @@ name: Hint.css
         right: -65px;
       }
 
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 450px) {
         body {
           font-size: 15px;
         }
@@ -332,22 +332,17 @@ name: Hint.css
       }
 
       .position-grid {
-        display: flex;
-        flex-wrap: wrap;
-      }
-
-      .position-grid__cell {
-        flex: 1 33.33%;
-        font-size: 0.8em;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.5rem;
       }
 
       .position-grid__cell a {
-        display: inline-block;
-        width: 90%;
+        display: block;
+        width: 100%;
         background: rgba(91, 192, 235, 0.37);
         color: white;
-        margin: 2px 0;
-        padding: 16px 5px;
+        padding: 16px 0;
       }
 
       .status-icon {
@@ -370,21 +365,12 @@ name: Hint.css
 
       .window {
         background: #fff;
-        width: 50vw;
-        min-width: 450px;
-        margin: auto;
+        width: clamp(0px, 100%, 70ch);
+        margin: 0 1rem;
         border: 1px solid #acacac;
         border-radius: 6px;
         box-shadow: 0px 6px 17px rgba(0, 0, 0, 0.2);
         cursor: default;
-      }
-
-      @media screen and (max-width: 500px) {
-        .window {
-          width: auto;
-          min-width: 0;
-          margin: 0 10px;
-        }
       }
 
       .titlebar {
@@ -578,261 +564,263 @@ name: Hint.css
     <div class="section section--inverted">
       <h2>Tryout</h2>
 
-      <div class="window">
-        <div class="titlebar">
-          <div class="buttons">
-            <a
-              class="titlebar__btn close hint--bottom-right hint--rounded"
-              aria-label="Close"
-            ></a>
-            <a
-              class="titlebar__btn minimize hint--bottom-right hint--rounded"
-              aria-label="Minimize"
-            ></a>
-            <a
-              class="titlebar__btn zoom hint--bottom-right hint--rounded"
-              aria-label="Zoom"
-            ></a>
-          </div>
-          Try hovering over different things
-        </div>
-        <div class="content">
-          <div class="position-grid">
-            <div class="position-grid__cell">
+      <div style="display: flex; justify-content: center">
+        <div class="window">
+          <div class="titlebar">
+            <div class="buttons">
               <a
-                href="javascript:void(0)"
-                aria-label="bottom-right"
-                class="hint--bottom-right hint--rounded"
-                >bottom-right</a
-              >
+                class="titlebar__btn close hint--bottom-right hint--rounded"
+                aria-label="Close"
+              ></a>
+              <a
+                class="titlebar__btn minimize hint--bottom-right hint--rounded"
+                aria-label="Minimize"
+              ></a>
+              <a
+                class="titlebar__btn zoom hint--bottom-right hint--rounded"
+                aria-label="Zoom"
+              ></a>
             </div>
-            <div class="position-grid__cell">
+            Try hovering over different things
+          </div>
+          <div class="content">
+            <div class="position-grid">
+              <div class="position-grid__cell">
+                <a
+                  href="javascript:void(0)"
+                  aria-label="bottom-right"
+                  class="hint--bottom-right hint--rounded"
+                  >bottom-right</a
+                >
+              </div>
+              <div class="position-grid__cell">
+                <a
+                  href="javascript:void(0)"
+                  aria-label="bottom"
+                  class="hint--bottom hint--rounded"
+                  >bottom</a
+                >
+              </div>
+              <div class="position-grid__cell">
+                <a
+                  href="javascript:void(0)"
+                  aria-label="bottom-left"
+                  class="hint--bottom-left hint--rounded"
+                  >bottom-left</a
+                >
+              </div>
+              <div class="position-grid__cell">
+                <a
+                  href="javascript:void(0)"
+                  aria-label="right"
+                  class="hint--right hint--rounded"
+                  >right</a
+                >
+              </div>
+              <div class="position-grid__cell"><a>❤️</a></div>
+              <div class="position-grid__cell">
+                <a
+                  href="javascript:void(0)"
+                  aria-label="left"
+                  class="hint--left hint--rounded"
+                  >left</a
+                >
+              </div>
+              <div class="position-grid__cell">
+                <a
+                  href="javascript:void(0)"
+                  aria-label="top-right"
+                  class="hint--top-right hint--rounded"
+                  >top-right</a
+                >
+              </div>
+              <div class="position-grid__cell">
+                <a
+                  href="javascript:void(0)"
+                  aria-label="top"
+                  class="hint--top hint--rounded"
+                  >top</a
+                >
+              </div>
+              <div class="position-grid__cell">
+                <a
+                  href="javascript:void(0)"
+                  aria-label="top-left"
+                  class="hint--top-left hint--rounded"
+                  >top-left</a
+                >
+              </div>
+            </div>
+
+            <h3>Color Modifiers</h3>
+            <p>
               <a
                 href="javascript:void(0)"
-                aria-label="bottom"
+                class="status-icon hint--bottom-right hint--error"
+                style="background: indianred"
+                aria-label="Error tooltip 👉🏼 hint--error"
+              >
+                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                  <path
+                    fill="#ffffff"
+                    d="M8.27,3L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3M8.41,7L12,10.59L15.59,7L17,8.41L13.41,12L17,15.59L15.59,17L12,13.41L8.41,17L7,15.59L10.59,12L7,8.41"
+                  />
+                </svg>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="status-icon hint--bottom hint--warning"
+                style="background: orange"
+                aria-label="Warning tooltip 👉🏼 hint--warning"
+              >
+                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                  <path
+                    fill="#ffffff"
+                    d="M11,4.5H13V15.5H11V4.5M13,17.5V19.5H11V17.5H13Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="status-icon hint--bottom-left hint--info"
+                style="background: lightblue"
+                aria-label="Info tooltip 👉🏼 hint--info"
+              >
+                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                  <path
+                    fill="#ffffff"
+                    d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11.05 8.23,12.81 10,13.58V16H14V13.58C15.77,12.81 17,11.05 17,9A5,5 0 0,0 12,4Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="javascript:void(0)"
+                class="status-icon hint--bottom-left hint--success"
+                style="background: lightgreen"
+                aria-label="Success tooltip 👉🏼 hint--success"
+              >
+                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+                  <path
+                    fill="#ffffff"
+                    d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"
+                  />
+                </svg>
+              </a>
+            </p>
+
+            <h3>Size variations</h3>
+
+            <p>
+              <a
+                href="javascript:void(0)"
+                class="hint--top hint--small"
+                style="
+                  border: 1px solid #eee;
+                  padding: 3px 6px;
+                  border-radius: 4px;
+                "
+                data-hint="You can show very very long sentences inside tooltips by using various available size variation classes. hint--small"
+              >
+                Small
+              </a>
+
+              <a
+                href="javascript:void(0)"
+                class="hint--top hint--medium"
+                style="
+                  border: 1px solid #eee;
+                  padding: 3px 6px;
+                  border-radius: 4px;
+                "
+                data-hint="You can show very very long sentences inside tooltips by using various available size variation classes. hint--medium"
+              >
+                Medium
+              </a>
+
+              <a
+                href="javascript:void(0)"
+                class="hint--top-left hint--large"
+                style="
+                  border: 1px solid #eee;
+                  padding: 3px 6px;
+                  border-radius: 4px;
+                "
+                data-hint="You can show very very long sentences inside tooltips by using various available size variation classes. hint--large"
+              >
+                Large
+              </a>
+
+              <a
+                href="javascript:void(0)"
+                class="hint--top hint--fit"
+                style="
+                  border: 1px solid #eee;
+                  padding: 3px 56px;
+                  border-radius: 4px;
+                "
+                data-hint="Fit gives you a tooltip which is as wide as the element it shows on. hint--fit"
+              >
+                Fit
+              </a>
+            </p>
+
+            <h3>Extra</h3>
+
+            <p style="margin-bottom: 50px">
+              <a
+                href="javascript:void(0)"
+                class="hint--bottom hint--always"
+                aria-label="...that always show 👉🏼 hint--always"
+                >You can also make tooltips...</a
+              >
+            </p>
+
+            <p>
+              <a
+                href="javascript:void(0)"
                 class="hint--bottom hint--rounded"
-                >bottom</a
+                aria-label="We have rounded corners 👉🏼 hint--rounded"
+                >Hmm...So you don't like sharp edges?</a
               >
-            </div>
-            <div class="position-grid__cell">
+            </p>
+
+            <p>
               <a
                 href="javascript:void(0)"
-                aria-label="bottom-left"
-                class="hint--bottom-left hint--rounded"
-                >bottom-left</a
+                class="hint--top hint--no-arrow"
+                aria-label="Just the tip! with hint--no-arrow"
+                >You can omit the arrow too.</a
               >
-            </div>
-            <div class="position-grid__cell">
+            </p>
+
+            <h3>Effects</h3>
+
+            <p>
               <a
                 href="javascript:void(0)"
-                aria-label="right"
-                class="hint--right hint--rounded"
-                >right</a
+                class="hint--top hint--no-animate"
+                aria-label="Simple show/hide tooltip 👉🏼 hint--no-animate"
+                >Dont like animation?</a
               >
-            </div>
-            <div class="position-grid__cell"><a>❤️</a></div>
-            <div class="position-grid__cell">
+            </p>
+            <p>
               <a
                 href="javascript:void(0)"
-                aria-label="left"
-                class="hint--left hint--rounded"
-                >left</a
+                class="hint--bottom hint--bounce"
+                aria-label="Bounce 👉🏼 hint--bounce"
+                >Adding a <code>hint--bounce</code> class gives you that...</a
               >
-            </div>
-            <div class="position-grid__cell">
+            </p>
+
+            <p>
               <a
                 href="javascript:void(0)"
-                aria-label="top-right"
-                class="hint--top-right hint--rounded"
-                >top-right</a
+                class="hint--bottom hint--no-shadow"
+                aria-label="Yes, no shadows!"
+                >Maybe you do not want shadows.</a
               >
-            </div>
-            <div class="position-grid__cell">
-              <a
-                href="javascript:void(0)"
-                aria-label="top"
-                class="hint--top hint--rounded"
-                >top</a
-              >
-            </div>
-            <div class="position-grid__cell">
-              <a
-                href="javascript:void(0)"
-                aria-label="top-left"
-                class="hint--top-left hint--rounded"
-                >top-left</a
-              >
-            </div>
+            </p>
           </div>
-
-          <h3>Color Modifiers</h3>
-          <p>
-            <a
-              href="javascript:void(0)"
-              class="status-icon hint--bottom-right hint--error"
-              style="background: indianred"
-              aria-label="Error tooltip 👉🏼 hint--error"
-            >
-              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                <path
-                  fill="#ffffff"
-                  d="M8.27,3L3,8.27V15.73L8.27,21H15.73L21,15.73V8.27L15.73,3M8.41,7L12,10.59L15.59,7L17,8.41L13.41,12L17,15.59L15.59,17L12,13.41L8.41,17L7,15.59L10.59,12L7,8.41"
-                />
-              </svg>
-            </a>
-            <a
-              href="javascript:void(0)"
-              class="status-icon hint--bottom hint--warning"
-              style="background: orange"
-              aria-label="Warning tooltip 👉🏼 hint--warning"
-            >
-              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                <path
-                  fill="#ffffff"
-                  d="M11,4.5H13V15.5H11V4.5M13,17.5V19.5H11V17.5H13Z"
-                />
-              </svg>
-            </a>
-            <a
-              href="javascript:void(0)"
-              class="status-icon hint--bottom-left hint--info"
-              style="background: lightblue"
-              aria-label="Info tooltip 👉🏼 hint--info"
-            >
-              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                <path
-                  fill="#ffffff"
-                  d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11.05 8.23,12.81 10,13.58V16H14V13.58C15.77,12.81 17,11.05 17,9A5,5 0 0,0 12,4Z"
-                />
-              </svg>
-            </a>
-            <a
-              href="javascript:void(0)"
-              class="status-icon hint--bottom-left hint--success"
-              style="background: lightgreen"
-              aria-label="Success tooltip 👉🏼 hint--success"
-            >
-              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                <path
-                  fill="#ffffff"
-                  d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"
-                />
-              </svg>
-            </a>
-          </p>
-
-          <h3>Size variations</h3>
-
-          <p>
-            <a
-              href="javascript:void(0)"
-              class="hint--top hint--small"
-              style="
-                border: 1px solid #eee;
-                padding: 3px 6px;
-                border-radius: 4px;
-              "
-              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes. hint--small"
-            >
-              Small
-            </a>
-
-            <a
-              href="javascript:void(0)"
-              class="hint--top hint--medium"
-              style="
-                border: 1px solid #eee;
-                padding: 3px 6px;
-                border-radius: 4px;
-              "
-              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes. hint--medium"
-            >
-              Medium
-            </a>
-
-            <a
-              href="javascript:void(0)"
-              class="hint--top-left hint--large"
-              style="
-                border: 1px solid #eee;
-                padding: 3px 6px;
-                border-radius: 4px;
-              "
-              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes. hint--large"
-            >
-              Large
-            </a>
-
-            <a
-              href="javascript:void(0)"
-              class="hint--top hint--fit"
-              style="
-                border: 1px solid #eee;
-                padding: 3px 56px;
-                border-radius: 4px;
-              "
-              data-hint="Fit gives you a tooltip which is as wide as the element it shows on. hint--fit"
-            >
-              Fit
-            </a>
-          </p>
-
-          <h3>Extra</h3>
-
-          <p style="margin-bottom: 50px">
-            <a
-              href="javascript:void(0)"
-              class="hint--bottom hint--always"
-              aria-label="...which always keep showing with hint--always"
-              >You can also make tooltips...</a
-            >
-          </p>
-
-          <p>
-            <a
-              href="javascript:void(0)"
-              class="hint--bottom hint--rounded"
-              aria-label="We have rounded corners 👉🏼 hint--rounded"
-              >Hmm...So you don't like sharp edges?</a
-            >
-          </p>
-
-          <p>
-            <a
-              href="javascript:void(0)"
-              class="hint--top hint--no-arrow"
-              aria-label="Just the tip! with hint--no-arrow"
-              >You can omit the arrow too.</a
-            >
-          </p>
-
-          <h3>Effects</h3>
-
-          <p>
-            <a
-              href="javascript:void(0)"
-              class="hint--top hint--no-animate"
-              aria-label="Simple show/hide tooltip 👉🏼 hint--no-animate"
-              >Dont like animation?</a
-            >
-          </p>
-          <p>
-            <a
-              href="javascript:void(0)"
-              class="hint--bottom hint--bounce"
-              aria-label="Bounce 👉🏼 hint--bounce"
-              >Adding a <code>hint--bounce</code> class gives you that...</a
-            >
-          </p>
-
-          <p>
-            <a
-              href="javascript:void(0)"
-              class="hint--bottom hint--no-shadow"
-              aria-label="Yes, no shadows!"
-              >Maybe you do not want shadows.</a
-            >
-          </p>
         </div>
       </div>
 
