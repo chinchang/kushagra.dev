@@ -664,7 +664,7 @@ name: Hint.css
             <a
               class="status-icon hint--bottom-right hint--error"
               style="background: indianred"
-              aria-label="This is an error tooltip"
+              aria-label="This is an error tooltip with hint--error"
             >
               <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
                 <path
@@ -676,7 +676,7 @@ name: Hint.css
             <a
               class="status-icon hint--bottom-right hint--warning"
               style="background: orange"
-              aria-label="This is a warning tooltip"
+              aria-label="This is a warning tooltip with hint--warning"
             >
               <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
                 <path
@@ -688,7 +688,7 @@ name: Hint.css
             <a
               class="status-icon hint--bottom-left hint--info"
               style="background: lightblue"
-              aria-label="This is an info tooltip"
+              aria-label="This is an info tooltip with hint--info"
             >
               <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
                 <path
@@ -700,7 +700,7 @@ name: Hint.css
             <a
               class="status-icon hint--bottom-left hint--success"
               style="background: lightgreen"
-              aria-label="This is success tooltip"
+              aria-label="This is success tooltip with hint--success"
             >
               <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
                 <path
@@ -721,7 +721,7 @@ name: Hint.css
                 padding: 3px 6px;
                 border-radius: 4px;
               "
-              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes."
+              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes. hint--small"
             >
               Small
             </a>
@@ -733,7 +733,7 @@ name: Hint.css
                 padding: 3px 6px;
                 border-radius: 4px;
               "
-              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes."
+              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes. hint--medium"
             >
               Medium
             </a>
@@ -745,7 +745,7 @@ name: Hint.css
                 padding: 3px 6px;
                 border-radius: 4px;
               "
-              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes."
+              data-hint="You can show very very long sentences inside tooltips by using various available size variation classes. hint--large"
             >
               Large
             </a>
@@ -756,7 +756,7 @@ name: Hint.css
           <p style="margin-bottom: 50px">
             <a
               class="hint--bottom hint--always"
-              aria-label="...which always keep showing"
+              aria-label="...which always keep showing with hint--always"
               >You can also make tooltips...</a
             >
           </p>
@@ -764,13 +764,15 @@ name: Hint.css
           <p>
             <a
               class="hint--bottom hint--rounded"
-              aria-label="We have rounded corners for you"
+              aria-label="We have rounded corners for you with hint--rounded"
               >Hmm...So you don't like sharp edges?</a
             >
           </p>
 
           <p>
-            <a class="hint--top hint--no-arrow" aria-label="Just the tip!"
+            <a
+              class="hint--top hint--no-arrow"
+              aria-label="Just the tip! with hint--no-arrow"
               >You can omit the arrow too.</a
             >
           </p>
@@ -780,12 +782,14 @@ name: Hint.css
           <p>
             <a
               class="hint--top hint--no-animate"
-              aria-label="Get a simple show/hide tooltip"
+              aria-label="Get a simple show/hide tooltip with hint--no-animate"
               >Dont like animation?</a
             >
           </p>
           <p>
-            <a class="hint--bottom hint--bounce" aria-label="Bounce"
+            <a
+              class="hint--bottom hint--bounce"
+              aria-label="Bounce with hint--bounce"
               >Adding a <code>hint--bounce</code> class gives you that...</a
             >
           </p>
