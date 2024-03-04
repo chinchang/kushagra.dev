@@ -241,6 +241,7 @@ blockquote div {
 
 .list-item {
   margin-bottom: 2.5rem;
+  display: flex;
 }
 .list-item__image {
   /* height: 180px; */
@@ -256,9 +257,9 @@ blockquote div {
   display: flex;
 }
 .list-item__number {
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 1;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   opacity: 0.2;
   position: relative;
   right: 1rem;

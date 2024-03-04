@@ -1,10 +1,13 @@
 
 
 <div class="container container--small">
-<ol reversed>
+<ol reversed style="list-style:none">
 	{% for post in posts %}
 	<li>
 		<article class="list-item {% if post.data.link %}list-item--external{% endif %}">
+    <span class="list-item__number">{{ loop.revindex }}</span>
+<div>
+
 			<h3 class="mb-xs">
 				<a href="{% if post.data.link %}{{ post.data.link }}{% else %}{{ post.url | url }}{% endif %}">{{ post.data.title }}</a>
 			</h3>
@@ -20,6 +23,7 @@
 				
 				{% if post.data.website %}<div class="post-website">{{ post.data.website }}</div>{% endif %}
 			</div>
+			<div>
 		</article>
 	</li>
 	{% endfor %}
