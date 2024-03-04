@@ -12,19 +12,20 @@ name: lab
   <article
     class="list-item list-item--lab {% if project.image %}list-item--with-picture{% endif %}"
   >
-    {% if project.image %}
-    <div
-      class="list-item__image"
-      style="background-image: url({{ project.image }})"
-    ></div>
-    {% endif %}
+    <span class="list-item__number">{{ forloop.i | plus:1 }}</span>
+
     <div class="list-item__content">
-      <a href="{{ project.link }}">
+      <a href="{{ project.link }}" style="display: block">
         <h3 class="post-title">{{ project.name }}</h3>
       </a>
       <span class="list-item--lab__desc">{{ project.desc }}</span>
     </div>
-    <!-- <div class="post-meta">{{ post.date | date: "%B %d, %Y" }}</div> -->
+
+    {% if project.image %}
+    <div class="list-item__image">
+      <img src="{{ project.image }}" />
+    </div>
+    {% endif %}
   </article>
 
   {% endfor %}
