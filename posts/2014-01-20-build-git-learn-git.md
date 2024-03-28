@@ -496,6 +496,10 @@ Wonderful! Our implementation is right. The final code for this part can be foun
 
 If you would like to take this one step further, [head over to CodeCrafters](https://app.codecrafters.io/join?via=chinchang) where they have a hands-on Build your own GIT challenge and more.
 
+<a href="https://app.codecrafters.io/join?via=chinchang" >
+<img src="/images/codecrafters-banner.png" />
+</a>
+
 Next I plan to implement concepts like merging (Fast-forward and 3-way-merge) and rebasing of branches.
 
 I had a lot of fun writing this and hope you enjoyed it too. If you did, share the Git love with others.
