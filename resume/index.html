@@ -11,11 +11,16 @@
     />
 
     <style>
+      :root {
+        --clr-theme: #3d9d7c;
+      }
       body {
         font-size: 20px;
         line-height: 1.4;
-        margin: 0;
-        padding: 0 2em;
+        margin: 0 auto;
+        max-width: 60ch;
+        padding: 1px 2em;
+        border-left: 1rem solid var(--clr-theme);
       }
 
       h1,
@@ -26,11 +31,15 @@
       h6 {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        font-weight: 200;
       }
 
       button {
         font-size: inherit;
         border-radius: 3px;
+      }
+      a {
+        color: var(--clr-theme);
       }
 
       .color-light {
@@ -45,10 +54,6 @@
         margin-top: 0.5rem;
       }
 
-      p {
-        max-width: 70ch;
-      }
-
       @media print {
         .download-link {
           display: none;
@@ -58,70 +63,102 @@
   </head>
 
   <body>
-    <h1>Kushagra gour - Resume</h1>
-    <a
-      class="download-link"
-      aria-label="Download Resume"
-      href="/uploads/kushagra-gour-resume.pdf"
-      download
-      >Download</a
-    >
-
-    <h2>Contact Me</h2>
+    <h1 class="">Kushagra gour's Resume</h1>
     <p>
-      <a href="tel:+919891457158">+91-9891457158</a>
-    </p>
-    <p>
+      🗒️
+      <a
+        class="download-link"
+        aria-label="Download Resume"
+        href="/uploads/kushagra-gour-resume.pdf"
+        download
+        >Download</a
+      >
+      / ☎️ <a href="tel:+919891457158">+91-9891457158</a> / 📩
       <a href="mailto:chinchang457@gmail.com">chinchang457@gmail.com</a>
     </p>
 
-    <h2>What I Know</h2>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
+    <section>
+      <h2>What I Know</h2>
+      <ul>
+        <li>Problem solving</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Experience</h2>
+      <ol reversed>
+        <li>
+          <strong>Independent Product Maker (Feb 2023 - Present)</strong>
+          <ul>
+            <li>
+              <p>
+                Building <a href="https://cssbattle.dev">CSSBattle</a> &
+                <a href="https://webmaker.app">Web Maker</a>
+              </p>
+            </li>
+          </ul>
+        </li>
 
-    <h2>Experience</h2>
-    <ol reversed>
-      <li>
-        <p>
-          <strong>Independent Product Maker (Sep 2018 - Present)</strong>
-        </p>
-      </li>
-      <li>
-        <strong
-          >Lead Frontend Developer,
-          <a rel="external noopener" href="https://wingify.com">Wingify</a> (Aug
-          2011 - Aug 2018)</strong
-        >
+        <li>
+          <strong
+            >Lead Frontend Developer,
+            <a rel="external noopener" href="https://pushowl.com">PushOwl</a>
+            (Dec 2019 - Feb 2023)</strong
+          >
+          <ul>
+            <li>
+              <p>Built and lead a team of 4 Frontend developers.</p>
+            </li>
+            <li>
+              <p>
+                Worked on a React app (dashboard) with custom Design System.
+              </p>
+            </li>
 
-        <p>
-          Worked primarily on the product,
-          <a rel="external noopener" href="https://vwo.com">VWO</a>.
-        </p>
-        <ul>
-          <li>
-            <p>
-              Designing architecture for frontend applications. Have worked with
-              Vue & Angular 1.
-            </p>
-          </li>
-          <li>
-            <p>Designing clear and easy APIs for reusable components.</p>
-          </li>
-          <li>
-            <p>Developing webpages that are performant & accessible.</p>
-          </li>
-          <li>
-            <p>
-              Working on developer experience so that fellow developers can give
-              their best.
-            </p>
-          </li>
-        </ul>
-      </li>
-    </ol>
+            <li>
+              <p>
+                Built and managed a JavaScript library that went on custom
+                websites as a third-party script.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong
+            >Lead Frontend Developer,
+            <a rel="external noopener" href="https://wingify.com">Wingify</a>
+            (Aug 2011 - Aug 2018)</strong
+          >
+
+          <p>
+            Worked primarily on the product,
+            <a rel="external noopener" href="https://vwo.com">VWO</a>.
+          </p>
+          <ul>
+            <li>
+              <p>
+                Designing architecture for frontend applications. Have worked
+                with Vue & Angular 1.
+              </p>
+            </li>
+            <li>
+              <p>Designing clear and easy APIs for reusable components.</p>
+            </li>
+            <li>
+              <p>Developing webpages that are performant & accessible.</p>
+            </li>
+            <li>
+              <p>
+                Working on developer experience so that fellow developers can
+                give their best.
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </section>
 
     <h2>Things I have created</h2>
     <ul>
@@ -131,7 +168,8 @@
         </h3>
         <p>First-ever CSS code-golfing game. Made with React.</p>
         <p>
-          Co-Maker. Had 10K players in first 2 weeks of launch. Featured on
+          Co-Maker. Had 10K players in first 2 weeks of launch. Currently has
+          350K registered players. Featured on
           <a
             rel="external noopener"
             href="https://www.producthunt.com/posts/cssbattle"
@@ -148,7 +186,7 @@
           Preact.
         </p>
         <p>
-          Featured on ProductHunt & Chrome Web Store, 50K+ active users on
+          Featured on ProductHunt & Chrome Web Store, 60K+ active users on
           Chrome Web Store.
         </p>
       </li>
@@ -171,7 +209,7 @@
         </h3>
         <p>A very easy to use CSS-only tooltip library</p>
         <p>
-          7800+ stars on
+          8400+ stars on
           <a
             href="https://github.com/chinchang/hint.css"
             rel="external noopener"
@@ -189,26 +227,7 @@
           >.
         </p>
       </li>
-      <li>
-        <h3 class="project-title">
-          <a rel="external noopener" href="https://tolks.io/">Tolks</a>
-        </h3>
-        <p>
-          A platform to easily create and share stories on the Internet. Made
-          with Vue.
-        </p>
-        <p>Featured on ProductHunt</p>
-      </li>
-      <li>
-        <h3 class="project-title">
-          <a rel="external noopener" href="http://prototyp.in/">Prototyp</a>
-        </h3>
-        <p>
-          App for quick and easy interaction prototyping based on Framer.js.
-          Because FrameStudio was just on Mac. Made with Vue.
-        </p>
-        <p>Featured on ProductHunt</p>
-      </li>
+
       <li><a href="/lab">More creations here</a></li>
     </ul>
 
@@ -232,9 +251,7 @@
       </li>
     </ul>
 
-    <p class="color-light">
-      Last updated: 18 Sep 2019
-    </p>
+    <p class="color-light">Last updated: 29 Mar 2024</p>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
