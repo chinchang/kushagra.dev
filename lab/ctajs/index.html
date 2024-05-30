@@ -242,7 +242,16 @@ name: cta.js
         top: 10px;
         left: 10px;
       }
+      .github-ribbon {
+        position: fixed;
+        inset: 0 0 auto auto;
+        background: black;
+        padding: 0.5rem 1rem;
+      }
     </style>
+    <script>
+      window._gaq = window._gaq || [];
+    </script>
   </head>
   <body>
     <h1 class="main-title">cta.js</h1>
@@ -496,12 +505,7 @@ name: cta.js
       >Tweet</a
     >
 
-    <a class="github-ribbon" href="https://github.com/chinchang/cta.js"
-      ><img
-        style="position: fixed; top: 0; right: 0; border: 0"
-        src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
-        alt="Fork me on GitHub"
-    /></a>
+    <a class="github-ribbon" href="https://github.com/chinchang/cta.js"></a>
 
     <script src="dist/cta.min.js"></script>
     <script>
@@ -558,7 +562,5 @@ name: cta.js
       id="github-bjs"
       src="https://buttons.github.io/buttons.js"
     ></script>
-
-    {% include 'analytics.html' %}
   </body>
 </html>
