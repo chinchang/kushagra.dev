@@ -84,7 +84,7 @@ function Commit(id, message) {
 Lets add the ability on our <code>Git</code> class to create a commit or commit (verb):
 
 ```js
-Git.prototype.commit = function(message) {
+Git.prototype.commit = function (message) {
   var commit = new Commit();
   return commit;
 };
@@ -145,7 +145,7 @@ console.assert(!!log[1] && log[1].id === 0); // And then Commit 0.
 Onto the implementation.
 
 ```js
-Git.prototype.log = function() {
+Git.prototype.log = function () {
   var history = []; // array of commits in reverse order.
 
   // 1. Start from last commit
@@ -162,9 +162,10 @@ The `log` function has only pseudo code right now in form of comments which tell
 2. Every commit should somehow know which commit was made before it.
 
 We have a failing test case right now:
-<a class="jsbin-embed" href="https://jsbin.com/AqAbEmuN/1/embed?js,console">Build Git - Learn Git (part 1)</a>
 
-<script src="https://static.jsbin.com/js/embed.js"></script>
+<a class="webmaker-embed" href="/js/bglg-1.js">Build Git - Learn Git (part 1)</a>
+
+<script src="/js/webmaker-embed.js"></script>
 
 Lets take up the first requirement: Knowing the last commit.
 
@@ -221,7 +222,7 @@ Git.prototype.commit = function (message) {
 Having our requirements in place, lets implement the `log()` function:
 
 ```js
-Git.prototype.log = function() {
+Git.prototype.log = function () {
   // Start from HEAD
   var commit = this.HEAD,
     history = [];
@@ -241,9 +242,10 @@ Git.prototype.log = function() {
 ```
 
 Our test should pass now:
-<a class="jsbin-embed" href="https://jsbin.com/AqAbEmuN/2/embed?js,console">Build Git - Learn Git (part 1)</a>
 
-<script src="https://static.jsbin.com/js/embed.js"></script>
+<a class="webmaker-embed" href="/js/bglg-2.js">Build Git - Learn Git (part 1)</a>
+
+<script src="/js/webmaker-embed.js"></script>
 
 ## Match your code
 
@@ -374,7 +376,7 @@ console.assert(repo.HEAD.name === "testing"); // Should be on testing branch aga
 This test fails right now as we don't have a `checkout` method yet. Lets write one:
 
 ```js
-Git.prototype.checkout = function(branchName) {
+Git.prototype.checkout = function (branchName) {
   // Check if a branch already exists with name = branchName
 };
 ```
@@ -397,7 +399,7 @@ function Git(name) {
 Continuing with the `checkout` function now. Taking first case when we find an existing branch, all we need to do is point the `HEAD`, the current branch pointer, to that existing branch:
 
 ```js
-Git.prototype.checkout = function(branchName) {
+Git.prototype.checkout = function (branchName) {
   // Loop through all branches and see if we have a branch
   // called `branchName`.
   for (var i = this.branches.length; i--; ) {
@@ -446,9 +448,9 @@ Git.prototype.checkout = function(branchName) {
 
 Eureka! Now our `checkout` tests pass :)
 
-<a class="jsbin-embed" href="https://jsbin.com/AqAbEmuN/3/embed?js,console">Build Git - Learn Git (part 1)</a>
+<a class="webmaker-embed" href="/js/bglg-3.js">Build Git - Learn Git (part 1)</a>
 
-<script src="https://static.jsbin.com/js/embed.js"></script>
+<script src="/js/webmaker-embed.js"></script>
 
 Now the grand moment for which we created the `checkout` function. Verifying the awesomeness of branches through the theory we saw earlier. We'll write one final test to verify the same:
 
@@ -462,7 +464,7 @@ repo.commit("Change 1");
 // Maps the array of commits into a string of commit ids.
 // For [C2, C1,C3], it returns "2-1-0"
 function historyToIdMapper(history) {
-  var ids = history.map(function(commit) {
+  var ids = history.map(function (commit) {
     return commit.id;
   });
   return ids.join("-");
@@ -484,9 +486,9 @@ console.assert(historyToIdMapper(repo.log()) === "3-1-0"); // Continue on master
 
 This test basically represents the diagrams we saw earlier explaining the working of branches. Lets see if our implementation is inline with the theory:
 
-<a class="jsbin-embed" href="https://jsbin.com/AqAbEmuN/4/embed?js,console">Build Git - Learn Git (part 1)</a>
+<a class="webmaker-embed" href="/js/bglg-4.js">Build Git - Learn Git (part 1)</a>
 
-<script src="https://static.jsbin.com/js/embed.js"></script>
+<script src="/js/webmaker-embed.js"></script>
 
 Wonderful! Our implementation is right. The final code for this part can be found in GIT repo: `git-part1.js`.
 
@@ -510,7 +512,5 @@ Till next time, bbye.
 
 - [https://git-scm.com/book/en/](https://git-scm.com/book/en/) (Where I learned Git from)
 - [https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html](https://www.kernel.org/pub/software/scm/git/docs/gitglossary.html)
-
-Thanks [JSBin](https://jsbin.com/) for your lovely console panel :)
 
 _Update: Join the [discussion on HN](https://news.ycombinator.com/item?id=7089380)._
