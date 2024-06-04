@@ -79,6 +79,8 @@
         _console.assert(condition, message);
         if (!condition) {
           addLog(message || '❌ Assertion failed: console.assert', { color: "tomato" });
+        } else {
+            addLog(message || '✅ Assertion passed: console.assert', { color: "green" }); 
         }
       };
     </script>
