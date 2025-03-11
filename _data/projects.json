@@ -71,6 +71,11 @@
     "desc": "Android Lollipop animations in CSS"
   },
   {
+    "name": "Random Animal Generator",
+    "link": "random-animal-generator/",
+    "desc": "A simple AI-built app to generate random animals for fun!"
+  },
+  {
     "name": "Kalu",
     "link": "kalu/",
     "desc": "Calculator concept for long and inter-linked calculations"
