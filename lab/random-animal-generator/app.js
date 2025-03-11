@@ -315,7 +315,7 @@ function displayAnimals(animals) {
 
     // Create card HTML
     card.innerHTML = `
-      <img src="${animal.image}" alt="${animal.name}" class="animal-image">
+      <img src="/lab/random-animal-generator/${animal.image}" alt="${animal.name}" class="animal-image">
       <div class="animal-info">
         <h3 class="animal-name">${animal.name}</h3>
         <span class="animal-type" data-type="${animal.type}">${animal.type}</span>
