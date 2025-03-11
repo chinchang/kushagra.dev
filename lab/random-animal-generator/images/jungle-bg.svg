@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a5632" />
+      <stop offset="100%" stop-color="#3ca66e" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)" />
+  
+  <!-- Jungle leaves and plants -->
+  <!-- Large leaves -->
+  <path d="M0 200 Q100 150, 200 200 Q300 250, 400 200 Q500 150, 600 200 Q700 250, 800 200 Q900 150, 1000 200 Q1100 250, 1200 200 L1200 0 L0 0 Z" fill="#2a7d4f" opacity="0.7" />
+  
+  <path d="M0 400 Q100 350, 200 400 Q300 450, 400 400 Q500 350, 600 400 Q700 450, 800 400 Q900 350, 1000 400 Q1100 450, 1200 400 L1200 300 L0 300 Z" fill="#2a7d4f" opacity="0.5" />
+  
+  <!-- Leaf patterns -->
+  <g opacity="0.2">
+    <!-- Left side leaves -->
+    <path d="M50 100 C0 150, 100 200, 50 250 C0 300, 100 350, 50 400 C0 450, 100 500, 50 550 C0 600, 100 650, 50 700 C0 750, 100 800, 50 850" stroke="#8ed1fc" stroke-width="5" fill="none" />
+    
+    <!-- Right side leaves -->
+    <path d="M1150 100 C1200 150, 1100 200, 1150 250 C1200 300, 1100 350, 1150 400 C1200 450, 1100 500, 1150 550 C1200 600, 1100 650, 1150 700 C1200 750, 1100 800, 1150 850" stroke="#8ed1fc" stroke-width="5" fill="none" />
+  </g>
+  
+  <!-- Palm leaves -->
+  <g opacity="0.6">
+    <!-- Left palm -->
+    <path d="M100 800 C150 700, 200 750, 250 650 C300 700, 350 600, 400 700" stroke="#3ca66e" stroke-width="15" fill="none" />
+    <path d="M100 800 C50 700, 0 750, -50 650" stroke="#3ca66e" stroke-width="15" fill="none" />
+    <path d="M100 800 C120 700, 80 650, 100 550" stroke="#3ca66e" stroke-width="15" fill="none" />
+    
+    <!-- Right palm -->
+    <path d="M1100 800 C1050 700, 1000 750, 950 650 C900 700, 850 600, 800 700" stroke="#3ca66e" stroke-width="15" fill="none" />
+    <path d="M1100 800 C1150 700, 1200 750, 1250 650" stroke="#3ca66e" stroke-width="15" fill="none" />
+    <path d="M1100 800 C1080 700, 1120 650, 1100 550" stroke="#3ca66e" stroke-width="15" fill="none" />
+  </g>
+  
+  <!-- Vines -->
+  <path d="M300 0 C320 100, 280 200, 320 300 C280 400, 320 500, 280 600 C320 700, 280 800, 300 900" stroke="#1a5632" stroke-width="5" fill="none" opacity="0.5" />
+  
+  <path d="M900 0 C880 100, 920 200, 880 300 C920 400, 880 500, 920 600 C880 700, 920 800, 900 900" stroke="#1a5632" stroke-width="5" fill="none" opacity="0.5" />
+  
+  <!-- Small decorative elements -->
+  <g opacity="0.3">
+    <circle cx="200" cy="150" r="10" fill="#f5a623" />
+    <circle cx="400" cy="250" r="8" fill="#f5a623" />
+    <circle cx="600" cy="150" r="12" fill="#f5a623" />
+    <circle cx="800" cy="250" r="9" fill="#f5a623" />
+    <circle cx="1000" cy="150" r="11" fill="#f5a623" />
+    
+    <circle cx="300" cy="350" r="10" fill="#f5a623" />
+    <circle cx="500" cy="450" r="8" fill="#f5a623" />
+    <circle cx="700" cy="350" r="12" fill="#f5a623" />
+    <circle cx="900" cy="450" r="9" fill="#f5a623" />
+    <circle cx="1100" cy="350" r="11" fill="#f5a623" />
+  </g>
+</svg> 

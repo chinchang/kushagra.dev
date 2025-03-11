@@ -1,0 +1,380 @@
+/* Global Styles */
+:root {
+  --primary-color: #2a7d4f;
+  --secondary-color: #f5a623;
+  --transparent-bg: rgba(0, 0, 0, 0.5);
+  --text-color: #ffffff;
+  --dark-green: #1a5632;
+  --light-green: #3ca66e;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  --color-fish: #007bff;
+  --color-mammal: #28a745;
+  --color-bird: #ffc107;
+  --color-reptile: #dc3545;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 120%;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  background-image: url("images/bg.webp");
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+main {
+  min-height: calc(100vh - 7lh);
+}
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  background-color: var(--transparent-bg);
+  border-radius: 15px;
+  margin-top: 15px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--secondary-color);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  padding-right: 20px;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sign-in {
+  background-color: var(--dark-green);
+  color: var(--text-color);
+}
+
+.sign-up {
+  background-color: var(--secondary-color);
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 0;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Generator Section */
+.generator-section {
+  /* padding: 40px 0; */
+}
+
+.generator-card {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: var(--card-shadow);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  color: #333;
+}
+
+.generator-card h3 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.setting {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.setting label {
+  font-weight: 700;
+  color: var(--dark-green);
+}
+
+.setting input,
+.setting select {
+  padding: 10px;
+  border: 2px solid var(--light-green);
+  border-radius: 8px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+.generate-btn {
+  background-color: var(--secondary-color);
+  color: #333;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.generate-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Results Section */
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.animal-card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.animal-card:hover {
+  transform: translateY(-10px);
+}
+
+.animal-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.animal-info {
+  padding: 20px;
+  color: #333;
+}
+
+.animal-name {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.animal-type {
+  display: inline-block;
+  background-color: var(--light-green);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+.animal-type[data-type="Mammal"] {
+  background-color: var(--color-mammal);
+}
+.animal-type[data-type="Bird"] {
+  background-color: var(--color-bird);
+}
+.animal-type[data-type="Fish"] {
+  background-color: var(--color-fish);
+}
+.animal-type[data-type="Reptile"] {
+  background-color: var(--color-reptile);
+}
+
+.animal-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animal-card {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animal-card:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+
+.animal-card:nth-child(3n) {
+  animation-delay: 1s;
+}
+
+.animal-card:nth-child(3n + 1) {
+  animation-delay: 1.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .results {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .results {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* view-transition classes */
+
+.generate-btn {
+  view-transition-name: generate-btn;
+}
+:root {
+  view-transition-name: none;
+}
