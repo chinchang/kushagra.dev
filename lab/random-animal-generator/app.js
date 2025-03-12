@@ -8,7 +8,7 @@ const musicToggle = document.getElementById("music-toggle");
 /*
 forest calm NL 07 200529_0181.wav by klankbeeld -- https://freesound.org/s/622928/ -- License: Attribution 4.0
 */
-const bgMusic = new Audio("/lab/random-animal-generator/bg.wav");
+const bgMusic = new Audio("/lab/random-animal-generator/bg.mp3");
 bgMusic.loop = true;
 bgMusic.volume = 0.5; // Set to 50% volume
 
