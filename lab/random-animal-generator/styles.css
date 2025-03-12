@@ -73,33 +73,10 @@ h1 {
   color: var(--secondary-color);
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
+.sub-heading {
+  text-align: center;
+  margin-bottom: 1rem;
 }
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a.active {
-  color: var(--secondary-color);
-}
-
-.auth-buttons {
-  display: flex;
-  gap: 10px;
-  padding-right: 20px;
-}
-
 button {
   padding: 8px 16px;
   border: none;
@@ -297,9 +274,11 @@ footer {
   text-align: center;
   padding: 20px 0;
   margin-top: 40px;
-  background-color: var(--primary-color);
+  /* background-color: var(--primary-color); */
   border-radius: 15px;
   box-shadow: var(--card-shadow);
+  color: #fff8;
+  backdrop-filter: blur(5px);
 }
 
 /* Animations */
@@ -377,4 +356,34 @@ footer {
 }
 :root {
   view-transition-name: none;
+}
+
+.music-control {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.music-btn {
+  background: none;
+  /* color: white; */
+  border: none;
+  padding: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.animal-card:nth-child(2) {
+  transition-delay: 1s;
+  animation-delay: 1s;
+}
+.animal-card:nth-child(3) {
+  transition-delay: 2s;
+  animation-delay: 2s;
 }

@@ -15,6 +15,9 @@
     <div class="app-container">
       <header>
         <h1>Random Animal Generator</h1>
+        <div class="music-control">
+          <button id="music-toggle" class="music-btn">🔇</button>
+        </div>
       </header>
 
       <main>
@@ -22,7 +25,7 @@
           <div
             class="generator-card animate__animated animate__fadeInUp animate__delay-2s"
           >
-            <p class="animate__animated animate__fadeInUp animate__delay-1s">
+            <p class="sub-heading">
               Generate random animals and learn fascinating facts about your
               favorite creatures!
             </p>
@@ -61,5 +64,19 @@
     </div>
 
     <script src="/lab/random-animal-generator/app.js"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6Y8E08HSVB"
+    ></script>
+    <script>
+      if (location.host.indexOf("localhost") === -1) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-6Y8E08HSVB");
+      }
+    </script>
   </body>
 </html>

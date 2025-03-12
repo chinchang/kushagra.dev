@@ -3,6 +3,19 @@ const generateBtn = document.getElementById("generate-btn");
 const countInput = document.getElementById("count");
 const categorySelect = document.getElementById("category");
 const resultsContainer = document.getElementById("results");
+const musicToggle = document.getElementById("music-toggle");
+
+/*
+forest calm NL 07 200529_0181.wav by klankbeeld -- https://freesound.org/s/622928/ -- License: Attribution 4.0
+*/
+const bgMusic = new Audio("/lab/random-animal-generator/bg.wav");
+bgMusic.loop = true;
+bgMusic.volume = 0.5; // Set to 50% volume
+
+// add sfx to generate btn
+const btnSfx = new Audio("/lab/random-animal-generator/frog.mp3");
+
+let didUserStopMusic = false;
 
 let areAnimalsGenerated = false;
 
@@ -222,6 +235,7 @@ function changeGenerateBtnText(text) {
 }
 // Function to generate random animals
 function generateAnimals() {
+  btnSfx.play();
   if (areAnimalsGenerated) {
     changeGenerateBtnText("Refreshing Animals...");
   } else {
@@ -395,3 +409,33 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
+
+// Function to toggle background music
+function toggleMusic(isUserAction = false) {
+  const musicToggle = document.getElementById("music-toggle");
+
+  if (bgMusic.paused) {
+    bgMusic
+      .play()
+      .then(() => {
+        musicToggle.innerHTML = "🔉";
+      })
+      .catch((err) => {
+        console.error("Error playing music:", err);
+      });
+  } else {
+    bgMusic.pause();
+    didUserStopMusic = true;
+    musicToggle.innerHTML = "🔇";
+  }
+}
+
+musicToggle.addEventListener("click", () => {
+  toggleMusic(true);
+});
+// toggle music on window click, if not already playing
+window.addEventListener("click", () => {
+  if (bgMusic.paused && !didUserStopMusic) {
+    toggleMusic();
+  }
+});
