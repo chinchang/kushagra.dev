@@ -109,6 +109,13 @@ const ANIMAL_DATA = {
         "Marsupials known for their powerful hind legs and pouches. Diet: Herbivore. Habitat: Forests, grasslands, and deserts. Lifespan: 6-8 years. Geographic Range: Australia.",
       image: "images/animals/kangaroo.png",
     },
+    {
+      name: "Polar Bear",
+      type: "Mammal",
+      description:
+        "The largest land carnivore, adapted for life in the Arctic. Diet: Carnivore. Habitat: Arctic sea ice and coastal areas. Lifespan: 25-30 years. Geographic Range: Arctic Circle regions including Alaska, Canada, Russia, Greenland, and Norway.",
+      image: "images/animals/polar-bear.png",
+    },
   ],
   birds: [
     {
@@ -146,6 +153,13 @@ const ANIMAL_DATA = {
         "Wading birds known for their pink coloration and standing on one leg. Diet: Omnivore. Habitat: Shallow lakes, lagoons, and wetlands. Lifespan: 20-30 years. Geographic Range: Americas, Caribbean, Africa, Asia, and Europe.",
       image: "images/animals/flamingo.png",
     },
+    {
+      name: "Bald Eagle",
+      type: "Bird",
+      description:
+        "A majestic bird of prey and the national symbol of the United States. Diet: Carnivore. Habitat: Near bodies of water with abundant food and old-growth trees. Lifespan: 20-30 years. Geographic Range: North America.",
+      image: "images/animals/bald-eagle.png",
+    },
   ],
   fish: [
     {
@@ -175,6 +189,13 @@ const ANIMAL_DATA = {
       description:
         "One of the largest rays, with a distinctive body shape. Diet: Omnivore. Habitat: Tropical and subtropical waters. Lifespan: 50 years. Geographic Range: Tropical and subtropical waters worldwide.",
       image: "images/animals/manta-ray.png",
+    },
+    {
+      name: "Seahorse",
+      type: "Fish",
+      description:
+        "Unique fish known for their horse-like head and the male's ability to carry and birth offspring. Diet: Carnivore. Habitat: Shallow tropical and temperate waters. Lifespan: 1-5 years. Geographic Range: Coastal waters worldwide.",
+      image: "images/animals/seahorse.png",
     },
   ],
   reptiles: [
@@ -212,6 +233,13 @@ const ANIMAL_DATA = {
       description:
         "The largest of all living reptiles and a formidable predator. Diet: Carnivore. Habitat: Coastal brackish and freshwater regions. Lifespan: 70 years. Geographic Range: Indo-Pacific region.",
       image: "images/animals/saltwater-crocodile.png",
+    },
+    {
+      name: "Green Iguana",
+      type: "Reptile",
+      description:
+        "A large, tree-dwelling lizard with a distinctive spiny crest along its back. Diet: Herbivore. Habitat: Tropical rainforests and coastal areas. Lifespan: 10-15 years. Geographic Range: Central and South America, Caribbean islands.",
+      image: "images/animals/green-iguana.png",
     },
   ],
 };
