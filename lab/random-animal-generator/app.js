@@ -229,9 +229,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function changeGenerateBtnText(text) {
-  document.startViewTransition(() => {
+  if (document.startViewTransition) {
+    document.startViewTransition(() => {
+      generateBtn.textContent = text;
+    });
+  } else {
     generateBtn.textContent = text;
-  });
+  }
 }
 // Function to generate random animals
 function generateAnimals() {
@@ -338,9 +342,13 @@ function displayAnimals(animals) {
     `;
 
     // Add card to results container
-    document.startViewTransition(() => {
+    if (document.startViewTransition) {
+      document.startViewTransition(() => {
+        resultsContainer.appendChild(card);
+      });
+    } else {
       resultsContainer.appendChild(card);
-    });
+    }
   });
 }
 
