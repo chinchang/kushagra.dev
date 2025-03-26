@@ -11,7 +11,7 @@
 
   --color-fish: #007bff;
   --color-mammal: #28a745;
-  --color-bird: #ffc107;
+  --color-bird: #deae20;
   --color-reptile: #dc3545;
 }
 
@@ -257,6 +257,13 @@ button:hover {
   border-radius: 20px;
   font-size: 0.8rem;
   margin-bottom: 15px;
+  display: inline-flex;
+
+  gap: 0.5rem;
+  align-items: center;
+}
+.animal-type span {
+  scale: 1.7;
 }
 .animal-type[data-type="Mammal"] {
   background-color: var(--color-mammal);
