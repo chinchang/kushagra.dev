@@ -171,7 +171,9 @@ button:hover {
 .setting {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+}
+.setting:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 
 .setting label {
@@ -196,6 +198,7 @@ button:hover {
   border-radius: 20px;
   display: block;
   margin: 0 auto;
+  position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -206,10 +209,11 @@ button:hover {
 
 /* Results Section */
 .results {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   margin-top: 40px;
+  justify-content: center;
 }
 
 .animal-card {
@@ -219,6 +223,9 @@ button:hover {
   box-shadow: var(--card-shadow);
   transition: transform 0.3s;
   position: relative;
+  width: 100%;
+  min-width: 15ch;
+  max-width: 26ch;
 }
 
 .animal-card:hover {
@@ -386,4 +393,29 @@ footer {
 .animal-card:nth-child(3) {
   transition-delay: 2s;
   animation-delay: 2s;
+}
+
+.generate-btn-wrap {
+  position: relative;
+}
+.generate-btn-lion {
+  position: absolute;
+  inset: 0;
+  bottom: 100%;
+  top: auto;
+  overflow: hidden;
+}
+
+.generate-btn:hover .generate-btn-lion::before {
+  transform: scale(2);
+}
+.generate-btn-lion img {
+  transform: translateY(100%);
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.generator-card:hover .generate-btn-lion img {
+  transform: translateY(80%);
+}
+.generate-btn:hover .generate-btn-lion img {
+  transform: translateY(40%);
 }

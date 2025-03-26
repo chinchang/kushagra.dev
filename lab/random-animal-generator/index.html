@@ -25,31 +25,42 @@
           <div
             class="generator-card animate__animated animate__fadeInUp animate__delay-2s"
           >
-            <p class="sub-heading">
-              Generate random animals and learn fascinating facts about your
-              favorite creatures!
-            </p>
-            <div class="settings">
-              <div class="setting">
-                <label for="count">Number of Animals:</label>
-                <input type="number" id="count" min="1" max="10" value="3" />
+            <form id="generator-form">
+              <p class="sub-heading">
+                Generate random animals and learn fascinating facts about your
+                favorite creatures!
+              </p>
+              <div class="settings">
+                <div class="setting">
+                  <label for="count">Number of Animals:</label>
+                  <input type="number" id="count" min="1" max="10" value="3" />
+                </div>
+
+                <div class="setting">
+                  <label for="category">Category:</label>
+                  <select id="category">
+                    <option value="all">All Animals</option>
+                    <option value="mammals">Mammals</option>
+                    <option value="birds">Birds</option>
+                    <option value="fish">Fish</option>
+                    <option value="reptiles">Reptiles</option>
+                  </select>
+                </div>
               </div>
 
-              <div class="setting">
-                <label for="category">Category:</label>
-                <select id="category">
-                  <option value="all">All Animals</option>
-                  <option value="mammals">Mammals</option>
-                  <option value="birds">Birds</option>
-                  <option value="fish">Fish</option>
-                  <option value="reptiles">Reptiles</option>
-                </select>
+              <div class="generate-btn-wrap">
+                <button id="generate-btn" class="generate-btn" type="submit">
+                  Discover Animals
+                  <div class="generate-btn-lion">
+                    <img
+                      src="/lab/random-animal-generator/images/lion.png"
+                      alt="Lion"
+                      width="160"
+                    />
+                  </div>
+                </button>
               </div>
-            </div>
-
-            <button id="generate-btn" class="generate-btn">
-              Discover Animals
-            </button>
+            </form>
           </div>
 
           <div id="results" class="results">

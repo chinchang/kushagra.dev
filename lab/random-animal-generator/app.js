@@ -4,6 +4,7 @@ const countInput = document.getElementById("count");
 const categorySelect = document.getElementById("category");
 const resultsContainer = document.getElementById("results");
 const musicToggle = document.getElementById("music-toggle");
+const generatorForm = document.getElementById("generator-form");
 
 /*
 forest calm NL 07 200529_0181.wav by klankbeeld -- https://freesound.org/s/622928/ -- License: Attribution 4.0
@@ -247,8 +248,8 @@ const ANIMAL_DATA = {
 // Event Listeners
 document.addEventListener("DOMContentLoaded", () => {
   // Add event listener to generate button
-  generateBtn.addEventListener("click", generateAnimals);
-
+  // generateBtn.addEventListener("click", generateAnimals);
+  generatorForm.addEventListener("submit", generateAnimals);
   // Add animation to logo
   const logo = document.getElementById("logo");
   if (logo) {
@@ -266,7 +267,10 @@ function changeGenerateBtnText(text) {
   }
 }
 // Function to generate random animals
-function generateAnimals() {
+function generateAnimals(e) {
+  if (e) {
+    e.preventDefault();
+  }
   btnSfx.play();
   if (areAnimalsGenerated) {
     changeGenerateBtnText("Refreshing Animals...");
