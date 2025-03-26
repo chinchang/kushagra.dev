@@ -4,6 +4,7 @@ title: "Strong vs Em"
 tags:
   - accessibility
   - html
+course_banner: true
 ---
 
 `<strong>` and `<em>` are two of the most basic tags that we learn when we start learning HTML. I am sure you must have used both these tags multiple times. I have too. But somewhere at the back of my mind I always had that slight confusion about which cases each should be used. In fact about which places one tag shouldn't be used. So I finally decided to look up the specifications to clear that doubt once and for all. And I must admit, the specification does a great job at explaining the purpose of each.

@@ -5,6 +5,7 @@ tags:
   - css
   - learning
   - tutorial
+course_banner: true
 ---
 
 In this post we'll build a 3D card with just CSS. Yes, just CSS! This is sort of an extension to my last post - ["Scroll-based 3d cards"](/blog/scroll-based-3d-cards/). So if you haven't read that already, I recommend you read that first.

@@ -8,4 +8,5 @@ tags:
   - css
   - game
   - code-golf
+course_banner: true
 ---

@@ -5,6 +5,7 @@ tags:
   - css
   - learning
   - tutorial
+course_banner: true
 ---
 
 In this blog post I'll show how we can simulate cards with 3D depth based on scrolling using the newly arrived scroll-based animations.

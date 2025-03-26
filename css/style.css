@@ -537,3 +537,7 @@ figure {
     animation: none;
   }
 }
+.learn-banner {
+  margin: 2rem 0;
+  display: block;
+}

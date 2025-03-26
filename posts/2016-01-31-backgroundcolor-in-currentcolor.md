@@ -4,6 +4,7 @@ title: "Using background color in currentColor"
 tags:
   - css
   - trick
+course_banner: true
 ---
 
 I had the following situation recently - I have a container with some background color and it needs to have an arrow coming out from inside of the same background color. I implemented the arrow using `:after` pseudo element. Something like this:

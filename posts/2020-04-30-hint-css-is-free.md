@@ -3,6 +3,7 @@ layout: post
 title: "Hint.css is free again!"
 tags:
   - product
+course_banner: true
 ---
 
 ## TL;DR

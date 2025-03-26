@@ -5,6 +5,7 @@ tags:
   - css
   - learning
   - tutorial
+course_banner: true
 ---
 
 Cascading Style Sheets (CSS) is an essential technology used in web development to style and layout web pages. CSS is not like other programming languages because of its unique core concepts and hence learning CSS can be challenging, especially for beginners. In this blog post, I attempt to outline how one can learn and master CSS.
