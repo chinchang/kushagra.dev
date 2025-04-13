@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var isSearchOpen = false,
     searchEl = document.querySelector("#js-search"),
     searchInputEl = document.querySelector("#js-search__input"),
@@ -33,11 +33,11 @@
 
     // do children
     // If all text nodes inside, get concatenated text from them.
-    var textNodes = [].slice.call(xml.childNodes).filter(function(node) {
+    var textNodes = [].slice.call(xml.childNodes).filter(function (node) {
       return node.nodeType === 3;
     });
     if (xml.hasChildNodes() && xml.childNodes.length === textNodes.length) {
-      obj = [].slice.call(xml.childNodes).reduce(function(text, node) {
+      obj = [].slice.call(xml.childNodes).reduce(function (text, node) {
         return text + node.nodeValue;
       }, "");
     } else if (xml.hasChildNodes()) {
@@ -66,7 +66,7 @@
 
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.open("GET", "/feed/feed.xml");
-  xmlhttp.onreadystatechange = function() {
+  xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState != 4) return;
     if (xmlhttp.status != 200 && xmlhttp.status != 304) {
       return;
@@ -85,7 +85,7 @@
       _gaq.push([
         "_trackEvent",
         "supersearch",
-        searchEl.classList.contains("is-active")
+        searchEl.classList.contains("is-active"),
       ]);
     searchEl.classList.toggle("is-active");
     if (searchEl.classList.contains("is-active")) {
@@ -95,7 +95,7 @@
       // while closing
       searchResultsEl.classList.add("is-hidden");
     }
-    setTimeout(function() {
+    setTimeout(function () {
       searchInputEl.focus();
     }, 210);
   };
@@ -123,7 +123,7 @@
       }
       searchResultsEl.style.offsetWidth;
 
-      var matchingPosts = posts.filter(function(post) {
+      var matchingPosts = posts.filter(function (post) {
         if (
           (post.title + "").toLowerCase().indexOf(currentInputValue) !== -1 ||
           (post.description + "").toLowerCase().indexOf(currentInputValue) !==
@@ -135,13 +135,13 @@
       if (!matchingPosts.length) {
         searchResultsEl.classList.add("is-hidden");
       }
-      currentResultHash = matchingPosts.reduce(function(hash, post) {
+      currentResultHash = matchingPosts.reduce(function (hash, post) {
         return post.title + hash;
       }, "");
       if (matchingPosts.length && currentResultHash !== lastSearchResultHash) {
         searchResultsEl.classList.remove("is-hidden");
         searchResultsEl.innerHTML = matchingPosts
-          .map(function(post) {
+          .map(function (post) {
             d = new Date(post.pubDate);
             return (
               '<li><a href="' +
@@ -160,3 +160,18 @@
       lastSearchResultHash = currentResultHash;
     });
 })();
+
+document.querySelector(".site-footer").addEventListener("click", function () {
+  // create a new plant
+  const newPlant = document.createElement("div");
+  newPlant.classList.add("footer__plant");
+  newPlant.innerHTML = `<div class="footer__plant-inner"> ${
+    ["☘️", "🌱", "🌿", "🌷", "🌻", "🪻"][Math.floor(Math.random() * 6)]
+  }</div>`;
+  newPlant.style.left = `${Math.random() * 100}%`;
+  newPlant.style.scale = `${50 + Math.random() * 100}%`;
+  document.body.appendChild(newPlant);
+
+  const audio = new Audio("/sfx/pop.mp3");
+  audio.play();
+});

@@ -22,7 +22,7 @@ I like to write [code](https://github.com/chinchang) and build things that peopl
   <img
     height="100"
     src="/images/signature.jpg"
-    style="mix-blend-mode: multiply"
+    style="mix-blend-mode: exclusion; filter:invert(100%)"
   />
 </p>
 

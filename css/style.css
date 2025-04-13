@@ -7,7 +7,10 @@
   --color-focus: #dcb236;
   --color-blockquote-bg: #f4e1cf;
   --color-code-border: #dcabab;
-  --color-cloud-bg: #35316e;
+  --color-cloud-bg: #201c51;
+  --color-grass-front: #39295a;
+  --color-grass-middle: #2c1b44;
+  --color-grass-back: #170b26;
   --base-font-size: 1.4em;
   --font-family-serif: Georgia, "Times New Roman", Times, serif;
   --font-family-heading: "M PLUS Rounded 1c", Arial, serif;
@@ -225,6 +228,10 @@ blockquote div {
   text-align: center;
   padding: 2rem;
   margin-top: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .site-footer__bg {
   display: flex;
@@ -253,10 +260,11 @@ blockquote div {
   max-width: 40%;
   flex-shrink: 0;
   margin-right: 1rem;
-  border: 4px solid #914949;
+  border: 2px solid #5d2ef7;
   border-radius: 5px;
   display: flex;
   align-self: flex-start;
+  margin-left: auto;
 }
 .list-item--lab {
   display: flex;
@@ -374,7 +382,7 @@ h6 + pre {
   position: absolute;
   width: 340px;
   height: 210px;
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
       circle at 90px 130px,
       var(--color-cloud-bg) 60px,
       transparent 61px
@@ -398,9 +406,11 @@ h6 + pre {
       ellipse at 50px 160px,
       var(--color-cloud-bg) 50px,
       transparent 51px
-    );
+    ); */
 
   animation: cloud-to-right 180s linear infinite;
+  font-size: 10rem;
+  opacity: 0.1;
 }
 .cloud--move-left {
   animation-name: cloud-to-left;
@@ -590,4 +600,66 @@ figure {
   /* animation: show-x 0.6s ease-in-out forwards; */
   font-family: "Press Start 2P", cursive;
   /* font-family: "Fugaz One", cursive; */
+}
+.footer__plant {
+  --spring-easing: linear(
+    0,
+    0.009,
+    0.035 2.1%,
+    0.141,
+    0.281 6.7%,
+    0.723 12.9%,
+    0.938 16.7%,
+    1.017,
+    1.077,
+    1.121,
+    1.149 24.3%,
+    1.159,
+    1.163,
+    1.161,
+    1.154 29.9%,
+    1.129 32.8%,
+    1.051 39.6%,
+    1.017 43.1%,
+    0.991,
+    0.977 51%,
+    0.974 53.8%,
+    0.975 57.1%,
+    0.997 69.8%,
+    1.003 76.9%,
+    1.004 83.8%,
+    1
+  );
+  position: fixed;
+  line-height: 1;
+  bottom: -5px;
+  left: 100px;
+  font-size: 100px;
+  pointer-events: none;
+  animation: spring-up 0.5s var(--spring-easing) forwards;
+  transform-origin: bottom;
+  display: flex;
+}
+.footer__plant-inner {
+  animation: swing 6s ease-in-out infinite;
+  transform-origin: bottom;
+}
+@keyframes swing {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes spring-up {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
