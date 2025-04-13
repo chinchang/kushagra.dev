@@ -545,6 +545,9 @@ figure {
   .cloud {
     transform: scale(0.3);
   }
+  .list-item__number {
+    font-size: 1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
