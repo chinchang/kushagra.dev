@@ -32,18 +32,13 @@
       title="RSS"
       href="/feed/rss.xml"
     />
-    <script>
-      /*var connectionCheckTimeout = setTimeout(function () {
-        window.isSlowConnection = true;
-        var style = document.createElement('style');
-        style.textContent = 'body{font: 17px/1.56 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"}';
-        document.head.appendChild(style);
-      }, 1000);
-      window.onload = function () {
-        console.log('fast connection');
-        clearTimeout(connectionCheckTimeout);
-      }*/
-    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="{% if label %}{{ label }}{% else %}{{ layout }}{% endif %}">
@@ -92,9 +87,15 @@
         style="top: 60%; right: 3vw; animation-duration: 200s"
       ></div>
 
-      <div class="container site-name-header">
+      <!-- <div class="container site-name-header">
         <a class="site-name-header__img" aria-label="Home" href="/"></a>
         Kushagra Gour's Website
+      </div> -->
+
+      <div class="title-wrap">
+        <a href="/" style="text-decoration: none">
+          <h1 class="title">Kushagra <br />Gour.</h1>
+        </a>
       </div>
 
       {% if page.url != '/' %}
@@ -112,11 +113,11 @@
         </div>
         <div>
           <a href="/lab/">Lab</a>
-          <span class="link-separator">❀</span>
+          <span class="link-separator">🌱</span>
           <a href="/games/">Games</a>
-          <span class="link-separator">❀</span>
+          <span class="link-separator">☘️</span>
           <a href="/blog/">Blog</a>
-          <span class="link-separator">❀</span>
+          <span class="link-separator">🌿</span>
           <a href="/about/">Me</a>
         </div>
       </div>
@@ -134,6 +135,8 @@
       <a href="/feed/feed.xml" class="rss-link" target="_blank"></a>
     </div>
     {% endif %}
+
+    <div class="overlay"></div>
 
     <script src="/js/script.js"></script>
   </body>
