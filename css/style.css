@@ -173,7 +173,7 @@ img {
   color: #27143d;
 }
 code:not([class]) {
-  background: #efdfdf;
+  /* background: #efdfdf; */
   padding: 4px 4px;
   border: 1px solid var(--color-code-border);
   border-radius: 5px;
