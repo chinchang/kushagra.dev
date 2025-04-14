@@ -5,6 +5,7 @@ tags:
   - tutorial
   - ai
   - chrome
+og_image: https://kushagra.dev/images/og/og-chrome-ai.png
 ---
 
 I recently wanted to tinker with Chrome's in-built AI, that uses the Gemini nano LLM. Though there are several articles/videos around getting started with it, I am still writing this guide post because most of them are dated now. Because the in-built AI is an experimental feature, it is undergoing very rapid iterations and so within a few months, all the information out there becomes old and invalid - even the official docs.

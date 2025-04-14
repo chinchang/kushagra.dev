@@ -13,11 +13,17 @@
       href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-'!0123456789"
       rel="stylesheet"
     /> -->
+
+    {% if og_image %}
+    <meta key="banner" property="og:image" content="{{ og_image }}" />
+    {% else %}
     <meta
       key="banner"
       property="og:image"
       content="https://kushagra.dev/images/social.jpeg"
     />
+    {% endif %}
+
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="/css/style.css?v=😌🥳🌱" />
