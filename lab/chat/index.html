@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chat Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 130%;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        color: #222;
+        background-color: #f5f5f5;
+        background-image: url("/lab/chat/bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        font-family: "IM Fell English", serif;
+        font-weight: 400;
+        overflow: hidden;
+      }
+
+      .instructions {
+        text-align: center;
+        padding: 1rem;
+        background-color: rgba(245, 227, 186, 0.9);
+        border-bottom: 2px solid #0006;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .chat-container {
+        flex: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .chat-message-scroller {
+        overflow-y: auto;
+        flex: 1;
+        /* display: flex; */
+      }
+      .chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 0; /* Important for flex child scrolling */
+      }
+
+      .message {
+        margin-bottom: 15px;
+        padding: 10px 15px;
+        border-radius: 15px;
+        max-width: 80%;
+        word-wrap: break-word;
+        border: 2px solid #0006;
+        filter: url(#squiggly);
+      }
+
+      .user-message {
+        background-color: #f5e3ba;
+        margin-left: auto;
+        border-bottom-right-radius: 0;
+      }
+
+      .ai-message {
+        background-color: #dedfa0;
+
+        margin-right: auto;
+        border-bottom-left-radius: 0;
+      }
+
+      .input-container {
+        display: flex;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      #message-input {
+        flex: 1;
+        padding: 12px;
+        background-color: #f5e3ba;
+        border: 2px solid #0006;
+        border-radius: 20px;
+        font-size: 1rem;
+        outline: none;
+        filter: url(#squiggly);
+      }
+
+      #send-button {
+        padding: 0px 18px;
+        background-color: #ebdb98;
+        color: white;
+        border: 2px solid #0006;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 1rem;
+        filter: url(#squiggly);
+        transition: background-color 0.2s;
+      }
+
+      #send-button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+
+      #send-button:hover:not(:disabled) {
+        background-color: #decd89;
+      }
+      #send-button:hover img {
+        scale: 1.2;
+      }
+      #send-button img {
+        height: 2em;
+      }
+
+      .typing-indicator {
+        /* display: none; */
+        /* padding: 10px 15px; */
+        /* background-color: #e9e9eb; */
+        color: black;
+        border-radius: 15px;
+        margin-right: auto;
+        border-bottom-left-radius: 0;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .typing-indicator span {
+        animation: typing 1s infinite;
+        display: inline-block;
+      }
+
+      @keyframes typing {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      :root {
+        view-transition-name: none;
+      }
+
+      .audio-controls {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+        z-index: 100;
+      }
+
+      .audio-controls button {
+        background-color: #ebdb98;
+        border: 2px solid #0006;
+        border-radius: 20px;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-family: "IM Fell English", serif;
+        font-size: 0.8rem;
+        filter: url(#squiggly);
+      }
+
+      .audio-controls button:hover {
+        background-color: #decd89;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="instructions">
+      A Chat interface for Chrome's in-built local AI. Works only on Chrome.
+      Make sure to
+      <a
+        href="https://kushagra.dev/blog/chrome-inbuilt-ai-getting-started/"
+        target="_blank"
+        >enable AI on Chrome</a
+      >
+      first.
+    </div>
+    <div class="chat-container">
+      <div class="chat-message-scroller" id="chat-message-scroller">
+        <div class="chat-messages" id="chat-messages">
+          <div
+            class="message ai-message"
+            style="view-transition-name: first-message"
+          >
+            Hello! I'm your AI assistant. How can I help you today?
+          </div>
+        </div>
+      </div>
+
+      <div class="input-container">
+        <input
+          type="text"
+          id="message-input"
+          placeholder="Type your message here..."
+          autocomplete="off"
+        />
+        <button id="send-button">
+          <img src="/lab/chat/send-icon.png" alt="send" />
+        </button>
+      </div>
+    </div>
+
+    <div class="audio-controls">
+      <button id="toggle-bg-music">Toggle Background Music</button>
+    </div>
+
+    <!-- Sound Effect by <a href="https://pixabay.com/users/u_iozlfd2w96-48029382/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=283674">u_iozlfd2w96</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=283674">Pixabay</a> -->
+    <!-- Music by <a href="https://pixabay.com/users/prettysleepy-2973588/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=264711">Amy</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=264711">Pixabay</a> -->
+    <audio id="bg-music" loop>
+      <source src="/lab/chat/bg.mp3" type="audio/mpeg" volume="0.1" />
+    </audio>
+    <audio id="message-sound">
+      <source src="/lab/chat/message.mp3" type="audio/mpeg" />
+    </audio>
+
+    <svg width="0" height="0">
+      <filter id="squiggly">
+        <feTurbulence baseFrequency="0.02" numOctaves="3" result="turbulence" />
+        <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2" />
+      </filter>
+    </svg>
+
+    <script>
+      let _ai;
+      const chatMessages = document.getElementById("chat-messages");
+      const chatMessageScroller = document.getElementById(
+        "chat-message-scroller"
+      );
+      const messageInput = document.getElementById("message-input");
+      const sendButton = document.getElementById("send-button");
+      let isWaitingForResponse = false;
+
+      // Audio controls
+      const bgMusic = document.getElementById("bg-music");
+      const messageSound = document.getElementById("message-sound");
+      const toggleBgMusicBtn = document.getElementById("toggle-bg-music");
+      let isBgMusicPlaying = false;
+
+      // Function to add a message to the chat
+      function addMessage(message, isUser) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `message ${
+          isUser ? "user-message" : "ai-message"
+        }`;
+        messageDiv.textContent = message;
+        messageDiv.style.setProperty(
+          "view-transition-name",
+          `message-${Date.now()}`
+        );
+
+        animate(() => {
+          chatMessages.appendChild(messageDiv);
+          chatMessageScroller.scrollTop = chatMessageScroller.scrollHeight;
+          playMessageSound();
+        });
+      }
+
+      function animate(domChangeFn) {
+        if (document.startViewTransition) {
+          document.startViewTransition(domChangeFn);
+        } else {
+          domChangeFn();
+        }
+      }
+
+      // Function to simulate AI response
+      async function getAIResponse(userMessage) {
+        // const response = await _ai.prompt(userMessage);
+        // return response;
+
+        // This is a simple response simulation
+        // In a real app, you would call an AI API here
+        const responses = [
+          "I understand what you're saying.",
+          "That's an interesting point!",
+          "Could you tell me more about that?",
+          "I'm here to help with that.",
+          "Let me think about that for a moment.",
+          "That's a great question!",
+          "I'm processing your request.",
+          "Thanks for sharing that with me.",
+        ];
+        return responses[Math.floor(Math.random() * responses.length)];
+      }
+
+      // Function to handle sending messages
+      function sendMessage() {
+        const message = messageInput.value.trim();
+        if (message && !isWaitingForResponse) {
+          isWaitingForResponse = true;
+          sendButton.disabled = true;
+          messageInput.disabled = true;
+
+          // Add user message
+          addMessage(message, true);
+          messageInput.value = "";
+
+          // Show typing indicator
+          const typingIndicator = document.createElement("div");
+          typingIndicator.className = "typing-indicator";
+          typingIndicator.style.setProperty(
+            "view-transition-name",
+            "typing-indicator"
+          );
+          typingIndicator.innerHTML =
+            "<span>.</span><span>.</span><span>.</span>";
+
+          animate(() => {
+            chatMessages.appendChild(typingIndicator);
+            chatMessageScroller.scrollTop = chatMessageScroller.scrollHeight;
+          });
+
+          // Get AI response
+          setTimeout(async () => {
+            try {
+              const aiResponse = await getAIResponse(message);
+              typingIndicator.remove();
+              addMessage(aiResponse, false);
+            } catch (error) {
+              console.error("Error getting AI response:", error);
+              addMessage(
+                "Sorry, I encountered an error. Please try again.",
+                false
+              );
+            } finally {
+              isWaitingForResponse = false;
+              sendButton.disabled = false;
+              messageInput.disabled = false;
+              messageInput.focus();
+            }
+          }, 0);
+        }
+      }
+
+      // Event listeners
+      sendButton.addEventListener("click", sendMessage);
+      messageInput.addEventListener("keypress", (e) => {
+        if (!isBgMusicPlaying) {
+          bgMusic.volume = 0.2;
+          bgMusic.play();
+          isBgMusicPlaying = true;
+        }
+
+        if (e.key === "Enter" && !isWaitingForResponse) {
+          sendMessage();
+        }
+      });
+
+      // Function to play message sound
+      function playMessageSound() {
+        messageSound.currentTime = 0;
+        messageSound.play().catch((e) => console.log("Audio play failed:", e));
+      }
+
+      // Toggle background music
+      toggleBgMusicBtn.addEventListener("click", () => {
+        if (bgMusic.paused) {
+          bgMusic
+            .play()
+            .catch((e) => console.log("Background music play failed:", e));
+          toggleBgMusicBtn.textContent = "Pause Background Music";
+        } else {
+          bgMusic.pause();
+          toggleBgMusicBtn.textContent = "Play Background Music";
+        }
+      });
+
+      async function init() {
+        try {
+          _ai = await window.ai.languageModel.create();
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      init();
+    </script>
+  </body>
+</html>
