@@ -33,6 +33,9 @@
         font-weight: 400;
         overflow: hidden;
       }
+      a {
+        color: currentColor;
+      }
 
       .instructions {
         text-align: center;
@@ -79,6 +82,7 @@
         word-wrap: break-word;
         border: 2px solid #0006;
         filter: url(#squiggly);
+        animation: show-message 0.5s ease-in-out;
       }
 
       .user-message {
@@ -169,6 +173,17 @@
         }
       }
 
+      @keyframes show-message {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       :root {
         view-transition-name: none;
       }
@@ -234,9 +249,9 @@
       </div>
     </div>
 
-    <div class="audio-controls">
+    <!-- <div class="audio-controls">
       <button id="toggle-bg-music">Toggle Background Music</button>
-    </div>
+    </div> -->
 
     <!-- Sound Effect by <a href="https://pixabay.com/users/u_iozlfd2w96-48029382/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=283674">u_iozlfd2w96</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=283674">Pixabay</a> -->
     <!-- Music by <a href="https://pixabay.com/users/prettysleepy-2973588/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=264711">Amy</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=264711">Pixabay</a> -->
@@ -249,8 +264,8 @@
 
     <svg width="0" height="0">
       <filter id="squiggly">
-        <feTurbulence baseFrequency="0.02" numOctaves="3" result="turbulence" />
-        <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="2" />
+        <feTurbulence baseFrequency="0.02" numOctaves="2" result="turbulence" />
+        <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="1" />
       </filter>
     </svg>
 
@@ -290,6 +305,9 @@
       }
 
       function animate(domChangeFn) {
+        domChangeFn();
+
+        return;
         if (document.startViewTransition) {
           document.startViewTransition(domChangeFn);
         } else {
@@ -299,8 +317,8 @@
 
       // Function to simulate AI response
       async function getAIResponse(userMessage) {
-        // const response = await _ai.prompt(userMessage);
-        // return response;
+        const response = await _ai.prompt(userMessage);
+        return response;
 
         // This is a simple response simulation
         // In a real app, you would call an AI API here
@@ -348,7 +366,7 @@
           setTimeout(async () => {
             try {
               const aiResponse = await getAIResponse(message);
-              typingIndicator.remove();
+
               addMessage(aiResponse, false);
             } catch (error) {
               console.error("Error getting AI response:", error);
@@ -357,6 +375,9 @@
                 false
               );
             } finally {
+              animate(() => {
+                typingIndicator.remove();
+              });
               isWaitingForResponse = false;
               sendButton.disabled = false;
               messageInput.disabled = false;
@@ -387,7 +408,7 @@
       }
 
       // Toggle background music
-      toggleBgMusicBtn.addEventListener("click", () => {
+      toggleBgMusicBtn?.addEventListener("click", () => {
         if (bgMusic.paused) {
           bgMusic
             .play()
