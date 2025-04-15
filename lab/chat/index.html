@@ -45,6 +45,7 @@
         margin-bottom: 1rem;
         font-size: 0.9rem;
         line-height: 1.4;
+        filter: url(#squiggly);
       }
 
       .chat-container {
@@ -114,6 +115,7 @@
         font-size: 1rem;
         outline: none;
         filter: url(#squiggly);
+        font-family: inherit;
       }
 
       #send-button {
@@ -211,12 +213,22 @@
       .audio-controls button:hover {
         background-color: #decd89;
       }
+
+      footer {
+        position: fixed;
+        left: 1rem;
+        right: 1rem;
+        bottom: 0;
+        text-align: center;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+      }
     </style>
   </head>
   <body>
     <div class="instructions">
-      A Chat interface for Chrome's in-built local AI. Works only on Chrome.
-      Make sure to
+      A Chat interface for Chrome's in-built local AI. Works only on Chrome,
+      without Internet. Make sure to
       <a
         href="https://kushagra.dev/blog/chrome-inbuilt-ai-getting-started/"
         target="_blank"
@@ -226,14 +238,7 @@
     </div>
     <div class="chat-container">
       <div class="chat-message-scroller" id="chat-message-scroller">
-        <div class="chat-messages" id="chat-messages">
-          <div
-            class="message ai-message"
-            style="view-transition-name: first-message"
-          >
-            Hello! I'm your AI assistant. How can I help you today?
-          </div>
-        </div>
+        <div class="chat-messages" id="chat-messages"></div>
       </div>
 
       <div class="input-container">
@@ -242,8 +247,9 @@
           id="message-input"
           placeholder="Type your message here..."
           autocomplete="off"
+          disabled="disabled"
         />
-        <button id="send-button">
+        <button id="send-button" disabled="disabled">
           <img src="/lab/chat/send-icon.png" alt="send" />
         </button>
       </div>
@@ -268,6 +274,11 @@
         <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="1" />
       </filter>
     </svg>
+
+    <footer>
+      Made by
+      <a href="https://kushagra.dev" target="_blank">The CSS Monk</a>
+    </footer>
 
     <script>
       let _ai;
@@ -391,7 +402,7 @@
       sendButton.addEventListener("click", sendMessage);
       messageInput.addEventListener("keypress", (e) => {
         if (!isBgMusicPlaying) {
-          bgMusic.volume = 0.2;
+          bgMusic.volume = 0.1;
           bgMusic.play();
           isBgMusicPlaying = true;
         }
@@ -422,9 +433,28 @@
 
       async function init() {
         try {
+          const availability = await window.ai.languageModel.availability();
+          if (availability !== "available") {
+            addMessage(
+              "Please follow the instructions above to enable AI in Chrome.",
+              false
+            );
+            return;
+          }
           _ai = await window.ai.languageModel.create();
+          addMessage(
+            "Hello! I'm your AI assistant. How can I help you today?",
+            false
+          );
+          sendButton.disabled = false;
+          messageInput.disabled = false;
+          messageInput.focus();
         } catch (e) {
           console.error(e);
+          addMessage(
+            "Please follow the instructions above to enable AI in Chrome.",
+            false
+          );
         }
       }
 
