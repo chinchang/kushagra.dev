@@ -81,9 +81,40 @@
         border-radius: 15px;
         max-width: 80%;
         word-wrap: break-word;
+        white-space: break-spaces;
         border: 2px solid #0006;
         filter: url(#squiggly);
         animation: show-message 0.5s ease-in-out;
+      }
+
+      .message code {
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-family: monospace;
+        font-size: 0.9em;
+      }
+
+      .message pre {
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 1em;
+        border-radius: 5px;
+        overflow-x: auto;
+        margin: 0.5em 0;
+      }
+
+      .message pre code {
+        background-color: transparent;
+        padding: 0;
+      }
+
+      .message a {
+        color: inherit;
+        text-decoration: underline;
+      }
+
+      .message a:hover {
+        text-decoration: none;
       }
 
       .user-message {
@@ -296,17 +327,48 @@
       const toggleBgMusicBtn = document.getElementById("toggle-bg-music");
       let isBgMusicPlaying = false;
 
+      // Simple markdown to HTML converter
+      function markdownToHtml(text) {
+        // Convert code blocks
+        text = text.replace(/```([\s\S]*?)```/g, "<pre><code>$1</code></pre>");
+
+        // Convert inline code
+        text = text.replace(/`([^`]+)`/g, "<code>$1</code>");
+
+        // Convert bold
+        text = text.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+
+        // Convert italic
+        text = text.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+
+        // Convert links
+        text = text.replace(
+          /\[([^\]]+)\]\(([^)]+)\)/g,
+          '<a href="$2" target="_blank">$1</a>'
+        );
+
+        // Convert line breaks
+        text = text.replace(/\n/g, "<br>");
+
+        return text;
+      }
+
       // Function to add a message to the chat
       function addMessage(message, isUser) {
         const messageDiv = document.createElement("div");
         messageDiv.className = `message ${
           isUser ? "user-message" : "ai-message"
         }`;
-        messageDiv.textContent = message;
         messageDiv.style.setProperty(
           "view-transition-name",
           `message-${Date.now()}`
         );
+
+        if (isUser) {
+          messageDiv.textContent = message;
+        } else {
+          messageDiv.innerHTML = markdownToHtml(message);
+        }
 
         animate(() => {
           chatMessages.appendChild(messageDiv);
