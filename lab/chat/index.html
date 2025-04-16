@@ -354,15 +354,19 @@
       }
 
       // Function to add a message to the chat
-      function addMessage(message, isUser) {
-        const messageDiv = document.createElement("div");
-        messageDiv.className = `message ${
-          isUser ? "user-message" : "ai-message"
-        }`;
-        messageDiv.style.setProperty(
-          "view-transition-name",
-          `message-${Date.now()}`
-        );
+      function addMessage(message, isUser, el) {
+        let messageDiv = el;
+
+        if (!el) {
+          messageDiv = document.createElement("div");
+          messageDiv.className = `message ${
+            isUser ? "user-message" : "ai-message"
+          }`;
+          messageDiv.style.setProperty(
+            "view-transition-name",
+            `message-${Date.now()}`
+          );
+        }
 
         if (isUser) {
           messageDiv.textContent = message;
@@ -370,11 +374,14 @@
           messageDiv.innerHTML = markdownToHtml(message);
         }
 
-        animate(() => {
-          chatMessages.appendChild(messageDiv);
-          chatMessageScroller.scrollTop = chatMessageScroller.scrollHeight;
-          playMessageSound();
-        });
+        if (!el) {
+          animate(() => {
+            chatMessages.appendChild(messageDiv);
+            chatMessageScroller.scrollTop = chatMessageScroller.scrollHeight;
+            playMessageSound();
+          });
+        }
+        return messageDiv;
       }
 
       function animate(domChangeFn) {
@@ -390,7 +397,7 @@
 
       // Function to simulate AI response
       async function getAIResponse(userMessage) {
-        const response = await _ai.prompt(userMessage);
+        const response = await _ai.promptStreaming(userMessage);
         return response;
 
         // This is a simple response simulation
@@ -440,7 +447,29 @@
             try {
               const aiResponse = await getAIResponse(message);
 
-              addMessage(aiResponse, false);
+              const stream = aiResponse;
+
+              let chunks = "";
+              let previousLength = 0;
+              let isFirstChunk = true;
+              let messageEl;
+
+              messageEl = addMessage("", false);
+
+              let result = "";
+              let previousChunk = "";
+
+              let i = 0;
+              for await (const chunk of stream) {
+                const newChunk = chunk.startsWith(previousChunk)
+                  ? chunk.slice(previousChunk.length)
+                  : chunk;
+
+                result += newChunk;
+                previousChunk = chunk;
+
+                addMessage(result, false, messageEl);
+              }
             } catch (error) {
               console.error("Error getting AI response:", error);
               addMessage(
