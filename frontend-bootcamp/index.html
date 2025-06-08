@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kushagra's Frontend Bootcamp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=IM+Fell+English:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset and base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Georgia, "Times New Roman", serif;
+        font-family: "IM Fell English", serif;
+        line-height: 1.6;
+        color: #333;
+        background: #f3f1ed;
+        min-height: 100vh;
+        background-image: url(./bg.png);
+        background-size: 80px;
+        font-size: 140%;
+      }
+
+      /* Screen reader only content */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        /* text-align: center; */
+      }
+
+      /* Hero Section */
+      .hero-section {
+        /* background: rgba(255, 255, 255, 0.9); */
+        border-radius: 20px;
+        padding: 3rem 2rem;
+        margin-bottom: 3rem;
+        /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+        /* border: 2px solid #e1e5e9; */
+      }
+
+      /* Title styling */
+      .title {
+        margin-bottom: 3rem;
+        font-weight: normal;
+      }
+
+      .author {
+        display: block;
+        font-size: 2.5rem;
+        font-style: italic;
+
+        margin-bottom: 0.5rem;
+        font-weight: 300;
+        font-family: "Allura", cursive;
+        margin-bottom: -2px;
+        line-height: 1;
+      }
+
+      .bootcamp {
+        display: block;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        letter-spacing: 0.05em;
+      }
+
+      /* Transformation section */
+      .transformation-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 1.4;
+        margin-bottom: 3rem;
+        color: #333;
+      }
+
+      .highlight {
+        font-size: 5rem;
+        display: block;
+        margin: 0;
+        color: #2c3e50;
+      }
+
+      .subtitle {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      /* Character transformation */
+      .character-transformation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        margin: 4rem 0;
+        flex-wrap: wrap;
+      }
+
+      .character {
+        position: relative;
+      }
+
+      .bear-face {
+        position: relative;
+        width: 120px;
+        height: 150px;
+      }
+
+      /* Ears */
+      .ears {
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+
+      .ear {
+        width: 25px;
+        height: 25px;
+        background: #ddd;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+      }
+
+      .ear.left {
+        left: 15px;
+      }
+
+      .ear.right {
+        right: 15px;
+      }
+
+      .ear::after {
+        content: "";
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        background: #f8f8f8;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* Face */
+      .face {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        background: #f0f0f0;
+        border-radius: 50%;
+        border: 2px solid #ddd;
+      }
+
+      /* Eyes */
+      .eyes {
+        position: absolute;
+        top: 25px;
+        width: 100%;
+      }
+
+      .eye {
+        width: 8px;
+        height: 8px;
+        background: #333;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      .eye.left {
+        left: 20px;
+      }
+
+      .eye.right {
+        right: 20px;
+      }
+
+      /* Mouth */
+      .mouth {
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 15px;
+        height: 8px;
+        border: 2px solid #333;
+        border-top: none;
+        border-radius: 0 0 15px 15px;
+      }
+
+      /* Body */
+      .body {
+        position: absolute;
+        top: 90px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 60px;
+        background: #f0f0f0;
+        border-radius: 30px 30px 15px 15px;
+        border: 2px solid #ddd;
+      }
+
+      /* Superhero styling */
+      .superhero .face {
+        background: #f8f8f8;
+      }
+
+      .cape {
+        position: absolute;
+        top: 70px;
+        left: -20px;
+        width: 140px;
+        height: 80px;
+        background: #e74c3c;
+        border-radius: 10px 10px 0 0;
+        z-index: -1;
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+      }
+
+      .mask {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        width: 60px;
+        height: 25px;
+        background: #34495e;
+        border-radius: 15px;
+      }
+
+      .superhero .body {
+        background: #3498db;
+        border-color: #2980b9;
+      }
+
+      .chest-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+        font-size: 14px;
+        color: white;
+        background: #e74c3c;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Arrow */
+      .arrow {
+        color: #7f8c8d;
+        font-size: 2rem;
+      }
+
+      .arrow svg {
+        width: 60px;
+        height: 20px;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        margin-top: 2rem;
+      }
+
+      .cta-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .cta-card {
+        height: 80px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 2px solid #e1e5e9;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-card:hover,
+      .cta-card:focus {
+        background: rgba(255, 255, 255, 0.9);
+        border-color: #3498db;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        outline: none;
+      }
+
+      .cta-card:focus {
+        box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+
+        .hero-section {
+          padding: 2rem 1.5rem;
+        }
+
+        .author {
+          font-size: 2rem;
+        }
+
+        .bootcamp {
+          font-size: 1.5rem;
+        }
+
+        .transformation-title {
+          font-size: 1.4rem;
+        }
+
+        .highlight {
+          font-size: 2rem;
+        }
+
+        .subtitle {
+          font-size: 1.2rem;
+        }
+
+        .character-transformation {
+          gap: 2rem;
+        }
+
+        .bear-face {
+          width: 100px;
+          height: 130px;
+        }
+
+        .face {
+          width: 70px;
+          height: 70px;
+        }
+
+        .body {
+          width: 50px;
+          height: 50px;
+          top: 80px;
+        }
+
+        .cape {
+          width: 120px;
+          height: 70px;
+          top: 60px;
+          left: -15px;
+        }
+
+        .cta-cards {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .character-transformation {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .cta-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Accessibility enhancements */
+      @media (prefers-reduced-motion: reduce) {
+        .cta-card {
+          transition: none;
+        }
+
+        .cta-card:hover {
+          transform: none;
+        }
+      }
+
+      /* High contrast mode support */
+      @media (prefers-contrast: high) {
+        .hero-section {
+          border-width: 3px;
+          border-color: #000;
+        }
+
+        .bear-face .face,
+        .bear-face .body {
+          border-width: 3px;
+          border-color: #000;
+        }
+
+        .cta-card {
+          border-width: 3px;
+        }
+      }
+
+      /* Testimonials Section */
+      .testimonials-section {
+        margin-top: 4rem;
+        padding: 3rem 0;
+      }
+
+      .section-title,
+      .testimonials-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: #333;
+        letter-spacing: 0.1em;
+      }
+
+      .testimonials-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .testimonial-card {
+        border: 2px solid #e1e5e9;
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      }
+
+      .quote-mark {
+        font-size: 8rem;
+        font-weight: bold;
+        color: #bbb;
+        line-height: 1;
+        margin-bottom: 1rem;
+        /* font-family: Georgia, serif; */
+      }
+
+      .testimonial-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 2rem;
+        font-style: italic;
+      }
+
+      .testimonial-author {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .author-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #ddd;
+        background: #f8f8f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .author-avatar svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      .author-info {
+        text-align: center;
+      }
+
+      .author-name {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0.25rem;
+      }
+
+      .author-role {
+        font-size: 0.9rem;
+        color: #888;
+        font-weight: normal;
+        letter-spacing: 0.05em;
+      }
+
+      /* Responsive testimonials */
+      @media (max-width: 768px) {
+        .testimonials-title {
+          font-size: 2rem;
+        }
+
+        .testimonials-container {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .testimonial-card {
+          padding: 1.5rem;
+        }
+
+        .quote-mark {
+          font-size: 3rem;
+        }
+
+        .testimonial-text {
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .testimonials-section {
+          margin-top: 2rem;
+        }
+
+        .testimonials-title {
+          font-size: 1.8rem;
+          margin-bottom: 2rem;
+        }
+
+        .testimonial-card {
+          padding: 1.25rem;
+        }
+      }
+
+      .card {
+        padding: 2.5rem 2rem 3.5rem 2rem;
+        border: 3px solid #f7f7f3;
+        border-radius: 24px;
+        box-shadow: 0 0 0 6px #e4e3dc, 0 0 0 8px #bbbab5,
+          0 4px 24px 12px rgba(0, 0, 0, 0.08);
+      }
+      /* Redesigned Testimonial Card (Speech Bubble) */
+      .speech-bubble {
+        position: relative;
+
+        margin-bottom: 3.5rem;
+
+        max-width: 370px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .speech-bubble::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -28px;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 32px;
+        background: #fff;
+        border-radius: 0 0 32px 32px;
+        border: 1.5px solid #e1e5e9;
+        border-top: none;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+        z-index: 1;
+      }
+      .speech-bubble .quote-mark {
+        font-size: 8rem;
+        color: #303230;
+        font-family: Georgia, serif;
+        font-weight: bold;
+        margin-bottom: -2rem;
+        margin-top: -0.5rem;
+        line-height: 0.8;
+        filter: drop-shadow(5px 6px 0px #0002);
+      }
+      .speech-bubble .testimonial-text {
+        font-size: 1.35rem;
+        color: #222;
+
+        font-style: normal;
+        line-height: 1.5;
+        margin-bottom: 0;
+        text-align: center;
+      }
+      .testimonial-avatar-wrapper {
+        position: absolute;
+        left: 50%;
+        bottom: -48px;
+        transform: translateX(-50%);
+        z-index: 2;
+      }
+      .testimonial-avatar {
+        width: 72px;
+        height: 72px;
+        background: #d2d2d2;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+      }
+      .testimonial-author-info {
+        margin-top: 2.5rem;
+        text-align: center;
+      }
+      .testimonial-author-info .author-name {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #222;
+        margin-bottom: 0rem;
+      }
+      .testimonial-author-info .author-role {
+        font-size: 1rem;
+        color: #888;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+      }
+      @media (max-width: 480px) {
+        .speech-bubble {
+          padding: 1.5rem 1rem 3.5rem 1rem;
+          max-width: 98vw;
+        }
+        .testimonial-avatar {
+          width: 56px;
+          height: 56px;
+        }
+        .testimonial-author-info {
+          margin-top: 2rem;
+        }
+      }
+      .instructor-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        /* filter: url(#squiggly); */
+      }
+      .instructor-info {
+        text-align: left;
+      }
+      .instructor-name {
+        font-size: 4rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: -1rem;
+      }
+      .instructor-role {
+        color: #888;
+        font-size: 1.5rem;
+        /* text-align: right; */
+      }
+      .instructor-bio {
+        max-width: 50ch;
+        text-align: left;
+      }
+      li::marker {
+        content: "*";
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero-section">
+        <h1 class="title">
+          <span class="author">kushagra's</span>
+          <span class="bootcamp">FRONTEND BOOTCAMP</span>
+        </h1>
+
+        <section
+          class="transformation"
+          aria-labelledby="transformation-heading"
+        >
+          <h2 id="transformation-heading" class="transformation-title">
+            JOIN TO
+            <strong class="highlight">TURN YOURSELF</strong>
+            <span class="subtitle">INTO MUCH MORE THAN A</span>
+            <strong class="highlight">FRONTEND<br />DEVELOPER</strong>
+          </h2>
+        </section>
+      </header>
+
+      <section class="testimonials-section" aria-label="Customer testimonials">
+        <h2 class="testimonials-title">Enroll</h2>
+
+        <div class="card">
+          <ul>
+            <li>Batch size limited to 20 students only</li>
+            <li>Admission would be first come first serve.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="testimonials-section" aria-label="Customer testimonials">
+        <h2 class="testimonials-title">Course syllabus</h2>
+
+        <div class="card"></div>
+      </section>
+
+      <section class="testimonials-section" aria-label="Customer testimonials">
+        <h2 class="testimonials-title">Know Your Instructor</h2>
+
+        <div class="card">
+          <div class="instructor-container">
+            <img src="me.png" style="height: 40vh" alt="Kushagra Gour" />
+            <div class="instructor-info">
+              <h3 class="instructor-name">Kushagra Gour</h3>
+              <p class="instructor-role">Instructor</p>
+
+              <p class="instructor-bio">
+                Hi! I'm Kushagra Gour, a frontend developer with over 15 years
+                of professional experience. I am starting this bootcamp because
+                I felt sad seeing the state of engineering. And I want to fix
+                it!
+              </p>
+              <p class="instructor-bio">
+                I want you to become a much better programmer, a better Frontend
+                developer and a better product builder than I am. Because with
+                this bootcamp, you'll have the start I didn't have.
+              </p>
+              <p class="instructor-bio">
+                I expect my students to be able to build their own products, and
+                to be able to get a job at a good company.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials-section" aria-label="Customer testimonials">
+        <h2 class="testimonials-title">Why LEARN here?</h2>
+        <div class="testimonials-container">
+          <div class="testimonial-card speech-bubble card">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <div class="testimonial-text">
+              <p>
+                If you really want to stop getting typecast as a Frontend, UI,
+                Backend engineer, I believe joining this Bootcamp is the best
+                place to start. Kush aka Chin Chang is a great mentor and I
+                would consider myself lucky if I got time with him to learn
+                about the latest in technology.
+              </p>
+            </div>
+            <div class="testimonial-avatar-wrapper">
+              <div class="testimonial-avatar"></div>
+            </div>
+            <div class="testimonial-author-info">
+              <h3 class="author-name">Ankit Jain</h3>
+              <p class="author-role">VP of Engineering, Wingify</p>
+            </div>
+          </div>
+          <div class="testimonial-card speech-bubble card">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <div class="testimonial-text">
+              <p>
+                I think students will really like my friend Kushagra’s bootcamp.
+                I’ve known him for about 9 years and worked with him for around
+                2 years. We are still in touch. He is a smart developer who made
+                projects like CSS Battle and Web Maker. He has worked on many
+                different kinds of products, for both other people and himself.
+                He understands web development really well. When we worked
+                together, I liked how curious he was. He asked good questions,
+                listened to others, and never said he understood something if he
+                didn’t. He always tried hard to learn things the right way. It
+                was fun and easy to work with him.
+              </p>
+
+              <p>
+                When he builds something, he thinks carefully about the code,
+                the design, and how people will use it. You can see this clearly
+                in the things he has made. Now that he is teaching, I think it’s
+                a great next step for him. He is clear, kind, and helpful. I
+                believe he will be a great teacher. I really recommend his
+                bootcamp to anyone who wants to learn web development the right
+                way.
+              </p>
+            </div>
+            <div class="testimonial-avatar-wrapper">
+              <div class="testimonial-avatar"></div>
+            </div>
+            <div class="testimonial-author-info">
+              <h3 class="author-name">Jitendra Vyas</h3>
+              <p class="author-role">UX lead, Wingify</p>
+            </div>
+          </div>
+          <div class="testimonial-card speech-bubble card">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <div class="testimonial-text">
+              <p>
+                When I was just starting out in my tech career, I worked with
+                Kushagra for a good seven years, and he was totally like the
+                first person to teach me the ins and outs of frontend. He's one
+                of those genuinely excited and pretty unique people you'll meet
+                in the tech world.
+              </p>
+
+              <p>
+                Now, with all the experience he's gained, and knowing how
+                genuinely excited he is about technology, I bet his bootcamp
+                would be absolutely top-notch.
+              </p>
+            </div>
+            <div class="testimonial-avatar-wrapper">
+              <div class="testimonial-avatar"></div>
+            </div>
+            <div class="testimonial-author-info">
+              <h3 class="author-name">Hariom</h3>
+              <p class="author-role">Engineer, Cal.com</p>
+            </div>
+          </div>
+
+          <div class="testimonial-card speech-bubble card">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <div class="testimonial-text">
+              <p>
+                Kushagra is a top-tier frontend hacker whose work spans
+                impactful projects—including work with Wingify, Pushowl,
+                CSSBattle and Web Maker. His deep expertise, real-world
+                experience, and passion for teaching make his Frontend Bootcamp
+                the perfect launchpad for anyone serious about building a career
+                in frontend development. Learn from the best to become the best!
+              </p>
+            </div>
+            <div class="testimonial-avatar-wrapper">
+              <div class="testimonial-avatar"></div>
+            </div>
+            <div class="testimonial-author-info">
+              <h3 class="author-name">Rohit</h3>
+              <p class="author-role">VP, Cloudstack</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <svg width="0" height="0">
+      <filter id="squiggly">
+        <feTurbulence baseFrequency="0.02" numOctaves="2" result="turbulence" />
+        <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="1" />
+      </filter>
+    </svg>
+  </body>
+</html>
