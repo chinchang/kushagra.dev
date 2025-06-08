@@ -58,7 +58,6 @@
         max-width: 1200px;
         margin: 0 auto;
         padding: 2rem;
-        /* text-align: center; */
       }
 
       /* Hero Section */
@@ -254,6 +253,9 @@
         html {
           font-size: 110%;
         }
+        .container {
+          padding: 1.2rem;
+        }
         .hero-section {
           padding: 0;
         }
@@ -261,7 +263,7 @@
           padding: 1.5rem 1rem 3.5rem 1rem;
         }
         .highlight {
-          font-size: 2rem;
+          font-size: 3rem;
         }
         .subtitle {
           font-size: 1.2rem;
@@ -303,11 +305,12 @@
         font-size: 1rem;
       }
       li {
-        padding-left: 1rem;
+        /* padding-left: 1rem; */
+        list-style: none;
       }
       li::marker {
-        content: "*";
-        margin-right: 2rem;
+        /* content: "*"; */
+        /* margin-right: 2rem; */
       }
       .button {
         background: #333;
@@ -376,9 +379,9 @@
           aria-labelledby="transformation-heading"
         >
           <h2 id="transformation-heading" class="transformation-title">
-            <span class="subtitle">JOIN TO</span>
+            <span class="subtitle">Join to</span>
             <strong class="highlight">TURN YOURSELF</strong>
-            <span class="subtitle">INTO MUCH MORE THAN A</span>
+            <span class="subtitle">into much more than a</span>
             <strong class="highlight">FRONTEND<br />DEVELOPER</strong>
           </h2>
         </section>
@@ -448,43 +451,63 @@
 
           <ul>
             <li>
-              <strong class="chapter-title">Browser & Internet</strong>
-              <p class="chapter-description">
-                We'll understand how a Browser enables us to use the Web and how
-                we can use the inbuilt tools to get insights into how any
-                website works.
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title">Browser & Internet</strong>
+                </summary>
+                <p class="chapter-description">
+                  We'll understand how a Browser enables us to use the Web and
+                  how we can use the inbuilt tools to get insights into how any
+                  website works.
+                </p>
+              </details>
             </li>
             <li>
-              <strong class="chapter-title">GIT</strong>
-              <p class="chapter-description">
-                We'll learn the basics of Git and how to use it to manage our
-                code.
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title">GIT</strong>
+                </summary>
+                <p class="chapter-description">
+                  We'll learn the basics of Git and how to use it to manage our
+                  code.
+                </p>
+              </details>
             </li>
             <li>
-              <strong class="chapter-title">HTML</strong>
-              <p class="chapter-description">
-                We'll learn how HTML enables communication through content and
-                how we can structure our content so that its accessible to
-                everyone.
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title">HTML</strong>
+                </summary>
+                <p class="chapter-description">
+                  We'll learn how HTML enables communication through content and
+                  how we can structure our content so that its accessible to
+                  everyone.
+                </p>
+              </details>
             </li>
             <li>
-              <strong class="chapter-title">CSS</strong>
-              <p class="chapter-description">
-                We'll develop clear mental models of how this seemingly daunting
-                language works and how to approach learning and using it in the
-                right manner.
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title">CSS</strong>
+                </summary>
+                <p class="chapter-description">
+                  We'll develop clear mental models of how this seemingly
+                  daunting language works and how to approach learning and using
+                  it in the right manner.
+                </p>
+              </details>
             </li>
             <li>
-              <strong class="chapter-title">JavaScript</strong>
-              <p class="chapter-description">
-                We'll focus on building a strong foundation of JavaScript and
-                structuring code for web applications. In the end, we'll also
-                touch a bit on React JS framework.
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title">JavaScript</strong>
+                </summary>
+                <p class="chapter-description">
+                  We'll focus on building a strong foundation of JavaScript and
+                  structuring code for web applications. In the end, we'll also
+                  touch a bit on React JS framework.
+                </p>
+              </details>
             </li>
             <li>
               <strong class="chapter-title"
@@ -492,17 +515,17 @@
               >
               <p class="chapter-description">
                 This won't be a separate module, but we'll touch it throughout
-                the camp.
+                the course.
               </p>
             </li>
 
             <li>
               <strong class="chapter-title">Design for Engineers</strong>
               <p class="chapter-description">
-                I believe Engineers should a bit of visual design too. It helps
-                appreciate the work of designers and also developers an empathy
-                for your customers. This won't be a separate module, but we'll
-                touch it throughout the camp.
+                I believe Engineers should know a bit of visual design too. It
+                helps appreciate the work of designers and also develops an
+                empathy for your customers. This won't be a separate module, but
+                we'll touch it throughout the course.
               </p>
             </li>
             <li>
@@ -530,7 +553,7 @@
               <strong class="chapter-title">Professional Etiquettes</strong>
               <p class="chapter-description">
                 Programming applications is not enough to get hired by a good
-                team.Soft skills are equally important. We'll learn how to be a
+                team. Soft skills are equally important. We'll learn how to be a
                 good team player.
               </p>
             </li>
@@ -564,8 +587,9 @@
                 this bootcamp, you'll have the start I didn't have.
               </p>
               <p class="instructor-bio">
-                I expect my students to be able to build their own products, and
-                to be able to get a job at a good company.
+                I envision my students to be not just great developers, but
+                equally well communicators, team players, product builders and
+                ready to face a world full of AI!
               </p>
             </div>
           </div>
@@ -745,7 +769,7 @@
             </div>
             <div class="testimonial-author-info">
               <h3 class="author-name">Varun Pai</h3>
-              <p class="author-role">Lead Designer, LinkedIn</p>
+              <p class="author-role">Lead Designer, PushOwl(Brevo)</p>
             </div>
           </div>
         </div>
