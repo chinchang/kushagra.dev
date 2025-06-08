@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kushagra's Frontend Bootcamp</title>
+    <title>Kushagra's Frontend Bootcamp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Great+Vibes&family=IM+Fell+English:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=IM+Fell+English:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -17,7 +17,9 @@
         padding: 0;
         box-sizing: border-box;
       }
-
+      html {
+        font-size: 140%;
+      }
       body {
         font-family: Georgia, "Times New Roman", serif;
         font-family: "IM Fell English", serif;
@@ -27,9 +29,10 @@
         min-height: 100vh;
         background-image: url(./bg.png);
         background-size: 80px;
-        font-size: 140%;
       }
-
+      p {
+        margin-bottom: 1rem;
+      }
       /* Screen reader only content */
       .sr-only {
         position: absolute;
@@ -45,6 +48,9 @@
       .number {
         font-family: "Allura", cursive;
         font-weight: 600;
+      }
+      a {
+        color: #756954;
       }
 
       /* Container */
@@ -69,6 +75,7 @@
       .title {
         margin-bottom: 3rem;
         font-weight: normal;
+        text-align: center;
       }
 
       .author {
@@ -93,7 +100,6 @@
         font-size: 1.8rem;
         font-weight: bold;
         line-height: 1.4;
-        margin-bottom: 3rem;
         color: #333;
       }
 
@@ -122,7 +128,7 @@
       }
 
       .testimonials-section {
-        margin-top: 4rem;
+        margin-top: 3rem;
         padding: 3rem 0;
       }
 
@@ -177,8 +183,8 @@
         margin-bottom: 3.5rem;
       }
       .speech-bubble::after {
-        content: "";
-        position: absolute;
+        /* content: ""; */
+        /* position: absolute; */
         left: 50%;
         bottom: -28px;
         transform: translateX(-50%);
@@ -202,7 +208,7 @@
         filter: drop-shadow(5px 6px 0px #0002);
       }
       .speech-bubble .testimonial-text {
-        font-size: 1.35rem;
+        /* font-size: 1.35rem; */
         /* color: #222; */
         font-style: normal;
         line-height: 1.5;
@@ -217,12 +223,17 @@
         z-index: 2;
       }
       .testimonial-avatar {
-        width: 72px;
-        height: 72px;
-        background: #d2d2d2;
+        width: 120px;
+        aspect-ratio: 1;
+        background: #f3f1ed;
         border-radius: 50%;
         border: 3px solid #fff;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        overflow: hidden;
+
+        img {
+          max-width: 100%;
+        }
       }
       .testimonial-author-info {
         margin-top: 2.5rem;
@@ -236,19 +247,31 @@
         margin-bottom: 0rem;
       }
       .testimonial-author-info .author-role {
-        font-size: 1rem;
         color: #888;
-        font-weight: 500;
-        letter-spacing: 0.08em;
+        margin-bottom: 0;
       }
-      @media (max-width: 480px) {
+      @media (max-width: 500px) {
+        html {
+          font-size: 110%;
+        }
+        .hero-section {
+          padding: 0;
+        }
         .speech-bubble {
           padding: 1.5rem 1rem 3.5rem 1rem;
-          max-width: 98vw;
+        }
+        .highlight {
+          font-size: 2rem;
+        }
+        .subtitle {
+          font-size: 1.2rem;
         }
         .testimonial-avatar {
           width: 56px;
           height: 56px;
+        }
+        .testimonials-container {
+          display: block;
         }
         .testimonial-author-info {
           margin-top: 2rem;
@@ -277,6 +300,7 @@
       .instructor-bio {
         max-width: 50ch;
         text-align: left;
+        font-size: 1rem;
       }
       li {
         padding-left: 1rem;
@@ -315,6 +339,28 @@
       .emoji {
         filter: grayscale(100%);
       }
+      .chapter-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #333;
+        /* margin-bottom: 0.5rem; */
+      }
+      .chapter-description {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Footer styles */
+      .footer {
+        text-align: center;
+        margin-top: 4rem;
+        padding: 2rem 0;
+        font-family: "Allura", cursive;
+        font-size: 1.5rem;
+        color: #aca08a;
+        font-style: italic;
+      }
     </style>
   </head>
   <body>
@@ -330,7 +376,7 @@
           aria-labelledby="transformation-heading"
         >
           <h2 id="transformation-heading" class="transformation-title">
-            JOIN TO
+            <span class="subtitle">JOIN TO</span>
             <strong class="highlight">TURN YOURSELF</strong>
             <span class="subtitle">INTO MUCH MORE THAN A</span>
             <strong class="highlight">FRONTEND<br />DEVELOPER</strong>
@@ -347,7 +393,15 @@
             <li>Admission would be first come first serve.</li>
             <li>
               Pre-requisites: Basic English, programming (any language)
-              knowledge & Curiosity.
+              knowledge & Curiosity. If you don't know programming at all and
+              still want to join the bootcamp, I suggest doing
+              <a
+                href="https://t.co/PeJKIhjlsI"
+                target="_blank"
+                rel="noopener noreferrer"
+                >this short course</a
+              >
+              before the admission call.
             </li>
             <li>
               Bootcamp costs <span class="number">₹50,000</span> per student.
@@ -355,6 +409,17 @@
             <li>
               Process to enroll: Register here, a short call to confirm
               pre-requisites, payment, Launch <span class="emoji">🚀</span>.
+            </li>
+            <li>
+              Bootcamp will approximately run for 15 days. Approximately because
+              this would be the first batch & we'll figure out exact duration.
+            </li>
+
+            <li>
+              For any queries,
+              <a href="mailto:chinchang457@gmail.com" target="_blank"
+                >please reach out</a
+              >.
             </li>
           </ul>
 
@@ -375,15 +440,100 @@
         <h2 class="testimonials-title">Course syllabus</h2>
 
         <div class="card">
+          <p>
+            I have designed the bootcamp syllabus to not just build you as a
+            good Frontend Developer, but make you ready for the professional
+            world.
+          </p>
+
           <ul>
-            <li>Browser & Internet</li>
-            <li>GIT</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript & ReactJS</li>
-            <li>Working with AI</li>
-            <li>Building end-to-end products</li>
-            <li>Professional ettiquetes</li>
+            <li>
+              <strong class="chapter-title">Browser & Internet</strong>
+              <p class="chapter-description">
+                We'll understand how a Browser enables us to use the Web and how
+                we can use the inbuilt tools to get insights into how any
+                website works.
+              </p>
+            </li>
+            <li>
+              <strong class="chapter-title">GIT</strong>
+              <p class="chapter-description">
+                We'll learn the basics of Git and how to use it to manage our
+                code.
+              </p>
+            </li>
+            <li>
+              <strong class="chapter-title">HTML</strong>
+              <p class="chapter-description">
+                We'll learn how HTML enables communication through content and
+                how we can structure our content so that its accessible to
+                everyone.
+              </p>
+            </li>
+            <li>
+              <strong class="chapter-title">CSS</strong>
+              <p class="chapter-description">
+                We'll develop clear mental models of how this seemingly daunting
+                language works and how to approach learning and using it in the
+                right manner.
+              </p>
+            </li>
+            <li>
+              <strong class="chapter-title">JavaScript</strong>
+              <p class="chapter-description">
+                We'll focus on building a strong foundation of JavaScript and
+                structuring code for web applications. In the end, we'll also
+                touch a bit on React JS framework.
+              </p>
+            </li>
+            <li>
+              <strong class="chapter-title"
+                >Web Accessibility & Performance</strong
+              >
+              <p class="chapter-description">
+                This won't be a separate module, but we'll touch it throughout
+                the camp.
+              </p>
+            </li>
+
+            <li>
+              <strong class="chapter-title">Design for Engineers</strong>
+              <p class="chapter-description">
+                I believe Engineers should a bit of visual design too. It helps
+                appreciate the work of designers and also developers an empathy
+                for your customers. This won't be a separate module, but we'll
+                touch it throughout the camp.
+              </p>
+            </li>
+            <li>
+              <strong class="chapter-title">Working with AI</strong>
+              <p class="chapter-description">
+                AI has become a need of the hour today. We'll learn how to use
+                AI to enhance our productivity, while making sure we don't loose
+                that human taste and become an AI puppet. "Vibe in the code, not
+                to the end user".
+              </p>
+            </li>
+            <li>
+              <strong class="chapter-title"
+                >Building end-to-end products</strong
+              >
+              <p class="chapter-description">
+                Though we'll focus on becoming a cracked Frontend Developer,
+                knowing how to build end-to-end products is an important skill,
+                more so in current times. We'll learn how to build simple
+                end-to-end products as a Frontend Developer.
+              </p>
+            </li>
+
+            <li>
+              <strong class="chapter-title">Professional Etiquettes</strong>
+              <p class="chapter-description">
+                Programming applications is not enough to get hired by a good
+                team.Soft skills are equally important. We'll learn how to be a
+                good team player.
+              </p>
+            </li>
           </ul>
         </div>
       </section>
@@ -399,7 +549,7 @@
               <p class="instructor-role">Instructor</p>
 
               <p class="instructor-bio">
-                Hi! I'm Kushagra Gour, a frontend developer with over 15 years
+                Hi! I'm Kushagra Gour, a Frontend Developer with over 15 years
                 of professional experience. I am starting this bootcamp because
                 I felt sad seeing the state of engineering. And I want to fix
                 it!
@@ -425,6 +575,28 @@
             <div class="quote-mark" aria-hidden="true">&ldquo;</div>
             <div class="testimonial-text">
               <p>
+                I’ve had the privilege of learning a great deal from Kushagra
+                throughout my journey as a Frontend Engineer. His ability to
+                teach frontend concepts is truly exceptional — among the very
+                best you’ll find. If you’re considering learning frontend, I
+                wholeheartedly recommend doing so with him!
+              </p>
+            </div>
+            <div class="testimonial-avatar-wrapper">
+              <div class="testimonial-avatar">
+                <img src="gaurav.png" alt="Gaurav Nanda" />
+              </div>
+            </div>
+            <div class="testimonial-author-info">
+              <h3 class="author-name">Gaurav Nanda</h3>
+              <p class="author-role">VP Engineering, SaaS Labs</p>
+            </div>
+          </div>
+
+          <div class="testimonial-card speech-bubble card">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <div class="testimonial-text">
+              <p>
                 If you really want to stop getting typecast as a Frontend, UI,
                 Backend engineer, I believe joining this Bootcamp is the best
                 place to start. Kush aka Chin Chang is a great mentor and I
@@ -433,7 +605,9 @@
               </p>
             </div>
             <div class="testimonial-avatar-wrapper">
-              <div class="testimonial-avatar"></div>
+              <div class="testimonial-avatar">
+                <img src="ankit.png" alt="Ankit Jain" />
+              </div>
             </div>
             <div class="testimonial-author-info">
               <h3 class="author-name">Ankit Jain</h3>
@@ -447,10 +621,7 @@
                 I've known Kushagra for 9 years and worked with him for 2. He's
                 a sharp developer behind projects like CSS Battle and Web Maker.
                 He’s worked on a wide range of products and truly understands
-                web development. I appreciated his curiosity and willingness to
-                learn—he asked great questions, listened well, and never
-                pretended to know what he didn’t. Working with him was fun and
-                easy.
+                web development.
               </p>
 
               <p>
@@ -461,7 +632,9 @@
               </p>
             </div>
             <div class="testimonial-avatar-wrapper">
-              <div class="testimonial-avatar"></div>
+              <div class="testimonial-avatar">
+                <img src="jitu1.png" alt="Jitendra Vyas" />
+              </div>
             </div>
             <div class="testimonial-author-info">
               <h3 class="author-name">Jitendra Vyas</h3>
@@ -486,7 +659,9 @@
               </p>
             </div>
             <div class="testimonial-avatar-wrapper">
-              <div class="testimonial-avatar"></div>
+              <div class="testimonial-avatar">
+                <img src="hariom.png" alt="Hariom" />
+              </div>
             </div>
             <div class="testimonial-author-info">
               <h3 class="author-name">Hariom</h3>
@@ -507,7 +682,9 @@
               </p>
             </div>
             <div class="testimonial-avatar-wrapper">
-              <div class="testimonial-avatar"></div>
+              <div class="testimonial-avatar">
+                <img src="rohit.png" alt="Rohit Yadav" />
+              </div>
             </div>
             <div class="testimonial-author-info">
               <h3 class="author-name">Rohit Yadav</h3>
@@ -538,16 +715,40 @@
             </div>
 
             <div class="testimonial-avatar-wrapper">
-              <div class="testimonial-avatar"></div>
+              <div class="testimonial-avatar">
+                <img src="rachit.png" alt="Rachit Gulati" />
+              </div>
             </div>
             <div class="testimonial-author-info">
               <h3 class="author-name">Rachit Gulati</h3>
               <p class="author-role">Staff Engineer, LinkedIn</p>
             </div>
           </div>
+
+          <div class="testimonial-card speech-bubble card">
+            <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+            <div class="testimonial-text">
+              <p>
+                The only one who, deservedly, should start his own bootcamp has
+                started one! LFGGGGG
+              </p>
+            </div>
+
+            <div class="testimonial-avatar-wrapper">
+              <div class="testimonial-avatar">
+                <img src="varun.png" alt="Varun Pai" />
+              </div>
+            </div>
+            <div class="testimonial-author-info">
+              <h3 class="author-name">Varun Pai</h3>
+              <p class="author-role">Lead Designer, LinkedIn</p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
+
+    <footer class="footer">― End of the page, beginning of a builder ―</footer>
 
     <svg width="0" height="0">
       <filter id="squiggly">
