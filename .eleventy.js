@@ -93,6 +93,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("cssconfasia");
   eleventyConfig.addPassthroughCopy("stuff");
   eleventyConfig.addPassthroughCopy("concert");
+  eleventyConfig.addPassthroughCopy("frontend-bootcamp");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   return {};
 };
