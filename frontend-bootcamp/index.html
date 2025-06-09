@@ -137,6 +137,19 @@
         padding: 3rem 0;
       }
 
+      .why-section {
+        text-align: center;
+      }
+
+      .why-text strong,
+      em {
+        color: #222;
+      }
+      em {
+        box-shadow: 0 3px 0 0 #a09075;
+        filter: url(#squiggly);
+      }
+
       .testimonials-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
@@ -311,12 +324,22 @@
         font-size: 1rem;
       }
       li {
-        /* padding-left: 1rem; */
+        padding-left: 1rem;
         list-style: none;
       }
       li::marker {
-        /* content: "*"; */
-        /* margin-right: 2rem; */
+        content: "*";
+        margin-right: 2rem;
+      }
+      .course-list {
+        list-style: none;
+
+        li {
+          padding-left: 0;
+        }
+        li::marker {
+          content: none;
+        }
       }
       .button {
         background: #333;
@@ -416,6 +439,27 @@
         </section>
       </header>
 
+      <section class="section why-section" aria-label="Why this bootcamp">
+        <h2 class="section-title">WHY?</h2>
+        <div class="card">
+          <p>
+            I have been part of hiring lately & I don't see real Frontend
+            developers these days. Somebody is great at JS, but doesn't know how
+            CSS works. Somebody is good at CSS, but doesn't have correct mental
+            models to write good JS. Some are great engineers, but don't
+            communicate well enough. In fact, lot of us can't even say "NO" when
+            they don't know something. There is a lot lacking in engineers today
+            and it is "frustrating" to see that! I want to build
+            <em>Complete Frontend engineers</em> who are great team players too.
+          </p>
+          <p>
+            But not just that. With AI coming in, jobs are getting scarce & so I
+            want to train them with product mindset - thinking in product and
+            capable of building e2e products too with just frontend experience.
+          </p>
+        </div>
+      </section>
+
       <section
         class="section testimonials-section"
         aria-label="Customer testimonials"
@@ -446,8 +490,9 @@
               pre-requisites, payment, Launch <span class="emoji">🚀</span>.
             </li>
             <li>
-              Bootcamp will approximately run for 15 days. Approximately because
-              this would be the first batch & we'll figure out exact duration.
+              Bootcamp will approximately run for <span class="number">15</span>
+              days. Approximately because this would be the first batch & we'll
+              figure out exact duration as we go.
             </li>
 
             <li>
@@ -460,7 +505,7 @@
 
           <div style="display: flex; justify-content: center; margin-top: 2rem">
             <details class="register-form">
-              <summary class="button">Register</summary>
+              <summary class="button">Register for June/July cohort</summary>
 
               <iframe
                 style="width: 100%; height: 40vh"
@@ -481,7 +526,7 @@
             world, specially in the AI world.
           </p>
 
-          <ul>
+          <ul class="course-list">
             <li>
               <details>
                 <summary>
@@ -865,6 +910,20 @@
               </p>
             </details>
           </div>
+
+          <div class="faq-item">
+            <details>
+              <summary>How long is the bootcamp?</summary>
+              <p>
+                This is the first cohort of the bootcamp, so honestly I can't
+                say exactly how much time it would take. I estimate
+                <span class="number">15</span> days of classes (excluding home
+                assignments, chat discussions etc). But the duration can extend
+                a bit, if there is need. Learning won't be compromised.
+              </p>
+            </details>
+          </div>
+
           <div class="faq-item">
             <details>
               <summary>Do you also place students after graduation?</summary>
