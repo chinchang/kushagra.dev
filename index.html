@@ -12,7 +12,11 @@
     />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="aXuLgPwQIm96xXrMJSEfGw" async></script>
+    <script
+      src="https://analytics.ahrefs.com/analytics.js"
+      data-key="aXuLgPwQIm96xXrMJSEfGw"
+      async
+    ></script>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
     <link
@@ -60,7 +64,9 @@
         justify-content: space-between;
         perspective: 800px;
         flex: 1;
-        overflow: hidden;
+        min-width: 0;
+        /* overflow: hidden; */
+        /* align-items: flex-end; */
       }
       .img {
         display: flex;
@@ -115,6 +121,7 @@
         transform: rotateY(-25deg);
         transform-style: preserve-3d;
         transform: skew(0deg, -3.3deg) rotateY(-10deg);
+        /* min-width: 50ch; */
       }
       .title {
         --starting-x: -3vw;
@@ -150,6 +157,10 @@
       }
       header {
         --starting-y: -30px;
+      }
+      header,
+      footer {
+        align-self: flex-end;
       }
       footer {
         --starting-y: 30px;
@@ -196,13 +207,19 @@
         opacity: 0.4;
       }
       .logo-wrap {
-        opacity: 0;
-        animation: show 0.3s ease-in-out forwards 0.6s;
-      }
-      .logo {
         position: absolute;
         left: 0;
         bottom: 0;
+        opacity: 0;
+        animation: show 0.3s ease-in-out forwards 0.6s;
+        width: 160px;
+        aspect-ratio: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .logo {
         animation: rotate 15s linear forwards infinite;
       }
       .text {
@@ -263,6 +280,17 @@
         }
         .content {
           padding: 2rem;
+          align-items: stretch;
+        }
+        header,
+        footer {
+          gap: 0;
+          justify-content: space-between;
+          align-self: stretch;
+        }
+        footer {
+          justify-content: center;
+          gap: 2rem;
         }
         .img {
           overflow: hidden;
@@ -309,6 +337,12 @@
       <div class="js-content content">
         <header>
           <a href="/lab/" data-anchor="Lab" aria-label="Lab">Lab</a>
+          <a
+            href="/frontend-bootcamp/"
+            data-anchor="Bootcamp"
+            aria-label="Bootcamp"
+            >Bootcamp</a
+          >
           <a href="/games/" data-anchor="Games" aria-label="Games">Games</a>
           <a href="/blog/" data-anchor="Blog" aria-label="Blog">Blog</a>
           <a href="/about/" data-anchor="About" aria-label="About">About</a>
@@ -349,6 +383,7 @@
     <script>
       function setContentWidth() {
         var contentWidth = document.querySelector(".js-content").offsetWidth;
+
         console.log({ contentWidth });
         document.documentElement.style.setProperty(
           "--width",
