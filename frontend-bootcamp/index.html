@@ -126,6 +126,7 @@
         letter-spacing: 0.1em;
       }
 
+      .section,
       .testimonials-section {
         margin-top: 3rem;
         padding: 3rem 0;
@@ -354,6 +355,29 @@
         margin-bottom: 0.5rem;
       }
 
+      /* FAQ styles */
+
+      .faq-item {
+        margin-bottom: 1rem;
+      }
+
+      .faq-item summary {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        padding: 1rem 0;
+      }
+
+      .faq-item summary:hover {
+        color: #756954;
+      }
+
+      .faq-item p {
+        margin-top: 0.5rem;
+        color: #555;
+      }
+
       /* Footer styles */
       .footer {
         text-align: center;
@@ -387,7 +411,10 @@
         </section>
       </header>
 
-      <section class="testimonials-section" aria-label="Customer testimonials">
+      <section
+        class="section testimonials-section"
+        aria-label="Customer testimonials"
+      >
         <h2 class="testimonials-title">Enroll</h2>
 
         <div class="card">
@@ -446,7 +473,7 @@
           <p>
             I have designed the bootcamp syllabus to not just build you as a
             good Frontend Developer, but make you ready for the professional
-            world.
+            world, specially in the AI world.
           </p>
 
           <ul>
@@ -510,52 +537,74 @@
               </details>
             </li>
             <li>
-              <strong class="chapter-title"
-                >Web Accessibility & Performance</strong
-              >
-              <p class="chapter-description">
-                This won't be a separate module, but we'll touch it throughout
-                the course.
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title"
+                    >Web Accessibility & Performance</strong
+                  >
+                </summary>
+                <p class="chapter-description">
+                  This won't be a separate module, but we'll touch it throughout
+                  the course.
+                </p>
+              </details>
             </li>
 
             <li>
-              <strong class="chapter-title">Design for Engineers</strong>
-              <p class="chapter-description">
-                I believe Engineers should know a bit of visual design too. It
-                helps appreciate the work of designers and also develops an
-                empathy for your customers. This won't be a separate module, but
-                we'll touch it throughout the course.
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title">Design for Engineers</strong>
+                </summary>
+                <p class="chapter-description">
+                  I believe Engineers should know a bit of visual design too. It
+                  helps appreciate the work of designers and also develops an
+                  empathy for your customers. This won't be a separate module,
+                  but we'll touch it throughout the course.
+                </p>
+              </details>
             </li>
             <li>
-              <strong class="chapter-title">Working with AI</strong>
-              <p class="chapter-description">
-                AI has become a need of the hour today. We'll learn how to use
-                AI to enhance our productivity, while making sure we don't loose
-                that human taste and become an AI puppet. "Vibe in the code, not
-                to the end user".
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title">Working with AI</strong>
+                </summary>
+
+                <p class="chapter-description">
+                  AI has become a need of the hour today. We'll learn how to use
+                  AI to enhance our productivity, while making sure we don't
+                  loose that human taste and become an AI puppet. "Vibe in the
+                  code, not to the end user".
+                </p>
+              </details>
             </li>
             <li>
-              <strong class="chapter-title"
-                >Building end-to-end products</strong
-              >
-              <p class="chapter-description">
-                Though we'll focus on becoming a cracked Frontend Developer,
-                knowing how to build end-to-end products is an important skill,
-                more so in current times. We'll learn how to build simple
-                end-to-end products as a Frontend Developer.
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title"
+                    >Building end-to-end products</strong
+                  >
+                </summary>
+                <p class="chapter-description">
+                  Though we'll focus on becoming a cracked Frontend Developer,
+                  knowing how to build end-to-end products is an important
+                  skill, more so in current times. We'll learn how to build
+                  simple end-to-end products as a Frontend Developer. This will
+                  make you resilient when job markets are down.
+                </p>
+              </details>
             </li>
 
             <li>
-              <strong class="chapter-title">Professional Etiquettes</strong>
-              <p class="chapter-description">
-                Programming applications is not enough to get hired by a good
-                team. Soft skills are equally important. We'll learn how to be a
-                good team player.
-              </p>
+              <details>
+                <summary>
+                  <strong class="chapter-title">Professional Etiquettes</strong>
+                </summary>
+                <p class="chapter-description">
+                  Programming applications is not enough to get hired by a good
+                  team. Soft skills are equally important. We'll learn how to be
+                  a good team player - speaking, writing, thinking & more!
+                </p>
+              </details>
             </li>
           </ul>
         </div>
@@ -732,7 +781,7 @@
                 learning from someone with elite, real-world skills.
               </p>
               <p>
-                I’ve worked with him and can vouch for both his work and
+                I've worked with him and can vouch for both his work and
                 humility.
               </p>
               <p>
@@ -774,9 +823,74 @@
           </div>
         </div>
       </section>
-    </main>
 
-    <footer class="footer">― End of the page, beginning of a builder ―</footer>
+      <section
+        class="section faq-section"
+        aria-label="Frequently Asked Questions"
+      >
+        <h2 class="section-title">FAQs</h2>
+        <div class="card">
+          <div class="faq-item">
+            <details>
+              <summary>
+                What's the refund policy if I don't like the bootcamp?
+              </summary>
+              <p>
+                We offer a 100% refund if you're not satisfied with the bootcamp
+                within the first 2 classes.
+              </p>
+            </details>
+          </div>
+
+          <div class="faq-item">
+            <details>
+              <summary>Do you have EMI option?</summary>
+              <p>No, we currently don't support EMI options.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Will I be professionally ready to work?</summary>
+              <p>
+                Absolutely! Our curriculum is designed to make you job-ready.
+                You'll build real projects, learn industry best practices, and
+                develop both technical and soft skills. With your combined
+                effort, by the end of the bootcamp, you'll have a portfolio of
+                work and the confidence to start your professional journey.
+              </p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary>Do you also place students after graduation?</summary>
+              <p>
+                While we don't guarantee placement, we provide extensive career
+                guidance including brand building & interview preparation. We
+                also have connections with various companies and will actively
+                help you find opportunities that match your skills and
+                interests.
+              </p>
+            </details>
+          </div>
+
+          <div class="faq-item">
+            <details>
+              <summary>How do you select the students for admission?</summary>
+              <p>
+                We look for students who are passionate about learning and have
+                a basic understanding of programming. The selection process
+                includes a short video call to discuss your goals and assess a
+                mutual fit. We value curiosity and dedication!
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        ― End of the page, beginning of a builder ―
+      </footer>
+    </main>
 
     <svg width="0" height="0">
       <filter id="squiggly">
