@@ -343,8 +343,8 @@ blockquote div {
 }
 pre[class*="language-"] {
   position: relative;
-  margin: 2rem calc(50% - 50vw) !important;
-  padding: 1.2rem calc(50vw - 50%) 1rem !important;
+  margin: 2rem calc((50% - 50vw) / 2) !important;
+  padding: 1.2rem calc((50vw - 50%) / 3) 1rem !important;
 }
 pre[class*="language-"]:after {
   text-transform: uppercase;
