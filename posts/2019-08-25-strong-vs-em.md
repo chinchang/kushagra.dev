@@ -133,7 +133,7 @@ Also, it's worth noting that accessibility isn't always about screen readers. Th
 
 ## Summary
 
-Next time you get confused which tag to use out of `strong` and `em`, think about this: What's your intention to change the visual appearance of a certain word or phrase? Is it just visual importance of does your stress actually help in communicating better by changing the meaning of the sentence (like you would have stressed while speaking)?
+Next time you get confused which tag to use out of `strong` and `em`, think about this: What's your intention - is it just visual importance or do you want to stress over something to communicate better by changing the meaning of the sentence (like you would have stressed while speaking)?
 
 If it's just visual importance, you want `strong`. If it alters the sentence meaning, use `em`.
 

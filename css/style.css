@@ -5,8 +5,8 @@
   --color-heading: #dcb236;
   --color-brand: #dcb236;
   --color-focus: #dcb236;
-  --color-blockquote-bg: #f4e1cf;
-  --color-code-border: #dcabab;
+  --color-blockquote-bg: #2c2a51;
+  --color-code-border: #dcb23666;
   --color-cloud-bg: #201c51;
   --color-grass-front: #39295a;
   --color-grass-middle: #2c1b44;
@@ -175,7 +175,7 @@ img {
 code:not([class]) {
   /* background: #efdfdf; */
   padding: 4px 4px;
-  border: 1px solid var(--color-code-border);
+  border: 2px solid var(--color-code-border);
   border-radius: 5px;
 }
 
@@ -186,7 +186,7 @@ blockquote {
   line-height: 1.6;
   position: relative;
   background: var(--color-blockquote-bg);
-  box-shadow: 1rem 0.5rem #914949;
+  box-shadow: 1rem 0.5rem #4f4b79;
 }
 
 blockquote::before {
@@ -485,7 +485,7 @@ figure {
 .info-box {
   padding: 1rem;
   background: var(--color-blockquote-bg);
-  border: 2px solid #c48d8d;
+  border: 2px solid #4f4b79;
   border-radius: 7px;
   margin-bottom: 1rem;
 }
