@@ -378,7 +378,7 @@
         setTimeout(() => {
           try {
             // In a real application, you would fetch from a JSON file:
-            fetch("./quiz.json")
+            fetch("/frontend-bootcamp/quiz-1/quiz.json")
               .then((response) => response.json())
               .then((data) => {
                 questions = data;
