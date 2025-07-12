@@ -120,7 +120,7 @@
   {
     "question": "In a form submission, the key for each value comes from…",
     "options": [
-      "the control's name attribute",
+      "the control's \"name\" attribute",
       "its id",
       "its aria-label",
       "placeholder text"
@@ -162,12 +162,12 @@
     "points": 1
   },
   {
-    "question": "The reason hitting Enter in a text field submits the form automatically is…",
+    "question": "Hitting Enter in a text field inside the form…",
     "options": [
-      "the field's maxlength",
-      "the presence of a <form> wrapper with a submit button",
-      "required validation",
-      "default browser zoom handling"
+      "validates the form",
+      "submits the form",
+      "takes you to next input field",
+      "resets the form"
     ],
     "correct": "B",
     "points": 1
