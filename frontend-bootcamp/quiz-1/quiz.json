@@ -1,0 +1,192 @@
+[
+  {
+    "question": "Which tag semantically identifies an abbreviation such as 'HTML'?",
+    "options": ["<abbr>", "<code>", "<span>", "<acronym>"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "What’s the biggest accessibility drawback of relying on the title attribute to show full forms?",
+    "options": [
+      "Browsers strip it in strict mode",
+      "It blocks focus order",
+      "It’s tiny, unzoomable and delayed",
+      "It forces uppercase"
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Which attribute hides an element from assistive tech while leaving it in the visual DOM?",
+    "options": [
+      "hidden",
+      "aria-hidden=\"true\"",
+      "tabindex=\"-1\"",
+      "role=\"none\""
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Where is a hard line-break (<br>) semantically OK?",
+    "options": [
+      "Page layout columns",
+      "Spacing between list items",
+      "Card titles",
+      "Poetry / mailing-address lines"
+    ],
+    "correct": "D",
+    "points": 1
+  },
+  {
+    "question": "The main reason to avoid sprinkling <br> for spacing is it…",
+    "options": [
+      "mixes presentation with content",
+      "slows the DOM parser",
+      "blocks flexbox",
+      "disables responsive images"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "If a chunk of page content is logically a standalone section (and could carry its own heading), which wrapper is best?",
+    "options": ["<div>", "<article>", "<section>", "<span>"],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Which heading outline is valid?",
+    "options": ["<h1><h3>", "<h1><h2><h3>", "<h2><h1>", "<h3> only"],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Putting an <h3> on a page with no <h1>/<h2> mainly…",
+    "options": [
+      "renders in italics",
+      "breaks ARIA landmarks",
+      "stops CSS grids",
+      "confuses screen-reader headings list navigation"
+    ],
+    "correct": "D",
+    "points": 1
+  },
+  {
+    "question": "What tag should wrap a date so machines can parse it?",
+    "options": ["<abbr>", "<data>", "<time>", "<meta>"],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "A control that merely navigates the user belongs in…",
+    "options": ["<a href>", "<button>", "<input type=\"submit\">", "<nav>"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Explicitly connecting a <label> with its <input> uses which pair?",
+    "options": [
+      "name / value",
+      "for / id",
+      "title / aria-label",
+      "data-* / role"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Wrapping an <input> inside its <label>…",
+    "options": [
+      "breaks focus order",
+      "requires for",
+      "auto-links label and control",
+      "is invalid HTML"
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Associating a label with a checkbox mainly helps users who…",
+    "options": [
+      "rely on high contrast",
+      "disable JS",
+      "use voice dictation",
+      "have motor impairments and need a larger click target"
+    ],
+    "correct": "D",
+    "points": 1
+  },
+  {
+    "question": "In a form submission, the key for each value comes from…",
+    "options": [
+      "the control's name attribute",
+      "its id",
+      "its aria-label",
+      "placeholder text"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "With method=\"get\" the form data is appended…",
+    "options": [
+      "in a JSON body",
+      "as request headers",
+      "to the URL after ?",
+      "in a cookie"
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "You should switch the form to method=\"post\" when you…",
+    "options": [
+      "need caching",
+      "must send a larger payload or sensitive data in the request body",
+      "want bookmarking of queries",
+      "need CORS pre-flight"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Inside a form, an untyped <button> acts as…",
+    "options": [
+      "type=\"reset\"",
+      "inert markup",
+      "type=\"submit\"",
+      "type=\"button\""
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "The reason hitting Enter in a text field submits the form automatically is…",
+    "options": [
+      "the field's maxlength",
+      "the presence of a <form> wrapper with a submit button",
+      "required validation",
+      "default browser zoom handling"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "In a <select>, why separate the human-readable text from the underlying value?",
+    "options": [
+      "Backend might need snake_case while UI shows 'Pretty Case'",
+      "It improves SEO",
+      "It prevents XSS",
+      "It boosts Lighthouse score"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Which DevTools checkbox keeps earlier network requests when the page navigates?",
+    "options": ["Disable cache", "Throttle", "Group by frame", "Preserve log"],
+    "correct": "D",
+    "points": 1
+  }
+]
