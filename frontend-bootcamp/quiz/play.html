@@ -374,11 +374,14 @@
       function loadQuestions() {
         showState("loading");
 
+        const params = new URLSearchParams(window.location.search);
+        const quizId = params.get("quizId");
+
         // Simulate API call delay
         setTimeout(() => {
           try {
             // In a real application, you would fetch from a JSON file:
-            fetch("/frontend-bootcamp/quiz-1/quiz.json")
+            fetch(`/frontend-bootcamp/quiz/quiz-${quizId}.json`)
               .then((response) => response.json())
               .then((data) => {
                 questions = data;
@@ -392,7 +395,7 @@
           } catch (error) {
             showState("error");
           }
-        }, 1000);
+        }, 10);
       }
 
       // Start the quiz

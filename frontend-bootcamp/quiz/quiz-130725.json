@@ -1,0 +1,397 @@
+[
+  {
+    "question": "Which input type opens a native colour picker in most browsers?",
+    "options": [
+      "<input type='submit' />",
+      "<input type='password' />",
+      "<input type='email' />",
+      "<input type='color' />"
+    ],
+    "correct": "D",
+    "points": 1
+  },
+  {
+    "question": "Which attribute makes an input field mandatory before form submission?",
+    "options": ["minlength", "pattern", "required", "placeholder"],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Which input attribute lets you define a regular-expression the value must match?",
+    "options": ["pattern", "title", "aria-hidden", "maxlength"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Why should you add a title attribute when using pattern validation?",
+    "options": [
+      "Improves SEO",
+      "Gives screen readers a human description of the pattern",
+      "Changes tooltip color",
+      "Blocks copy-paste"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "What happens if minlength=\"3\" is set on an input but the field is left blank?",
+    "options": [
+      "Form blocks submission",
+      "minlength is ignored until some text is entered",
+      "Browser autofills zeros",
+      "Value becomes null"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Client-side validation alone is unsafe because…",
+    "options": [
+      "Users might bypass it via DevTools",
+      "It slows down servers",
+      "It hides error messages",
+      "It encrypts data"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Which attribute removes an element from the accessibility tree while keeping it visible?",
+    "options": ["hidden", "aria-hidden=\"true\"", "role=\"none\"", "title"],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "The tree that screen readers derive from the DOM is called the…",
+    "options": ["Render tree", "CSSOM", "Accessibility tree", "Shadow DOM"],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Merging the DOM tree and CSSOM produces the…",
+    "options": ["CSS Cascade", "Render tree", "GPU layer tree", "Event loop"],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Giving several <details> elements the same name attribute turns them into a(n)…",
+    "options": ["Tab panel", "Accordion", "Tooltip", "Carousel"],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Which attribute keeps a <details> element expanded on initial load?",
+    "options": ["open", "show", "expanded", "start"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "The semantic HTML element for modal dialogs is…",
+    "options": ["<modal>", "<popup>", "<dialog>", "<window>"],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Which element displays task-completion progress visually without JS?",
+    "options": ["<meter>", "<progress>", "<output>", "<time>"],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "What input type obscures the characters the user types?",
+    "options": ["password", "text", "search", "tel"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "The default type of a <button> inside a form is…",
+    "options": ["reset", "button", "submit", "menu"],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Which attribute limits the maximum number of characters allowed in a text input?",
+    "options": ["maxlength", "size", "pattern", "step"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Setting type=\"reset\" on a button will…",
+    "options": [
+      "Submit the form",
+      "Clear the form to its initial values",
+      "Disable all inputs",
+      "Focus the first input"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "What is the main purpose of server-side validation if client-side checks already exist?",
+    "options": [
+      "Improve typography",
+      "Reduce CSS size",
+      "Ensure security and data integrity",
+      "Generate tooltips"
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Which input type triggers the browser’s native date picker?",
+    "options": ["week", "date", "month", "All of the above"],
+    "correct": "D",
+    "points": 1
+  },
+  {
+    "question": "The user-agent stylesheet is provided by…",
+    "options": [
+      "The site’s CSS file",
+      "The browser",
+      "The operating system",
+      "The W3C"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Which way of adding CSS incurs extra network request?",
+    "options": [
+      "External stylesheet via <link>",
+      "Inline style attribute",
+      "In-page style tag",
+      "User-agent style"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "An in-page <style> block best placed...",
+    "options": [
+      "at the end of BODY",
+      "start of the BODY",
+      "in the HEAD tag",
+      "outside BODY"
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "If a <link> lacks rel=\"stylesheet\", most browsers will…",
+    "options": [
+      "Fetch but ignore the file",
+      "Still apply it as CSS",
+      "Refuse to fetch the file",
+      "Treat it as JavaScript"
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Placing CSS links in the <head> helps avoid…",
+    "options": [
+      "CSP violations",
+      "Render-blocking caused by late styles",
+      "Duplicate rules",
+      "Cookie warnings"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Inline styles are discouraged because they…",
+    "options": [
+      "Bypass the cascade",
+      "Can't be overridden",
+      "Mix content and presentation, hurting reuse",
+      "Increase HTTP requests"
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Which data structure does the CSS parser create before styles are applied?",
+    "options": ["CSSOM", "DOM", "Accessibility tree", "BOM"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Which of these is NOT a valid way to include CSS?",
+    "options": [
+      "<link rel=\"stylesheet\">",
+      "<style>",
+      "style=\"...\"",
+      "<script>"
+    ],
+    "correct": "D",
+    "points": 1
+  },
+  {
+    "question": "The link rel=\"stylesheet\" method is preferred because…",
+    "options": [
+      "It isolates styles in reusable files",
+      "Browsers ignore caching",
+      "It reduces specificity",
+      "It converts CSS to JS"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "A large <script> placed before a <style> block can…",
+    "options": [
+      "Improve First Paint",
+      "Force the browser to wait before parsing styles",
+      "Minify CSS automatically",
+      "Enable HTTP/2"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "In a relative URL like href=\"styles.css\", which part is omitted?",
+    "options": [
+      "Domain and path",
+      "Query string",
+      "Protocol and domain",
+      "File extension"
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "In the regex ^[0-9]{3}$, {3} enforces…",
+    "options": [
+      "Exactly three digits",
+      "At least three digits",
+      "Up to three digits",
+      "Any number of digits"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Which input type provides a slider UI for numeric selection?",
+    "options": ["number", "range", "meter", "progress"],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "The pattern attribute’s regex is applied…",
+    "options": [
+      "Only after the field is non-empty",
+      "Even when empty",
+      "Only on blur",
+      "Only on change event"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Which attribute conveys that a link points to the current page?",
+    "options": [
+      "aria-current=\"page\"",
+      "aria-role=\"current\"",
+      "aria-selected=\"true\"",
+      "role=\"current\""
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "To hide text visually yet keep it for screen readers, you typically use…",
+    "options": [
+      "display:none",
+      "aria-hidden",
+      "CSS helper class like .sr-only",
+      "opacity:0"
+    ],
+    "correct": "C",
+    "points": 1
+  },
+  {
+    "question": "Which element automatically groups related form controls with a visible border and legend?",
+    "options": ["fieldset", "section", "div", "details"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Which git command pulls the main branch from the origin remote into the current branch?",
+    "options": [
+      "git fetch origin",
+      "git pull origin main",
+      "git push origin main",
+      "git clone --main"
+    ],
+    "correct": "B",
+    "points": 1
+  },
+  {
+    "question": "Adding 'playground.*' to .gitignore will…",
+    "options": [
+      "Ignore any file starting with playground regardless of extension",
+      "Ignore the playground folder only",
+      "Ignore nothing; syntax invalid",
+      "Delete matching files"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+
+  {
+    "question": "Which HTML element visually groups collapsible content and summary?",
+    "options": ["details", "dialog", "summary", "aside"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Which logical property sets the margin at the start of the block axis, replacing the traditional \"margin-top\"?",
+    "options": [
+      "margin-block-start",
+      "margin-block-end",
+      "margin-inline-start",
+      "margin-left"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "For left-to-right English text, the property \"padding-inline-start\" adds padding on which physical side of the element?",
+    "options": ["Left", "Right", "Top", "Bottom"],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "Why are logical properties such as \"padding-inline-start\" preferred over physical ones like \"padding-left\" on multilingual websites?",
+    "options": [
+      "They adapt automatically to writing-direction changes",
+      "They render faster in the GPU",
+      "They reduce CSS file size",
+      "They only apply to flex items"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "CSS logical properties are based on two perpendicular axes called…",
+    "options": [
+      "Inline and Block",
+      "Row and Column",
+      "Start and End",
+      "Horizontal and Vertical"
+    ],
+    "correct": "A",
+    "points": 1
+  },
+  {
+    "question": "In vertical-writing Chinese where characters flow top → bottom, the inline axis direction is…",
+    "options": [
+      "Vertical top-to-bottom",
+      "Horizontal left-to-right",
+      "Horizontal right-to-left",
+      "Vertical bottom-to-top"
+    ],
+    "correct": "A",
+    "points": 1
+  }
+]
