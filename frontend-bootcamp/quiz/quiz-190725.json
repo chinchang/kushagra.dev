@@ -1,0 +1,259 @@
+[
+  {
+    "question": "What does the CSS Object Model (CSSOM) represent? ",
+    "options": [
+      "Binary bytecode of stylesheets",
+      "A tree representation of parsed CSS text",
+      "Only inline styles collected in an array",
+      "Browser GPU layer graph"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Where do default styles (like H1 margins) come from when you write no CSS at all? ",
+    "options": [
+      "ECMAScript engine",
+      "Author stylesheet",
+      "User agent stylesheet",
+      "GPU compositor defaults"
+    ],
+    "correct": "C"
+  },
+
+  {
+    "question": "What problem do logical properties primarily solve? ",
+    "options": [
+      "GPU overdraw",
+      "Network latency",
+      "Direction & writing‑mode adaptability",
+      "Font subsetting"
+    ],
+    "correct": "C"
+  },
+  {
+    "question": "In English, which physical directions map to the inline and block axes? ",
+    "options": [
+      "Inline: top→bottom, Block: left→right",
+      "Inline: left→right, Block: top→bottom",
+      "Inline: right→left, Block: bottom→top",
+      "Inline: top→bottom, Block: right→left"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "For Hebrew, what is the inline direction? ",
+    "options": [
+      "Left to right",
+      "Top to bottom",
+      "Right to left",
+      "Bottom to top"
+    ],
+    "correct": "C"
+  },
+
+  {
+    "question": "Why is px described as an absolute unit here? ",
+    "options": [
+      "It scales with root font size",
+      "It has device pixel ratio baked in",
+      "It is not relative to any other thing",
+      "It always equals 1 physical screen pixel"
+    ],
+    "correct": "C"
+  },
+  {
+    "question": "What distinguishes relative units from absolute units? ",
+    "options": [
+      "Relative units require JavaScript",
+      "Relative units are percentages only",
+      "Relative units resolve against another reference value",
+      "Absolute units cannot be printed"
+    ],
+    "correct": "C"
+  },
+
+  {
+    "question": "What default behavior does a block-level div have before setting an explicit width? ",
+    "options": [
+      "Shrinks to content",
+      "Centers itself",
+      "Takes full inline (horizontal) space of its parent",
+      "Floats left"
+    ],
+    "correct": "C"
+  },
+
+  {
+    "question": "For text widths, which unit is recommended most often here? ",
+    "options": ["in", "ch", "pt", "deg"],
+    "correct": "B"
+  },
+  {
+    "question": "For a larger device which is used from far away, you would want to have...",
+    "options": [
+      "smaller font size",
+      "larger font size",
+      "font size does't matter",
+      "different font style"
+    ],
+    "correct": "A"
+  },
+  {
+    "question": "What does 1lh (one LH) represent in the transcript's terminology? ",
+    "options": [
+      "Average glyph width",
+      "Height of the lowercase x",
+      "Computed line height (one line of text)",
+      "Cap height"
+    ],
+    "correct": "C"
+  },
+  {
+    "question": "Why is 1lh larger than 1ex? ",
+    "options": [
+      "ex includes leading",
+      "lh includes extra spacing above/below glyph box",
+      "ex scales with viewport width",
+      "lh ignores font metrics"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "How can you ensure a box shows exactly three lines of text regardless of font size changes? ",
+    "options": [
+      "height:3ex",
+      "line-height:3%",
+      "height:3lh",
+      "max-height:3em and overflow:hidden"
+    ],
+    "correct": "C"
+  },
+
+  {
+    "question": "rem unit is better in most cases compared to em unit because...",
+    "options": [
+      "rem is absolute unit",
+      "rem is easier to predict and maintain",
+      "rem is faster to calculate",
+      "rem is relative to parent"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "rem unit relative to...",
+    "options": [
+      "parent font size",
+      "root font size",
+      "element's font size",
+      "viewport width"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "What concept explains how every element is dimensioned and placed? ",
+    "options": [
+      "Cascade layers",
+      "Display contexts",
+      "Box model",
+      "GPU tiling"
+    ],
+    "correct": "C"
+  },
+  {
+    "question": "Every element on a web page is a...",
+    "options": ["Square", "Trapezoid", "Rectangle", "image"],
+    "correct": "C"
+  },
+  {
+    "question": "By default, setting an inline-size changes the size of...",
+    "options": ["Margin box", "Padding box", "Content box", "All of above"],
+    "correct": "C"
+  },
+  {
+    "question": "What happens to the visible (content) area when you increase margin while fitting inside a fixed parent? ",
+    "options": [
+      "Content area expands",
+      "Border thickness auto-reduces",
+      "Content area visually shrinks to accommodate margin",
+      "Parent size grows"
+    ],
+    "correct": "C"
+  },
+  {
+    "question": "Where does a child block element appear relative to its parent's box model? ",
+    "options": [
+      "Inside the parent's margin box",
+      "Inside the parent's content box",
+      "Overlayed on the border box",
+      "Inside the parent's padding edge only if display:block"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Why do margin, border, and padding cause inner content to shrink under a fixed outer constraint? ",
+    "options": [
+      "Browser bug in box sizing",
+      "Element must remain within 100% available parent space",
+      "Margins convert to absolute positioning",
+      "Render tree ignores intrinsic sizes"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "Which sequence correctly reflects the nesting from innermost to outermost in the box model as implied? ",
+    "options": [
+      "Margin → Border → Padding → Content",
+      "Content → Padding → Border → Margin",
+      "Padding → Content → Border → Margin",
+      "Content → Border → Padding → Margin"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "What is the immediate result of adding a thick border to a 100% wide block element? ",
+    "options": [
+      "Border overlaps outside parent",
+      "Content width decreases to make space for border",
+      "Overflow becomes scroll",
+      "Element switches to inline formatting"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "Setting a 'width' on an element affects the width of the...",
+    "options": ["Margin box", "Padding box", "Content box", "Border box"],
+    "correct": "C"
+  },
+  {
+    "question": "What would the visual width of a box with just width:150px be? ",
+    "options": ["150px", "160px", "140px", "can't say"],
+    "correct": "A"
+  },
+  {
+    "question": "What would the visual inline-size (width in English language) of a box with width:150px and padding:10px be? ",
+    "options": ["150px", "160px", "170px", "can't say"],
+    "correct": "A"
+  },
+
+  {
+    "question": "What would the visual inline-size  of a box with inline-size:100px and margin:10px be? ",
+    "options": ["100px", "110px", "120px", "can't say"],
+    "correct": "A"
+  },
+
+  {
+    "question": "What property can be used to control the sizing behavior of an element?",
+    "options": ["width", "inline-size", "box-sizing", "padding"],
+    "correct": "C"
+  },
+
+  {
+    "question": "What is the default value of box-sizing?",
+    "options": ["padding-box", "border-box", "content-box", "margin-box"],
+    "correct": "C"
+  }
+]

@@ -387,7 +387,10 @@
                 questions = data;
                 startQuiz();
               })
-              .catch((error) => showState("error"));
+              .catch((error) => {
+                console.error("Error loading questions:", error);
+                showState("error");
+              });
 
             // questions = sampleQuestions;
             // userAnswers = new Array(questions.length).fill(null);
