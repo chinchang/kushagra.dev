@@ -1,0 +1,203 @@
+[
+  {
+    "question": "Which two keyword values does the CSS `box-sizing` property officially accept? ",
+    "options": [
+      "content-box and border-box",
+      "content-box and padding-box",
+      "border-box and margin-box",
+      "padding-box and margin-box"
+    ],
+    "answer": "A"
+  },
+
+  {
+    "question": "In the CSS box model, the element’s 'visual' width corresponds to the width of which box? ",
+    "options": ["Content box", "Padding box", "Border box", "Margin box"],
+    "answer": "C"
+  },
+
+  {
+    "question": "With `box-sizing: content-box`, an element having `inline-size: 100px` and `padding: 20px` will visually render how wide? (Assume no border.)",
+    "options": ["100 px", "120 px", "140 px", "160 px"],
+    "answer": "C"
+  },
+  {
+    "question": "Adding a `margin` of 50px on an element increases the element’s overall box width by how much?",
+    "options": [
+      "It stays the same; margin lies outside the box model",
+      "Adds 50 px total",
+      "Adds 100 px total",
+      "Adds 200 px total"
+    ],
+    "answer": "C"
+  },
+  {
+    "question": "The universal selector in CSS is denoted by which single character?",
+    "options": ["*", "&", "#", "%"],
+    "answer": "A"
+  },
+  {
+    "question": "A 'type selector' targets elements based on their:",
+    "options": [
+      "class attribute",
+      "inline style",
+      "HTML tag name",
+      "document position"
+    ],
+    "answer": "C"
+  },
+
+  {
+    "question": "Over-riding `button:focus { outline: 0; }` without providing an alternative focus style is discouraged because it:",
+    "options": [
+      "Triggers a layout thrash",
+      "Breaks keyboard accessibility by hiding the focus indicator ",
+      "Increases specificity of other rules",
+      "Stops the hover state from firing"
+    ],
+    "answer": "B"
+  },
+  {
+    "question": "Browsers supply default hover, active and focus styles for interactive elements to:",
+    "options": [
+      "Improve GPU utilisation",
+      "Signal interactivity and current state to users ",
+      "Reduce CSS file size",
+      "Comply with HTTP specifications"
+    ],
+    "answer": "B"
+  },
+  {
+    "question": "The `active` pseudo-class on a button represents the period:",
+    "options": [
+      "Just after `mouseenter`",
+      "While the mouse button is pressed before release ",
+      "After the click event fires",
+      "When the element acquires keyboard focus"
+    ],
+    "answer": "B"
+  },
+  {
+    "question": "Releasing the mouse outside the element after pressing cancels the click because:",
+    "options": [
+      "`click` fires only if press and release happen on the same element ",
+      "Browsers ignore mouseup globally",
+      "DefaultAction is prevented",
+      "CSS `:active` state blocks it"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "Which nth-child formula selects all odd-numbered children? ",
+    "options": ["`2n`", "`2n+1`", "`n+2`", "`-n+1`"],
+    "answer": "B"
+  },
+  {
+    "question": "To select only the even children, a valid nth-child expression is:",
+    "options": ["`2n`", "`2n+1`", "`2n+2`", "Both A and C are valid "],
+    "answer": "D"
+  },
+  {
+    "question": "Which selector targets an element that is the *first* child of its parent?",
+    "options": [
+      "`:first-child`",
+      "`:first-of-type`",
+      "`:nth-child(0)`",
+      "`:root`"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "`:last-child` differs from `:nth-last-child(1)` in what way?",
+    "options": [
+      "They are identical in effect",
+      "The latter counts only element nodes",
+      "`:last-child` ignores text nodes",
+      "`:nth-last-child(1)` cannot be used on lists"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "Which nth-child formula matches *from the third child onward*? ",
+    "options": ["`n+3`", "`3n`", "`-n+3`", "`3n-1`"],
+    "answer": "A"
+  },
+  {
+    "question": "What nth-child expression would match *only* the first three children?",
+    "options": ["`-n+3`", "`n-3`", "`3n`", "`n+3`"],
+    "answer": "A"
+  },
+  {
+    "question": "A `div` takes 100% of its parent’s inline width by default because it is a:",
+    "options": [
+      "Flex item",
+      "Inline element",
+      "Block-level element ",
+      "Replaced element"
+    ],
+    "answer": "C"
+  },
+  {
+    "question": "A `span` behaves differently from a `div` primarily because `span` is:",
+    "options": [
+      "Rendered in monospace",
+      "Always absolutely positioned",
+      "A deprecated element",
+      "An inline element"
+    ],
+    "answer": "D"
+  },
+
+  {
+    "question": "With `width: 100%` on a block element, adding a 10px border results in:",
+    "options": [
+      "Overflow beyond the parent",
+      "Content width reducing by 20px to keep overall width at 100%",
+      "Border overlapping the margin",
+      "Automatic switch to `box-sizing: border-box`"
+    ],
+    "answer": "B"
+  },
+
+  {
+    "question": "Which selector targets 'all' elements inside `.parent` regardless of depth?",
+    "options": [".parent *", ".parent > *", "* .parent", ".parent + *"],
+    "answer": "A"
+  },
+  {
+    "question": "The descendant combinator in `.parent div` is represented by:",
+    "options": ["A single space character", "`>`", "`+`", "`~`"],
+    "answer": "A"
+  },
+  {
+    "question": "`-n+3` used with `:nth-child()` selects:",
+    "options": [
+      "Only the first three children",
+      "All children after the third",
+      "Only even children",
+      "No children (invalid syntax)"
+    ],
+    "answer": "A"
+  },
+  {
+    "question": "Negative or zero positions generated by an `nth-child` formula are:",
+    "options": [
+      "Clamped to 1 automatically",
+      "Ignored as invalid, so no element is matched",
+      "Wrapped around from the end",
+      "Cause a CSS syntax error"
+    ],
+    "answer": "B"
+  },
+
+  {
+    "question": "Which selector selects all <p> tags which are direct children of .box?",
+    "options": [".box p", "p.box", ".box > p", "p > .box"],
+    "answer": "C"
+  },
+  {
+    "question": "Which selector selects all <p> which have .box class on them?",
+    "options": [".box > p", ".box p", "p.box", "p > .box"],
+    "answer": "C"
+  }
+]

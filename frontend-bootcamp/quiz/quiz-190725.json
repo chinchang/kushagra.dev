@@ -97,7 +97,7 @@
       "font size does't matter",
       "different font style"
     ],
-    "correct": "A"
+    "correct": "B"
   },
   {
     "question": "What does 1lh (one LH) represent in the transcript's terminology? ",
@@ -236,11 +236,11 @@
   {
     "question": "What would the visual inline-size (width in English language) of a box with width:150px and padding:10px be? ",
     "options": ["150px", "160px", "170px", "can't say"],
-    "correct": "A"
+    "correct": "C"
   },
 
   {
-    "question": "What would the visual inline-size  of a box with inline-size:100px and margin:10px be? ",
+    "question": "What would the visual inline-size of a box with inline-size:100px and margin:10px be?",
     "options": ["100px", "110px", "120px", "can't say"],
     "correct": "A"
   },
