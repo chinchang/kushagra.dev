@@ -1,0 +1,249 @@
+[
+  {
+    "question": "Which pseudo-class triggers the default blue focus ring added by Google Chrome browser?",
+    "options": [":focus", ":focus-visible", ":active", ":hover"],
+    "correct": "B"
+  },
+  {
+    "question": "After clicking a button with the mouse, the element is focused but the blue ring is missing. Why?",
+    "options": [
+      ":focus is deprecated in modern browsers",
+      "The element is not actually focused",
+      "Browsers apply the default outline on :focus-visible, not on :focus, for mouse interactions",
+      "The outline property cannot be applied by user agents"
+    ],
+    "correct": "C"
+  },
+
+  {
+    "question": "Which property is inherited by default?",
+    "options": ["padding", "margin-left", "border-width", "color"],
+    "correct": "D"
+  },
+  {
+    "question": "You set font-size on a parent element. What happens to its child elements by default?",
+    "options": [
+      "They ignore the parent's font-size",
+      "They inherit only if they are inline elements",
+      "They inherit only if they are block elements",
+      "They inherit the font-size from the parent"
+    ],
+    "correct": "D"
+  },
+
+  {
+    "question": "Setting padding on a parent automatically gives the same padding to its children. True or false?",
+    "options": [
+      "True",
+      "False",
+      "Only for inline children",
+      "Only if box-sizing is border-box"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "In the default flow layout, how do inline elements get placed?",
+    "options": [
+      "They are placed in the inline direction and wrap to the next line when there's no space",
+      "Each takes a full line like blocks",
+      "They are absolutely positioned by default",
+      "They center themselves horizontally"
+    ],
+    "correct": "A"
+  },
+  {
+    "question": "Which property controls whether an element behaves as block or inline?",
+    "options": ["display", "position", "visibility", "float"],
+    "correct": "A"
+  },
+  {
+    "question": "Which statement best describes a block element in the flow layout?",
+    "options": [
+      "It ignores width and height",
+      "It takes the available inline width of its containing block and starts on a new line",
+      "It never affects surrounding elements via margins",
+      "It always shrinks to fit its content"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "What is the name of the default layout algorithm used by browsers?",
+    "options": [
+      "Grid layout",
+      "Flow layout",
+      "Absolute layout",
+      "Subgrid layout"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "What happens when a child element is changed to position: absolute?",
+    "options": [
+      "It is removed from the normal flow; the parent no longer grows to contain it",
+      "It becomes a flex item automatically",
+      "It gets sticky related to viewport",
+      "It becomes fixed to the viewport"
+    ],
+    "correct": "A"
+  },
+  {
+    "question": "Without top/left/right/bottom, where does an absolutely positioned element appear initially?",
+    "options": [
+      "At the top-left of the viewport",
+      "At its static position as if it were still in the normal flow",
+      "Centered in the nearest positioned ancestor",
+      "At the bottom of the document"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "Offsets (top/left/right/bottom) for an absolutely positioned element are computed relative to:",
+    "options": [
+      "The nearest positioned ancestor; otherwise the initial containing block",
+      "Always the viewport",
+      "The nearest ancestor with overflow: hidden",
+      "The root element's margin box"
+    ],
+    "correct": "A"
+  },
+  {
+    "question": "For a static-positioned element, 100% width typically refers to which 'box' of the parent?",
+    "options": [
+      "The border box of the nearest ancestor",
+      "The padding box of the nearest ancestor",
+      "The content box of the nearest block or formatting-context ancestor",
+      "The margin box of the nearest ancestor"
+    ],
+    "correct": "C"
+  },
+  {
+    "question": "For an absolutely positioned element with a positioned ancestor, the containing block is defined by the ancestor's:",
+    "options": ["Margin box", "Border box", "Padding box", "Content box"],
+    "correct": "C"
+  },
+  {
+    "question": "A quick way to identify an element's containing block during debugging is to:",
+    "options": [
+      "Set its inline-size/width to 100% (optionally with box-sizing: border-box) and see what it fills",
+      "Toggle content-visibility: auto",
+      "Add overflow: hidden to the parent",
+      "Switch the document to quirks mode"
+    ],
+    "correct": "A"
+  },
+
+  {
+    "question": "If an absolutely positioned element has no positioned ancestor, how does it behave relative to the viewport during scrolling?",
+    "options": [
+      "It stays fixed like position: fixed",
+      "It scrolls with the page because it's not anchored to the viewport",
+      "It randomly reflows on each paint",
+      "It becomes sticky at the top"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "Which values make an element 'positioned' (i.e., establish a positioning context)?",
+    "options": [
+      "position: relative,",
+      "position: absolute,",
+      "position: fixed,",
+      "All the above"
+    ],
+    "correct": "D"
+  },
+
+  {
+    "question": "To switch the layout mechanism inside an element to Flexbox, you would",
+    "options": [
+      "Set display: grid",
+      "Set display: block",
+      "Set display: flex",
+      "Set display: inline"
+    ],
+    "correct": "C"
+  },
+
+  {
+    "question": "By default, flex items are laid out in the",
+    "options": [
+      "Column direction",
+      "Row direction",
+      "Both directions",
+      "None of the above"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "By default, flex items are allowed to...",
+    "options": [
+      "Grow and shrink",
+      "Grow only",
+      "Shrink only",
+      "None of the above"
+    ]
+  },
+  {
+    "question": "If all flex items have the same flex-grow but different initial sizes, what happens?",
+    "options": [
+      "They end up the same final size",
+      "The larger initial item remains larger; they grow by the same amount, not to the same size",
+      "Smaller items steal more space and become largest",
+      "All items shrink to the smallest content size"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "What does flex-basis: auto mean for a flex item?",
+    "options": [
+      "Use the explicit width/height if set; otherwise use the max-content size",
+      "Always use min-content sizing",
+      "Ignore any explicit width",
+      "Treat basis as 0"
+    ],
+    "correct": "A"
+  },
+
+  {
+    "question": "Conceptually, a flex item's final main size can be thought of as:",
+    "options": [
+      "The sum of its margins only",
+      "Its flex-basis plus its share of distributed free space",
+      "Always 100% of the container",
+      "Its min-content size only"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "Which does flex-grow actually control?",
+    "options": [
+      "The element's intrinsic content size",
+      "Distribution of positive free space among items",
+      "The cross-axis alignment",
+      "Whether items wrap or not"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "In a left-to-right document, flex-direction: row aligns items along which direction?",
+    "options": [
+      "The inline direction (left to right)",
+      "The block direction (top to bottom)",
+      "The opposite of the writing mode",
+      "It depends on justify-content only"
+    ],
+    "correct": "A"
+  },
+  {
+    "question": "Setting display: flex on a parent does what immediately?",
+    "options": [
+      "Changes the layout mechanism for its direct children (they become flex items)",
+      "Changes the parent's outer display to inline",
+      "Makes all grandchildren grid items",
+      "Disables the cascade for child elements"
+    ],
+    "correct": "A"
+  }
+]
