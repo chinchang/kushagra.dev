@@ -1,0 +1,194 @@
+[
+  {
+    "question": "In JavaScript mental model, primitive values are described as:",
+    "options": [
+      "Objects that can be mutated at will",
+      "Entities that always exist far away and are immutable",
+      "Functions stored in global scope",
+      "values that created on demand"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "According to the mental model, variables in JavaScript act primarily as:",
+    "options": [
+      "Containers holding data internally",
+      "Links (references) to existing values",
+      "Memory addresses you can arithmetic on",
+      "Static type annotations"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Which statement about primitive values is TRUE?",
+    "options": [
+      "They can be extended with new properties",
+      "They are created and destroyed by user code",
+      "All primitives already exist and cannot be mutated",
+      "They live inside variables that own them"
+    ],
+    "correct": "C"
+  },
+
+  {
+    "question": "What type of JavaScript value is a DOM element when logged in DevTools?",
+    "options": ["Primitive", "Function", "Object", "Symbol"],
+    "correct": "C"
+  },
+
+  {
+    "question": "<code>console.log(typeof(function(x){ return x * 2; }))</code> logs:",
+    "options": ["function", "object", "undefined", "number"],
+    "correct": "A"
+  },
+  {
+    "question": "Manipulating a variable’s link does NOT:",
+    "options": [
+      "Clone the underlying value",
+      "Change any other variable’s link to that value",
+      "Create a new value in memory",
+      "All of the above"
+    ],
+    "correct": "D"
+  },
+  {
+    "question": "Which of these is NOT a primitive in JavaScript?",
+    "options": ["number", "string", "boolean", "object"],
+    "correct": "D"
+  },
+
+  {
+    "question": "The left side of an assignment operator should always be a...",
+    "options": ["primitive", "function", "expression", "variable"],
+    "correct": "D"
+  },
+
+  {
+    "question": "The right side of an assignment operator should always be an...",
+    "options": ["primitive", "function", "expression", "variable"],
+    "correct": "C"
+  },
+
+  {
+    "question": "An expression is a question you can ask the JavaScript Universe, which it always answers with a...",
+    "options": ["object", "a single value", "a function", "a variable"],
+    "correct": "B"
+  },
+
+  {
+    "question": "The global variable <code>document</code> in browsers refers to:",
+    "options": [
+      "A string containing raw HTML source",
+      "The root DOM node object of the current page",
+      "A CSSStyleSheet instance",
+      "The window’s user‑agent string"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "What does <code>document.children[0]</code> return for a typical HTML document?",
+    "options": [
+      "<head> element",
+      "<body> element",
+      "<html> element",
+      "A NodeList of all elements"
+    ],
+    "correct": "C"
+  },
+  {
+    "question": "Unlike <code>children</code>, the <code>childNodes</code> property includes:",
+    "options": [
+      "Only element nodes",
+      "Text and comment nodes as well",
+      "Shadow DOM nodes only",
+      "Ancestor nodes"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "Arrays in JavaScript are zero‑indexed. The first child node can be accessed with index:",
+    "options": ["0", "1", "-1", "length"],
+    "correct": "A"
+  },
+  {
+    "question": "Which DOM API returns the FIRST element matching a CSS selector string?",
+    "options": [
+      "document.querySelectorAll()",
+      "document.querySelector()",
+      "document.getElementsByClassName()",
+      "window.findElement()"
+    ],
+    "correct": "B"
+  },
+  {
+    "question": "Which call returns a static NodeList that could have length 0, 1 or many?",
+    "options": [
+      "document.querySelector()",
+      "document.children()",
+      "document.querySelectorAll()",
+      "document.getElementById()"
+    ],
+    "correct": "C"
+  },
+
+  {
+    "question": "For a button element, which method attaches code to run when the button is clicked?",
+    "options": [
+      "button.addEventListener('click', handler)",
+      "button.onclick()",
+      "button.trigger('click')",
+      "document.listen('click', handler)"
+    ],
+    "correct": "A"
+  },
+
+  {
+    "question": "Which phrase best describes the DRY principle?",
+    "options": [
+      "Duplicate rows yield speed",
+      "Don’t Repeat Yourself",
+      "Design Requires Yielding",
+      "Dynamic Rendering Yearly"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Why would you use CSS variables (also called CSS custom properties) while writing CSS?",
+    "options": [
+      "To avoid repeating identical numeric values in multiple declarations",
+      "To enable media queries",
+      "To polyfill legacy browsers",
+      "To convert px to rem automatically"
+    ],
+    "correct": "A"
+  },
+
+  {
+    "question": "CSS variables (custom properties) are declared inside a rule using:",
+    "options": ["@", "$", "--", "%%"],
+    "correct": "C"
+  },
+  {
+    "question": "Using the CSS function <code>var()</code> allows you to:",
+    "options": [
+      "Import external stylesheets",
+      "Reference a custom property’s current value",
+      "Create scoped CSS modules",
+      "Define keyframe animations"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Why might <code>document.children</code> return only one item?",
+    "options": [
+      "Because <html> is the sole child of the document node",
+      "The page used Shadow DOM",
+      "Scripts were deferred",
+      "children ignores elements when async scripts are present"
+    ],
+    "correct": "A"
+  }
+]
