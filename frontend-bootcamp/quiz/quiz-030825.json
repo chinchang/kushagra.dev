@@ -1,0 +1,119 @@
+[
+  {
+    "question": "When you write {} in code, JavaScript always",
+    "options": [
+      "reuses a global singleton object",
+      "creates a brand‑new non‑primitive value in memory",
+      "creates a primitive value",
+      "references the nearest prototype object"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Once flex items wrap onto separate lines, their flex-grow ratios",
+    "options": [
+      "continue to compare across all lines",
+      "apply only among items on the same line",
+      "are ignored entirely",
+      "switch to the cross‑axis"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Which HTML element is most semantic for a to‑do list where order matters?",
+    "options": ["<ul>", "<ol>", "<div>", "<section>"],
+    "correct": "B"
+  },
+
+  {
+    "question": "What does setting textContent on an element do to its existing child nodes?",
+    "options": [
+      "Appends the text after existing children",
+      "Replaces all existing children with the text",
+      "Inserts the text before the first child",
+      "Has no effect if children exist"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Adding the defer attribute to a <script> tag ensures the script",
+    "options": [
+      "blocks HTML parsing until it finishes",
+      "executes after the DOM has been fully parsed",
+      "runs before any CSS loads",
+      "ignores any runtime errors"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Using <div onclick=\"...\"> as a clickable control is inferior to <button> because",
+    "options": [
+      "<button> provides built‑in keyboard and accessibility behavior",
+      "<div> cannot receive focus",
+      "<div> events are deprecated",
+      "browsers block onclick on divs"
+    ],
+    "correct": "A"
+  },
+
+  {
+    "question": "How can prevent a form from submitting from the submit button's click listener?",
+    "options": [
+      "return false",
+      "event.preventDefault()",
+      "event.stopPropagation()",
+      "event.stopImmediatePropagation()"
+    ],
+    "correct": "B"
+  },
+
+  {
+    "question": "Single source of truth for all the state of your web page should be the...",
+    "options": ["DOM", "state variables", "URL of the page", "form fields"],
+    "correct": "B"
+  },
+
+  {
+    "question": "Method available to add an item to the start of an array is...",
+    "options": ["push()", "unshift()", "pop()", "shift()"],
+    "correct": "B"
+  },
+
+  {
+    "question": "What is the type of an array in JavaScript?",
+    "options": ["object", "array", "function", "string"],
+    "correct": "A"
+  },
+
+  {
+    "question": "Which selector is the best choice to query an element in JavaScript?",
+    "options": [".some-element", "#some-element", "p", ".js-some-element"],
+    "correct": "D"
+  },
+
+  {
+    "question": "If `inputEl` contains the reference to a text INPUT element, you can read the current value of that input with...",
+    "options": [
+      "inputEl.value",
+      "inputEl.textContent",
+      "inputEl.innerHTML",
+      "inputEl.getAttribute('value')"
+    ],
+    "correct": "A"
+  },
+
+  {
+    "question": "Which of the following DOM APIs enable you to change the DOM?",
+    "options": [
+      "node.append()",
+      "node.prepend()",
+      "node.remove()",
+      "All of the above"
+    ],
+    "correct": "D"
+  }
+]
