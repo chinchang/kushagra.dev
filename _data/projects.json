@@ -1,5 +1,12 @@
 [
   {
+    "name": "Scribbble",
+    "link": "https://scribbble.app",
+    "desc": "A beautiful screen annotation Mac app for educators, content creators and presenters!",
+    "image": "https://www.scribbble.app/icon.png"
+  },
+
+  {
     "name": "Personal Finance Manager (Google Sheet template)",
     "link": "https://kushagragour.lemonsqueezy.com/checkout/buy/0ebcb6b7-1b6c-4789-97b3-7098275f94ad",
     "desc": "A simple to use and private google sheet that helps you visualise & track your (and spouse's) financial portfolio, your expenses, your liabilities, available runway, goals, insurances and more!",
