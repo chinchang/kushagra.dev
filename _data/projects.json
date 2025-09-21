@@ -1,5 +1,12 @@
 [
   {
+    "name": "Passportify",
+    "link": "https://Passportify.ai",
+    "desc": "Transform any image into a passport-compliant photo instantly using AI. Generate professional passport photos for official documents with perfect background and sizing.",
+    "image": "https://www.passportify.ai/social.png"
+  },
+
+  {
     "name": "Scribbble",
     "link": "https://scribbble.app",
     "desc": "A beautiful screen annotation Mac app for educators, content creators and presenters!",
