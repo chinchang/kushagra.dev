@@ -159,6 +159,9 @@ img {
 .post__content p {
   line-height: 1.7;
 }
+.post__content hr {
+  opacity: 0.1;
+}
 .post_divider {
   width: 50%;
   margin: 2.5rem auto;
