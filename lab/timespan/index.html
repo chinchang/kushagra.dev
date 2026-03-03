@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimeSpan — Every second, beautifully accounted for</title>
+    <base href="/lab/timespan/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Grain texture overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- Ambient glow blobs -->
+    <div class="ambient-glow ambient-glow--1" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow--2" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo">
+          <svg
+            class="nav__logo-icon"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="14"
+              cy="14"
+              r="13"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <circle
+              cx="14"
+              cy="14"
+              r="9"
+              stroke="currentColor"
+              stroke-width="1"
+              opacity="0.4"
+            />
+            <line
+              x1="14"
+              y1="14"
+              x2="14"
+              y2="6"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <line
+              x1="14"
+              y1="14"
+              x2="20"
+              y2="14"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              opacity="0.7"
+            />
+            <circle cx="14" cy="14" r="1.5" fill="currentColor" />
+          </svg>
+          <span>TimeSpan</span>
+        </a>
+        <div class="nav__links">
+          <a href="#features" class="nav__link">Features</a>
+          <a href="#showcase" class="nav__link">Preview</a>
+          <a href="#how-it-works" class="nav__link">How It Works</a>
+        </div>
+        <a
+          href="https://buy.polar.sh/polar_cl_yxXzsCTJkNWqduRO0bc8wkBxAgupBPsnrP1dO106oit"
+          class="nav__cta"
+        >
+          <span>Download</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path
+              d="M7 1v9m0 0L3.5 6.5M7 10l3.5-3.5M2 13h10"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ===================== HERO ===================== -->
+      <section class="hero">
+        <div class="hero__content">
+          <div class="hero__text">
+            <p class="hero__overline reveal">FOR MACOS</p>
+            <h1 class="hero__title">
+              <span class="reveal">Every second,</span>
+              <span class="reveal"><em>beautifully</em></span>
+              <span class="reveal">accounted for.</span>
+            </h1>
+            <p class="hero__subtitle reveal">
+              A precision time tracker that lives in your menu bar. Start a
+              timer, track projects, see where your hours
+              go&hairsp;&mdash;&hairsp;all without leaving your workflow.
+            </p>
+            <div class="hero__actions reveal">
+              <a
+                href="https://buy.polar.sh/polar_cl_yxXzsCTJkNWqduRO0bc8wkBxAgupBPsnrP1dO106oit"
+                class="btn btn--primary"
+              >
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path
+                    d="M4.5 6.75C4.5 4.68 6.18 3 8.25 3h1.5C11.82 3 13.5 4.68 13.5 6.75V15H4.5V6.75Z"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                  />
+                  <path
+                    d="M3 15h12"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="9" cy="10" r="1" fill="currentColor" />
+                </svg>
+                Download for Mac
+              </a>
+              <a href="#features" class="btn btn--ghost">
+                See features
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M1 7h12m0 0L8.5 2.5M13 7l-4.5 4.5"
+                    stroke="currentColor"
+                    stroke-width="1.3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="hero__meta reveal">
+              <span class="hero__meta-item">
+                <span class="hero__meta-dot"></span>
+                macOS native
+              </span>
+              <span class="hero__meta-item">
+                <span class="hero__meta-dot"></span>
+                Data stays local
+              </span>
+            </div>
+          </div>
+
+          <div class="hero__viz">
+            <div class="clock">
+              <!-- Tick marks rendered via CSS -->
+              <div class="clock__ticks">
+                <div class="clock__tick" style="--i: 0"></div>
+                <div class="clock__tick" style="--i: 1"></div>
+                <div class="clock__tick" style="--i: 2"></div>
+                <div class="clock__tick" style="--i: 3"></div>
+                <div class="clock__tick" style="--i: 4"></div>
+                <div class="clock__tick" style="--i: 5"></div>
+                <div class="clock__tick" style="--i: 6"></div>
+                <div class="clock__tick" style="--i: 7"></div>
+                <div class="clock__tick" style="--i: 8"></div>
+                <div class="clock__tick" style="--i: 9"></div>
+                <div class="clock__tick" style="--i: 10"></div>
+                <div class="clock__tick" style="--i: 11"></div>
+                <div class="clock__tick" style="--i: 12"></div>
+                <div class="clock__tick" style="--i: 13"></div>
+                <div class="clock__tick" style="--i: 14"></div>
+                <div class="clock__tick" style="--i: 15"></div>
+                <div class="clock__tick" style="--i: 16"></div>
+                <div class="clock__tick" style="--i: 17"></div>
+                <div class="clock__tick" style="--i: 18"></div>
+                <div class="clock__tick" style="--i: 19"></div>
+                <div class="clock__tick" style="--i: 20"></div>
+                <div class="clock__tick" style="--i: 21"></div>
+                <div class="clock__tick" style="--i: 22"></div>
+                <div class="clock__tick" style="--i: 23"></div>
+                <div class="clock__tick" style="--i: 24"></div>
+                <div class="clock__tick" style="--i: 25"></div>
+                <div class="clock__tick" style="--i: 26"></div>
+                <div class="clock__tick" style="--i: 27"></div>
+                <div class="clock__tick" style="--i: 28"></div>
+                <div class="clock__tick" style="--i: 29"></div>
+                <div class="clock__tick" style="--i: 30"></div>
+                <div class="clock__tick" style="--i: 31"></div>
+                <div class="clock__tick" style="--i: 32"></div>
+                <div class="clock__tick" style="--i: 33"></div>
+                <div class="clock__tick" style="--i: 34"></div>
+                <div class="clock__tick" style="--i: 35"></div>
+                <div class="clock__tick" style="--i: 36"></div>
+                <div class="clock__tick" style="--i: 37"></div>
+                <div class="clock__tick" style="--i: 38"></div>
+                <div class="clock__tick" style="--i: 39"></div>
+                <div class="clock__tick" style="--i: 40"></div>
+                <div class="clock__tick" style="--i: 41"></div>
+                <div class="clock__tick" style="--i: 42"></div>
+                <div class="clock__tick" style="--i: 43"></div>
+                <div class="clock__tick" style="--i: 44"></div>
+                <div class="clock__tick" style="--i: 45"></div>
+                <div class="clock__tick" style="--i: 46"></div>
+                <div class="clock__tick" style="--i: 47"></div>
+                <div class="clock__tick" style="--i: 48"></div>
+                <div class="clock__tick" style="--i: 49"></div>
+                <div class="clock__tick" style="--i: 50"></div>
+                <div class="clock__tick" style="--i: 51"></div>
+                <div class="clock__tick" style="--i: 52"></div>
+                <div class="clock__tick" style="--i: 53"></div>
+                <div class="clock__tick" style="--i: 54"></div>
+                <div class="clock__tick" style="--i: 55"></div>
+                <div class="clock__tick" style="--i: 56"></div>
+                <div class="clock__tick" style="--i: 57"></div>
+                <div class="clock__tick" style="--i: 58"></div>
+                <div class="clock__tick" style="--i: 59"></div>
+              </div>
+              <!-- Orbital rings -->
+              <div class="clock__ring clock__ring--outer">
+                <div class="clock__orbit-dot clock__orbit-dot--outer"></div>
+              </div>
+              <div class="clock__ring clock__ring--middle">
+                <div class="clock__orbit-dot clock__orbit-dot--middle"></div>
+              </div>
+              <div class="clock__ring clock__ring--inner">
+                <div class="clock__orbit-dot clock__orbit-dot--inner"></div>
+              </div>
+              <!-- Arc segments representing projects -->
+              <svg class="clock__arcs" viewBox="0 0 400 400">
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="155"
+                  fill="none"
+                  stroke="var(--accent)"
+                  stroke-width="3"
+                  stroke-dasharray="180 795"
+                  stroke-linecap="round"
+                  opacity="0.6"
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="0 200 200"
+                    to="360 200 200"
+                    dur="45s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="155"
+                  fill="none"
+                  stroke="var(--accent-2)"
+                  stroke-width="3"
+                  stroke-dasharray="120 795"
+                  stroke-linecap="round"
+                  opacity="0.4"
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="200 200 200"
+                    to="560 200 200"
+                    dur="45s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="125"
+                  fill="none"
+                  stroke="var(--accent)"
+                  stroke-width="2"
+                  stroke-dasharray="100 685"
+                  stroke-linecap="round"
+                  opacity="0.35"
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="90 200 200"
+                    to="450 200 200"
+                    dur="60s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="125"
+                  fill="none"
+                  stroke="var(--accent-3)"
+                  stroke-width="2"
+                  stroke-dasharray="60 685"
+                  stroke-linecap="round"
+                  opacity="0.3"
+                >
+                  <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from="270 200 200"
+                    to="630 200 200"
+                    dur="60s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+              </svg>
+              <!-- Center -->
+              <div class="clock__center">
+                <div class="clock__center-ring"></div>
+                <div class="clock__center-dot"></div>
+              </div>
+              <!-- Live time display -->
+              <div class="clock__time" id="clockTime">00:00:00</div>
+              <!-- Floating project labels -->
+              <div class="clock__label clock__label--1">Design</div>
+              <div class="clock__label clock__label--2">Development</div>
+              <div class="clock__label clock__label--3">Research</div>
+            </div>
+          </div>
+        </div>
+        <!-- Scroll indicator -->
+        <div class="hero__scroll" aria-hidden="true">
+          <div class="hero__scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- ===================== MARQUEE ===================== -->
+      <section class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <div class="marquee__content">
+            <span>MENU BAR</span><span class="marquee__dot">&#x2737;</span>
+            <span>PROJECT TRACKING</span
+            ><span class="marquee__dot">&#x2737;</span> <span>ANALYTICS</span
+            ><span class="marquee__dot">&#x2737;</span>
+            <span>FLOATING TIMER</span
+            ><span class="marquee__dot">&#x2737;</span>
+            <span>ONE CLICK START</span
+            ><span class="marquee__dot">&#x2737;</span>
+            <span>MONTHLY STATS</span><span class="marquee__dot">&#x2737;</span>
+            <span>SMART SEARCH</span><span class="marquee__dot">&#x2737;</span>
+            <span>LOCAL DATA</span><span class="marquee__dot">&#x2737;</span>
+          </div>
+          <div class="marquee__content" aria-hidden="true">
+            <span>MENU BAR</span><span class="marquee__dot">&#x2737;</span>
+            <span>PROJECT TRACKING</span
+            ><span class="marquee__dot">&#x2737;</span> <span>ANALYTICS</span
+            ><span class="marquee__dot">&#x2737;</span>
+            <span>FLOATING TIMER</span
+            ><span class="marquee__dot">&#x2737;</span>
+            <span>ONE CLICK START</span
+            ><span class="marquee__dot">&#x2737;</span>
+            <span>MONTHLY STATS</span><span class="marquee__dot">&#x2737;</span>
+            <span>SMART SEARCH</span><span class="marquee__dot">&#x2737;</span>
+            <span>LOCAL DATA</span><span class="marquee__dot">&#x2737;</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== FEATURES ===================== -->
+      <section class="features" id="features">
+        <div class="features__header">
+          <p class="section-label reveal">CAPABILITIES</p>
+          <h2 class="section-title reveal">
+            Designed for<br /><em>deep focus</em>
+          </h2>
+        </div>
+
+        <div class="features__grid">
+          <!-- Feature 1 -->
+          <div class="feature-card reveal" data-delay="0">
+            <div class="feature-card__glow" aria-hidden="true"></div>
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 40 40" fill="none">
+                <rect
+                  x="6"
+                  y="4"
+                  width="28"
+                  height="4"
+                  rx="2"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <rect
+                  x="10"
+                  y="12"
+                  width="20"
+                  height="24"
+                  rx="3"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <circle
+                  cx="20"
+                  cy="24"
+                  r="5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <line
+                  x1="20"
+                  y1="24"
+                  x2="20"
+                  y2="20.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <line
+                  x1="20"
+                  y1="24"
+                  x2="23"
+                  y2="24"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Menu Bar Native</h3>
+            <p class="feature-card__desc">
+              Lives where you need it. One click to start
+              tracking&hairsp;&mdash;&hairsp;zero context switching. Always
+              visible, never intrusive.
+            </p>
+            <div class="feature-card__footer">
+              <span class="feature-card__tag">Always accessible</span>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card reveal" data-delay="1">
+            <div class="feature-card__glow" aria-hidden="true"></div>
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 40 40" fill="none">
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="14"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M20 10 A10 10 0 0 1 30 20"
+                  stroke="var(--accent)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M30 20 A10 10 0 0 1 23 29"
+                  stroke="var(--accent-2)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M23 29 A10 10 0 0 1 10 20"
+                  stroke="var(--accent-3)"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <circle
+                  cx="20"
+                  cy="20"
+                  r="3"
+                  fill="currentColor"
+                  opacity="0.3"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Project Insights</h3>
+            <p class="feature-card__desc">
+              Beautiful donut charts break down your month at a glance. See
+              exactly where your hours go across every project.
+            </p>
+            <div class="feature-card__footer">
+              <span class="feature-card__tag">Visual analytics</span>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card reveal" data-delay="2">
+            <div class="feature-card__glow" aria-hidden="true"></div>
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 40 40" fill="none">
+                <rect
+                  x="5"
+                  y="10"
+                  width="30"
+                  height="18"
+                  rx="4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <circle
+                  cx="15"
+                  cy="19"
+                  r="4"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                />
+                <line
+                  x1="15"
+                  y1="19"
+                  x2="15"
+                  y2="16.5"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                />
+                <rect
+                  x="22"
+                  y="16"
+                  width="8"
+                  height="2"
+                  rx="1"
+                  fill="currentColor"
+                  opacity="0.4"
+                />
+                <rect
+                  x="22"
+                  y="21"
+                  width="5"
+                  height="2"
+                  rx="1"
+                  fill="currentColor"
+                  opacity="0.25"
+                />
+                <circle
+                  cx="32"
+                  cy="11"
+                  r="4"
+                  fill="var(--accent)"
+                  opacity="0.8"
+                />
+                <path
+                  d="M30.5 11L31.5 12L33.5 10"
+                  stroke="var(--bg)"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Floating Timer</h3>
+            <p class="feature-card__desc">
+              A compact, draggable window shows your running timer. Frosted
+              glass design keeps it beautiful and unobtrusive.
+            </p>
+            <div class="feature-card__footer">
+              <span class="feature-card__tag">Always visible</span>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card reveal" data-delay="3">
+            <div class="feature-card__glow" aria-hidden="true"></div>
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 40 40" fill="none">
+                <circle
+                  cx="20"
+                  cy="18"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M26 24l5 5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M14 16h8M14 20h5"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  opacity="0.5"
+                />
+                <circle
+                  cx="17"
+                  cy="18"
+                  r="1"
+                  fill="var(--accent)"
+                  opacity="0.6"
+                />
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Smart Search</h3>
+            <p class="feature-card__desc">
+              Fuzzy matching finds your projects instantly. Recently used
+              projects surface first, so you can resume in one click.
+            </p>
+            <div class="feature-card__footer">
+              <span class="feature-card__tag">Instant recall</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SHOWCASE ===================== -->
+      <section class="showcase" id="showcase">
+        <div class="showcase__container">
+          <div class="showcase__text">
+            <p class="section-label reveal">PREVIEW</p>
+            <h2 class="section-title reveal">
+              Precision at<br />a <em>glance</em>
+            </h2>
+            <p class="showcase__desc reveal">
+              TimeSpan integrates seamlessly into your macOS experience. Track
+              time from the menu bar, view today's log, and analyze monthly
+              patterns&hairsp;&mdash;&hairsp;all in a beautifully crafted native
+              interface.
+            </p>
+            <ul class="showcase__list">
+              <li class="reveal">Dark native UI with warm accent colors</li>
+              <li class="reveal">Tabbed interface for Logs &amp; Stats</li>
+              <li class="reveal">One-click quick-start for recent projects</li>
+              <li class="reveal">Manual entry for forgotten sessions</li>
+            </ul>
+          </div>
+
+          <div class="showcase__mockup reveal">
+            <div class="mockup">
+              <!-- Title bar -->
+              <div class="mockup__bar">
+                <div class="mockup__dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="mockup__title">TimeSpan</span>
+              </div>
+              <!-- Timer section -->
+              <div class="mockup__timer">
+                <div class="mockup__timer-project">
+                  <span class="mockup__pulse"></span>
+                  Website Redesign
+                </div>
+                <div class="mockup__timer-display" id="mockupTime">
+                  02:34:17
+                </div>
+                <div class="mockup__timer-actions">
+                  <button class="mockup__btn mockup__btn--pause">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <rect x="2" y="1" width="3" height="10" rx="1" />
+                      <rect x="7" y="1" width="3" height="10" rx="1" />
+                    </svg>
+                  </button>
+                  <button class="mockup__btn mockup__btn--stop">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <rect x="2" y="2" width="8" height="8" rx="1.5" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <!-- Tabs -->
+              <div class="mockup__tabs">
+                <span class="mockup__tab mockup__tab--active">Logs</span>
+                <span class="mockup__tab">Stats</span>
+              </div>
+              <!-- Entries -->
+              <div class="mockup__entries">
+                <div class="mockup__entry">
+                  <div
+                    class="mockup__entry-color"
+                    style="background: var(--accent)"
+                  ></div>
+                  <div class="mockup__entry-info">
+                    <span class="mockup__entry-name">Website Redesign</span>
+                    <span class="mockup__entry-time">09:15 — 11:42</span>
+                  </div>
+                  <span class="mockup__entry-dur">2h 27m</span>
+                </div>
+                <div class="mockup__entry">
+                  <div
+                    class="mockup__entry-color"
+                    style="background: var(--accent-2)"
+                  ></div>
+                  <div class="mockup__entry-info">
+                    <span class="mockup__entry-name">API Integration</span>
+                    <span class="mockup__entry-time">11:50 — 13:20</span>
+                  </div>
+                  <span class="mockup__entry-dur">1h 30m</span>
+                </div>
+                <div class="mockup__entry">
+                  <div
+                    class="mockup__entry-color"
+                    style="background: var(--accent-3)"
+                  ></div>
+                  <div class="mockup__entry-info">
+                    <span class="mockup__entry-name">Research</span>
+                    <span class="mockup__entry-time">14:00 — 15:15</span>
+                  </div>
+                  <span class="mockup__entry-dur">1h 15m</span>
+                </div>
+                <div class="mockup__entry mockup__entry--faded">
+                  <div
+                    class="mockup__entry-color"
+                    style="background: #8a8690"
+                  ></div>
+                  <div class="mockup__entry-info">
+                    <span class="mockup__entry-name">Team Meeting</span>
+                    <span class="mockup__entry-time">15:30 — 16:00</span>
+                  </div>
+                  <span class="mockup__entry-dur">0h 30m</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== HOW IT WORKS ===================== -->
+      <section class="how" id="how-it-works">
+        <div class="how__header">
+          <p class="section-label reveal">WORKFLOW</p>
+          <h2 class="section-title reveal">
+            Three steps.<br /><em>Zero friction.</em>
+          </h2>
+        </div>
+        <div class="how__steps">
+          <div class="how__step reveal">
+            <div class="how__step-num">01</div>
+            <div class="how__step-content">
+              <h3>Name your project</h3>
+              <p>
+                Type a project name or pick from your recent list. Smart fuzzy
+                search finds matches as you type.
+              </p>
+            </div>
+          </div>
+          <div class="how__connector" aria-hidden="true">
+            <div class="how__connector-line"></div>
+          </div>
+          <div class="how__step reveal">
+            <div class="how__step-num">02</div>
+            <div class="how__step-content">
+              <h3>Hit start</h3>
+              <p>
+                One click. The timer runs in the menu bar and an optional
+                floating window keeps time always visible.
+              </p>
+            </div>
+          </div>
+          <div class="how__connector" aria-hidden="true">
+            <div class="how__connector-line"></div>
+          </div>
+          <div class="how__step reveal">
+            <div class="how__step-num">03</div>
+            <div class="how__step-content">
+              <h3>Review your insights</h3>
+              <p>
+                Animated charts show your monthly breakdown by project.
+                Understand your time, optimize your focus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CTA ===================== -->
+      <section class="cta" id="download">
+        <div class="cta__content">
+          <div class="cta__clock" aria-hidden="true">
+            <svg viewBox="0 0 120 120" fill="none">
+              <circle
+                cx="60"
+                cy="60"
+                r="55"
+                stroke="currentColor"
+                stroke-width="0.5"
+                opacity="0.2"
+              />
+              <circle
+                cx="60"
+                cy="60"
+                r="40"
+                stroke="currentColor"
+                stroke-width="0.5"
+                opacity="0.15"
+              />
+              <circle
+                cx="60"
+                cy="60"
+                r="25"
+                stroke="currentColor"
+                stroke-width="0.5"
+                opacity="0.1"
+              />
+              <line
+                x1="60"
+                y1="60"
+                x2="60"
+                y2="25"
+                stroke="var(--accent)"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                opacity="0.5"
+              />
+              <line
+                x1="60"
+                y1="60"
+                x2="85"
+                y2="60"
+                stroke="var(--accent)"
+                stroke-width="1"
+                stroke-linecap="round"
+                opacity="0.3"
+              />
+              <circle
+                cx="60"
+                cy="60"
+                r="3"
+                fill="var(--accent)"
+                opacity="0.6"
+              />
+            </svg>
+          </div>
+          <p class="section-label reveal">READY?</p>
+          <h2 class="cta__title reveal">
+            Your time deserves<br /><em>better tracking.</em>
+          </h2>
+          <p class="cta__desc reveal">
+            Lightweight, private, and built for people who care about where
+            their hours go.
+          </p>
+          <div class="cta__actions reveal">
+            <a
+              href="https://buy.polar.sh/polar_cl_yxXzsCTJkNWqduRO0bc8wkBxAgupBPsnrP1dO106oit"
+              class="btn btn--primary btn--large"
+            >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M5 7.5C5 5.01 7.01 3 9.5 3h1C12.99 3 15 5.01 15 7.5V16H5V7.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                />
+                <path
+                  d="M3 16h14"
+                  stroke="currentColor"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+                <circle cx="10" cy="11" r="1" fill="currentColor" />
+              </svg>
+              Download for macOS
+            </a>
+            <a href="#features" class="btn btn--ghost">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M1 7h12m0 0L8.5 2.5M13 7l-4.5 4.5"
+                  stroke="currentColor"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="cta__stats reveal">
+            <div class="cta__stat">
+              <span class="cta__stat-num" data-count="0">0</span
+              ><span class="cta__stat-suffix">kb</span>
+              <span class="cta__stat-label">Data sent to cloud</span>
+            </div>
+            <div class="cta__stat-divider"></div>
+            <div class="cta__stat">
+              <span class="cta__stat-num" data-count="1">0</span
+              ><span class="cta__stat-suffix"> click</span>
+              <span class="cta__stat-label">To start tracking</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <svg
+            class="footer__logo-icon"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="14"
+              cy="14"
+              r="13"
+              stroke="currentColor"
+              stroke-width="1.5"
+            />
+            <circle
+              cx="14"
+              cy="14"
+              r="9"
+              stroke="currentColor"
+              stroke-width="1"
+              opacity="0.4"
+            />
+            <line
+              x1="14"
+              y1="14"
+              x2="14"
+              y2="6"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <line
+              x1="14"
+              y1="14"
+              x2="20"
+              y2="14"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              opacity="0.7"
+            />
+            <circle cx="14" cy="14" r="1.5" fill="currentColor" />
+          </svg>
+          <span>TimeSpan</span>
+        </div>
+        <div class="footer__links">
+          <a href="#features">Features</a>
+          <a
+            href="https://buy.polar.sh/polar_cl_yxXzsCTJkNWqduRO0bc8wkBxAgupBPsnrP1dO106oit"
+            >Download</a
+          >
+        </div>
+        <p class="footer__copy">Built with care for macOS</p>
+      </div>
+    </footer>
+
+    <script>
+      // ── Live clock in hero viz ──
+      function updateClock() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2, "0");
+        const m = String(now.getMinutes()).padStart(2, "0");
+        const s = String(now.getSeconds()).padStart(2, "0");
+        const el = document.getElementById("clockTime");
+        if (el) el.textContent = `${h}:${m}:${s}`;
+      }
+      updateClock();
+      setInterval(updateClock, 1000);
+
+      // ── Mockup timer (incrementing) ──
+      let mockupSeconds = 9257; // 2:34:17
+      function updateMockup() {
+        mockupSeconds++;
+        const h = String(Math.floor(mockupSeconds / 3600)).padStart(2, "0");
+        const m = String(Math.floor((mockupSeconds % 3600) / 60)).padStart(
+          2,
+          "0",
+        );
+        const s = String(mockupSeconds % 60).padStart(2, "0");
+        const el = document.getElementById("mockupTime");
+        if (el) el.textContent = `${h}:${m}:${s}`;
+      }
+      setInterval(updateMockup, 1000);
+
+      // ── Nav blur on scroll ──
+      const nav = document.getElementById("nav");
+      window.addEventListener(
+        "scroll",
+        () => {
+          nav.classList.toggle("nav--scrolled", window.scrollY > 40);
+        },
+        { passive: true },
+      );
+
+      // ── Scroll reveal (Intersection Observer) ──
+      const reveals = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const delay = entry.target.dataset.delay || 0;
+              entry.target.style.transitionDelay = `${delay * 0.12}s`;
+              entry.target.classList.add("revealed");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+      );
+      reveals.forEach((el) => revealObserver.observe(el));
+
+      // ── Feature card cursor glow ──
+      document.querySelectorAll(".feature-card").forEach((card) => {
+        const glow = card.querySelector(".feature-card__glow");
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          glow.style.opacity = "1";
+          glow.style.background = `radial-gradient(300px circle at ${x}px ${y}px, rgba(232,132,42,0.1), transparent 70%)`;
+        });
+        card.addEventListener("mouseleave", () => {
+          glow.style.opacity = "0";
+        });
+      });
+
+      // ── Stat counter animation ──
+      const statNums = document.querySelectorAll(".cta__stat-num");
+      const statObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              const target = parseInt(el.dataset.count);
+              const duration = 1500;
+              const start = performance.now();
+              function tick(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(eased * target);
+                if (progress < 1) requestAnimationFrame(tick);
+              }
+              requestAnimationFrame(tick);
+              statObserver.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+      statNums.forEach((el) => statObserver.observe(el));
+
+      // ── Smooth scroll for anchor links ──
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
