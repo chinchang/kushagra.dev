@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>VibeType — music that types itself</title>
+  <meta name="description" content="A desktop companion that turns your typing into a living soundtrack. Ambient, adaptive, quietly yours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <section class="hero" id="hero">
+    <div class="stage">
+      <header class="topbar">
+        <span class="wordmark">VibeType</span>
+        <span class="version">v1.0 · macOS</span>
+      </header>
+
+      <div class="lead">
+        <img class="logo" src="logo.png" alt="VibeType app icon" width="512" height="512" />
+        <p class="eyebrow">For writers, coders, thinkers.</p>
+        <h1 class="headline">Music that <em>types</em> itself.</h1>
+        <p class="tagline">A living soundtrack shaped by what you write. VibeType listens to your keystrokes and plays the soundtrack underneath.</p>
+        <a class="cta" href="https://kushagra.dev/lab/VibeType/VibeType-0.1.0.dmg" download>
+          <span class="cta__label">Download for Mac</span>
+          <span class="cta__arrow" aria-hidden="true">↓</span>
+        </a>
+      </div>
+
+      <div class="kbd-stage">
+        <div class="music-layer" data-music-fx aria-hidden="true"></div>
+        <div class="keyboard" data-keyboard aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <button class="audio-chip" id="audioChip" aria-pressed="false" title="Toggle audio (M)">
+    <span class="audio-chip__dot" aria-hidden="true"></span>
+    <span class="audio-chip__label">Click to hear it</span>
+  </button>
+
+  <script src="keyboard.js"></script>
+  <script src="synth.js"></script>
+  <script src="music-fx.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
