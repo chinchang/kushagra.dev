@@ -100,6 +100,25 @@ img, svg, canvas { display: block; max-width: 100%; }
   max-width: 820px;
   margin: 0 auto;
 }
+/* Decorative illustration — cream-on-bordeaux etched line art effect.
+   The source PNG is dark ink on cream; inverting + lighten blend tints
+   the cream away and leaves only the cream-toned line art on bordeaux. */
+.illustration {
+  position: absolute;
+  right: -4%;
+  bottom: -8%;
+  width: clamp(220px, 38vw, 580px);
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.55;
+  filter: invert(1) sepia(0.35) saturate(1.1) brightness(0.92) hue-rotate(-8deg) drop-shadow(0 12px 20px rgba(0, 0, 0, 0.4));
+  mix-blend-mode: lighten;
+}
+@media (max-width: 860px) {
+  .illustration { display: none; }
+}
+
 .logo {
   width: clamp(72px, 8vw, 104px);
   height: auto;
