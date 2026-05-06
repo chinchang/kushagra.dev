@@ -1,11 +1,14 @@
 ---
 layout: post
-title: "Vibecoding on Mac mini from anywhere"
+title: "Vibe-coding on Mac mini from anywhere"
 tags:
   - tutorial
   - productivity
   - mac
+og_image: https://kushagra.dev/images/og/og-vibecoding-on-macmini.png
 ---
+
+![Vibecoding on Mac mini from anywhere](/images/og/og-vibecoding-on-macmini.png)
 
 This post is about me wanting to use my Mac mini whenever I’m away from it. This use case started with me wanting to work from another room. Since all my work (and in-progress) is on the Mac mini (and it is not movable), I wanted to keep working on the same machine. (PS: yes I know there is GIT). And working these days means just prompting, so even a reliable SSH connection works. So here is how I did it.
 
