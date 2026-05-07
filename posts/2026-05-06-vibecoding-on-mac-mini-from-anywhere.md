@@ -70,3 +70,9 @@ That gives you two benefits:
 > PS: Credit to this tip goes to [Ayush Soni](https://x.com/ayysoni) who suggested this at the IndieHacking Retreat when I refused to close my laptop lid! 😆
 
 That’s it. Three small pieces — SSH, Tailscale, and tmux — and your Mac mini quietly becomes a Vibe-coding machine you can use from anywhere, with work that survives sleeps and disconnects on either end.
+
+### Bonus update: try Zellij instead of tmux
+
+tmux is actually painful to use sometimes. I don’t like its default keyboard shortcuts. You can’t easily copy things from there. Even when you get it working, it works only half the time. No good mouse support either.
+
+Ayush recently suggested a newer terminal multiplexer called [Zellij](https://zellij.dev/). I gave it a quick spin and am liking it. So try that too.
