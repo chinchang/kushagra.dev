@@ -1,5 +1,44 @@
 [
   {
+    "id": "scribbble",
+    "name": "Scribbble",
+    "tagline": "Annotate your screen, live",
+    "subtitle": "Draw on anything, instantly",
+    "category": "Graphics & Design",
+    "categoryIcon": "M16.84 2.73a1.4 1.4 0 0 0-1.07.44L3.66 15.28l-1.5 6.56 6.55-1.5L20.83 8.23a1.5 1.5 0 0 0 0-2.12l-2.97-2.97a1.4 1.4 0 0 0-1.02-.41z",
+    "icon": "https://www.scribbble.app/icon.png",
+    "accent": "#f43f5e",
+    "accent2": "#fb923c",
+    "price": "Get",
+    "priceNote": "View on scribbble.app",
+    "link": "https://scribbble.app",
+    "developer": "Kushagra Gour",
+    "rating": 4.9,
+    "ratingCount": "208",
+    "ratingLabel": "208 Ratings",
+    "age": "4+",
+    "size": "5.6 MB",
+    "lang": "EN",
+    "featured": true,
+    "featuredKicker": "EDITOR’S CHOICE",
+    "featuredHeadline": "Turn your screen into a canvas.",
+    "blurb": "A beautiful screen-annotation app for educators, content creators and presenters. Draw on anything, anywhere, instantly.",
+    "description": "Scribbble lets you draw directly on top of your screen — over any app, any window, any moment. Perfect for teaching, demos, presentations and recordings where pointing isn’t enough.\n\nGrab a pen, circle the thing that matters, sketch an arrow, highlight a flow — then clear it all with a keystroke. Smooth, pressure-aware strokes and a thoughtfully minimal toolbar keep the focus on what you’re explaining, not on the tool.",
+    "highlights": [
+      { "icon": "M16.84 2.73a1.4 1.4 0 0 0-1.07.44L3.66 15.28l-1.5 6.56 6.55-1.5L20.83 8.23a1.5 1.5 0 0 0 0-2.12l-2.97-2.97a1.4 1.4 0 0 0-1.02-.41z", "title": "Draw on anything", "text": "Annotate over any app or window in real time." },
+      { "icon": "M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z", "title": "Made for presenters", "text": "Built for educators, creators and live demos." },
+      { "icon": "M19 13H5v-2h14v2z", "title": "Clear in a keystroke", "text": "Wipe the canvas instantly and keep flowing." },
+      { "icon": "M7 14a3 3 0 0 0-3 3c0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2a4 4 0 0 0 4-4 3 3 0 0 0-3-3zm13.71-9.37l-1.34-1.34a1 1 0 0 0-1.41 0L9 11.25 12.75 15l8.96-8.96a1 1 0 0 0 0-1.41z", "title": "Smooth strokes", "text": "Pressure-aware, buttery drawing." }
+    ],
+    "screenshots": [],
+    "whatsNewVersion": "2.0",
+    "whatsNew": "• Redesigned floating toolbar\n• New highlighter & shape tools\n• Performance improvements for 4K displays",
+    "reviews": [
+      { "title": "A must for teaching", "author": "msdraws", "stars": 5, "text": "I teach online and Scribbble has completely changed how I explain things. Circling and underlining live is magic." },
+      { "title": "So clean", "author": "demodave", "stars": 5, "text": "The toolbar gets out of the way and the strokes feel great. Exactly what I wanted." }
+    ]
+  },
+  {
     "id": "namemyspace",
     "name": "NameMySpace",
     "tagline": "Your Desktops, Named",
@@ -118,45 +157,6 @@
     "reviews": [
       { "title": "Saves me every day", "author": "portjuggler", "stars": 5, "text": "I run a dozen projects at once. This is the first thing I open in the morning now." },
       { "title": "Just works", "author": "fullstackfran", "stars": 4, "text": "Does exactly one thing and does it well. Wish I’d had this years ago." }
-    ]
-  },
-  {
-    "id": "scribbble",
-    "name": "Scribbble",
-    "tagline": "Annotate your screen, live",
-    "subtitle": "Draw on anything, instantly",
-    "category": "Graphics & Design",
-    "categoryIcon": "M16.84 2.73a1.4 1.4 0 0 0-1.07.44L3.66 15.28l-1.5 6.56 6.55-1.5L20.83 8.23a1.5 1.5 0 0 0 0-2.12l-2.97-2.97a1.4 1.4 0 0 0-1.02-.41z",
-    "icon": "https://www.scribbble.app/icon.png",
-    "accent": "#f43f5e",
-    "accent2": "#fb923c",
-    "price": "Get",
-    "priceNote": "View on scribbble.app",
-    "link": "https://scribbble.app",
-    "developer": "Kushagra Gour",
-    "rating": 4.9,
-    "ratingCount": "208",
-    "ratingLabel": "208 Ratings",
-    "age": "4+",
-    "size": "5.6 MB",
-    "lang": "EN",
-    "featured": true,
-    "featuredKicker": "EDITOR’S CHOICE",
-    "featuredHeadline": "Turn your screen into a canvas.",
-    "blurb": "A beautiful screen-annotation app for educators, content creators and presenters. Draw on anything, anywhere, instantly.",
-    "description": "Scribbble lets you draw directly on top of your screen — over any app, any window, any moment. Perfect for teaching, demos, presentations and recordings where pointing isn’t enough.\n\nGrab a pen, circle the thing that matters, sketch an arrow, highlight a flow — then clear it all with a keystroke. Smooth, pressure-aware strokes and a thoughtfully minimal toolbar keep the focus on what you’re explaining, not on the tool.",
-    "highlights": [
-      { "icon": "M16.84 2.73a1.4 1.4 0 0 0-1.07.44L3.66 15.28l-1.5 6.56 6.55-1.5L20.83 8.23a1.5 1.5 0 0 0 0-2.12l-2.97-2.97a1.4 1.4 0 0 0-1.02-.41z", "title": "Draw on anything", "text": "Annotate over any app or window in real time." },
-      { "icon": "M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21.4 8 14 2 9.4h7.6z", "title": "Made for presenters", "text": "Built for educators, creators and live demos." },
-      { "icon": "M19 13H5v-2h14v2z", "title": "Clear in a keystroke", "text": "Wipe the canvas instantly and keep flowing." },
-      { "icon": "M7 14a3 3 0 0 0-3 3c0 1.31-1.16 2-2 2 .92 1.22 2.49 2 4 2a4 4 0 0 0 4-4 3 3 0 0 0-3-3zm13.71-9.37l-1.34-1.34a1 1 0 0 0-1.41 0L9 11.25 12.75 15l8.96-8.96a1 1 0 0 0 0-1.41z", "title": "Smooth strokes", "text": "Pressure-aware, buttery drawing." }
-    ],
-    "screenshots": [],
-    "whatsNewVersion": "2.0",
-    "whatsNew": "• Redesigned floating toolbar\n• New highlighter & shape tools\n• Performance improvements for 4K displays",
-    "reviews": [
-      { "title": "A must for teaching", "author": "msdraws", "stars": 5, "text": "I teach online and Scribbble has completely changed how I explain things. Circling and underlining live is magic." },
-      { "title": "So clean", "author": "demodave", "stars": 5, "text": "The toolbar gets out of the way and the strokes feel great. Exactly what I wanted." }
     ]
   }
 ]
