@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="tsbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7a44a"/>
+      <stop offset=".5" stop-color="#e8842a"/>
+      <stop offset="1" stop-color="#c86e5a"/>
+    </linearGradient>
+    <radialGradient id="tsglow" cx=".7" cy=".25" r=".9">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tsface" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf4ea"/>
+      <stop offset="1" stop-color="#f0e2cf"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" fill="url(#tsbg)"/>
+  <rect width="256" height="256" fill="url(#tsglow)"/>
+  <!-- clock face -->
+  <circle cx="128" cy="134" r="74" fill="url(#tsface)"/>
+  <circle cx="128" cy="134" r="74" fill="none" stroke="#16161c" stroke-opacity=".08" stroke-width="2"/>
+  <!-- crown / button -->
+  <rect x="118" y="40" width="20" height="18" rx="6" fill="#16161c"/>
+  <rect x="124" y="30" width="8" height="16" rx="4" fill="#16161c"/>
+  <!-- tick marks -->
+  <g stroke="#16161c" stroke-opacity=".55" stroke-width="4" stroke-linecap="round">
+    <line x1="128" y1="70" x2="128" y2="82"/>
+    <line x1="128" y1="186" x2="128" y2="198"/>
+    <line x1="64" y1="134" x2="76" y2="134"/>
+    <line x1="180" y1="134" x2="192" y2="134"/>
+  </g>
+  <!-- elapsed sweep -->
+  <path d="M128 134 L128 72 A62 62 0 0 1 184 116 Z" fill="#e8842a" fill-opacity=".22"/>
+  <!-- hands -->
+  <g stroke-linecap="round">
+    <line x1="128" y1="134" x2="128" y2="88" stroke="#16161c" stroke-width="9"/>
+    <line x1="128" y1="134" x2="170" y2="120" stroke="#e8842a" stroke-width="7"/>
+  </g>
+  <circle cx="128" cy="134" r="9" fill="#16161c"/>
+  <circle cx="128" cy="134" r="3.5" fill="#fbf4ea"/>
+</svg>

@@ -1,0 +1,695 @@
+---
+permalink: /app-store/index.html
+title: App Store
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="The Kushagra App Store — Mac apps crafted by Kushagra Gour." />
+    <meta name="theme-color" content="#a770ef" />
+    <title>App Store — Kushagra Gour</title>
+    <meta property="og:title" content="App Store — Kushagra Gour" />
+    <meta property="og:description" content="A little Mac App Store for the apps I've made." />
+    <meta property="og:image" content="https://kushagra.dev/images/social.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/app-store.css?v=1" />
+  </head>
+
+  <body class="appstore" data-view="store">
+    <main class="as-window" role="application" aria-label="App Store">
+      <!-- ===================================================== titlebar -->
+      <div class="as-titlebar">
+        <a class="as-home" href="/" title="Back to kushagra.dev" aria-label="Back to kushagra.dev">
+          <svg viewBox="0 0 24 24"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z" /></svg>
+        </a>
+        <button class="as-back" id="asBack" type="button">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z" /></svg>
+          Discover
+        </button>
+        <div class="as-titlebar__title" id="asTitle">App Store</div>
+      </div>
+
+      <div class="as-bodywrap">
+        <!-- ================================================== sidebar -->
+        <aside class="as-sidebar">
+          <label class="as-search">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z" /></svg>
+            <input id="asSearch" type="search" placeholder="Search" autocomplete="off" spellcheck="false" />
+          </label>
+
+          <nav class="as-nav" id="asNav" aria-label="Categories">
+            <button class="as-nav__item is-active" data-filter="discover" type="button">
+              <svg viewBox="0 0 24 24"><path d="M12 2 4 7v10l8 5 8-5V7zm0 2.3 5.5 3.4L12 11 6.5 7.7zM6 9.2l5 3.1v6.2l-5-3.1zm12 0v6.2l-5 3.1v-6.2z" /></svg>
+              Discover
+            </button>
+            <div class="as-nav__sep"></div>
+            {% assign cats = macapps | map: "category" | uniq %}
+            {% for cat in cats %}
+            {% assign capp = macapps | where: "category", cat | first %}
+            <button class="as-nav__item" data-filter="{{ cat }}" type="button">
+              <svg viewBox="0 0 24 24"><path d="{{ capp.categoryIcon }}" /></svg>
+              {{ cat }}
+            </button>
+            {% endfor %}
+            <div class="as-nav__sep"></div>
+            <button class="as-nav__item" data-filter="discover" type="button">
+              <svg viewBox="0 0 24 24"><path d="M21 10.12h-6.78l2.74-2.82c-2.73-2.7-7.15-2.8-9.88-.1a6.875 6.875 0 0 0 0 9.79 7.02 7.02 0 0 0 9.88 0A6.62 6.62 0 0 0 19 12.31h2a8.978 8.978 0 0 1-15.32 6.16 8.825 8.825 0 0 1 0-12.49 8.69 8.69 0 0 1 12.27 0L21 3z" /></svg>
+              Updates
+            </button>
+          </nav>
+
+          <div class="as-sidebar__foot">
+            <div class="as-sidebar__avatar">KG</div>
+            <div>
+              <div class="as-sidebar__name">Kushagra Gour</div>
+              <div class="as-sidebar__sub">kushagra.dev</div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ==================================================== main -->
+        <div class="as-main" id="asMain">
+          <!-- ========================= STORE VIEW ========================= -->
+          <section class="as-view as-store" id="storeView">
+            <!-- featured carousel -->
+            <div class="as-featured">
+              <div class="as-featured__eyebrow">Featured</div>
+              <div class="as-featured__track" id="asFeatTrack">
+                {% for app in macapps %}
+                <article
+                  class="as-feat"
+                  data-open="{{ app.id }}"
+                  style="--c1: {{ app.accent }}; --c2: {{ app.accent2 }}"
+                  tabindex="0"
+                  role="button"
+                  aria-label="View {{ app.name }}"
+                >
+                  <div class="as-feat__kicker">{{ app.featuredKicker }}</div>
+                  <h3 class="as-feat__headline">{{ app.featuredHeadline }}</h3>
+                  <p class="as-feat__blurb">{{ app.blurb }}</p>
+                  <div class="as-feat__foot">
+                    <img class="as-feat__icon" src="{{ app.icon }}" alt="" loading="lazy" />
+                    <div class="as-feat__meta">
+                      <div class="as-feat__name">{{ app.name }}</div>
+                      <div class="as-feat__sub">{{ app.subtitle }}</div>
+                    </div>
+                    <button class="as-get" type="button" data-get data-link="{{ app.link }}">Get</button>
+                  </div>
+                </article>
+                {% endfor %}
+              </div>
+              <div class="as-featured__dots" id="asDots"></div>
+            </div>
+
+            <!-- app list -->
+            <section class="as-section">
+              <div class="as-section__head">
+                <h2 class="as-section__title" id="asListTitle">
+                  Mac Apps from Kushagra
+                  <small>Tiny, native, handmade software</small>
+                </h2>
+              </div>
+              <div class="as-applist" id="asList">
+                {% for app in macapps %}
+                <article class="as-row" data-open="{{ app.id }}" data-cat="{{ app.category }}" tabindex="0" role="button" aria-label="View {{ app.name }}">
+                  <img class="as-row__icon" src="{{ app.icon }}" alt="" loading="lazy" />
+                  <div class="as-row__main">
+                    <div class="as-row__name">{{ app.name }}</div>
+                    <div class="as-row__sub">{{ app.subtitle }}</div>
+                    <div class="as-row__cat">{{ app.category }}</div>
+                  </div>
+                  <div class="as-row__cta">
+                    <button class="as-get" type="button" data-get data-link="{{ app.link }}">Get</button>
+                    <div class="as-row__price">{{ app.priceNote }}</div>
+                  </div>
+                </article>
+                {% endfor %}
+              </div>
+              <div class="as-empty" id="asEmpty">No apps match your search.</div>
+            </section>
+          </section>
+
+          <!-- ======================= PRODUCT VIEWS ======================= -->
+          {% for app in macapps %}
+          <section class="as-view as-product" id="product-{{ app.id }}" data-product="{{ app.id }}" style="--c1: {{ app.accent }}; --c2: {{ app.accent2 }}" hidden>
+            <div class="as-prod__hero">
+              <img class="as-prod__icon" id="prodicon-{{ app.id }}" src="{{ app.icon }}" alt="{{ app.name }} icon" />
+              <div class="as-prod__head">
+                <h1 class="as-prod__name">{{ app.name }}</h1>
+                <div class="as-prod__tagline">{{ app.tagline }}</div>
+                <div class="as-prod__actions">
+                  <button class="as-get" type="button" data-get data-link="{{ app.link }}">Get</button>
+                  <span class="as-prod__pricenote">{{ app.priceNote }}</span>
+                  <button class="as-prod__share" type="button" data-share="{{ app.link }}" aria-label="Share">
+                    <svg viewBox="0 0 24 24"><path d="M12 3 8 7h3v9h2V7h3zm6 8v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2v2H6v8h12v-8h-2V9h2a2 2 0 0 1 2 2z" /></svg>
+                  </button>
+                </div>
+                <div class="as-prod__dev">{{ app.developer }}</div>
+              </div>
+            </div>
+
+            <!-- stat bar -->
+            <div class="as-stats">
+              <div class="as-stat">
+                <div class="as-stat__label">{{ app.ratingLabel }}</div>
+                <div class="as-stat__value">
+                  {{ app.rating }}
+                  <span class="as-stat__stars" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27l-5.4 3.27 1.43-6.16-4.78-4.14 6.3-.54L12 4l2.45 5.7 6.3.54-4.78 4.14 1.43 6.16z" /></svg>
+                  </span>
+                </div>
+              </div>
+              <div class="as-stat">
+                <div class="as-stat__label">Age</div>
+                <div class="as-stat__value">{{ app.age }}<small> yrs</small></div>
+              </div>
+              <div class="as-stat">
+                <div class="as-stat__label">Category</div>
+                <div class="as-stat__value">
+                  <svg viewBox="0 0 24 24"><path d="{{ app.categoryIcon }}" /></svg>
+                  <small>{{ app.category }}</small>
+                </div>
+              </div>
+              <div class="as-stat">
+                <div class="as-stat__label">Developer</div>
+                <div class="as-stat__value"><small>{{ app.developer }}</small></div>
+              </div>
+              <div class="as-stat">
+                <div class="as-stat__label">Size</div>
+                <div class="as-stat__value"><small>{{ app.size }}</small></div>
+              </div>
+              <div class="as-stat">
+                <div class="as-stat__label">Language</div>
+                <div class="as-stat__value">{{ app.lang }}</div>
+              </div>
+            </div>
+
+            <!-- screenshots -->
+            <div class="as-shots">
+              {% if app.screenshots.size > 0 %}
+                {% for shot in app.screenshots %}
+                <div class="as-shot"><img src="{{ shot }}" alt="{{ app.name }} screenshot" loading="lazy" /></div>
+                {% endfor %}
+              {% else %}
+                <div class="as-shot as-shot--mock">
+                  <div class="as-mock">
+                    <img src="{{ app.icon }}" alt="" />
+                    <b>{{ app.featuredHeadline }}</b>
+                    <span>{{ app.blurb }}</span>
+                  </div>
+                </div>
+                <div class="as-shot as-shot--mock" style="--c1: {{ app.accent2 }}; --c2: {{ app.accent }}">
+                  <div class="as-mock">
+                    <b>{{ app.tagline }}</b>
+                    <span>{{ app.subtitle }}</span>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+
+            <!-- description -->
+            <div class="as-block">
+              <p class="as-desc">{{ app.description }}</p>
+              <div class="as-highlights">
+                {% for h in app.highlights %}
+                <div class="as-hi">
+                  <div class="as-hi__ic"><svg viewBox="0 0 24 24"><path d="{{ h.icon }}" /></svg></div>
+                  <div>
+                    <div class="as-hi__t">{{ h.title }}</div>
+                    <div class="as-hi__d">{{ h.text }}</div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- what's new -->
+            <div class="as-block">
+              <h2 class="as-block__title">What's New <span class="as-block__ver">Version {{ app.whatsNewVersion }}</span></h2>
+              <p class="as-whatsnew">{{ app.whatsNew }}</p>
+            </div>
+
+            <!-- ratings -->
+            <div class="as-block">
+              <h2 class="as-block__title">Ratings &amp; Reviews</h2>
+              <div class="as-ratings">
+                <div>
+                  <div class="as-ratings__big">{{ app.rating }}</div>
+                  <div class="as-ratings__outof">out of 5</div>
+                </div>
+                <div class="as-ratings__bars" data-rating="{{ app.rating }}">
+                  <div class="as-bar"><span class="as-bar__star">5</span><div class="as-bar__track"><div class="as-bar__fill" data-star="5"></div></div></div>
+                  <div class="as-bar"><span class="as-bar__star">4</span><div class="as-bar__track"><div class="as-bar__fill" data-star="4"></div></div></div>
+                  <div class="as-bar"><span class="as-bar__star">3</span><div class="as-bar__track"><div class="as-bar__fill" data-star="3"></div></div></div>
+                  <div class="as-bar"><span class="as-bar__star">2</span><div class="as-bar__track"><div class="as-bar__fill" data-star="2"></div></div></div>
+                  <div class="as-bar"><span class="as-bar__star">1</span><div class="as-bar__track"><div class="as-bar__fill" data-star="1"></div></div></div>
+                </div>
+                <div class="as-ratings__count">{{ app.ratingLabel }}</div>
+              </div>
+              <div class="as-reviews">
+                {% for r in app.reviews %}
+                <div class="as-review">
+                  <div class="as-review__top">
+                    <span class="as-review__title">{{ r.title }}</span>
+                    <span class="as-review__author">{{ r.author }}</span>
+                  </div>
+                  <div class="as-review__stars" aria-label="{{ r.stars }} out of 5">
+                    {% for s in (1..r.stars) %}<svg viewBox="0 0 24 24"><path d="M12 17.27l-5.4 3.27 1.43-6.16-4.78-4.14 6.3-.54L12 4l2.45 5.7 6.3.54-4.78 4.14 1.43 6.16z" /></svg>{% endfor %}
+                  </div>
+                  <div class="as-review__text">{{ r.text }}</div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- info -->
+            <div class="as-block">
+              <h2 class="as-block__title">Information</h2>
+              <dl class="as-info">
+                <div class="as-info__row"><dt>Developer</dt><dd>{{ app.developer }}</dd></div>
+                <div class="as-info__row"><dt>Category</dt><dd>{{ app.category }}</dd></div>
+                <div class="as-info__row"><dt>Size</dt><dd>{{ app.size }}</dd></div>
+                <div class="as-info__row"><dt>Compatibility</dt><dd>macOS</dd></div>
+                <div class="as-info__row"><dt>Languages</dt><dd>English</dd></div>
+                <div class="as-info__row"><dt>Age Rating</dt><dd>{{ app.age }}</dd></div>
+                <div class="as-info__row"><dt>Price</dt><dd>{{ app.priceNote }}</dd></div>
+                <div class="as-info__row"><dt>Website</dt><dd><a href="{{ app.link }}" target="_blank" rel="noopener" style="color: var(--as-blue)">View ↗</a></dd></div>
+              </dl>
+            </div>
+          </section>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+
+    <script>
+      (function () {
+        "use strict";
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var body = document.body;
+        var main = document.getElementById("asMain");
+        var storeView = document.getElementById("storeView");
+        var backBtn = document.getElementById("asBack");
+        var titleEl = document.getElementById("asTitle");
+        var products = {};
+        document.querySelectorAll("[data-product]").forEach(function (el) {
+          products[el.getAttribute("data-product")] = el;
+        });
+
+        /* ---------- view transition helper ---------- */
+        function swap(fn) {
+          if (reduce || !document.startViewTransition) {
+            fn();
+            return { finished: Promise.resolve() };
+          }
+          return document.startViewTransition(fn);
+        }
+
+        /* ---------- open a product page ---------- */
+        var current = null;
+        function openApp(id, sourceIcon) {
+          var view = products[id];
+          if (!view || current === id) return;
+          var prodIcon = document.getElementById("prodicon-" + id);
+          if (sourceIcon && prodIcon) {
+            sourceIcon.style.viewTransitionName = "as-hero";
+            prodIcon.style.viewTransitionName = "as-hero";
+          }
+          var t = swap(function () {
+            storeView.setAttribute("hidden", "");
+            Object.keys(products).forEach(function (k) {
+              products[k].setAttribute("hidden", "");
+            });
+            view.removeAttribute("hidden");
+            body.setAttribute("data-view", "product");
+            titleEl.textContent = view.querySelector(".as-prod__name").textContent;
+            main.scrollTop = 0;
+          });
+          current = id;
+          t.finished.then(function () {
+            if (sourceIcon) sourceIcon.style.viewTransitionName = "";
+            if (prodIcon) prodIcon.style.viewTransitionName = "";
+            animateBars(view);
+          });
+          if (location.hash !== "#" + id) {
+            history.pushState({ app: id }, "", "#" + id);
+          }
+        }
+
+        function closeApp(push) {
+          if (!current) return;
+          var view = products[current];
+          var prodIcon = document.getElementById("prodicon-" + current);
+          var rowIcon = document.querySelector('[data-open="' + current + '"] .as-row__icon');
+          if (rowIcon && prodIcon) {
+            prodIcon.style.viewTransitionName = "as-hero";
+            rowIcon.style.viewTransitionName = "as-hero";
+          }
+          swap(function () {
+            view.setAttribute("hidden", "");
+            storeView.removeAttribute("hidden");
+            body.setAttribute("data-view", "store");
+            titleEl.textContent = "App Store";
+          }).finished.then(function () {
+            if (prodIcon) prodIcon.style.viewTransitionName = "";
+            if (rowIcon) rowIcon.style.viewTransitionName = "";
+          });
+          current = null;
+          if (push !== false && location.hash) {
+            history.pushState({ app: null }, "", location.pathname);
+          }
+        }
+
+        /* ---------- rating bars ---------- */
+        function animateBars(view) {
+          var bars = view.querySelectorAll(".as-bar__fill");
+          if (!bars.length) return;
+          var rating = parseFloat(view.querySelector(".as-ratings__bars").getAttribute("data-rating")) || 4.8;
+          // shape a plausible distribution skewed toward the rating
+          var weights = { 5: 0, 4: 0, 3: 0, 2: 0, 1: 0 };
+          var top = Math.min(98, 40 + (rating - 3) * 30);
+          weights[5] = top;
+          weights[4] = Math.max(6, 100 - top - 8);
+          weights[3] = Math.max(3, (5 - rating) * 14);
+          weights[2] = Math.max(1, (5 - rating) * 5);
+          weights[1] = Math.max(1, (5 - rating) * 4);
+          bars.forEach(function (b) {
+            var s = b.getAttribute("data-star");
+            requestAnimationFrame(function () {
+              b.style.width = Math.min(100, weights[s]) + "%";
+            });
+          });
+        }
+
+        /* ---------- click delegation ---------- */
+        document.addEventListener("click", function (e) {
+          var getBtn = e.target.closest("[data-get]");
+          if (getBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+            install(getBtn);
+            return;
+          }
+          var shareBtn = e.target.closest("[data-share]");
+          if (shareBtn) {
+            e.preventDefault();
+            e.stopPropagation();
+            doShare(shareBtn.getAttribute("data-share"));
+            return;
+          }
+          var opener = e.target.closest("[data-open]");
+          if (opener) {
+            var icon = opener.querySelector(".as-row__icon, .as-feat__icon");
+            openApp(opener.getAttribute("data-open"), icon);
+          }
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if ((e.key === "Enter" || e.key === " ") && document.activeElement) {
+            var opener = document.activeElement.closest && document.activeElement.closest("[data-open]");
+            if (opener && !e.target.closest("[data-get]")) {
+              e.preventDefault();
+              openApp(opener.getAttribute("data-open"), opener.querySelector(".as-row__icon, .as-feat__icon"));
+            }
+          }
+          if (e.key === "Escape" && current) closeApp();
+        });
+
+        backBtn.addEventListener("click", function () {
+          history.length > 1 ? history.back() : closeApp();
+        });
+
+        /* ---------- GET button install animation ---------- */
+        function install(btn) {
+          var link = btn.getAttribute("data-link");
+          if (btn.classList.contains("is-open")) {
+            window.open(link, "_blank", "noopener");
+            return;
+          }
+          if (reduce) {
+            window.open(link, "_blank", "noopener");
+            markOpen(btn);
+            return;
+          }
+          if (btn.classList.contains("is-installing")) return;
+          if (!btn.querySelector(".as-get__ring")) {
+            var ns = "http://www.w3.org/2000/svg";
+            var svg = document.createElementNS(ns, "svg");
+            svg.setAttribute("class", "as-get__ring");
+            svg.setAttribute("viewBox", "0 0 24 24");
+            var c = document.createElementNS(ns, "circle");
+            c.setAttribute("cx", "12");
+            c.setAttribute("cy", "12");
+            c.setAttribute("r", "8");
+            svg.appendChild(c);
+            btn.appendChild(svg);
+          }
+          btn.classList.add("is-installing");
+          setTimeout(function () {
+            btn.classList.remove("is-installing");
+            markOpen(btn);
+            window.open(link, "_blank", "noopener");
+          }, 1150);
+        }
+        function markOpen(btn) {
+          btn.classList.add("is-open");
+          btn.textContent = "Open";
+        }
+
+        /* ---------- share ---------- */
+        function doShare(url) {
+          if (navigator.share) {
+            navigator.share({ url: url }).catch(function () {});
+          } else if (navigator.clipboard) {
+            navigator.clipboard.writeText(url);
+          } else {
+            window.open(url, "_blank", "noopener");
+          }
+        }
+
+        /* ---------- sidebar filtering ---------- */
+        var nav = document.getElementById("asNav");
+        var rows = Array.prototype.slice.call(document.querySelectorAll("#asList .as-row"));
+        var feat = document.querySelector(".as-featured");
+        var listTitle = document.getElementById("asListTitle");
+        var emptyEl = document.getElementById("asEmpty");
+        var defaultTitle = listTitle.innerHTML;
+
+        nav.addEventListener("click", function (e) {
+          var item = e.target.closest(".as-nav__item");
+          if (!item) return;
+          nav.querySelectorAll(".as-nav__item").forEach(function (n) {
+            n.classList.toggle("is-active", n === item);
+          });
+          if (current) closeApp(false);
+          var filter = item.getAttribute("data-filter");
+          applyFilter(filter);
+        });
+
+        function applyFilter(filter) {
+          searchInput.value = "";
+          var shown = 0;
+          rows.forEach(function (r) {
+            var match = filter === "discover" || r.getAttribute("data-cat") === filter;
+            r.classList.toggle("is-hidden", !match);
+            if (match) shown++;
+          });
+          if (filter === "discover") {
+            feat.style.display = "";
+            listTitle.innerHTML = defaultTitle;
+          } else {
+            feat.style.display = "none";
+            listTitle.innerHTML = filter + "<small>" + shown + " app" + (shown === 1 ? "" : "s") + "</small>";
+          }
+          emptyEl.classList.toggle("is-shown", shown === 0);
+          replayReveal();
+        }
+
+        /* ---------- search ---------- */
+        var searchInput = document.getElementById("asSearch");
+        searchInput.addEventListener("input", function () {
+          var q = searchInput.value.trim().toLowerCase();
+          if (q) {
+            nav.querySelectorAll(".as-nav__item").forEach(function (n) {
+              n.classList.toggle("is-active", n.getAttribute("data-filter") === "discover");
+            });
+            feat.style.display = "none";
+            listTitle.innerHTML = "Results<small>“" + searchInput.value + "”</small>";
+          } else {
+            feat.style.display = "";
+            listTitle.innerHTML = defaultTitle;
+          }
+          var shown = 0;
+          rows.forEach(function (r) {
+            var txt = r.textContent.toLowerCase();
+            var match = !q || txt.indexOf(q) !== -1;
+            r.classList.toggle("is-hidden", !match);
+            if (match) shown++;
+          });
+          emptyEl.classList.toggle("is-shown", shown === 0);
+        });
+
+        /* ---------- scroll reveal ---------- */
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (en) {
+              if (en.isIntersecting) {
+                en.target.classList.add("in");
+                io.unobserve(en.target);
+              }
+            });
+          },
+          { root: main, threshold: 0.12 }
+        );
+        function observeRows() {
+          rows.forEach(function (r, i) {
+            if (!r.classList.contains("is-hidden")) {
+              r.style.transitionDelay = i * 45 + "ms";
+              io.observe(r);
+            }
+          });
+        }
+        function replayReveal() {
+          rows.forEach(function (r, i) {
+            r.classList.remove("in");
+            io.unobserve(r);
+            if (!r.classList.contains("is-hidden")) {
+              r.style.transitionDelay = i * 45 + "ms";
+              requestAnimationFrame(function () {
+                r.classList.add("in");
+              });
+            }
+          });
+        }
+        if (reduce) {
+          rows.forEach(function (r) {
+            r.classList.add("in");
+          });
+        } else {
+          observeRows();
+        }
+
+        /* ---------- featured carousel ---------- */
+        var track = document.getElementById("asFeatTrack");
+        var dotsWrap = document.getElementById("asDots");
+        var cards = Array.prototype.slice.call(track.children);
+        var dots = cards.map(function (c, i) {
+          var d = document.createElement("button");
+          d.className = "as-dot" + (i === 0 ? " is-active" : "");
+          d.setAttribute("aria-label", "Featured " + (i + 1));
+          d.addEventListener("click", function () {
+            scrollToCard(i);
+            restartAuto();
+          });
+          dotsWrap.appendChild(d);
+          return d;
+        });
+        var activeIdx = 0;
+        function scrollToCard(i) {
+          var c = cards[i];
+          track.scrollTo({ left: c.offsetLeft - track.offsetLeft, behavior: reduce ? "auto" : "smooth" });
+        }
+        function setActive(i) {
+          if (i === activeIdx) return;
+          activeIdx = i;
+          dots.forEach(function (d, k) {
+            d.classList.toggle("is-active", k === i);
+          });
+        }
+        var sTimer;
+        track.addEventListener("scroll", function () {
+          clearTimeout(sTimer);
+          sTimer = setTimeout(function () {
+            var center = track.scrollLeft + track.clientWidth / 2;
+            var best = 0,
+              bestD = Infinity;
+            cards.forEach(function (c, i) {
+              var cc = c.offsetLeft - track.offsetLeft + c.clientWidth / 2;
+              var d = Math.abs(cc - center);
+              if (d < bestD) {
+                bestD = d;
+                best = i;
+              }
+            });
+            setActive(best);
+          }, 60);
+        });
+
+        var auto;
+        function startAuto() {
+          if (reduce || cards.length < 2) return;
+          auto = setInterval(function () {
+            if (body.getAttribute("data-view") !== "store") return;
+            var next = (activeIdx + 1) % cards.length;
+            scrollToCard(next);
+          }, 5000);
+        }
+        function restartAuto() {
+          clearInterval(auto);
+          startAuto();
+        }
+        track.addEventListener("pointerenter", function () {
+          clearInterval(auto);
+        });
+        track.addEventListener("pointerleave", startAuto);
+        startAuto();
+
+        /* drag to scroll the featured track */
+        var down = false,
+          startX,
+          startL,
+          moved;
+        track.addEventListener("pointerdown", function (e) {
+          down = true;
+          moved = false;
+          startX = e.clientX;
+          startL = track.scrollLeft;
+        });
+        window.addEventListener("pointermove", function (e) {
+          if (!down) return;
+          var dx = e.clientX - startX;
+          if (Math.abs(dx) > 4) moved = true;
+          track.scrollLeft = startL - dx;
+        });
+        window.addEventListener("pointerup", function () {
+          down = false;
+        });
+        track.addEventListener(
+          "click",
+          function (e) {
+            if (moved) {
+              e.stopPropagation();
+              e.preventDefault();
+            }
+          },
+          true
+        );
+
+        /* ---------- deep-link / history ---------- */
+        window.addEventListener("popstate", function () {
+          var id = location.hash.replace("#", "");
+          if (id && products[id]) {
+            openApp(id, document.querySelector('[data-open="' + id + '"] .as-row__icon'));
+          } else {
+            closeApp(false);
+          }
+        });
+        var initial = location.hash.replace("#", "");
+        if (initial && products[initial]) {
+          // open without animation on first paint
+          var v = products[initial];
+          storeView.setAttribute("hidden", "");
+          v.removeAttribute("hidden");
+          body.setAttribute("data-view", "product");
+          titleEl.textContent = v.querySelector(".as-prod__name").textContent;
+          current = initial;
+          animateBars(v);
+        }
+      })();
+    </script>
+  </body>
+</html>
