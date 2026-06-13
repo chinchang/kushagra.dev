@@ -6,26 +6,159 @@ name: lab
 
 <h1 class="post__title">Lab</h1>
 
+<style>
+  .applink {
+    --r: 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 18px;
+    margin-bottom: 26px;
+    border-radius: var(--r);
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: linear-gradient(135deg, rgba(48, 36, 92, 0.66), rgba(28, 23, 56, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 12px 40px rgba(70, 50, 150, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(12px) saturate(160%);
+    backdrop-filter: blur(12px) saturate(160%);
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+      box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+  .applink::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    z-index: -1;
+    background: radial-gradient(38% 60% at 82% 8%, rgba(255, 107, 53, 0.55), transparent 60%),
+      radial-gradient(40% 70% at 100% 100%, rgba(45, 127, 249, 0.5), transparent 60%),
+      radial-gradient(45% 80% at 60% 30%, rgba(168, 85, 247, 0.4), transparent 65%);
+    filter: blur(8px);
+    opacity: 0.85;
+    transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  .applink:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 20px 56px rgba(90, 60, 190, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  }
+  .applink:hover::before {
+    transform: scale(1.1) rotate(4deg);
+  }
+
+  .applink__icons {
+    display: flex;
+    flex: 0 0 auto;
+    padding-left: 6px;
+  }
+  .applink__icons img {
+    width: 52px;
+    height: 52px;
+    border-radius: 13px;
+    object-fit: cover;
+    margin-left: -16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    outline: 2px solid rgba(20, 16, 40, 0.65);
+    background: #14102a;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .applink__icons img:first-child {
+    margin-left: 0;
+  }
+  .applink:hover .applink__icons img:nth-child(1) { transform: translateX(-6px) rotate(-6deg); }
+  .applink:hover .applink__icons img:nth-child(2) { transform: translateY(-2px) rotate(-2deg); }
+  .applink:hover .applink__icons img:nth-child(3) { transform: translateY(-2px) rotate(2deg); }
+  .applink:hover .applink__icons img:nth-child(4) { transform: translateX(6px) rotate(6deg); }
+
+  .applink__text {
+    flex: 1;
+    min-width: 0;
+    line-height: 1.35;
+  }
+  .applink__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .applink__badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .applink__sub {
+    font-size: 13px;
+    opacity: 0.78;
+    margin-top: 2px;
+  }
+  .applink__cta {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 999px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.25s ease, gap 0.25s ease;
+  }
+  .applink__cta svg {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+    transition: transform 0.25s ease;
+  }
+  .applink:hover .applink__cta {
+    background: rgba(255, 255, 255, 0.24);
+  }
+  .applink:hover .applink__cta svg {
+    transform: translateX(3px);
+  }
+
+  @media (max-width: 600px) {
+    .applink {
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .applink__cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .applink, .applink *, .applink::before { transition: none !important; }
+  }
+</style>
+
 <div class="container container--small">
-  <a
-    href="/app-store/"
-    style="
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 18px;
-      margin-bottom: 22px;
-      border-radius: 16px;
-      text-decoration: none;
-      color: #fff;
-      background: linear-gradient(135deg, #ff6b35, #a855f7 60%, #2d7ff9);
-      box-shadow: 0 10px 30px rgba(120, 80, 200, 0.35);
-    "
-  >
-    <span style="font-size: 26px; line-height: 1"></span>
-    <span style="flex: 1">
-      <strong style="display: block; font-size: 17px">My Mac apps, App Store style</strong>
-      <span style="opacity: 0.9; font-size: 13px">Browse my Mac apps in a little App Store →</span>
+  <a href="/app-store/" class="applink" aria-label="Browse my Mac apps in the App Store">
+    <span class="applink__icons" aria-hidden="true">
+      <img src="https://www.scribbble.app/icon.png" alt="" loading="lazy" />
+      <img src="/lab/namemyspace/logo.png" alt="" loading="lazy" />
+      <img src="/images/timespan-icon.svg" alt="" loading="lazy" />
+      <img src="/images/home127-256.png" alt="" loading="lazy" />
+    </span>
+    <span class="applink__text">
+      <span class="applink__title">My Mac Apps <span class="applink__badge">App Store</span></span>
+      <span class="applink__sub">Native little apps I’ve built — browse them App Store style.</span>
+    </span>
+    <span class="applink__cta">
+      Open Store
+      <svg viewBox="0 0 24 24"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z" /></svg>
     </span>
   </a>
 </div>
