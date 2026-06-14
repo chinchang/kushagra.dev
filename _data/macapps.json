@@ -1,6 +1,7 @@
 [
   {
     "id": "scribbble",
+    "poster": "/images/app-posters/scribbble.webp",
     "name": "Scribbble",
     "tagline": "Annotate your screen, live",
     "subtitle": "Draw on anything, instantly",
@@ -40,6 +41,7 @@
   },
   {
     "id": "namemyspace",
+    "poster": "/images/app-posters/namemyspace.webp",
     "name": "NameMySpace",
     "tagline": "Your Desktops, Named",
     "subtitle": "Name & color your macOS Spaces",
@@ -83,6 +85,7 @@
   },
   {
     "id": "timespan",
+    "poster": "/images/posters/timespan.svg",
     "name": "TimeSpan",
     "tagline": "Every second, beautifully accounted for",
     "subtitle": "A precision time tracker for your menu bar",
@@ -101,7 +104,7 @@
     "age": "4+",
     "size": "4.2 MB",
     "lang": "EN",
-    "featured": true,
+    "featured": false,
     "featuredKicker": "FOR MACOS",
     "featuredHeadline": "Where do your hours go?",
     "blurb": "A precision time tracker that lives in your menu bar. Start a timer, track projects, and see exactly where your hours go — all without leaving your workflow.",
@@ -122,6 +125,7 @@
   },
   {
     "id": "home127",
+    "poster": "/images/app-posters/home127.webp",
     "name": "Home127",
     "tagline": "Localhost, in your menu bar",
     "subtitle": "All your local servers, one click away",

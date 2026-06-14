@@ -80,6 +80,7 @@ eleventyExcludeFromCollections: true
               <div class="as-featured__eyebrow">Featured</div>
               <div class="as-featured__track" id="asFeatTrack">
                 {% for app in macapps %}
+                {% if app.featured %}
                 <article
                   class="as-feat"
                   data-open="{{ app.id }}"
@@ -88,18 +89,24 @@ eleventyExcludeFromCollections: true
                   role="button"
                   aria-label="View {{ app.name }}"
                 >
-                  <div class="as-feat__kicker">{{ app.featuredKicker }}</div>
-                  <h3 class="as-feat__headline">{{ app.featuredHeadline }}</h3>
-                  <p class="as-feat__blurb">{{ app.blurb }}</p>
-                  <div class="as-feat__foot">
-                    <img class="as-feat__icon" src="{{ app.icon }}" alt="" loading="lazy" />
-                    <div class="as-feat__meta">
-                      <div class="as-feat__name">{{ app.name }}</div>
-                      <div class="as-feat__sub">{{ app.subtitle }}</div>
+                  <div class="as-feat__media" style="background-image: url('{{ app.poster }}')">
+                    <span class="as-feat__badge">{{ app.featuredKicker }}</span>
+                  </div>
+                  <div class="as-feat__panel">
+                    <div class="as-feat__kicker">{{ app.category }}</div>
+                    <h3 class="as-feat__headline">{{ app.featuredHeadline }}</h3>
+                    <p class="as-feat__blurb">{{ app.blurb }}</p>
+                    <div class="as-feat__foot">
+                      <img class="as-feat__icon" src="{{ app.icon }}" alt="" loading="lazy" />
+                      <div class="as-feat__meta">
+                        <div class="as-feat__name">{{ app.name }}</div>
+                        <div class="as-feat__sub">{{ app.subtitle }}</div>
+                      </div>
+                      <button class="as-get" type="button" data-get data-link="{{ app.link }}">Get</button>
                     </div>
-                    <button class="as-get" type="button" data-get data-link="{{ app.link }}">Get</button>
                   </div>
                 </article>
+                {% endif %}
                 {% endfor %}
               </div>
               <div class="as-featured__dots" id="asDots"></div>
